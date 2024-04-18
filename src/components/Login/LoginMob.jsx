@@ -75,7 +75,7 @@ className=' my-4 m-auto'
 />
 <h1 className={`font-tinos font-bold text-center  uppercase text-[48px] text-greenAcc`}>login</h1>
       
-<form onSubmit={handleSubmit(handilform)} className='text-center mt-[-20px] w-[90%] m-auto'>
+<form onSubmit={handleSubmit(handilform)} className='text-center mt-[-20px] '>
                             <input
                               {...register("email")}
                                 type="email"
