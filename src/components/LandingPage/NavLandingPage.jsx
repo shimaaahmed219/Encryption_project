@@ -33,7 +33,7 @@ export default function NavLandingPage() {
           <li className={`relative ${location.pathname==='/'?"border-b-2 border-yellowAcc":''} `}><Link to="/">Home</Link></li>
           <li className={`relative ${location.pathname==='/about'?"border-b-2 border-yellowAcc":''} `}><Link to="/about">About Us</Link></li>
           <li className={`relative ${location.pathname==='/service'?"border-b-2 border-yellowAcc":''} `}><Link to="/service">Service</Link></li>
-          <li className={`relative ${location.pathname==='/passForm'?"border-b-2 border-yellowAcc":''} `}><Link to="/passForm">passport</Link></li>
+          <li className={`relative ${location.pathname==='/passform'?"border-b-2 border-yellowAcc":''} `}><Link to="/passform">passport</Link></li>
           <li><Link to="/login" className='font-roboto    text-white bg-yellowAcc py-[10px] px-[24px] rounded-[25px] h-[48p]'>Sign in</Link></li>
         </ul>
       </nav>
