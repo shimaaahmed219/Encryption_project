@@ -8,6 +8,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import axios from "axios";
 import { url } from "../URL";
 import Swal from "sweetalert2";
+import { useState } from "react";
 
 
 
@@ -42,6 +43,14 @@ const schema = z.object({
         ),
 });
 export default function AddEmployeeForm() {
+    const [selectedImage, setSelectedImage] = useState(null)
+    
+    const handleImageChange = (e) => {
+        const file = e.target.files[0];
+        if (file) {
+            setSelectedImage(URL.createObjectURL(file)); // إنشاء عنوان URL للصورة المحددة وتخزينه في الحالة
+        }
+    };
     const {
         register,
         handleSubmit,
@@ -87,18 +96,19 @@ export default function AddEmployeeForm() {
                 onSubmit={handleSubmit(onsubmit)}
                 className=" flex-col flex items-center "
             >
-                <div className="  w-[115px] h-[115px] rounded-full userIconForm flex justify-center items-center ">
+                <div className=" relative w-[115px] h-[115px] rounded-full userIconForm flex justify-center items-center ">
                     <input
                         {...register("photo")}
+                        onChange={handleImageChange}
                         type="file"
-                        className="w-full h-full z-50 opacity-0"
+                        className="w-full h-full absolute z-40 opacity-0"
                     />
- 
+          {selectedImage && <img src={selectedImage} alt="Selected" className="w-full absolute h-full object-cover rounded-full"/>}
                     {/* {title} */}
                 </div>
                 
-                <div className=" mt-[-35px] ml-[80px]  w-[27px] h-[27px] bg-yellowAcc rounded-full flex justify-center items-center">
-                    <img src={icon} className="text-yellowAcc" />
+                <div className=" mt-[-35px] ml-[80px] z-50  w-[27px] h-[27px] bg-yellowAcc rounded-full flex justify-center items-center">
+                    <img src={icon} className="text-yellowAcc  " />
                 </div>
                 {errors.photo&& (
                             <div className=" text-red-500 m-auto  mt-[10px] mb-[5px]">{`**${errors.photo.message}`}</div>
