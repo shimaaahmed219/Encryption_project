@@ -17,7 +17,7 @@ export default function LandingFut() {
       
       <div className="w-5/6 m-auto min-h-[146px]  grid xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-x-[77px]">
         {/*   Encryption technology. */}
-        <div className="xl:w-[326px] border-b-2 border-yellowAcc md:w-[400px] h-[146px] xl:my-0 lg:my-10 my-10 bg-bg rounded-[20px] px-[20px] pt-[20px]">
+        <div className="xl:w-[326px] border-b-2 border-yellowAcc md:w-[400px] min-h-[146px] xl:my-0 lg:my-10 my-10 bg-bg rounded-[20px] px-[20px] pt-[20px]">
           {/* icon */}
           <img src={encIcon} className="mt-[-43px] ml-[10px] mb-2" />
 
@@ -27,7 +27,7 @@ export default function LandingFut() {
           </h4>
 
           {/* description */}
-          <p className="font-roboto text-[13px] text-p font-normal w-[252px]">
+          <p className="font-roboto text-[13px] text-p font-normal pb-3 md:w-[252px]">
             The practice of protecting information using encrypted algorithms,
             hashes, and signatures.
           </p>
@@ -38,7 +38,7 @@ export default function LandingFut() {
 
 
         {/* Ease of use.  */}
-        <div className="xl:w-[326px] md:w-[400px] border-b-2 border-yellowAcc h-[146px] lg:m-auto md:m-auto xl:my-0 lg:my-10 my-10 bg-bg rounded-[20px] px-[20px] pt-[20px]">
+        <div className="xl:w-[326px] md:w-[400px] border-b-2 border-yellowAcc min-h-[146px] lg:m-auto md:m-auto xl:my-0 lg:my-10 my-10 bg-bg rounded-[20px] px-[20px] pt-[20px]">
           {/* icon */}
           <img src={setIcon} className="mt-[-43px] ml-[10px] mb-2" />
 
@@ -48,14 +48,14 @@ export default function LandingFut() {
           </h4>
 
           {/* description */}
-          <p className="font-roboto text-[13px] text-p font-normal w-[252px]">
+          <p className="font-roboto text-[13px] text-p font-normal pb-3 md:w-[252px]">
             The practice of protecting information using encrypted algorithms,
             hashes, and signatures.
           </p>
         </div>
 
         {/* ******************************************* */}
-        <div className="xl:w-[326px] border-b-2 border-yellowAcc md:w-[400px] h-[146px] xl:ml-0 md:ml-[290px] ml-0  md:ms-auto xl:my-0 lg:my-10 my-10 bg-bg rounded-[20px] px-[20px] pt-[20px]">
+        <div className="xl:w-[326px] border-b-2 border-yellowAcc md:w-[400px] min-h-[146px] xl:ml-0 md:ml-[290px] ml-0  md:ms-auto xl:my-0 lg:my-10 my-10 bg-bg rounded-[20px] px-[20px] pt-[20px]">
           {/* icon */}
           <img src={decIcon} className="mt-[-43px] ml-[10px] mb-2" />
 
@@ -65,7 +65,7 @@ export default function LandingFut() {
           </h4>
 
           {/* description */}
-          <p className="font-roboto text-[13px] text-p font-normal w-[252px]">
+          <p className="font-roboto text-[13px] text-p font-normal pb-3 md:w-[252px]">
             The practice of protecting information using encrypted algorithms,
             hashes, and signatures.
           </p>

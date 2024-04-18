@@ -3,7 +3,7 @@ import icon from "../../assets/landingPage/Group (1).svg";
 import { useState } from "react";
 import icon2 from "../../assets/filters-2.svg";
 
-import { LoginOutlined } from "@mui/icons-material";
+
 import NavDropDowen from "./NavDropDowen";
 export default function NavLandingPage() {
   // import {log} from '@mui/icons-material'
@@ -20,7 +20,7 @@ export default function NavLandingPage() {
     <div className='w-5/6 m-auto  items-center justify-between py-10 h-70px flex '>
       <div className='flex '>
 
-      <img src={icon} className="sm:w-[76px] sm:h-[52px]" />
+      <img src={icon} className="md:block hidden" />
         <h1 className={` font-tinos text-[24px]  items-center gap-x-8 text-greenAcc mt-3 ml-3  text-xl`}>
           <span className='text-yellowAcc md:text-[24px] text-[15px]'>E-</span>passport
         </h1>
@@ -40,10 +40,10 @@ export default function NavLandingPage() {
       <div className='xl:hidden block w-6/6 ms-auto'>
         <div className="flex">
         <button onClick={toogleDropDowen} className=''>
-        <img src={icon2} />
+        <img src={icon2} className="mt-2" />
       
       </button>
-      <Link to="/login" className='font-roboto text-greenAcc py-[10px] px-[24px]  h-[48p]'> <LoginOutlined/> Sign in</Link>
+      
         </div>
     
       </div>

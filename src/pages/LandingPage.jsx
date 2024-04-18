@@ -32,7 +32,7 @@ export default function LandingPage() {
             <h1 className="font-bold leading-[45px] font-tinos text-yellowAcc text-[40px]">
               Obtain your passport easily through our website
             </h1>
-            <p className="w-[430px]  text-greenAcc text-[20px] font-roboto font-normal my-4">
+            <p className="md:w-[430px]  text-greenAcc text-[20px] font-roboto font-normal my-4">
               From the small stuff to the big picture, organizes the work know
               what to do, why it matters, and how to get it done.
             </p>
@@ -47,16 +47,19 @@ export default function LandingPage() {
           </div>
           {/* computer image */}
           <div>
-            <div className=" flex  items-center lg:ml-[-400px]   md:ml-[50px] ml-[50px]">
+            <div className=" flex  items-center lg:ml-[-400px]   md:ml-[50px] md:px-0 px-10">
               <div className="relative">
                 <img src={img} className="mt-[170px] absolute ml-[-20px]" />
                 <img src={g4} className="" />
               </div>
-              <div className="flex items-center mx-3">
+              <div className="md:block hidden">
+              <div className="flex items-center mx-3 ">
                 <img src={mob} className="absolute " />
                 <img src={tru} className="absolute mt-[160px] ml-[-30px]" />
                 <img src={t} className="absolute mt-[160px] ml-[-15px]" />
               </div>
+              </div>
+              
             </div>
           </div>
         </div>
@@ -76,14 +79,14 @@ export default function LandingPage() {
 
       {/* Services guide */}
       <div className="w-full ">
-        <h1 className="text-center my-9 text-black font-tinos font-bold text-[48px] ">
+        <h1 className="text-center my-9 text-black font-tinos font-bold md:text-[48px] text-[30px] ">
           Services guide
         </h1>
         <div className=" service w-full h-[491px] flex-col flex justify-center items-center ">
-          <h1 className="text-yellowAcc font-tinos md:text-[48px] text-[35px] font-bold my-3">
+          <h1 className="text-yellowAcc font-tinos md:text-[48px] text-[24px] font-bold my-3">
             Online passport service
           </h1>
-          <p className="w-[576px] h-[139px] leading-7  md:text-[24px] text-[18px] md:px-0 px-10 text-white font-roboto font-light text-center">
+          <p className="md:w-[576px] min-h-[139px] leading-7  md:text-[24px] text-[18px] md:px-0 px-10 text-white font-roboto font-light text-center">
             text ever since when an unknown printer took a galley of type and
             scrambled it to make a type specimen book. It has survived not only
             five centuries, but also the leap into electronic typesetting,
@@ -97,47 +100,19 @@ export default function LandingPage() {
 
       {/* Security */}
 
-      {/* <div className="w-full min-h-[456px] bg-bg my-[100px] py-10 px-20">
-        <div className="w-5/6 min-h-[456px] m-auto grid md:grid-cols-2 grid-cols-1   items-center md:justify-between justify-center ">
-         
-          <div className=" flex  items-center me-auto">
-            <div className="relative">
-              <img src={img} className="mt-[170px] absolute ml-[-20px]" />
-              <img src={g4} className="" />
-            </div>
-            <div className="flex items-center mx-3">
-              <img src={mob} className="absolute" />
-              <img src={tru} className="absolute mt-[160px] ml-[-30px]" />
-              <img src={t} className="absolute mt-[160px] ml-[-15px]" />
-            </div>
-          </div>
-
-          <div className="md:w-full w-6/6 ml-[-120px] px-6 md:my-0 my-10 md:text-left  text-center">
-            <h1 className="text-yellowAcc font-tinos hover:text-[42px] lg:text-[40px] text-[40px]  md:text-[28px] font-bold lg:w-[550px] leading-[45px] mb-2">
-              Our website is characterized by complete data protection
-            </h1>
-            <p className=" xl:w-[576px]  min-h-[91px]  hover:text-[22px] lg:text-[20px] md:text-[18px] text-[20px] my-7 font-roboto text-greenAcc  font-normal leading-7">
-              text ever since when an unknown printer took a galley of type and
-              scrambled it to make a type specimen book. It has survived not
-              only five centuries, but also the leap into electronic
-              typesetting, remaining essentially unchange
-            </p>
-            <button className="w-[166px] h-[53px]  hover:text-yellowAcc hover:bg-bgEmp bg-yellowAcc font-tinos text-white rounded-[25px]   text-[24px] font-bold">
-              see more
-            </button>
-          </div>
-        </div>
-      </div> */}
-      <div className="w-full min-h-[376px] bg-bg my-[100px] py-10 px-20">
+    
+      <div className="w-full min-h-[376px] bg-bg my-[100px] py-10 md:px-20">
         <div className=" flex lg:flex-row w-full  flex-col justify-center items-center">
-          <div className=" flex  m-auto  items-center gap-x-5 lg:w-3/6 w-6/6  h-[456px] ">
+          <div className=" flex  m-auto  pl-5 items-center gap-x-5 lg:w-3/6 w-6/6  h-[456px] ">
             <div className="relative">
               <img src={star} className="mt-5 absolute ml-[-50px]" />
               <img src={smallStar} className="mt-[60px] absolute ml-[-50px]" />
               <img src={img} className="mt-[170px] absolute ml-[-20px]" />
               <img src={g4} className="" />
             </div>
-            <div className="flex items-center mx-3">
+           <div className="md:block hidden">
+             
+           <div className="flex items-center mx-3 ">
               <img
                 src={smallStar}
                 className=" absolute ml-[140px] mt-[-55px] "
@@ -149,11 +124,12 @@ export default function LandingPage() {
               <img src={t} className="absolute mt-[160px] ml-[-15px]" />
             </div>
           </div>
-          <div className="lg:w-3/6 w-6/6 lg:text-left  lg:ml-[-120px] px-6 md:my-0 my-10 md:text-left  ">
-            <h1 className="text-yellowAcc lg:text-left text-center font-tinos hover:text-[42px] lg:text-[40px] text-[40px]  md:text-[28px] font-bold lg:w-[550px] leading-[45px] mb-2">
+           </div>
+          <div className="lg:w-3/6 w-6/6 lg:text-left  lg:ml-[-120px] md:px-6 md:my-0 my-10 md:text-left  ">
+            <h1 className="text-yellowAcc lg:text-left text-center px-5 font-tinos lg:hover:text-[42px] lg:text-[40px] text-[27px]  md:text-[28px] font-bold lg:w-[550px]  leading-[45px] mb-2">
               Our website is characterized by complete data protection
             </h1>
-            <p className=" lg:w-[576px] min-h-[91px] lg:text-left text-center  lg:text-[20px] md:text-[18px] text-[20px] my-7 font-roboto text-greenAcc  font-normal leading-7">
+            <p className=" lg:w-[576px] min-h-[91px] lg:text-left md:text-center px-5  lg:text-[20px] md:text-[18px] text-[20px] my-7 font-roboto text-greenAcc  font-normal leading-7">
               text ever since when an unknown printer took a galley of type and
               scrambled it to make a type specimen book. It has survived not
               only five centuries, but also the leap into electronic
