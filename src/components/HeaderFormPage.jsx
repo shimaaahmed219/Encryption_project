@@ -16,7 +16,7 @@ const HeaderFormPage = ({step}) => {
         >
           1
         </div>
-        <h5 className="xl:w-[126px] text-start capitalize font-tinos font-bold text-[20px] text-greenAcc">
+        <h5 className="xl:w-[126px] text-start capitalize font-tinos font-bold md:text-[20px] text-[18px] text-greenAcc">
           Personal information
         </h5>
       </button>
@@ -31,7 +31,7 @@ const HeaderFormPage = ({step}) => {
         >
           2
         </div>
-        <h5 className="xl:w-[150px] text-start capitalize font-tinos font-bold text-[20px] text-greenAcc">Annats marital status</h5>
+        <h5 className="xl:w-[150px] text-start capitalize font-tinos font-bold md:text-[20px] text-[18px] text-greenAcc">Annats marital status</h5>
       </button>
       <button
         className={`flex items-center xl:my-0 my-5  `}
@@ -44,7 +44,7 @@ const HeaderFormPage = ({step}) => {
         >
           3
         </div>
-        <h5 className="w-[150px] text-start capitalize font-tinos font-bold text-[20px] text-greenAcc">
+        <h5 className="w-[150px] text-start capitalize font-tinos font-bold md:text-[20px] text-[18px] text-greenAcc">
           {" "}
           I need proof of identity
         </h5>
@@ -54,13 +54,13 @@ const HeaderFormPage = ({step}) => {
         // onClick={() => goToStep(4)}
       >
         <div
-          className={`w-[29px] mx-2 h-[29px] rounded-full bg-fileUploud ${
+          className={`w-[29px] mx-2 md:px-0 px-2  h-[29px] rounded-full bg-fileUploud ${
             isPageOpen(4) ? "bg-yellowAcc" : ""
           } flex justify-center items-center font-roboto text-lg`}
         >
           4
         </div>
-        <h5 className="xl:w-[405px] text-start capitalize font-tinos font-bold text-[20px] text-greenAcc">
+        <h5 className="xl:w-[405px] mf:ml-0  text-start capitalize font-tinos font-bold md:text-[20px] text-[17px] text-greenAcc">
           {" "}
           Names of those who can be reviewed when necessary in the A.S.C
         </h5>

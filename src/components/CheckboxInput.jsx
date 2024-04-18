@@ -24,7 +24,7 @@ export default function CheckboxInput({register}) {
                     aria-labelledby="demo-radio-buttons-group-label"
                      defaultValue="first_time"
                     name="radio-buttons-group"
-                    className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mb-5 font-roboto text-xl px-10 pt-7 pb-5"
+                    className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mb-5 font-roboto   md:pl-20  pt-7 pb-5"
                   >
                     <FormControlLabel
                       value="first_time"
@@ -69,7 +69,7 @@ export default function CheckboxInput({register}) {
                     />
                     <FormControlLabel
                       className="xl:ml-[-50px]"
-                      value="Replacement_of_previous_passport"
+                      value="Replacement_of_previous"
                       control={
                         <Radio
                         {...register("type" ,{
