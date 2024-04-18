@@ -28,6 +28,7 @@ export default function FexidSidebar() {
     { id: 9, name: "Employees", href: "/employee", src: employee },
     { id: 10, name: "forginEmployee", href: "/forginEmployee", src: users },
     { id: 11, name: "recruitment", href: "/recruitment", src: Settingsicon },
+    { id: 12, name: "recruitment", href: "/recruitment", src: Settingsicon },
   ];
 
   const [data, setData] = useState({});
