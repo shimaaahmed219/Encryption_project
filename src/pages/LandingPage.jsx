@@ -54,7 +54,7 @@ export default function LandingPage() {
               </div>
               <div className="md:block hidden">
               <div className="flex items-center mx-3 ">
-                <img src={mob} className="absolute " />
+                <img src={mob} className="absolute  " />
                 <img src={tru} className="absolute mt-[160px] ml-[-30px]" />
                 <img src={t} className="absolute mt-[160px] ml-[-15px]" />
               </div>
