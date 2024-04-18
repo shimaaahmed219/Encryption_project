@@ -1,0 +1,9 @@
+.date-input::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+/* Hide the internal date picker arrow in Firefox */
+.date-input::-moz-calendar-picker-indicator {
+  display: none;
+}
+

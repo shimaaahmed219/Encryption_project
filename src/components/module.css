@@ -1,0 +1,44 @@
+.userIcon{
+    background:url('../assets/saidbaricon/Group 2353.svg')
+}
+.userIconForm{
+    background:url('../assets/formIcon/Group (3).svg') 
+}
+::-webkit-scrollbar {
+  width: 8px; 
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #556c58;
+  border-radius: 4px;  
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgb(229, 231, 235);
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.show {
+  animation: slideIn 0.3s forwards;
+}
+
+.hide {
+  animation: slideOut 0.2s forwards;
+}
