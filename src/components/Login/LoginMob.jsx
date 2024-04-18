@@ -75,12 +75,12 @@ className=' my-4 m-auto'
 />
 <h1 className={`font-tinos font-bold text-center  uppercase text-[48px] text-greenAcc`}>login</h1>
       
-<form onSubmit={handleSubmit(handilform)} className='text-center mt-[-20px] '>
+<form onSubmit={handleSubmit(handilform)} className='text-center mt-[-20px] w-[90%] m-auto'>
                             <input
                               {...register("email")}
                                 type="email"
                                 placeholder='Email'
-                                className={`block focus:outline-none shadow-form placeholder:text-2xl rounded-input m-auto w-[70%]   px-5 py-[20px] my-10`} />
+                                className={`block focus:outline-none shadow-form placeholder:text-2xl rounded-input m-auto w-[60%]   px-5 py-[20px] my-10`} />
                            
                            {errors.email && (
                                   <div className="text-red-500 mt-[-20px] mb-[15px]">{`**${errors.email.message}`}</div>
@@ -92,7 +92,7 @@ className=' my-4 m-auto'
                               {...register("password")}
                                 type={showPassword ? "text" : "password"}
                                 placeholder='password'
-                                className='block focus:outline-none shadow-form placeholder:text-2xl rounded-input m-auto  w-[70%] px-5 py-[20px] my-10' />
+                                className='block focus:outline-none shadow-form placeholder:text-2xl rounded-input m-auto  w-[60%] px-5 py-[20px] my-10' />
   <span
                     onClick={() => setShowPassword(!showPassword)}
                     className="absolute cursor-pointer top-5 xl:right-[80px] lg:right-[30px] md:right-[30px] right-[10px]"
