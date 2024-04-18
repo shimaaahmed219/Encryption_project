@@ -27,8 +27,8 @@ export default function FexidSidebar() {
     { id: 8, name: "Decrypt file", href: "/Decrypt", src: decimg },
     { id: 9, name: "Employees", href: "/employee", src: employee },
     { id: 10, name: "forginEmployee", href: "/ForgenEmployee", src: users },
-    { id: 11, name: "recruitment", href: "/recruitmentArea", src: Settingsicon },
-    // { id: 12, name: "recruitment", href: "/recruitment", src: Settingsicon },
+    { id: 11, name: "recruitment area", href: "/recruitmentArea", src: Settingsicon },
+    { id: 12, name: "passport Employee", href: "/passEployee", src: Settingsicon },
   ];
 
   const [data, setData] = useState({});
