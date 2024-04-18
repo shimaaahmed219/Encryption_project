@@ -20,9 +20,9 @@ export default function NavLandingPage() {
     <div className='w-5/6 m-auto  items-center justify-between py-10 h-70px flex '>
       <div className='flex '>
 
-      <img src={icon} />
+      <img src={icon} className="sm:w-[76px] sm:h-[52px]" />
         <h1 className={` font-tinos text-[24px]  items-center gap-x-8 text-greenAcc mt-3 ml-3  text-xl`}>
-          <span className='text-yellowAcc text-[24px]'>E-</span>passport
+          <span className='text-yellowAcc md:text-[24px] text-[15px]'>E-</span>passport
         </h1>
       
       </div>
