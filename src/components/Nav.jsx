@@ -39,7 +39,7 @@ function Nav() {
       <div className="flex row w-full">
         <div className="ms-auto flex">
           <h1
-            className={` font-tinos text-[26px] text-greenAcc mt-3 mr-3  text-xl`}
+            className={` font-tinos text-[26px] text-greenAcc mt-2 mr-3  text-xl`}
           >
             <span className="text-yellowAcc text-[22px]">E-</span>passport
           </h1>
@@ -47,7 +47,7 @@ function Nav() {
           <img
             src={icon}
             alt="enc-img"
-            className="ms-auto transition ease-in-out delay-150 duration-700 "
+            className="ms-auto md:block hidden transition ease-in-out delay-150 duration-700 "
           />
         </div>
       </div>

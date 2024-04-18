@@ -26,7 +26,7 @@ export default function PassFormRequest() {
     register,
     handleSubmit,
     formState: { errors },
-    watch,
+    // watch,
   } = useForm({ mode: "all" });
 
   // next step
@@ -162,13 +162,13 @@ export default function PassFormRequest() {
               <CheckboxInput register={register} errors={errors} />
 
               {/* data and passport department */}
-              <div className="px-10 flex lg:flex-row flex-col justify-between">
+              <div className="md:px-10 flex lg:flex-row flex-col justify-between">
                 {/* passport department */}
 
                 <div className="">
-                  <div className="flex gap-x-6 items-center">
+                  <div className="md:flex md:gap-x-6 items-center">
                     {/* passport department input */}
-                    <label className=" font-roboto mr-5 text-[22px] text-greenAcc font-semibold">
+                    <label className=" font-roboto mr-5 my-1  md:text-[22px] text-[15px] text-greenAcc font-semibold">
                       Passports Department
                     </label>
                     <input
@@ -179,7 +179,7 @@ export default function PassFormRequest() {
                         },
                       })}
                       type="type"
-                      className=" focus:outline-none w-[300px] h-[50px] px-[20px]   py-[6px] border-[1px] rounded-input border-yellowAcc"
+                      className=" my-1 focus:outline-none md:w-[300px] h-[50px] px-[20px]   py-[6px] border-[1px] rounded-input border-yellowAcc"
                     />
                   </div>
 
@@ -192,18 +192,20 @@ export default function PassFormRequest() {
                 </div>
 
                 {/* date */}
-                <div className="gap-x-6 flex items-center font-roboto lg:mt-0 mt-3 text-[22px] text-greenAcc ">
-                  <label>The date</label>
+                
+                <div className="gap-x-6 flex  items-center font-roboto lg:mt-0 mt-3 text-[22px] text-greenAcc ">
+                  <label className="md:block hidden">The date</label>
                   <input
                     type="text"
-                    className="date-input focus:outline-none "
+                    className="date-input focus:outline-none md:block hidden "
                     value=" .... /   ..../....   22__"
+                    
                   />
                 </div>
               </div>
 
               {/* presonal data */}
-              <div className="px-10 grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 pt-5 text-greenAcc font-roboto text-xl font-medium">
+              <div className="md:px-10 grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 pt-5 text-greenAcc font-roboto text-xl font-medium">
                 {/* first name input */}
                 <div className="">
                   <label className="block p-3">First Name</label>
@@ -292,7 +294,7 @@ export default function PassFormRequest() {
               </div>
 
               {/* PresonalFormArabic  */}
-              <div className="px-10 grid xl:grid-cols-4 lg:grid-cols-3 grid-cols-2 pt-3 text-greenAcc font-roboto text-xl font-medium ">
+              <div className="md:px-10 md:grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2  flex flex-col-reverse pt-5 text-greenAcc font-roboto text-xl font-medium" >
       <div className="">
         <label className="block px-10 py-3 text-right">اسم العائله</label>
         <input
@@ -354,8 +356,8 @@ export default function PassFormRequest() {
 
               {/* date of birth */}
               <div className="xl:flex  py-5">
-                <div className="md:flex px-10 pt-[15px] items-center text-greenAcc lg:w-[60%] w-full font-roboto">
-                  <label className="font-roboto w-[150px] mx-5 text-[22px] font-semibold text-greenAcc">
+                <div className="md:flex md:px-10 pt-[15px] items-center text-greenAcc lg:w-[60%] w-full font-roboto">
+                  <label className="font-roboto w-[150px] mx-5 md:text-[22px] text-[17px] py-2 font-semibold text-greenAcc">
                     Date of birth
                   </label>
 
@@ -369,7 +371,7 @@ export default function PassFormRequest() {
                       })}
                       placeholder="00-00-2000"
                       type="text"
-                      className="border-[1px] text-[20px] font-roboto px-5 border-yellowAcc lg:w-[250px] w-[90%] h-[50px] rounded-input"
+                      className="border-[1px] text-[20px] font-roboto px-5 border-yellowAcc lg:w-[250px] md:w-[90%] w-[97%] h-[50px] rounded-input"
                     />
                     {/* data of birth error */}
                     {errors.date_of_birth && (
@@ -381,7 +383,7 @@ export default function PassFormRequest() {
                   </div>
                 </div>
 
-                <div className="flex flex-col w-[40%]  justify-around px-10 items-center mt-[30px] ">
+                <div className="flex flex-col md:w-[40%]   justify-around md:px-10 items-center mt-[30px] ">
                   <div>
                     <FormControl className="flex flex-row items-center gap-x-5">
                       <FormLabel
@@ -425,7 +427,7 @@ export default function PassFormRequest() {
 
               {/* Place of birth  */}
               <div className=" lg:flex">
-                <div className="px-10 mt-5  font-roboto  items-center text-[20px] text-greenAcc">
+                <div className="md:px-10 mt-5  font-roboto  items-center md:text-[20px] text-[15px] text-greenAcc">
                   <label className="block my-3 text-greenAcc font-roboto font-medium">
                     {" "}
                     Place of birth (department / governorate)
@@ -440,7 +442,7 @@ export default function PassFormRequest() {
                           },
                         })}
                         type="text"
-                        className=" rounded-input lg:w-[320px] w-full  h-50px border-[1px] border-yellowAcc px-[20px] py-[6px]"
+                        className=" rounded-input lg:w-[320px] w-full  h-50px border-[1px] border-yellowAcc md:px-[20px] py-[6px]"
                       />
                     </div>
                   </div>
@@ -450,7 +452,7 @@ export default function PassFormRequest() {
                     </span>
                   )}
                 </div>
-                <div className=" my-[20px]  font-roboto ml-5 items-center text-[20px] text-greenAcc">
+                <div className=" my-[20px]  font-roboto md:ml-5 items-center text-[20px] text-greenAcc">
                   <label className="block my-[12px] text-greenAcc font-roboto font-medium">
                     {" "}
                     Religion
@@ -464,7 +466,7 @@ export default function PassFormRequest() {
                         },
                       })}
                       type="text"
-                      className=" rounded-input  w-[276px] h-50px border-[1px] border-yellowAcc  pl-[20px] py-[6px]"
+                      className=" rounded-input  md:w-[276px] h-50px border-[1px] border-yellowAcc  md:pl-[20px] py-[6px]"
                     />
                   </div>
                   {errors.religion && (
@@ -474,7 +476,7 @@ export default function PassFormRequest() {
               </div>
               {/*  educational qualification . */}
               <div>
-                <div className="flex flex-col px-10">
+                <div className="flex flex-col md:px-10">
                   <div>
                     <label className=" text-greenAcc font-roboto font-medium text-[20px] mt-2 mb-2">
                       Latest educational qualification and its date
@@ -934,7 +936,7 @@ export default function PassFormRequest() {
             </div>
           </div>
         )}
-        <pre>{JSON.stringify(watch(), null, 2)}</pre>
+        {/* <pre>{JSON.stringify(watch(), null, 2)}</pre> */}
       </form>
     </div>
   );
