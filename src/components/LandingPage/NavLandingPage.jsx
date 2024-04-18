@@ -5,7 +5,9 @@ import icon2 from "../../assets/filters-2.svg";
 
 
 import NavDropDowen from "./NavDropDowen";
+import { useGetProfileDataQuery } from "../../rtk/api/apiSlice";
 export default function NavLandingPage() {
+  const { data} = useGetProfileDataQuery()
   // import {log} from '@mui/icons-material'
   const location = useLocation()
   const [showDropDowen, setShowDropDowen] = useState(false);
@@ -30,11 +32,12 @@ export default function NavLandingPage() {
       <nav className='xl:block hidden ms-auto'>
 
         <ul className='flex text-greenAcc justify-between gap-x-16 font-tinos font-bold text-[24px] items-center'>
-          <li className={`relative ${location.pathname==='/'?"border-b-2 border-yellowAcc":''} `}><Link to="/">Home</Link></li>
-          <li className={`relative ${location.pathname==='/about'?"border-b-2 border-yellowAcc":''} `}><Link to="/about">About Us</Link></li>
-          <li className={`relative ${location.pathname==='/service'?"border-b-2 border-yellowAcc":''} `}><Link to="/service">Service</Link></li>
-          <li className={`relative ${location.pathname==='/passform'?"border-b-2 border-yellowAcc":''} `}><Link to="/passform">passport</Link></li>
-          <li><Link to="/login" className='font-roboto    text-white bg-yellowAcc py-[10px] px-[24px] rounded-[25px] h-[48p]'>Sign in</Link></li>
+          <li className={` ${location.pathname==='/'?"border-b-2 border-yellowAcc":''} `}><Link to="/">Home</Link></li>
+          <li className={` ${location.pathname==='/about'?"border-b-2 border-yellowAcc":''} `}><Link to="/about">About Us</Link></li>
+          <li className={` ${location.pathname==='/service'?"border-b-2 border-yellowAcc":''} `}><Link to="/service">Service</Link></li>
+          <li className={` ${location.pathname==='/passform'?"border-b-2 border-yellowAcc":''} `}><Link to="/passform">passport</Link></li>
+         
+         <li className={`${data &&"hidden"}`}><Link to="/login" className='font-roboto    text-white bg-yellowAcc py-[10px] px-[24px] rounded-[25px] h-[48p]'>Sign in</Link></li>
         </ul>
       </nav>
       <div className='xl:hidden block w-6/6 ms-auto'>
