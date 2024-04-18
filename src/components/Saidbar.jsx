@@ -28,8 +28,8 @@ export default function Saidebar( {handilClose, showSidebar} ) {
     { id: 7, name: "Encryption file", href: "/encryption", src: Encrypted },
     { id: 8, name: "Decrypt file", href: "/Decrypt", src: decimg },
     { id: 9, name: "Employees", href: "/employee", src: employee },
-    { id: 10, name: "forginEmployee", href: "/forginEmployee", src: users },
-    { id: 11, name: "recruitment", href: "/recruitment", src: Settingsicon },
+    { id: 10, name: "forginEmployee", href: "/ForgenEmployee", src: users },
+    { id: 11, name: "recruitment", href: "/recruitmentArea", src: Settingsicon },
    
   ];
 
