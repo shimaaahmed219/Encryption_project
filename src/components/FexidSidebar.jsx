@@ -20,7 +20,7 @@ import Logout from "./Logout/Logout";
 export default function FexidSidebar() {
   const links = [
     { id: 1, name: "Statistics", href: "/", src: img },
-    { id: 2, name: "All Encrypted files", href: "/addFile", src: Encrypted },
+    { id: 2, name: "All Encrypted files", href: "/EncryptedFiles", src: Encrypted },
     { id: 5, name: "Add request", href: "/passForm", src: Edit },
     { id: 9, name: "add employee", href: "/addEmployee", src: users },
     { id: 7, name: "Encryption file", href: "/encryption", src: Encrypted },
