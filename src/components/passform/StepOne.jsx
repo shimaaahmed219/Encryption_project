@@ -419,7 +419,7 @@ export default function StepOne({
                   },
                 })}
                 type="text"
-                className=" rounded-input  md:w-[93%] h-[50px] border-[1px] border-yellowAcc  md:pl-[20px] py-[6px]"
+                className=" rounded-input  md:w-[93%] w-[98%] h-[50px] border-[1px] border-yellowAcc  md:pl-[20px] py-[6px]"
               />
             </div>
             {errors.religion && (

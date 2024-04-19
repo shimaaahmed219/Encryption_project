@@ -24,7 +24,7 @@ export default function StepThree({
 
       <div className="py-10">
         <div className=" m-auto md:flex md:px-5 md:ml-0  justify-center items-center">
-          <label className="text-greenAcc mx-3 md:ml-0 ml-6 font-roboto text-[22px] font-medium ">
+          <label className="text-greenAcc mx-3 md:ml-0 mr-9 ml-6 font-roboto text-[22px] font-medium ">
             National ID Card
           </label>
           <input
@@ -34,7 +34,7 @@ export default function StepThree({
                 message: "This field is required",
               },
             })}
-            className="rounded-input bg-transparent md:ml-0 ml-6 focus:outline-none border-[1px] border-yellowAcc w-[83%] h-[50px]"
+            className="rounded-input bg-transparent md:ml-0 ml-6 focus:outline-none border-[1px] border-yellowAcc md:w-[70%] w-[83%] h-[50px]"
           />
         </div>
         {errors.national_id && (
@@ -43,14 +43,14 @@ export default function StepThree({
           </div>
         )}
 
-        <div className="w-5/6 md:px-5 md:mx-5 md:flex items-center my-10">
-          <label className="text-greenAcc md:ml-0 ml-6  font-roboto text-[22px] font-medium capitalize ">
+        <div className="w-5/6 md:px-5 md:mx-5 md:flex items-center mt-[45px]">
+          <label className="text-greenAcc md:ml-11 ml-6 md:mx-10 font-roboto text-[22px] font-medium capitalize ">
             university Id
           </label>
           <input
             {...register("university_id")}
             type="text"
-            className="rounded-input  bg-transparent md:ml-0 ml-6 m-auto focus:outline-none w-full border-[1px] border-yellowAcc md:w-[65%] h-[50px]"
+            className="rounded-input  bg-transparent  md:ml-[100px] ml-6 m-auto focus:outline-none w-full border-[1px] border-yellowAcc md:w-[65%] h-[50px]"
           />
         </div>
       </div>
@@ -58,7 +58,7 @@ export default function StepThree({
       {/* fils */}
       <div className=" w-[80%]  m-auto grid xl:grid-cols-3 md:grid-cols-2  justify-center gap-8">
         <div>
-          <div className="md:pl-5 pl-[6px]">
+          <div className="md:pl-5 pl-[2px]">
             <label className="block text-yellowAcc my-3 font-roboto text-[22px] font-medium text-center">
               Birth certificate
             </label>
@@ -95,7 +95,7 @@ export default function StepThree({
         </div>
 
         <div>
-          <div className="md:pl-5 pl-[6px]">
+          <div className="md:pl-5 pl-[2px]">
             <label className="block text-yellowAcc my-3 font-roboto text-[22px] font-medium text-center">
               Identification card
             </label>
@@ -129,7 +129,7 @@ export default function StepThree({
           )}
         </div>
         <div>
-          <div className="md:pl-5 pl-[6px]">
+          <div className="md:pl-5 pl-[2px]">
             <label className="block my-3 text-yellowAcc font-roboto text-[22px] font-medium text-center">
               graduation cert
             </label>
@@ -160,27 +160,7 @@ export default function StepThree({
       </div>
       {/* date */}
 
-      <div className="w-5/6 m-auto mt-10 md:block hidden">
-        <label className="block font-ropoto text-[22px] font-medium text-greenAcc">
-          Issuer
-        </label>
-
-        <div className="flex">
-          <input
-            type="text "
-            className="border-[1px] border-yellowAcc rounded-input w-[276px] h-[50px] bx-[20px] by-[6px] bg-transparent"
-          />
-
-          <label className="text-[22px] my-2 ml-10 mr-5 text-greenAcc font-roboto font-medium">
-            Release Date
-          </label>
-          <input
-            type="text"
-            className="date-input focus:outline-none bg-transparent "
-            value=" .... /   ..../....   22__"
-          />
-        </div>
-      </div>
+      
     </div>
     <div className="my-10 m-auto mt-[50px] flex w-[80%] justify-around">
       <button

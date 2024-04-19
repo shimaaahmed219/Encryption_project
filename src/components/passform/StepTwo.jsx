@@ -68,9 +68,9 @@ export default function StepTwo({
           )}
         </Box>
 
-        <div className=" md:px-[100px] md:pr-0 pr-[20px]">
+        <div className="  md:pr-0 pr-[20px] md:mx-20">
           {/* husband name */}
-          <label className="text-greenAcc font-roboto my-3 text-xl font-medium block">
+          <label className="text-greenAcc font-roboto my-3 text-xl font-bold block">
             Husband name /
           </label>
           <input
@@ -78,12 +78,13 @@ export default function StepTwo({
             type="text"
             className=" focus:outline-none px-5 text-lg text-hreenAcc rounded-input bg-transparent w-full h-[50px] border-[1px] border-yellowAcc"
           />
-          <label className="text-greenAcc font-roboto mb-3 mt-7 text-xl font-medium block">
-            Nationality /
+          <label className="text-greenAcc font-roboto mb-3 mt-7 text-xl font-bold block">
+            Nationality 
           </label>
           <input
+          value="Eegyptian"
             type="text"
-            className=" focus:outline-none px-5 rounded-input  text-lg text-hreenAcc w-full bg-transparent h-[50px] border-[1px] border-yellowAcc"
+            className=" focus:outline-none px-5 rounded-input font-roboto text-lg text-hreenAcc w-full bg-transparent h-[50px] border-[1px] border-yellowAcc"
           />
         </div>
       </div>
