@@ -119,7 +119,7 @@ export default function PassFormRequest() {
 
             {/* image 4*6  */}
             <div className="w-[95%]  ">
-              <div className="w-[158px] h-[207px] bg-fileUploud md:ms-auto md:ml[0px]   mr-[-20px] ml-10  md:mt-[-9rem]   ">
+              <div className="w-[158px] h-[207px] bg-fileUploud md:ms-auto md:ml[0px]     md:mt-[-9rem]   ">
                 <input
                   {...register("photo", {
                     required: {
