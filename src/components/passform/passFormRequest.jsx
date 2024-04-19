@@ -35,7 +35,7 @@ export default function PassFormRequest() {
     handleSubmit,
     formState: { errors },
     // watch,
-  } = useForm({ mode: "all" });
+  } = useForm();
 
   // next step
   const nextStep = () => {
