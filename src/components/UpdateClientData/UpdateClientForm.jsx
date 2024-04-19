@@ -10,10 +10,7 @@ import StepTwo from "./StepTwo";
 import StepFour from "./StepFour";
 import StepOne from "./StepOne";
 import StepThree from "./StepThree";
-// import StepFour from "./StepFour";
-// import StepThree from "./StepThree";
-// import StepTwo from "./StepTwo";
-// import StepOne from "./stepOne";
+
 
 export default function UpdateClientForm() {
   // get client id
@@ -189,7 +186,7 @@ export default function UpdateClientForm() {
     <div>
       <form onSubmit={handleSubmit(onsubmit)}>
         {/* page1 */}
-        {step >= 1 && (
+     
           <div
             className={` ${
               step === 1 ? "block" : "hidden"
@@ -205,11 +202,11 @@ export default function UpdateClientForm() {
               image={image}
             />
           </div>
-        )}
+     
 
         {/* steep 2 */}
 
-        {step >= 2 && (
+       
           <div
             className={`bg-bg min-h-screen w-full ${
               step === 2 ? "block" : "hidden"
@@ -226,11 +223,11 @@ export default function UpdateClientForm() {
               image={image}
             />
           </div>
-        )}
+   
 
         {/* steep 3 */}
 
-        {step >= 3 && (
+       
           <div className={`${step === 3 ? "block" : "hidden"}`}>
             <StepThree
               register={register}
@@ -242,10 +239,10 @@ export default function UpdateClientForm() {
               goToStep={goToStep}
             />
           </div>
-        )}
+      
         {/* steep  4 */}
-        {step >= 4 && (
-          <div className={``}>
+      
+          <div className={`${step === 3 ? "block" : "hidden"}`}>
             <StepFour
               register={register}
               errors={errors}
@@ -254,7 +251,7 @@ export default function UpdateClientForm() {
               goToStep={goToStep}
             />
           </div>
-        )}
+    
         {/* <pre>{JSON.stringify(watch(), null, 2)}</pre> */}
       </form>
     </div>

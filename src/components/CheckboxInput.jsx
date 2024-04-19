@@ -24,7 +24,7 @@ export default function CheckboxInput({register}) {
                     aria-labelledby="demo-radio-buttons-group-label"
                      defaultValue="first_time"
                     name="radio-buttons-group"
-                    className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mb-5 font-roboto pl-[-10px]  md:pl-20  pt-7 pb-5"
+                    className="grid xl:grid-cols-4 px-[20px] lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mb-5 font-roboto   justify-center  pt-7 pb-5"
                   >
                     <FormControlLabel
                       value="first_time"
@@ -68,7 +68,7 @@ export default function CheckboxInput({register}) {
                       label="Replacement_of_lost"
                     />
                     <FormControlLabel
-                      className="xl:ml-[-50px]"
+                      className="xl:ml-[20px]"
                       value="Replacement_of_previous"
                       control={
                         <Radio
@@ -90,7 +90,7 @@ export default function CheckboxInput({register}) {
                     />
                     <FormControlLabel
                      value="Damaged_replacement"
-                     className="xl:ml-[50px]"
+                     className="xl:ml-[70px] "
                       control={
                         <Radio
                         {...register("type" ,{

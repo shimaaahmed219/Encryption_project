@@ -1,0 +1,108 @@
+/* eslint-disable react/prop-types */
+
+import {
+  FormControlLabel,
+  Box,
+  FormControl,
+  FormLabel,
+  Radio,
+  RadioGroup,
+} from "@mui/material";
+
+import HeaderFormPage from "../HeaderFormPage";
+export default function StepTwo({
+  nextStep,
+  register,
+  prevStep,
+  step,
+  goToStep,
+  errors,
+}) {
+  return (
+    <div
+      className={`bg-bg min-h-screen w-full  ${
+        step === 2 ? "block" : "hidden"
+      } `}
+    >
+      <div className="bg-baform flex flex-col   shadow-shadowEmp w-6/6 pl-6 pt-10 pb-[55px] md:mx-20 mx-5 min-h-[520px] rounded-[20px] m-auto my-10">
+        <HeaderFormPage goToStep={goToStep} step={step} />
+        <hr className="h-[1px] w-full bg-slate-600 my-8" />
+        <Box className="">
+          <FormControl className="flex flex-row items-center gap-x-5">
+            <FormLabel
+              id="demo-radio-buttons-group-label "
+              className="text-greenAcc text-[20px] font-roboto font-bold "
+            ></FormLabel>
+            <RadioGroup
+              aria-labelledby="demo-radio-buttons-group-label"
+              name="radio-buttons-group"
+              className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 w-5/6  m-auto  justify-around lg:gap-x-[13rem] font-medium  font-roboto text-xl pt-7 pb-5  "
+            >
+              <FormControlLabel
+                {...register("marital_status", {
+                  required: {
+                    value: true,
+                    message: "please choose your maryial status",
+                  },
+                })}
+                value={"Under 16 years old"}
+                control={<Radio style={{ color: "#F6C90E" }} />}
+                label="Under 16 years old"
+              />
+              <FormControlLabel
+                {...register("marital_status")}
+                value={"Married"}
+                control={<Radio style={{ color: "#F6C90E" }} />}
+                label="Married"
+              />
+              <FormControlLabel
+                {...register("marital_status")}
+                value={"unMarried"}
+                control={<Radio style={{ color: "#F6C90E" }} />}
+                label="unMarried"
+              />
+            </RadioGroup>
+          </FormControl>
+          {errors.marital_status && (
+            <div className=" text-red-500 mt-[-30px]  m-auto ml-[100px] text-[20px]">{`**${errors.marital_status.message}`}</div>
+          )}
+        </Box>
+
+        <div className=" md:px-[100px] md:pr-0 pr-[20px]">
+          {/* husband name */}
+          <label className="text-greenAcc font-roboto my-3 text-xl font-medium block">
+            Husband name /
+          </label>
+          <input
+            {...register("husband_name")}
+            type="text"
+            className=" focus:outline-none px-5 text-lg text-hreenAcc rounded-input bg-transparent w-full h-[50px] border-[1px] border-yellowAcc"
+          />
+          <label className="text-greenAcc font-roboto mb-3 mt-7 text-xl font-medium block">
+            Nationality /
+          </label>
+          <input
+            type="text"
+            className=" focus:outline-none px-5 rounded-input  text-lg text-hreenAcc w-full bg-transparent h-[50px] border-[1px] border-yellowAcc"
+          />
+        </div>
+      </div>
+      <div className="my-10 m-auto mt-[50px] flex w-[80%] justify-around">
+        <button
+          className="md:w-[255px] mb-10  h-[65px] md:bg-greenAcc text-[32px] md:text-white text-greenAcc font-tinos rounded-input"
+          type="button"
+          onClick={prevStep}
+        >
+          Back
+        </button>
+        <button
+          className="md:w-[255px] mb-10  h-[65px] md:bg-greenAcc text-[32px] md:text-white text-greenAcc font-tinos rounded-input"
+          type="button"
+          onClick={nextStep}
+        >
+          Next
+        </button>
+      </div>
+    </div>
+  );
+}
