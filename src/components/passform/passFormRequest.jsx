@@ -146,12 +146,12 @@ export default function PassFormRequest() {
                 />
 
                 <h6
-                  className={`font-tions font-bold  text-thin text-greenAcc text-[18px] text-center absolute mt-[100px] ml-[1rem]`}
+                  className={`font-tions font-bold  text-thin text-greenAcc text-[18px] w-full text-center absolute mt-[100px] `}
                 >
                   Upload a photo
                 </h6>
                 <h6
-                  className={`font-tions font-bold text-thin text-greenAcc uppercase text-[24px] text-center absolute mt-[120px] ml-[2.5rem]`}
+                  className={`font-tions font-bold text-thin text-greenAcc uppercase text-[24px] w-full text-center absolute mt-[120px] `}
                 >
                   4*6 cm
                 </h6>
