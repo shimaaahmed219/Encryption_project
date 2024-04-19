@@ -20,38 +20,53 @@ import HeaderFormPage from "../HeaderFormPage";
 import CheckboxInput from "../CheckboxInput";
 
 export default function PassFormRequest() {
-  const [selectedImage, setSelectedImage] = useState(null)
-    
-    const handleImageChange = (e) => {
-        const file = e.target.files[0];
-        if (file) {
-            setSelectedImage(URL.createObjectURL(file)); // إنشاء عنوان URL للصورة المحددة وتخزينه في الحالة
-        }
-    };
+  
+  const [selectedImage, setSelectedImages] = useState({});
+ 
+
+
+
+  
+
+    const handleImageChange = (e, fieldName) => {
+      const file = e.target.files[0];
+      if (file) {
+          setSelectedImages(prevState => ({
+              ...prevState,
+              [fieldName]: URL.createObjectURL(file) // Store the URL for the selected image under the corresponding field name
+          }));
+      }
+  };
   const [step, setStep] = useState(1);
 
   const {
     register,
     handleSubmit,
     formState: { errors },
-    // watch,
+    watch,
   } = useForm();
 
   // next step
   const nextStep = () => {
     setStep(step + 1);
+   
   };
 
   // prev step
   const prevStep = () => {
     setStep(step - 1);
+  
   };
 
   // goto page from header
   const goToStep = (stepNumber) => {
     setStep(stepNumber);
   };
-
+const photo =watch("photo" )
+const national_id_photo=watch("national_id_photo")
+const birth_cert=watch("birth_cert")
+console.log("photo:",photo ,"national_id_photo",national_id_photo);
+console.log("birth_cert",birth_cert);
   // fatching data
   const onsubmit = (data) => {
     console.log(data);
@@ -86,6 +101,7 @@ export default function PassFormRequest() {
     formdata.append("husband_name", data.husband_name);
     formdata.append("religion", data.religion);
     formdata.append("age", data.age);
+   
     axios
       .post(`${url}/client`, formdata, {
         headers: {
@@ -101,7 +117,7 @@ export default function PassFormRequest() {
     <div>
       <form onSubmit={handleSubmit(onsubmit)}>
         {/* page1 */}
-        {step >= 1 && (
+        
           <div
             className={` ${
               step === 1 ? "block" : "hidden"
@@ -135,11 +151,11 @@ export default function PassFormRequest() {
                       message: "This field is required",
                     },
                   })}
-                  onChange={handleImageChange}
+                  onChange={(e) => handleImageChange(e, "photo")}
                   type="file"
                   className="opacity-0 absolute w-[6/6] h-[100%] z-50"
                 />
-            {selectedImage && <img src={selectedImage} alt="Selected" className="w-full  z-40 absolute h-full object-cover "/>}
+            {selectedImage["photo"] && <img src={selectedImage["photo"]} alt="Selected" className="w-full  z-40 absolute h-full object-cover "/>}
                 <img
                   src={uploadImg}
                   className="absolute mt-[50px] ml-[55px]"
@@ -579,11 +595,11 @@ export default function PassFormRequest() {
               </button>
             </div>
           </div>
-        )}
+        
 
         {/* steep 2 */}
 
-        {step >= 2 && (
+       
           <div
             className={`bg-bg min-h-screen w-full  ${
               step === 2 ? "block" : "hidden"
@@ -669,11 +685,11 @@ export default function PassFormRequest() {
               </button>
             </div>
           </div>
-        )}
+       
 
         {/* steep 3 */}
 
-        {step >= 3 && (
+    
           <div className={`${step === 3 ? "block" : "hidden"}`}>
             <div className="w-[85%] shadow-shadowEmp mt-10 bg-baform min-h-[778px] m-auto py-7  rounded-[20px] justify-center ">
               <HeaderFormPage goToStep={goToStep} step={step} />
@@ -726,13 +742,15 @@ export default function PassFormRequest() {
                         {...register("birth_cert", {
                           required: {
                             value: true,
+                            
                             message: "This field is required",
                           },
                         })}
+                        onChange={(e) => handleImageChange(e, "birth_cert")}
                         type="file"
                         className="opacity-0 w-full h-full absolute z-50"
                       />
-
+  
                       <div></div>
                       <div className="absolute text-center ">
                         <img src={upload} className="mt-[40px] ml-[79px]" />
@@ -741,6 +759,7 @@ export default function PassFormRequest() {
                           <h3>4*6 CM</h3>
                         </div>
                       </div>
+                      {selectedImage["birth_cert"] && <img src={selectedImage["birth_cert"]} alt="Selected" className="w-full  z-40 absolute h-full object-cover "/>}
                     </div>
                     {errors.birth_cert && (
                       <span className="text-red-500 text-[20px] my-10">
@@ -763,6 +782,7 @@ export default function PassFormRequest() {
                             message: "This field is required",
                           },
                         })}
+                        onChange={(e) => handleImageChange(e, "national_id_photo")}
                         type="file"
                         className="opacity-0 w-full h-full absolute z-50"
                       />
@@ -773,7 +793,9 @@ export default function PassFormRequest() {
                           <h3>4*6 CM</h3>
                         </div>
                       </div>
+                      {selectedImage["national_id_photo"] && <img src={selectedImage["national_id_photo"]} alt="Selected" className="w-full  z-40 absolute h-full object-cover "/>}
                     </div>
+                 
                   </div>
                   {errors.national_id_photo && (
                     <span className="text-red-500 mx-5 text-[20px] my-10">
@@ -788,7 +810,13 @@ export default function PassFormRequest() {
                     </label>
                     <div className="w-[236px] h-[200px] rounded-[7px] bg-fileUploud relative">
                       <input
-                        {...register("graduation_cert")}
+                        {...register("graduation_cert", {
+                          required: {
+                            value: true,
+                            message: "This field is required",
+                          },
+                        })}
+                        onChange={(e) => handleImageChange(e, "graduation_cert")}
                         type="file"
                         className="opacity-0 w-full h-full absolute z-50"
                       />
@@ -799,7 +827,9 @@ export default function PassFormRequest() {
                           <h3>4*6 CM</h3>
                         </div>
                       </div>
+                      {selectedImage["graduation_cert"] && <img src={selectedImage["graduation_cert"]} alt="Selected" className="w-full  z-40 absolute h-full object-cover "/>}
                     </div>
+                
                   </div>
                 </div>
               </div>
@@ -844,10 +874,10 @@ export default function PassFormRequest() {
               </button>
             </div>
           </div>
-        )}
+        
         {/* steep  4 */}
-        {step >= 4 && (
-          <div className={``}>
+        
+          <div className={`${step === 4 ? "block" : "hidden"}`}>
             <div className=" w-5/6 min-h-[423px] mb-10 py-5 bg-baform shadow-shadowEmp rounded-[20px] m-auto mt-10">
               <HeaderFormPage goToStep={goToStep} step={step} />
               <Hr />
@@ -948,7 +978,7 @@ export default function PassFormRequest() {
               </button>
             </div>
           </div>
-        )}
+        
         {/* <pre>{JSON.stringify(watch(), null, 2)}</pre> */}
       </form>
     </div>

@@ -1,9 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
-import icon from "../assets/landingPage/Group (1).svg";
 import { useState } from "react";
 import icon2 from "../assets/filters-2.svg";
-
-import { LoginOutlined } from "@mui/icons-material";
 import NavDropDowen from "./LandingPage/NavDropDowen";
 
 
@@ -17,12 +14,12 @@ export default function Navbar() {
       console.log(showDropDowen);
     };
   return (
-    <div className='w-5/6 m-auto  z-50 items-center justify-between py-10 h-70px flex '>
+    <div className='w-5/6 m-auto  z-50 items-center justify-between  h-70px flex '>
       <div className='flex '>
 
-      <img src={icon} className="lg:w-[77px] w-[50px]" />
+     
         <h1 className={` font-tinos text-[24px]  items-center gap-x-8 text-white mt-3 ml-3  text-xl`}>
-          <span className='text-yellowAcc text-[24px]'>E-</span>passport
+          <span className='text-yellowAcc text-[20px]'>E-</span>passport
         </h1>
       
       </div>
@@ -37,6 +34,8 @@ export default function Navbar() {
           <li><Link to="/login" className='font-roboto    text-white bg-yellowAcc py-[10px] px-[24px] rounded-[25px] h-[48p]'>Sign in</Link></li>
         </ul>
       </nav>
+
+
       <div className='xl:hidden block w-6/6 ms-auto'>
         <div className="flex md:flex-row flex-col">
         <button onClick={toogleDropDowen} className={`${showDropDowen&&<NavDropDowen/>}`}>
@@ -44,9 +43,10 @@ export default function Navbar() {
       </button>
       <div  className={`${!showDropDowen&&"hidden"} `}>
         <NavDropDowen/>
-      </div>
-      <Link to="/login" className='font-roboto text-white py-[10px] px-[24px] md:ml-0 ml-[-30px] h-[48p]'> <LoginOutlined/> Sign in</Link>
+      </div>~
         </div>
+       
+      
     
       </div>
      
