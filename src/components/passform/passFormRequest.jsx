@@ -672,7 +672,7 @@ export default function PassFormRequest() {
               {/* inputs */}
 
               <div className="py-10">
-                <div className="w-6/5 m-auto flex px-5 items-center">
+                <div className="w-6/5 m-auto md:flex px-5 items-center">
                   <label className="text-greenAcc mx-3 font-roboto text-[22px] font-medium ">
                     National ID Card
                   </label>
@@ -692,14 +692,14 @@ export default function PassFormRequest() {
                   </div>
                 )}
 
-                <div className="w-5/6 px-5 mx-5 flex items-center my-10">
+                <div className="w-5/6 px-5 md:mx-5 md:flex items-center my-10">
                   <label className="text-greenAcc  font-roboto text-[22px] font-medium capitalize ">
                     university Id
                   </label>
                   <input
                     {...register("university_id")}
                     type="text"
-                    className="rounded-input  bg-transparent m-auto focus:outline-none border-[1px] border-yellowAcc w-[65%] h-[50px]"
+                    className="rounded-input  bg-transparent m-auto focus:outline-none w-full border-[1px] border-yellowAcc md:w-[65%] h-[50px]"
                   />
                 </div>
               </div>
@@ -795,7 +795,7 @@ export default function PassFormRequest() {
               </div>
               {/* date */}
 
-              <div className="w-5/6 m-auto mt-10">
+              <div className="w-5/6 m-auto mt-10 md:block hidden">
                 <label className="block font-ropoto text-[22px] font-medium text-greenAcc">
                   Issuer
                 </label>
@@ -819,14 +819,14 @@ export default function PassFormRequest() {
             </div>
             <div className="my-10 m-auto mt-[50px] flex w-[80%] justify-around">
               <button
-                className="w-[255px] mb-10  h-[65px] bg-greenAcc text-[32px] text-white font-tinos rounded-input"
+                className="w-[255px] mb-10  h-[65px] md:bg-greenAcc text-[32px] text-greenAcc md:text-white font-tinos rounded-input"
                 type="button"
                 onClick={prevStep}
               >
                 back
               </button>
               <button
-                className="w-[255px] mb-10  h-[65px] bg-greenAcc text-[32px] text-white font-tinos rounded-input"
+                className="w-[255px] mb-10  h-[65px] md:bg-greenAcc text-[32px] text-greenAcc md:text-white font-tinos rounded-input"
                 type="button"
                 onClick={nextStep}
               >
@@ -856,7 +856,7 @@ export default function PassFormRequest() {
                         message: "This field is required",
                       },
                     })}
-                    className="border-[1px]  border-yellowAcc bg-transparent md:w-[330px] rounded-input h-[50px]"
+                    className="border-[1px]  border-yellowAcc bg-transparent md:w-[330px] w-full rounded-input h-[50px]"
                   />
                   {errors.age && (
                     <div className="text-[20px] text-red-500">
@@ -877,7 +877,7 @@ export default function PassFormRequest() {
                         message: "This field is required",
                       },
                     })}
-                    className="border-[1px] border-yellowAcc bg-transparent md:w-[330px] rounded-input h-[50px]"
+                    className="border-[1px] border-yellowAcc bg-transparent md:w-[330px] w-full rounded-input h-[50px]"
                   />
                   {errors.address && (
                     <div className="text-[20px] text-red-500">
@@ -887,11 +887,13 @@ export default function PassFormRequest() {
                 </div>
               </div>
               {/*  */}
-              <div className="grid xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 px-10 pt-10 mb-5"></div>
+              
+              <div className="md:block hidden"></div>
             </div>
             <Hr />
             {/* paragraph */}
-            <div className="w-5/6 mt-5 px-10 py-10 m-auto">
+           <div className="md:block hidden">
+           <div className="w-5/6 mt-5 px-10 py-10 m-auto md:block hidden">
               <p className="font-tinos text-[26px] font-bold">
                 I, the undersigned, declare that all the data shown above, as
                 well as the documents provided , are correct and conform to the
@@ -900,7 +902,7 @@ export default function PassFormRequest() {
               </p>
             </div>
 
-            <div className="w-5/6 my-5 px-10 py-10 m-auto flex">
+            <div className="w-5/6 my-5 px-10 py-10 m-auto flex ">
               <div className="flex items-center py-6">
                 <label className="text-[22px] my-2 ml-10 mr-5 text-greenAcc font-roboto font-medium">
                   Done in
@@ -919,16 +921,17 @@ export default function PassFormRequest() {
                 <input className="w-full border-[1px] border-yellowAcc h-[50px] bg-transparent py-[6px] px-[20px] rounded-input" />
               </div>
             </div>
+           </div>
             <div className="my-10 m-auto mt-[50px] flex w-[80%] justify-around">
               <button
-                className="w-[255px] mb-10  h-[65px] bg-greenAcc text-[32px] text-white font-tinos rounded-input"
+                className="w-[255px] mb-10  h-[65px] md:bg-greenAcc text-[32px] md:text-white text-greenAcc font-tinos rounded-input"
                 type="button"
                 onClick={prevStep}
               >
                 back
               </button>
               <button
-                className="w-[255px] mb-10  h-[65px] bg-greenAcc text-[32px] text-white font-tinos rounded-input"
+                className="w-[255px] mb-10  h-[65px] md:bg-greenAcc text-[32px] md:text-white text-greenAcc font-tinos rounded-input"
                 type="submit"
               >
                 Next
