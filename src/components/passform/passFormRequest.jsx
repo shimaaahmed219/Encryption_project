@@ -20,6 +20,14 @@ import HeaderFormPage from "../HeaderFormPage";
 import CheckboxInput from "../CheckboxInput";
 
 export default function PassFormRequest() {
+  const [selectedImage, setSelectedImage] = useState(null)
+    
+    const handleImageChange = (e) => {
+        const file = e.target.files[0];
+        if (file) {
+            setSelectedImage(URL.createObjectURL(file)); // إنشاء عنوان URL للصورة المحددة وتخزينه في الحالة
+        }
+    };
   const [step, setStep] = useState(1);
 
   const {
@@ -119,7 +127,7 @@ export default function PassFormRequest() {
 
             {/* image 4*6  */}
             <div className="w-[95%]  ">
-              <div className="w-[158px] h-[207px] bg-fileUploud md:ms-auto md:ml[0px]     md:mt-[-9rem]   ">
+              <div className="w-[158px] h-[207px] relative bg-fileUploud md:ms-auto md:ml[0px]     md:mt-[-9rem]   ">
                 <input
                   {...register("photo", {
                     required: {
@@ -127,30 +135,32 @@ export default function PassFormRequest() {
                       message: "This field is required",
                     },
                   })}
+                  onChange={handleImageChange}
                   type="file"
-                  className="opacity-0 w-[6/6] h-[100%] z-50"
+                  className="opacity-0 absolute w-[6/6] h-[100%] z-50"
                 />
-
+            {selectedImage && <img src={selectedImage} alt="Selected" className="w-full  z-40 absolute h-full object-cover "/>}
                 <img
                   src={uploadImg}
-                  className="absolute mt-[-170px] ml-[55px]"
+                  className="absolute mt-[50px] ml-[55px]"
                 />
 
                 <h6
-                  className={`font-tions font-bold  text-thin text-greenAcc text-[18px] text-center absolute mt-[-7rem] ml-[1rem]`}
+                  className={`font-tions font-bold  text-thin text-greenAcc text-[18px] text-center absolute mt-[100px] ml-[1rem]`}
                 >
                   Upload a photo
                 </h6>
                 <h6
-                  className={`font-tions font-bold text-thin text-greenAcc uppercase text-[24px] text-center absolute mt-[-5.25rem] ml-[2.5rem]`}
+                  className={`font-tions font-bold text-thin text-greenAcc uppercase text-[24px] text-center absolute mt-[120px] ml-[2.5rem]`}
                 >
                   4*6 cm
                 </h6>
-                {/* error messge from presonal image */}
                 {errors.photo && (
-                  <span className="text-red-500">{errors.photo?.message}</span>
+                  <span className="text-red-500 absolute mt-[210px]">{errors.photo?.message}</span>
                 )}
               </div>
+               {/* error messge from presonal image */}
+              
             </div>
             {/* form1 */}
             <div className="w-[100%] mt-10 min-h-screen bg-white rounded-[30px] p-10 shadow-shadowEmp">
