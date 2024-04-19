@@ -101,7 +101,7 @@ export default function PassFormRequest() {
           >
             <div className="flex">
               {/* title  */}
-              <div className="w-1/6 lg:mt-5 mt-20 ml-10 ">
+              <div className="w-1/6 lg:mt-5 mt-20 ml-10 md:block hidden ">
                 <img src={img} alt="" />
               </div>
 
@@ -118,8 +118,8 @@ export default function PassFormRequest() {
             </div>
 
             {/* image 4*6  */}
-            <div className="w-[95%] ">
-              <div className="w-[158px] h-[207px] bg-fileUploud ms-auto mt-[-9rem]   ">
+            <div className="w-[95%]  ">
+              <div className="w-[158px] h-[207px] bg-fileUploud md:ms-auto md:ml[0px]   mr-[-20px] ml-10  md:mt-[-9rem]   ">
                 <input
                   {...register("photo", {
                     required: {
@@ -205,7 +205,7 @@ export default function PassFormRequest() {
               </div>
 
               {/* presonal data */}
-              <div className="md:px-10 grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 pt-5 text-greenAcc font-roboto text-xl font-medium">
+              <div className="md:px-10 md:grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 flex flex-col pt-5 text-greenAcc font-roboto text-xl font-medium">
                 {/* first name input */}
                 <div className="">
                   <label className="block p-3">First Name</label>
@@ -217,7 +217,7 @@ export default function PassFormRequest() {
                       },
                     })}
                     type="text"
-                    className={` md:w-[240px] w-[90%] h-[50px] px-[20px] py-[6px] rounded-input border-[1px] border-yellowAcc `}
+                    className={` md:w-[240px] w-[99%] h-[50px] px-[20px] py-[6px] rounded-input border-[1px] border-yellowAcc `}
                   />
                   {/* set first name error */}
                   {errors.first_name && (
@@ -239,7 +239,7 @@ export default function PassFormRequest() {
                         message: "This field is required",
                       },
                     })}
-                    className={` md:w-[240px] w-[90%] h-[50px] px-[20px] py-[6px] rounded-input border-[1px] border-yellowAcc `}
+                    className={` md:w-[240px]  w-[99%] h-[50px] px-[20px] py-[6px] rounded-input border-[1px] border-yellowAcc `}
                   />
 
                   {/* set secons name errors */}
@@ -261,7 +261,7 @@ export default function PassFormRequest() {
                       },
                     })}
                     type="text"
-                    className={` md:w-[240px] w-[90%] h-[50px] px-[20px] py-[6px] rounded-input border-[1px] border-yellowAcc `}
+                    className={` md:w-[240px]  w-[99%] h-[50px] px-[20px] py-[6px] rounded-input border-[1px] border-yellowAcc `}
                   />
                   {/* third name errors */}
                   {errors.third_name && (
@@ -282,7 +282,7 @@ export default function PassFormRequest() {
                         message: "This field is required",
                       },
                     })}
-                    className={` md:w-[240px] w-[90%] h-[50px] px-[20px] py-[6px] rounded-input border-[1px] border-yellowAcc `}
+                    className={` md:w-[240px]  w-[99%] h-[50px] px-[20px] py-[6px] rounded-input border-[1px] border-yellowAcc `}
                   />
                   {/* set last name errors */}
                   {errors.last_name && (
@@ -517,7 +517,7 @@ export default function PassFormRequest() {
                     )}
                   </div>
 
-                  <div className="grid grid-cols-2 gap-x-16">
+                  <div className="grid md:grid-cols-2 gap-x-16">
                     <div className="py-3">
                       <label className=" block text-greenAcc font-roboto font-medium text-[20px] mt-2 mb-2  ">
                         Work phone
