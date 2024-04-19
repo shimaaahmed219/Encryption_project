@@ -672,8 +672,8 @@ export default function PassFormRequest() {
               {/* inputs */}
 
               <div className="py-10">
-                <div className="w-6/5 m-auto md:flex px-5 items-center">
-                  <label className="text-greenAcc mx-3 font-roboto text-[22px] font-medium ">
+                <div className=" m-auto md:flex md:px-5 md:ml-0  justify-center items-center">
+                  <label className="text-greenAcc mx-3 md:ml-0 ml-6 font-roboto text-[22px] font-medium ">
                     National ID Card
                   </label>
                   <input
@@ -683,7 +683,7 @@ export default function PassFormRequest() {
                         message: "This field is required",
                       },
                     })}
-                    className="rounded-input bg-transparent focus:outline-none border-[1px] border-yellowAcc w-[83%] h-[50px]"
+                    className="rounded-input bg-transparent md:ml-0 ml-6 focus:outline-none border-[1px] border-yellowAcc w-[83%] h-[50px]"
                   />
                 </div>
                 {errors.national_id && (
@@ -692,22 +692,22 @@ export default function PassFormRequest() {
                   </div>
                 )}
 
-                <div className="w-5/6 px-5 md:mx-5 md:flex items-center my-10">
-                  <label className="text-greenAcc  font-roboto text-[22px] font-medium capitalize ">
+                <div className="w-5/6 md:px-5 md:mx-5 md:flex items-center my-10">
+                  <label className="text-greenAcc md:ml-0 ml-6  font-roboto text-[22px] font-medium capitalize ">
                     university Id
                   </label>
                   <input
                     {...register("university_id")}
                     type="text"
-                    className="rounded-input  bg-transparent m-auto focus:outline-none w-full border-[1px] border-yellowAcc md:w-[65%] h-[50px]"
+                    className="rounded-input  bg-transparent md:ml-0 ml-6 m-auto focus:outline-none w-full border-[1px] border-yellowAcc md:w-[65%] h-[50px]"
                   />
                 </div>
               </div>
 
               {/* fils */}
-              <div className="md:flex justify-center gap-8">
+              <div className=" w-[80%]  m-auto grid xl:grid-cols-3 md:grid-cols-2  justify-center gap-8">
                 <div>
-                  <div className="pl-5">
+                  <div className="md:pl-5 pl-[6px]">
                     <label className="block text-yellowAcc my-3 font-roboto text-[22px] font-medium text-center">
                       Birth certificate
                     </label>
@@ -741,7 +741,7 @@ export default function PassFormRequest() {
                 </div>
 
                 <div>
-                  <div className="pl-5">
+                  <div className="md:pl-5 pl-[6px]">
                     <label className="block text-yellowAcc my-3 font-roboto text-[22px] font-medium text-center">
                       Identification card
                     </label>
@@ -772,7 +772,7 @@ export default function PassFormRequest() {
                   )}
                 </div>
                 <div>
-                  <div className="pl-5">
+                  <div className="md:pl-5 pl-[6px]">
                     <label className="block my-3 text-yellowAcc font-roboto text-[22px] font-medium text-center">
                       graduation cert
                     </label>
