@@ -168,7 +168,7 @@ export default function PassFormRequest() {
                 <div className="">
                   <div className="md:flex md:gap-x-6 items-center">
                     {/* passport department input */}
-                    <label className=" font-roboto mr-5 my-1  md:text-[22px] text-[15px] text-greenAcc font-semibold">
+                    <label className=" font-roboto mr-5 my-1  md:text-[22px] text-[15px] text-greenAcc md:font-semibold">
                       Passports Department
                     </label>
                     <input
@@ -575,11 +575,11 @@ export default function PassFormRequest() {
 
         {step >= 2 && (
           <div
-            className={`bg-bg min-h-screen w-full ${
+            className={`bg-bg min-h-screen w-full  ${
               step === 2 ? "block" : "hidden"
             } `}
           >
-            <div className="bg-baform flex flex-col   shadow-shadowEmp w-6/6 pl-6 pt-10 pb-[55px] mx-20 min-h-[520px] rounded-[20px] m-auto my-10">
+            <div className="bg-baform flex flex-col   shadow-shadowEmp w-6/6 pl-6 pt-10 pb-[55px] md:mx-20 mx-5 min-h-[520px] rounded-[20px] m-auto my-10">
               <HeaderFormPage goToStep={goToStep} step={step} />
               <hr className="h-[1px] w-full bg-slate-600 my-8" />
               <Box className="">
@@ -623,7 +623,7 @@ export default function PassFormRequest() {
                 )}
               </Box>
 
-              <div className="px-[100px]">
+              <div className=" md:px-[100px] md:pr-0 pr-[20px]">
                 {/* husband name */}
                 <label className="text-greenAcc font-roboto my-3 text-xl font-medium block">
                   Husband name /
@@ -644,14 +644,14 @@ export default function PassFormRequest() {
             </div>
             <div className="my-10 m-auto mt-[50px] flex w-[80%] justify-around">
               <button
-                className="w-[255px] mb-10  h-[65px] bg-greenAcc text-[32px] text-white font-tinos rounded-input"
+                className="md:w-[255px] mb-10  h-[65px] md:bg-greenAcc text-[32px] md:text-white text-greenAcc font-tinos rounded-input"
                 type="button"
                 onClick={prevStep}
               >
-                back
+                Back
               </button>
               <button
-                className="w-[255px] mb-10  h-[65px] bg-greenAcc text-[32px] text-white font-tinos rounded-input"
+                className="md:w-[255px] mb-10  h-[65px] md:bg-greenAcc text-[32px] md:text-white text-greenAcc font-tinos rounded-input"
                 type="button"
                 onClick={nextStep}
               >
