@@ -24,10 +24,10 @@ export default function StepFour({goToStep,prevStep,errors,register,step}) {
                       message: "This field is required",
                     },
                   })}
-                  className="border-[1px]  border-yellowAcc bg-transparent  w-full rounded-input h-[50px]"
+                  className="border-[1px] focus:outline-none  border-yellowAcc bg-transparent  w-full rounded-input h-[50px]"
                 />
                 {errors.age && (
-                  <div className="text-[20px] text-red-500">
+                  <div className="text-[15px] my-5  text-red-500">
                     ***{errors.age.message}
                   </div>
                 )}
@@ -45,10 +45,10 @@ export default function StepFour({goToStep,prevStep,errors,register,step}) {
                       message: "This field is required",
                     },
                   })}
-                  className="border-[1px] border-yellowAcc bg-transparent  w-full rounded-input h-[50px]"
+                  className="border-[1px] focus:outline-none border-yellowAcc bg-transparent  w-full rounded-input h-[50px]"
                 />
                 {errors.address && (
-                  <div className="text-[20px] text-red-500">
+                  <div className="text-[15px] my-5 focus:outline-none text-red-500">
                     ***{errors.address.message}
                   </div>
                 )}

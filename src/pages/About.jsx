@@ -37,24 +37,27 @@ export default function About() {
             <img src={img} className="w-full absolute " />
             <div className="absolute w-full">
               <Navbar />
-              <h1 className="text-white text-center lg:mt-[70px] capitalize md:text-[64px] font-tinos">
+              <h1 className="text-white md:block hidden text-center lg:mt-[70px] capitalize md:text-[64px] font-tinos">
                 About Us
               </h1>
             </div>
           </div>
           {/*  */}
     
-          <div className="h-[360px]  w-full flex md:flex-row flex-col md:my-[100px] my-[50px]  justify-center gap-x-[70px] items-center">
+          <div className="h-[360px]  w-full flex md:flex-row flex-col md:my-[100px]  justify-center gap-x-[70px] items-center">
             <div className="">
-              <h1 className="text-[48px] font-tinos font-bold">Our mission</h1>
-              <p className="w-[475px] md:mb-0 mb-[50px] m-auto text-[24px] font-normal text-greenAcc leading-8 font-roboto">
+              <h1 className="md:text-[48px] ml-10 sm:text-[30] text-[25px] font-tinos sm:mt-0 mt-[-300px] font-bold">Our mission</h1>
+              <p className="lg:w-[475px] ml-10 md:mb-0 mb-[50px] m-auto lg:text-[24px] md:[20px] font-normal text-greenAcc leading-8 font-roboto">
                 text ever since when an unknown printer took a galley of type and
                 scrambled it to make a type specimen book. It has survived not only
                 five centuries, but also the leap into electronic typesetting,
                 remaining essentially unchanged.
               </p>
             </div>
-            <img src={img2} />
+            <div>
+            <img src={img2}  />
+            </div>
+         
           </div>
     
           {/*  */}

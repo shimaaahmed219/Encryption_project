@@ -38,7 +38,7 @@ export default function StepThree({
           />
         </div>
         {errors.national_id && (
-          <div className="text-red-500 text-[20px] ml-[200px]">
+          <div className="text-red-500 text-[15px] my-5 md:ml-[300px]">
             ***{errors.national_id.message}
           </div>
         )}
@@ -87,9 +87,9 @@ export default function StepThree({
               {selectedImage["birth_cert"] && <img src={selectedImage["birth_cert"]} alt="Selected" className="w-full  z-40 absolute h-full object-cover "/>}
             </div>
             {errors.birth_cert && (
-              <span className="text-red-500 text-[20px] my-10">
+              <div className="text-red-500 text-[15px] my-2">
                 ***{errors.birth_cert.message}
-              </span>
+              </div>
             )}
           </div>
         </div>
@@ -123,9 +123,9 @@ export default function StepThree({
          
           </div>
           {errors.national_id_photo && (
-            <span className="text-red-500 mx-5 text-[20px] my-10">
+            <div className="text-red-500 mx-5 text-[15px] my-2">
               ***{errors.national_id_photo.message}
-            </span>
+            </div>
           )}
         </div>
         <div>
@@ -156,7 +156,13 @@ export default function StepThree({
             </div>
         
           </div>
+          {errors.national_id_photo && (
+            <div className="text-red-500 mx-5 text-[15px] my-2">
+              ***{errors.graduation_cert.message}
+            </div>
+          )}
         </div>
+     
       </div>
       {/* date */}
 

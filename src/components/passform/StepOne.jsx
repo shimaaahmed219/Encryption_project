@@ -4,7 +4,6 @@ import uploadImg from "../../assets/passForm/upload.svg";
 import CheckboxInput from "../CheckboxInput";
 import HeaderFormPage from "../HeaderFormPage";
 
-
 import {
   FormControlLabel,
   FormControl,
@@ -12,7 +11,6 @@ import {
   Radio,
   RadioGroup,
 } from "@mui/material";
-
 
 
 export default function StepOne({
@@ -25,16 +23,11 @@ export default function StepOne({
   selectedImage,
 }) {
   return (
-
-
-
     <div
       className={` ${
         step === 1 ? "block" : "hidden"
       } w-[88%] m-auto scroll-px-20`}
     >
-
-
       <div className="flex">
         {/* title  */}
         <div className="w-1/6 lg:mt-5 mt-20 ml-10 md:block hidden ">
@@ -86,17 +79,16 @@ export default function StepOne({
           >
             4*6 cm
           </h6>
-            {/* error messge from presonal image */}
+          {/* error messge from presonal image */}
           {errors.photo && (
             <span className="text-red-500 text-[15px] ml-[-5px] absolute mt-[210px]">
               ***{errors.photo?.message}
             </span>
           )}
         </div>
-      
       </div>
-   
-      <div className="w-[100%] mt-10 min-h-screen bg-white rounded-[30px] p-10 shadow-shadowEmp">
+
+      <div className="w-[100%] mt-10 min-h-screen bg- bg-baform rounded-[30px] p-10 shadow-shadowEmp">
         {/* Select the active page */}
         <HeaderFormPage goToStep={goToStep} step={step} />
         <hr className="w-[100%] h-[1px] my-10 bg-hr" />
@@ -122,20 +114,19 @@ export default function StepOne({
                   },
                 })}
                 type="type"
-                className=" my-1 focus:outline-none md:w-[350px]  w-full h-[50px] px-[20px]   py-[6px] border-[1px] rounded-input border-yellowAcc"
+                className=" my-1 bg-transparent focus:outline-none md:w-[350px]  w-full h-[50px] px-[20px]   py-[6px] border-[1px] rounded-input border-yellowAcc"
               />
             </div>
 
             {/* set errors passport department */}
             {errors.passports_department && (
-              <span className="text-red-500 text-[15px] ml-[270px]">
+              <span className="text-red-500 text-[15px] md:ml-[270px]">
                 ***{errors.passports_department.message}
               </span>
             )}
           </div>
 
           {/* date */}
-
         </div>
 
         {/* presonal data */}
@@ -151,11 +142,11 @@ export default function StepOne({
                 },
               })}
               type="text"
-              className={` md:w-[240px] w-[99%] h-[50px] px-[20px] py-[6px] rounded-input border-[1px] border-yellowAcc `}
+              className={` md:w-[240px] bg-transparent focus:outline-none  w-[99%] h-[50px] px-[20px] py-[6px] rounded-input border-[1px] border-yellowAcc `}
             />
             {/* set first name error */}
             {errors.first_name && (
-              <span className="text-red-500 py-5 ">
+              <span className="text-red-500 text-[15px] py-5 ">
                 {" "}
                 ***{errors.first_name.message}
               </span>
@@ -173,12 +164,12 @@ export default function StepOne({
                   message: "This field is required",
                 },
               })}
-              className={` md:w-[240px]  w-[99%] h-[50px] px-[20px] py-[6px] rounded-input border-[1px] border-yellowAcc `}
+              className={` md:w-[240px] bg-transparent w-[99%] h-[50px] focus:outline-none  px-[20px] py-[6px] rounded-input border-[1px] border-yellowAcc `}
             />
 
             {/* set secons name errors */}
             {errors.second_name && (
-              <span className="text-red-500 py-5 ">
+              <span className="text-red-500 py-5 text-[15px] ">
                 ***{errors.second_name.message}
               </span>
             )}
@@ -195,11 +186,11 @@ export default function StepOne({
                 },
               })}
               type="text"
-              className={` md:w-[240px]  w-[99%] h-[50px] px-[20px] py-[6px] rounded-input border-[1px] border-yellowAcc `}
+              className={` md:w-[240px] bg-transparent w-[99%] h-[50px] focus:outline-none   px-[20px] py-[6px] rounded-input border-[1px] border-yellowAcc `}
             />
             {/* third name errors */}
             {errors.third_name && (
-              <span className="text-red-500 py-5 ">
+              <span className="text-red-500 py-5 text-[15px]">
                 ***{errors.third_name.message}
               </span>
             )}
@@ -216,11 +207,11 @@ export default function StepOne({
                   message: "This field is required",
                 },
               })}
-              className={` md:w-[240px]  w-[99%] h-[50px] px-[20px] py-[6px] rounded-input border-[1px] border-yellowAcc `}
+              className={` md:w-[240px]  w-[99%] h-[50px] bg-transparent focus:outline-none  px-[20px] py-[6px] rounded-input border-[1px] border-yellowAcc `}
             />
             {/* set last name errors */}
             {errors.last_name && (
-              <span className="text-red-500 py-5 ">
+              <span className="text-red-500 text-[15px] py-5 ">
                 ***{errors.last_name.message}
               </span>
             )}
@@ -239,10 +230,10 @@ export default function StepOne({
                 },
               })}
               type="text"
-              className=" md:w-[240px] w-[98%] h-[50px] px-[20px] py-[6px] rounded-input border-[1px] border-yellowAcc"
+              className=" md:w-[240px] w-[98%] bg-transparent h-[50px] focus:outline-none   px-[20px] py-[6px] rounded-input border-[1px] border-yellowAcc"
             />
             {errors.last_name_ar && (
-              <div className="text-[20px] text-red-500 my-5">
+              <div className="text-[15px] text-red-500 my-5">
                 ***{errors.last_name_ar.message}
               </div>
             )}
@@ -257,10 +248,10 @@ export default function StepOne({
                 },
               })}
               type="text"
-              className="md:w-[240px] w-[98%] h-[50px] px-[20px] py-[6px] rounded-input border-[1px] border-yellowAcc"
+              className="md:w-[240px] bg-transparent w-[98%] h-[50px] focus:outline-none  px-[20px] py-[6px] rounded-input border-[1px] border-yellowAcc"
             />
             {errors.third_name_ar && (
-              <div className="text-[20px] text-red-500 my-5">
+              <div className="text-[15px] text-red-500 my-5">
                 ***{errors.third_name_ar.message}
               </div>
             )}
@@ -275,10 +266,10 @@ export default function StepOne({
                 },
               })}
               type="text"
-              className=" md:w-[240px] w-[98%] h-[50px] px-[20px] py-[6px] rounded-input border-[1px] border-yellowAcc"
+              className=" md:w-[240px] bg-transparent w-[98%] h-[50px] px-[20px] py-[6px] focus:outline-none  rounded-input border-[1px] border-yellowAcc"
             />
             {errors.second_name_ar && (
-              <div className="text-[20px] text-red-500 my-5">
+              <div className="text-[15px] text-red-500 my-5">
                 ***{errors.second_name_ar.message}
               </div>
             )}
@@ -294,10 +285,10 @@ export default function StepOne({
                 },
               })}
               type="text"
-              className=" md:w-[240px] w-[98%] h-[50px] px-[20px] py-[6px] rounded-input border-[1px] border-yellowAcc"
+              className=" md:w-[240px] bg-transparent w-[98%] h-[50px] px-[20px] py-[6px] focus:outline-none  rounded-input border-[1px] border-yellowAcc"
             />
             {errors.first_name_ar && (
-              <div className="text-[15pxpx] text-red-500 my-5">
+              <div className="text-[15px] text-red-500 my-5">
                 ***{errors.first_name_ar.message}
               </div>
             )}
@@ -307,7 +298,7 @@ export default function StepOne({
         {/* date of birth */}
         <div className="xl:flex mt-8  py-5">
           <div className="md:flex md:px-10 pt-[15px] items-center text-greenAcc lg:w-[60%] w-full font-roboto">
-            <label className="font-roboto w-[150px] mx-5 md:text-[22px] text-[17px] py-2 font-semibold text-greenAcc">
+            <label className="font-roboto w-[150px] mt-[-20px] md:mb-0 my-5  mx-5 md:text-[22px] text-[17px] py-2 font-semibold text-greenAcc">
               Date of birth
             </label>
 
@@ -321,11 +312,11 @@ export default function StepOne({
                 })}
                 placeholder="00-00-2000"
                 type="text"
-                className="border-[1px] text-[20px] font-roboto px-5 border-yellowAcc xl:ml-[72px] lg:w-[350px] md:w-[90%] w-[97%] h-[50px] rounded-input"
+                className="border-[1px] bg-transparent focus:outline-none md:mt-0 mt-5 mb-4 text-[20px] font-roboto px-5 border-yellowAcc xl:ml-[72px] lg:w-[350px] md:w-[90%] w-[97%] h-[50px] rounded-input"
               />
               {/* data of birth error */}
               {errors.date_of_birth && (
-                <span className="text-red-500 my-5 text-[20px] ">
+                <span className="text-red-500 mt-[30px] text-[15px] md:ml-[80px] ">
                   {" "}
                   ***{errors.date_of_birth.message}
                 </span>
@@ -368,7 +359,7 @@ export default function StepOne({
               </FormControl>
             </div>
             {errors.gender && (
-              <span className="text-red-500 text-[20px] ml-[-50px]">
+              <span className="text-red-500 text-[15px] ml-[-50px]">
                 ****{errors.gender.message}
               </span>
             )}
@@ -392,40 +383,37 @@ export default function StepOne({
                     },
                   })}
                   type="text"
-                  className=" rounded-input  w-full  h-[50px] border-[1px] border-yellowAcc px-[20px] py-[6px]"
+                  className=" rounded-input bg-transparent  mb-3 w-full  h-[50px] border-[1px] focus:outline-none  border-yellowAcc px-[20px] py-[6px]"
                 />
               </div>
             </div>
             {errors.governorate && (
-              <span className="text-red-500  mt-[10px] mb-[5px]">
+              <span className="text-red-500 text-[15px] mt-[10px] mb-[5px]">
                 ***{errors.governorate.message}
               </span>
             )}
           </div>
 
-
-
           <div className=" my-[20px] pt-2 font-roboto md:ml-5 items-center text-[20px] text-greenAcc">
             <label className="block  pb-6 font-bold text-greenAcc font-roboto">
-              
               Religion
             </label>
             {/* <div className="items-center flex"> */}
-              <input
-                {...register("religion", {
-                  required: {
-                    value: true,
-                    message: "This field is required",
-                  },
-                })}
-                type="text"
-                className=" rounded-input  md:w-[93%] w-[94%] h-[50px] border-[1px] border-yellowAcc  md:pl-[20px] py-[6px]"
-              />
-            </div>
+            <input
+              {...register("religion", {
+                required: {
+                  value: true,
+                  message: "This field is required",
+                },
+              })}
+              type="text"
+              className=" rounded-input bg-transparent focus:outline-none  md:w-[93%] w-[97%] h-[50px] border-[1px] border-yellowAcc  md:pl-[20px] py-[6px]"
+            />
             {errors.religion && (
-              <div className=" text-red-500 m-auto  mt-[10px] mb-[5px]">{`***${errors.religion.message}`}</div>
+              <div className=" text-red-500 m-auto text-[15px] mt-[10px] mb-[5px]">{`***${errors.religion.message}`}</div>
             )}
           </div>
+        </div>
         {/* </div> */}
         {/*  educational qualification . */}
         <div>
@@ -441,10 +429,10 @@ export default function StepOne({
                     message: "This field is required",
                   },
                 })}
-                className="w-full h-[50px] mt-6 mb-10 px-[20px] py-[6px] border-[1px] border-yellowAcc rounded-input "
+                className="w-full h-[50px] mt-6 mb-10  bg-transparent focus:outline-none  px-[20px] py-[6px] border-[1px] border-yellowAcc rounded-input "
               />
               {errors.academic_qualification && (
-                <span className=" text-red-500 text-[20px] m-auto  mt-[10px] mb-[5px]">
+                <span className=" text-red-500 text-[15px] m-auto  mt-[10px] mb-[5px]">
                   ***{errors.academic_qualification.message}
                 </span>
               )}
@@ -461,10 +449,10 @@ export default function StepOne({
                     message: "This field is required",
                   },
                 })}
-                className="w-full h-[50px] mt-5 px-[20px] py-[6px] border-[1px] border-yellowAcc rounded-input "
+                className="w-full h-[50px] mt-5 px-[20px] bg-transparent py-[6px] focus:outline-none  border-[1px] border-yellowAcc rounded-input "
               />
               {errors.job && (
-                <span className=" text-red-500 text-[20px] m-auto  mt-[10px] mb-[5px]">
+                <span className=" text-red-500 text-[15px] m-auto  mt-[10px] mb-[5px]">
                   {errors.job.message}
                 </span>
               )}
@@ -483,10 +471,10 @@ export default function StepOne({
                     },
                   })}
                   type="text"
-                  className=" w-full h-[50px] mt-4 px-[20px] py-[6px] border-[1px] border-yellowAcc rounded-input"
+                  className=" w-full h-[50px] mt-4 px-[20px] bg-transparent py-[6px] focus:outline-none  border-[1px] border-yellowAcc rounded-input"
                 />
                 {errors.phone && (
-                  <div className=" text-red-500 m-auto  mt-[10px] mb-[5px]">{`**${errors.phone.message}`}</div>
+                  <div className=" text-red-500 m-auto text-[15px] mt-[10px] mb-[5px]">{`**${errors.phone.message}`}</div>
                 )}
               </div>
 
@@ -502,10 +490,10 @@ export default function StepOne({
                     },
                   })}
                   type="text"
-                  className=" w-full h-[50px] px-[20px] mt-4 py-[6px] border-[1px] border-yellowAcc rounded-input"
+                  className=" w-full h-[50px] px-[20px] bg-transparent mt-4 py-[6px] focus:outline-none  border-[1px] border-yellowAcc rounded-input"
                 />
                 {errors.home_phone && (
-                  <div className=" text-red-500 m-auto  mt-[10px] mb-[5px]">{`**${errors.home_phone.message}`}</div>
+                  <div className=" text-red-500 m-auto text-[15px]  mt-[10px] mb-[5px]">{`**${errors.home_phone.message}`}</div>
                 )}
               </div>
             </div>

@@ -64,7 +64,7 @@ export default function StepTwo({
             </RadioGroup>
           </FormControl>
           {errors.marital_status && (
-            <div className=" text-red-500 mt-[-30px]  m-auto ml-[100px] text-[20px]">{`**${errors.marital_status.message}`}</div>
+            <div className=" text-red-500 mb-5 mt-[-14px] text-[15px] m-auto ml-[100px] ">{`**${errors.marital_status.message}`}</div>
           )}
         </Box>
 
