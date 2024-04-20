@@ -16,9 +16,9 @@ export default function Navbar() {
     <div className="w-5/6 m-auto my-5  z-50 items-center justify-between  h-70px flex ">
       <div className="flex ">
         <h1
-          className={` font-tinos text-[24px]  items-center gap-x-8 text-white mt-3 ml-3  text-xl`}
+          className={` font-tinos text-[24px]   items-center gap-x-8 text-white md:mt-3 mt-[-30px] ml-3  text-xl`}
         >
-          <span className="text-yellowAcc text-[20px]">E-</span>passport
+          <span className="text-yellowAcc text-[20px] ">E-</span>passport
         </h1>
       </div>
 

@@ -44,17 +44,17 @@ export default function About() {
           </div>
           {/*  */}
     
-          <div className="h-[360px]  w-full flex md:flex-row flex-col md:my-[100px]  justify-center gap-x-[70px] items-center">
+          <div className="h-[360px]  w-full flex md:flex-row flex-col lg:my-[100px] sm:my-[-50px]   justify-center gap-x-[70px] items-center">
             <div className="">
               <h1 className="md:text-[48px] ml-10 sm:text-[30] text-[25px] font-tinos sm:mt-0 mt-[-300px] font-bold">Our mission</h1>
-              <p className="lg:w-[475px] ml-10 md:mb-0 mb-[50px] m-auto lg:text-[24px] md:[20px] font-normal text-greenAcc leading-8 font-roboto">
+              <p className="lg:w-[475px] md:w-[350px] sm:w-[475px] w-[350px] ml-10 md:mb-0 mb-[50px] m-auto lg:text-[24px] md:[20px] font-normal text-greenAcc leading-8 font-roboto">
                 text ever since when an unknown printer took a galley of type and
                 scrambled it to make a type specimen book. It has survived not only
                 five centuries, but also the leap into electronic typesetting,
                 remaining essentially unchanged.
               </p>
             </div>
-            <div>
+            <div className="px-10">
             <img src={img2}  />
             </div>
          
