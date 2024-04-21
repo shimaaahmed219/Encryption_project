@@ -12,7 +12,7 @@ function EncryptionType() {
           />
           <div className="lg:w-[35%] md:w-[40%] w-[70%] flex flex-row rounded-input border-white border-4 relative ">
             <select
-              className={`font-tinos  focus:outline-none select appearance-none px-5  rounded-input text-2xl w-[100%]  h-[3.75rem] bg-greenAcc appearanse-none text-white `}
+              className={`font-tinos  focus:outline-none select appearance-none px-5  rounded-input md:text-2xl text-[20px] w-[100%]  h-[3.75rem] bg-greenAcc appearanse-none text-white `}
             >
               <option>Choose the encryption type </option>
               <option>Choose the encryption type </option>

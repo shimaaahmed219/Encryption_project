@@ -16,6 +16,7 @@ import PassEmployee from "./pages/PassEmployee";
 import ForeignEmployee from "./pages/ForeignEmployee";
 import RecruitmentArea from "./pages/RecruitmentArea";
 import UpdateClientData from "./pages/UpdateClientData";
+import Security from "./pages/Security";
 
 
 
@@ -29,6 +30,7 @@ export default function App() {
       <Route path="/" element={<LandingPage/>}/>
       <Route path="/about" element={<About/>}/>
       <Route path="/service" element={<Service/>}/>
+      <Route path="/security" element={<Security/>} />
       <Route path="/login" element={<Login/>}/>
       <Route path="/Dashboard" element={<Dashboard/>}/>
       <Route path="/addEmployee" element={<AddEmployee/>}/>

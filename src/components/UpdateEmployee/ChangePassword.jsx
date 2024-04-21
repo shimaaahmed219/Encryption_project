@@ -64,7 +64,7 @@ export default function ChangePassword() {
     <>
       <form onSubmit={handleSubmit(changePasswordHandle)}>
         <div
-          className={` font-medium font-roboto m-auto  w-[90%] md:text-[22px] grid  extramd:grid-cols-2 grid-cols-1 xl:gap-x-32 lg:gap-x-16 gap-x-8 gap-y-8  rounded-[10px]`}
+          className={` font-medium font-roboto m-auto  px-8 w-[100%] md:text-[22px] grid  extramd:grid-cols-2 grid-cols-1 xl:gap-x-32 lg:gap-x-16 gap-x-8 gap-y-8  rounded-[10px]`}
         >
           {/* Current Password */}
           <div>
@@ -76,11 +76,11 @@ export default function ChangePassword() {
                 {...register("current_password")}
                 placeholder=" Enter password"
                 type={showPassword ? "text" : "password"}
-                className="pl-2 xl:w-[365px]   w-[90%] text-greenAcc font-semibold  md:text-[22px]   focus:outline-none h-[50px] border-2 rounded-[10px] bg-transparent border-yellowAcc"
+                className="pl-2 xl:w-[365px]    w-full text-greenAcc font-semibold  md:text-[22px]   focus:outline-none h-[50px] border-2 rounded-[10px] bg-transparent border-yellowAcc"
               />
               <span
                 onClick={() => setShowPassword(!showPassword)}
-                className="  absolute bottom-[17px] xl:right-[5px]  xl:block hidden cursor-pointer"
+                className="  absolute bottom-[17px] xl:right-[20px] right-[20px]   cursor-pointer"
               >
                 {showPassword ? (
                   <FiEyeOff size={20} color="yellow" />
@@ -106,11 +106,11 @@ export default function ChangePassword() {
                 {...register("new_password")}
                 placeholder="Enter password"
                 type={showPassword ? "text" : "password"}
-                className=" pl-2 xl:w-[365px]   w-[90%] text-greenAcc font-semibold  md:text-[22px]   focus:outline-none h-[50px] border-2 rounded-[10px] bg-transparent border-yellowAcc"
+                className=" pl-2 xl:w-[365px]    w-full text-greenAcc font-semibold  md:text-[22px]   focus:outline-none h-[50px] border-2 rounded-[10px] bg-transparent border-yellowAcc"
               />
               <span
                 onClick={() => setShowPassword(!showPassword)}
-                className="  absolute bottom-[17px] right-[5px]  xl:block hidden cursor-pointer"
+                className="  absolute bottom-[17px] xl:right-[20px] right-[20px] cursor-pointer"
               >
                 {showPassword ? (
                   <FiEyeOff size={20} color="yellow" />
@@ -134,12 +134,12 @@ export default function ChangePassword() {
               {...register("new_password_confirmation")}
               placeholder="Enter Password "
               type={showPassword ? "text" : "password"}
-              className="pl-2 xl:w-[365px]   w-[90%] text-greenAcc font-semibold  md:text-[22px]   focus:outline-none h-[50px] border-2 rounded-[10px] bg-transparent border-yellowAcc"
+              className="pl-2 xl:w-[365px]    w-full text-greenAcc font-semibold  md:text-[22px]   focus:outline-none h-[50px] border-2 rounded-[10px] bg-transparent border-yellowAcc"
             />
             <div className=" relative">
               <span
                 onClick={() => setShowPassword(!showPassword)}
-                className="  absolute bottom-[17px] right-[5px]  xl:block hidden cursor-pointer"
+                className="  absolute bottom-[17px] xl:right-[20px] right-[20px] cursor-pointer"
               >
                 {showPassword ? (
                   <FiEyeOff size={20} color="yellow" />
@@ -157,7 +157,7 @@ export default function ChangePassword() {
         <div className=" flex justify-center">
           <button
             type="submit"
-            className={` font-tinos  font-bold ms-7 my-[3rem] rounded-[10px] text-[26px] bg-greenAcc w-[198px] h-[50px] text-white`}
+            className={` font-tinos  font-bold xl:ms-7 my-[3rem] rounded-[10px] text-[26px] bg-greenAcc sm:w-[198px] w-[150px] h-[50px] text-white`}
           >
             save
           </button>

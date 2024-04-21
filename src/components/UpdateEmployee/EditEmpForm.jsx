@@ -24,7 +24,7 @@ const schema = z.object({
     .any()
     .refine(
       (files) => files?.[0]?.size <= MAX_FILE_SIZE,
-      `Max image size is 5MB.`
+      `this fild is requaird.`
     )
     .refine(
       (files) => ACCEPTED_IMAGE_TYPES.includes(files?.[0]?.type),
@@ -105,7 +105,8 @@ export default function EditEmpForm() {
   };
 
   return (
-    <div className="lg:w-[70%] w-[90%]  lg:ms-auto m-auto lg:mr-[30px]  mt-5 h-full pt-6 shadow-shadowEmp bg-bgEmp rounded-[20px]">
+    
+    <div className="xl:w-[70%]  m-auto w-[90%] lg:ms-auto  xl:mr-[30px]  mt-5 h-full pt-6 shadow-shadowEmp bg-bgEmp rounded-[20px]">
       <form
         onSubmit={handleSubmit(onSubmitForm)}
         className=" flex-col flex items-center"
@@ -115,7 +116,7 @@ export default function EditEmpForm() {
             <input
               {...register("photo")}
               type="file"
-              className=" w-full h-full z-50 opacity-0 absolute"
+              className=" w-full h-full z-50 m-auto opacity-0 absolute"
             />
             {employeeData.photo ? (
               <img
@@ -128,7 +129,7 @@ export default function EditEmpForm() {
           </div>
           
           {errors.photo && (
-            <div className=" text-red-500 m-auto  mt-[15px] mb-[15px]">{`**${errors.photo.message}`}</div>
+            <div className=" text-red-500 m-auto ml-[-20px] text-[15px] ">{`**${errors.photo.message}`}</div>
           )}
         </div>
         <h2 className={` font-tinos text-greenAcc text-[30px] capitalize`}>
@@ -147,10 +148,10 @@ export default function EditEmpForm() {
         </div>
 
         <div
-          className={`font-roboto  w-[100%] px-10 justify-between  grid  extramd:grid-cols-2 grid-cols-1 xl:gap-x-32 lg:gap-x-16 gap-x-8 gap-y-8 mt-10 rounded-[10px]`}
+          className={`font-roboto  w-[100%] px-10 justify-between  grid  extramd:grid-cols-2 grid-cols-1 lg:gap-x-32 :gap-x-16 gap-x-8 gap-y-8 mt-10 rounded-[10px]`}
         >
           {/* name */}
-          <div>
+          <div className="">
             <label className="capitalize  ml-1  text-greenAcc font-semibold block  md:text-[22px]">
               name
             </label>
@@ -159,7 +160,7 @@ export default function EditEmpForm() {
               {...register("name")}
               placeholder="name"
               type="text"
-              className="xl:w-[365px]   w-[90%]  text-greenAcc font-semibold    md:text-[22px] pl-2 focus:outline-none h-[50px] border-2 rounded-[10px] bg-transparent border-yellowAcc"
+              className="xl:w-[365px]    w-full  text-greenAcc font-semibold    md:text-[22px] pl-2 focus:outline-none h-[50px] border-2 rounded-[10px] bg-transparent border-yellowAcc"
             />
             {errors.name && (
               <div className=" text-red-500 m-auto  mt-[15px] mb-[15px]">{`**${errors.name.message}`}</div>
@@ -176,7 +177,7 @@ export default function EditEmpForm() {
               {...register("phone")}
               placeholder="enter employee phone number"
               type="text"
-              className=" pl-2 xl:xl:w-[365px]   w-[90%] text-greenAcc font-semibold  md:text-[22px]   focus:outline-none h-[50px] border-2 rounded-[10px] bg-transparent border-yellowAcc"
+              className=" pl-2 xl:w-[365px]    w-full    text-greenAcc font-semibold  md:text-[22px]   focus:outline-none h-[50px] border-2 rounded-[10px] bg-transparent border-yellowAcc"
             />
             {/* className='xl:w-[365px]   w-[90%] md:text-[22px]  pl-2 focus:outline-none h-[50px] border-2 rounded-[10px] bg-transparent border-yellowAcc' /> */}
             {errors.phone && (
@@ -194,7 +195,7 @@ export default function EditEmpForm() {
               {...register("email")}
               placeholder="email Adress "
               type="text"
-              className="xl:w-[365px]   w-[90%] md:text-[22px]  text-greenAcc font-semibold  pl-2 focus:outline-none h-[50px] border-2 rounded-[10px] bg-transparent border-yellowAcc"
+              className="xl:w-[365px]    w-full md:text-[22px]  text-greenAcc font-semibold  pl-2 focus:outline-none h-[50px] border-2 rounded-[10px] bg-transparent border-yellowAcc"
             />
             {/* className='xl:w-[365px]   w-[90%] md:text-[22px]  pl-2 focus:outline-none h-[50px] border-2 rounded-[10px] bg-transparent border-yellowAcc' /> */}
             {errors.email && (
@@ -212,19 +213,22 @@ export default function EditEmpForm() {
               {...register("job")}
               type="text"
               placeholder="job "
-              className=" pl-2 xl:xl:w-[365px]    w-[90%] text-greenAcc font-semibold  md:text-[22px]   focus:outline-none h-[50px] border-2 rounded-[10px] bg-transparent border-yellowAcc"
+              className=" pl-2 xl:w-[365px]    w-full text-greenAcc font-semibold  md:text-[22px]   focus:outline-none h-[50px] border-2 rounded-[10px] bg-transparent border-yellowAcc"
             />
             {errors.job && (
               <div className=" text-red-500 m-auto  mt-[15px] mb-[15px]">{`**${errors.job.message}`}</div>
             )}
           </div>
         </div>
+        <div className="w-full flex justify-center">
         <button
           type="submit"
-          className={` font-tinos font-bold ms-7 my-[3rem] rounded-[10px] text-[26px] bg-greenAcc w-[198px] h-[50px] text-white`}
+          className={` font-tinos font-bold xl:ms-7  my-[3rem] rounded-[10px] text-[26px] bg-greenAcc sm:w-[198px] w-[150px] h-[50px] text-white`}
         >
           save
         </button>
+        </div>
+       
         <div className=" w-[90%] my-5">
           <h4 className={`font-tinos font-bold text-[26px] text-yellowAcc`}>
             Change Password

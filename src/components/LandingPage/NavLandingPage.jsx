@@ -30,7 +30,7 @@ export default function NavLandingPage() {
       </div>
 
       <nav className="xl:block hidden ms-auto">
-        <ul className="flex text-greenAcc justify-between gap-x-16 font-tinos font-bold text-[24px] items-center">
+        <ul className="flex text-greenAcc justify-between gap-x-14 font-tinos font-bold text-[24px] items-center">
           <li
             className={` 
             ${
@@ -57,6 +57,15 @@ export default function NavLandingPage() {
             }  hover:text-yellowAcc  `}
           >
             <Link to="/service">Service</Link>
+          </li>
+          <li
+            className={` ${
+              location.pathname === "/passform"
+                ? "border-b-2 border-yellowAcc"
+                : ""
+            }  hover:text-yellowAcc `}
+          >
+            <Link to="/security">Security</Link>
           </li>
           <li
             className={` ${

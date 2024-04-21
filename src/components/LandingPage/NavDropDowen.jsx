@@ -27,14 +27,20 @@ export default function NavDropDowen() {
               Service
             </li>
           </Link>
+          <Link to="/security">
+            <li className="hover:bg-greenAcc py-2 px-5 text-greenAcc font-tinos  rounded-xl font-bold hover:px-8 hover:text-white">
+              Security
+            </li>
+          </Link>
           <Link to="/passform">
             <li className="hover:bg-greenAcc py-2 px-5 text-greenAcc font-tinos  rounded-xl font-bold hover:px-8 hover:text-white">
               passport
             </li>
           </Link>
-        </ul>
-        <li  className={`${data && "hidden"}`}><Link to="/login" className='"hover:bg-greenAcc py-2 px-5 text-greenAcc font-tinos  rounded-xl font-bold hover:px-8 hover:text-white'>Sign in</Link> </li>
+          <li  className={`${data && "hidden"}`}><Link to="/login" className='"hover:bg-greenAcc py-2 px-5 text-greenAcc font-tinos  rounded-xl font-bold hover:px-8 hover:text-white'>Sign in</Link> </li>
         <li  className={`${!data && "hidden"}`}><Link to="/login" className='"hover:bg-greenAcc py-2 px-5 text-greenAcc font-tinos  rounded-xl font-bold hover:px-8 hover:text-white'>dashboard</Link> </li>
+        </ul>
+       
       </div>
     </div>
   );
