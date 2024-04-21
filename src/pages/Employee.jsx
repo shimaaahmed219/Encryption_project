@@ -26,7 +26,7 @@ export default function Empolyee() {
 
 
 
-        <div className=' w-5/6 m-auto flex items-center gap-x-[61px]  '>
+        <div className=' w-5/6 m-auto gap-y-7 flex md:flex-row flex-col items-center gap-x-[61px]  '>
          
           {/* add employee button */}
           <Link to="/addEmployee">
@@ -35,7 +35,7 @@ export default function Empolyee() {
 
 
           {/* search input */}
-          <div className='w-[431px] h-[51px] bg-searchbg rounded-[12px] justify-center items-center flex '>
+          <div className='md:w-[431px] h-[51px] bg-searchbg rounded-[12px] justify-center items-center flex '>
             <span className='px-5'>
               <img src={searchicon} />
             </span>
@@ -44,7 +44,7 @@ export default function Empolyee() {
             }
             value={search}
             type='search' 
-            className=' focus:outline-none px-5 w-[90%] h-full placeholder:text-[24px] placeholder:font-roboto focus:outline bg-transparent' placeholder='Search...' />
+            className=' focus:outline-none px-5 md:w-[90%]  h-full placeholder:text-[24px] placeholder:font-roboto focus:outline bg-transparent' placeholder='Search...' />
           </div>
         </div>
 
