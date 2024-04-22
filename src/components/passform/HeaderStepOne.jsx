@@ -8,7 +8,7 @@ export default function HeaderStepOne({
   handleImageChange,
 }) {
   return (
-    <div className=" md:flex justify-between px-10">
+    <div className=" flex md:justify-between md:flex-row flex-col items-center px-10">
       <div className="w-1/6 lg:mt-[60px] mt-20 md:block hidden ">
         <img src={img} alt="" />
       </div>
@@ -26,7 +26,7 @@ export default function HeaderStepOne({
         </div>
       </div>
 
-      <div className="w-[158px] h-[207px]  relative mt-10 bg-fileUploud  md:ml[0px]        ">
+      <div className="w-[158px] h-[207px]  relative mt-10 bg-fileUploud  md:ml[0px]      ">
         <input
           {...register("photo", {
             required: {
