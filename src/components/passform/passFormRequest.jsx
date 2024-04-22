@@ -47,7 +47,7 @@ export default function PassFormRequest() {
 
   // Determine if all fields are filled
   
-
+  const [uploadProgress, setUploadProgress] = useState(0);
   // fatching data
   const onsubmit = (data) => {
     console.log(data);
@@ -68,8 +68,16 @@ export default function PassFormRequest() {
           "Content-Type": "multipart/form-data",
           Authorization: `Bearer ${window.localStorage.getItem("token")}`,
         },
+        onUploadProgress: (progressEvent) => {
+          const percentCompleted = Math.round(
+            (progressEvent.loaded * 100) / progressEvent.total
+          );
+          setUploadProgress(percentCompleted);
+        },
       })
       .then((res) => {
+       
+        setUploadProgress(0);
         console.log(res)
         console.log(res);
         // Show SweetAlert upon successful submission
@@ -102,7 +110,7 @@ export default function PassFormRequest() {
           nextStep={nextStep}
           handleImageChange={handleImageChange}
           selectedImage={selectedImage}
-         
+         uploadProgress={uploadProgress}
         />
 
         {/* steep 2 */}

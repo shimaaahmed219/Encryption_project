@@ -126,207 +126,7 @@ export default function ForginDesc({ search }) {
     });
   };
 
-  // handil status
-  // const handilChange = async (
-  //   event,
-  //   id
-  // ) => {
-  //  try {
-  //   const selectedValue = event.target.value;
-  //   let rejectReasonManual = "";
-
-  //   // Check if selected status is rejected
-  //   if (selectedValue === "rejected") {
-  //     // Prompt user to enter rejection reason using SweetAlert2
-  //     const { value } = await Swal.fire({
-  //       title: "the reason of refuse",
-  //       input: "textarea",
-  //       inputPlaceholder:
-  //         "The purpose of the planned stay has not been established and its conditions are not m",
-  //       inputAttributes: {
-  //         autocapitalize: "off",
-  //       },
-  //       showCancelButton: true,
-  //       confirmButtonText: "Save",
-  //       cancelButtonText: "Cancel",
-  //       confirmButtonColor: "#324134",
-  //       cancelButtonColor: "#ccc",
-  //       showLoaderOnConfirm: true,
-  //       preConfirm: (reason) => {
-  //         rejectReasonManual = reason;
-  //       },
-  //     });
-
-  //     // If the user confirms and entered a reason, continue with the update
-  //     if (value && value.trim() !== "") {
-  //       // Perform the update with the entered reason
-  //       const response = await axios.put(
-  //         `${url}/clientOrder/${id}`,
-  //         {
-  //           status: selectedValue,
-  //           reject_reason: rejectReasonManual,
-  //         },
-  //         {
-  //           headers: {
-  //             "Content-Type": "application/json",
-  //             Authorization: `Bearer ${window.localStorage.getItem("token")}`,
-  //           },
-  //         }
-  //       );
-
-  //       // Handle success and error responses
-  //       if (response.status === 200) {
-  //         // Update client status in state
-  //         setClient((prevClients) => {
-  //           return prevClients.map((client) => {
-  //             if (client.id === id) {
-  //               return {
-  //                 ...client,
-  //                 status: selectedValue,
-  //                 reject_reason: rejectReasonManual,
-  //               };
-  //             } else {
-  //               return client;
-  //             }
-  //           });
-  //         });
-
-  //         Swal.fire({
-  //           title: "Success!",
-  //           text: "Client status updated successfully!",
-  //           icon: "success",
-  //         });
-  //       } else {
-  //         throw new Error("Failed to update client status");
-  //       }
-  //     }
-  //   }
-
-  //   else if (selectedValue === "approved") {
-  //     // Prompt user to select 'received_type' using SweetAlert2
-  //     const { value: receivedType } = await Swal.fire({
-  //       title: "Select Received Type",
-  //       input: "select",
-  //       inputOptions: {
-  //         mofa: "MOFA",
-  //         "recruitment district": "Recruitment District",
-  //       },
-  //       inputPlaceholder: "Select received type",
-  //       showCancelButton: true,
-  //       confirmButtonText: "Save",
-  //       cancelButtonText: "Cancel",
-  //       confirmButtonColor: "#324134",
-  //       cancelButtonColor: "#ccc",
-
-  //       inputValidator: (value) => {
-  //         if (!value) {
-  //           return "You need to choose a received type";
-  //         }
-  //         // setClient((prev)=>prev.filter((client)=>client.id !== id))
-  //       },
-  //     });
-
-  //     // If the user selects a received type, continue with the update
-  //     if (receivedType) {
-  //       const response = await axios.put(
-  //         `${url}/clientOrder/${id}`,
-  //         {
-  //           status: selectedValue,
-  //           received_type: receivedType,
-  //         },
-  //         {
-  //           headers: {
-  //             "Content-Type": "application/json",
-  //             Authorization: `Bearer ${window.localStorage.getItem("token")}`,
-  //           },
-  //         }
-  //       );
-
-  //       // Handle success and error responses
-  //       if (response.status === 200) {
-  //         // Update client status in state
-  //         setClient((prevClients) =>
-  //           prevClients.map((client) =>
-  //             client.id === id
-  //               ? {
-  //                   ...client,
-  //                   status: selectedValue,
-  //                   received_type: receivedType,
-  //                 }
-  //               : client
-  //           )
-  //         );
-
-  //         Swal.fire({
-  //           title: "Success!",
-  //           text: "Client status updated successfully!",
-  //           icon: "success",
-  //         });
-
-  //
-  //     const response = await axios.put(
-  //       `${url}/clientOrder/${id}`,
-  //       {
-  //         status: "processing",
-  //         received_type: receivedType,
-  //       },
-  //       {
-  //         headers: {
-  //           "Content-Type": "application/json",
-  //           Authorization: `Bearer ${window.localStorage.getItem("token")}`,
-  //         },
-  //       }
-  //     );
-  //  console.log(response);
-
-  //         } else {
-  //           throw new Error("Failed to update client status");
-  //         }
-  //       }
-  //     } else {
-  //       // For other statuses ('pending' or any other), proceed with the update as before
-  //       const response = await axios.put(
-  //         `${url}/clientOrder/${id}`,
-  //         {
-  //           status: selectedValue,
-  //         },
-  //         {
-  //           headers: {
-  //             "Content-Type": "application/json",
-  //             Authorization: `Bearer ${window.localStorage.getItem("token")}`,
-  //           },
-  //         }
-  //       );
-
-  //       // Handle success and error responses
-  //       if (response.status === 200) {
-  //         // Update client status in state
-
-  //         setClient((prevClients) =>
-  //           prevClients.map((client) =>
-  //             client.id === id ? { ...client, status: selectedValue } : client
-  //           )
-  //         );
-
-  //         Swal.fire({
-  //           title: "Success!",
-  //           text: "Client status updated successfully!",
-  //           icon: "success",
-  //         });
-  //       } else {
-  //         throw new Error("Failed to update client status");
-  //       }
-  //     }
-  //   } catch (error) {
-  //     Swal.fire({
-  //       title: "Error!",
-  //       text: "Failed to update client status",
-  //       icon: "error",
-  //     });
-  //   }
-  //   const res = await axios.get(`${url}/client`);
-  //   setClient(res.data.data);
-  // };
+  
   const handilChange = async (event, id) => {
     try {
       const selectedValue = event.target.value;
@@ -508,13 +308,13 @@ export default function ForginDesc({ search }) {
       >
         <Table className="">
           <TableHead className="bg-greenAcc h-[70px]  ">
-            <TableRow className="flex  [&>*:nth-child(1)]:w-[150px]    [&>*:nth-child(2)]:pl-[60px]  [&>*:nth-child(3)]:ml-[-30px] [&>*:nth-child(4)]:ml-[-40px] [&>*:nth-child(1)]:justify-center justify-around items-center ">
+            <TableRow className="flex  lg:[&>*:nth-child(1)]:w-[150px]    lg:[&>*:nth-child(3)]:block  [&>*:nth-child(3)]:hidden lg:[&>*:nth-child(2)]:pl-[60px]  [&>*:nth-child(3)]:ml-[-30px] lg:[&>*:nth-child(4)]:ml-[-40px] [&>*:nth-child(1)]:justify-center  md:[&>*:nth-child(5)]:block [&>*:nth-child(5)]:hidden justify-around items-center ">
               {colum.map((col) => (
                 <TableCell
                   className="border-none h-[70px] items-center text-white flex"
                   key={col.id}
                 >
-                  <span className="ml-[-20px] text-[24px] font-tinos capitalize font-bold ">
+                  <span className="ml-[-20px] lg:text-[24px] font-tinos capitalize font-bold ">
                     {col.name}
                   </span>
                 </TableCell>
@@ -541,26 +341,26 @@ export default function ForginDesc({ search }) {
             className="flex   font-roboto text-[22px]   my-4 bg-white rounded-[14px] shadow-employee lg:h-[70px] items-center px-5"
           >
             <div className="flex  w-[25%] items-center ">
-              <span className="xl:text-[22px] text-[15px] text-yellowAcc ">
+              <span className="xl:text-[22px] md:block hidden text-[15px] text-yellowAcc ">
                 {index + 1} -
               </span>
               <img
-                className="w-[40px] h-[40px] rounded-full"
+                className="w-[40px] h-[40px] md:block hidden rounded-full"
                 src={`https://epassport-api.preview-ym.com/${user?.photo}`}
               />
-              <span className="font-roboto flex  mt-1 xl:text-[15px] text-[15px]  text-greenD mx-3 capitalize">
+              <span className="font-roboto flex  mt-1 xl:text-[15px] text-[8px]  text-greenD mx-3 capitalize">
                 {" "}
                 {user.first_name} {user.second_name} {user.third_name}
               </span>
             </div>
-            <div className="text-yellowAcc text-[18px] w-[150px]  text-center">
+            <div className="text-yellowAcc md:text-[18px] text-[10px] w-[150px]  text-center">
               {user.national_id.substring(0, 14)}
             </div>
-            <div className="xl:text-[20px]  text-[15px]  w-[130px] text-greenD ml-[80px] ">
+            <div className="xl:text-[20px]  text-[15px] md:block hidden  w-[130px] text-greenD ml-[80px] ">
               {user.updated_at.substring(0, 10)}
             </div>
 
-            <div className="xl:text-[20px] w-[150px] text-center text-[15px]  text-greenD ml-[40px]">
+            <div className="xl:text-[20px]   w-[150px] text-center text-[15px]  text-greenD ml-[40px]">
               {/* status */}
               <FormControl fullWidth>
                 <InputLabel
@@ -598,13 +398,14 @@ export default function ForginDesc({ search }) {
               </FormControl>
             </div>
             <div className=" flex gap-x-3 items-center  lg:ms-auto ">
-              <button
+             <div className="md:block hidden">
+             <button
                 onClick={() => handleOpenModal(user)}
                 className="text-[16px] font-normal text-white bg-yellowAcc h-[34px] w-[140px] rounded-[25px] flex items-center justify-center"
               >
                 View details
               </button>
-
+</div>
               <Link
                 to={`/updateClient/${user.id}`}
                 className="mr-3 lg:block hidden "

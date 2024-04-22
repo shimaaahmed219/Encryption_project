@@ -6,6 +6,7 @@ export default function HeaderStepOne({
   errors,
   selectedImage,
   handleImageChange,
+  uploadProgress,
 }) {
   return (
     <div className=" flex md:justify-between md:flex-row flex-col items-center px-10">
@@ -58,12 +59,31 @@ export default function HeaderStepOne({
           4*6 cm
         </h6>
         {/* error messge from presonal image */}
+        <div className="progress mt-[215px] absolute top-[-100px] left-[50px]">
+        {selectedImage["photo"] && (
+  <>
+    <img src={selectedImage["photo"]} alt="Selected" className="w-full z-40 absolute h-full object-cover" />
+    <div className="progress mt-[215px] absolute top-[-250px] left-[10px] z-50">
+      <div
+        className="border-2 border-gray-200   rounded-full w-[50px] h-[50px] animate-spin"
+        style={{ borderTopColor: "black" }}
+      />
+      <div className="absolute text-gray-300 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-gray-800 font-bold text-lg">
+        {uploadProgress}%
+      </div>
+    </div>
+  </>
+)}
+</div>
+
         {errors.photo && (
           <span className="text-red-500 text-[15px] ml-[-5px] absolute mt-[210px]">
             ***{errors.photo?.message}
           </span>
         )}
       </div>
+     
+      
     </div>
   );
 }

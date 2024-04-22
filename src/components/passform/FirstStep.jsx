@@ -22,6 +22,7 @@ export default function FirstStep({
   step,
   handleImageChange,
   selectedImage,
+  uploadProgress,
 }) {
   return (
     <div
@@ -36,6 +37,7 @@ export default function FirstStep({
           register={register}
           handleImageChange={handleImageChange}
           selectedImage={selectedImage}
+          uploadProgress={uploadProgress}
         />
         {/* form body */}
         <div className="w-[95%] m-auto min-h-screen my-10 px-2 py-5 bg-baform rounded-[30px]">

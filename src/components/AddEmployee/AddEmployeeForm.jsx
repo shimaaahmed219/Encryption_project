@@ -7,13 +7,13 @@ import { url } from "../URL";
 import Swal from "sweetalert2";
 import { useState } from "react";
 
-const MAX_FILE_SIZE = 5000000;
-const ACCEPTED_IMAGE_TYPES = [
-  "image/jpeg",
-  "image/jpg",
-  "image/png",
-  "image/webp",
-];
+// const MAX_FILE_SIZE = 5000000;
+// const ACCEPTED_IMAGE_TYPES = [
+//   "image/jpeg",
+//   "image/jpg",
+//   "image/png",
+//   "image/webp",
+// ];
 
 const schema = z.object({
   name: z
@@ -36,24 +36,24 @@ const schema = z.object({
   photo: z
     .any()
    
-    .refine(
-        (files) => {
-            if (!files || !files[0]) {
-                return false; 
-            }
-            return files[0].size <= MAX_FILE_SIZE; 
-        },
-        `Photo is required. Only .jpg, .jpeg, .png and .webp formats are supported."`
-    )
-    .refine(
-        (files) => {
-            if (!files || !files[0]) {
-                return false; 
-            }
-            return ACCEPTED_IMAGE_TYPES.includes(files[0].type); 
-        },
-        "Photo is required. Only .jpg, .jpeg, .png and .webp formats are supported."
-    ),
+    // .refine(
+    //     (files) => {
+    //         if (!files || !files[0]) {
+    //             return false; 
+    //         }
+    //         return files[0].size <= MAX_FILE_SIZE; 
+    //     },
+    //     `Photo is required. Only .jpg, .jpeg, .png and .webp formats are supported."`
+    // )
+    // .refine(
+    //     (files) => {
+    //         if (!files || !files[0]) {
+    //             return false; 
+    //         }
+    //         return ACCEPTED_IMAGE_TYPES.includes(files[0].type); 
+    //     },
+    //     "Photo is required. Only .jpg, .jpeg, .png and .webp formats are supported."
+    // ),
 });
 export default function AddEmployeeForm() {
   const [selectedImage, setSelectedImage] = useState(null);
