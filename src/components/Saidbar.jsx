@@ -11,8 +11,10 @@ import { Link } from "react-router-dom";
 import decimg from "../assets/EncAndEecICONS/Group 2288.svg";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import { IconButton } from "@mui/material";
-import { useGetProfileDataQuery } from "../rtk/api/apiSlice";
 import Logout from "./Logout/Logout";
+import { useState ,useEffect } from "react";
+import axios from "axios";
+import { url } from "./URL";
 
 
 
@@ -33,7 +35,24 @@ export default function Saidebar( {handilClose, showSidebar} ) {
     { id: 12, name: "passport authority", href: "/passEployee", src: Settingsicon },
   ];
 
-  const { data} = useGetProfileDataQuery();
+  
+  const [data, setData] = useState({});
+  //   const [close, setClose] = useState(false);
+  useEffect(() => {
+    axios
+      .get(`${url}/auth/myProfile`, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+          Authorization: `Bearer ${window.localStorage.getItem("token")}`,
+        },
+      })
+      .then((res) => setData(res.data.data));
+  }, []);
+  // console.log(data);
+
+  //   const handilClose = () => {
+  //     setClose(true);
+  //   };
 
   return (
     <div
@@ -55,20 +74,20 @@ export default function Saidebar( {handilClose, showSidebar} ) {
 
       <div className={`flex flex-col  items-center pb-6 bt-3`}>
         <div className="w-[65px] h-[67px] rounded-full userIcon flex justify-center items-center ">
-          {data.data?.photo ? (
+          {data?.photo ? (
             <img
               className="w-[65px] h-[67px] rounded-full"
-              src={`https://epassport-api.preview-ym.com/${data.data?.photo}`}
+              src={`https://epassport-api.preview-ym.com/${data?.photo}`}
             />
           ) : (
             ""
           )}
         </div>
         <h2 className={`font-tinos text-yellowAcc capitalize text-[24px]`}>
-          {data.data?.name}
+          {data?.name}
         </h2>
         <h6 className={`font-roboto font-light text-email  text-[20px]`}>
-          {data.data?.email}
+          {data?.email}
         </h6>
         <div className="flex flex-col w-full mt-5  ">
           {links.map((link) => (
