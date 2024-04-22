@@ -37,6 +37,14 @@ export default function EditEmpForm() {
   // console.log(id);
 
   // add defolt value in inputs
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setSelectedImage(URL.createObjectURL(file)); // إنشاء عنوان URL للصورة المحددة وتخزينه في الحالة
+    }
+  };
   const [employeeData, setemployeeData] = useState({
     name: "",
     email: "",
@@ -115,6 +123,7 @@ export default function EditEmpForm() {
           <div className="w-[115px] h-[115px] relative rounded-full userIconForm flex justify-center items-center ">
             <input
               {...register("photo")}
+              onChange={handleImageChange}
               type="file"
               className=" w-full h-full z-50 m-auto opacity-0 absolute"
             />
@@ -126,6 +135,13 @@ export default function EditEmpForm() {
             ) : (
               ""
             )}
+             {selectedImage && (
+            <img
+              src={selectedImage}
+              alt="Selected"
+              className="w-full absolute h-full object-cover rounded-full"
+            />
+          )}
           </div>
           
           {errors.photo && (

@@ -130,14 +130,215 @@ import {
   
   
       // handil status
-      const handilChange = async (
-        event,
-        id
-      ) => {
-       try {
+      // const handilChange = async (
+      //   event,
+      //   id
+      // ) => {
+      //  try {
+      //   const selectedValue = event.target.value;
+      //   let rejectReasonManual = "";
+  
+      //   // Check if selected status is rejected
+      //   if (selectedValue === "rejected") {
+      //     // Prompt user to enter rejection reason using SweetAlert2
+      //     const { value } = await Swal.fire({
+      //       title: "the reason of refuse",
+      //       input: "textarea",
+      //       inputPlaceholder:
+      //         "The purpose of the planned stay has not been established and its conditions are not m",
+      //       inputAttributes: {
+      //         autocapitalize: "off",
+      //       },
+      //       showCancelButton: true,
+      //       confirmButtonText: "Save",
+      //       cancelButtonText: "Cancel",
+      //       confirmButtonColor: "#324134",
+      //       cancelButtonColor: "#ccc",
+      //       showLoaderOnConfirm: true,
+      //       preConfirm: (reason) => {
+      //         rejectReasonManual = reason;
+      //       },
+      //     });
+  
+      //     // If the user confirms and entered a reason, continue with the update
+      //     if (value && value.trim() !== "") {
+      //       // Perform the update with the entered reason
+      //       const response = await axios.put(
+      //         `${url}/clientOrder/${id}`,
+      //         {
+      //           status: selectedValue,
+      //           reject_reason: rejectReasonManual,
+      //         },
+      //         {
+      //           headers: {
+      //             "Content-Type": "application/json",
+      //             Authorization: `Bearer ${window.localStorage.getItem("token")}`,
+      //           },
+      //         }
+      //       );
+  
+      //       // Handle success and error responses
+      //       if (response.status === 200) {
+      //         // Update client status in state
+      //         setClient((prevClients) => {
+      //           return prevClients.map((client) => {
+      //             if (client.id === id) {
+      //               return {
+      //                 ...client,
+      //                 status: selectedValue,
+      //                 reject_reason: rejectReasonManual,
+      //               };
+      //             } else {
+      //               return client;
+      //             }
+      //           });
+      //         });
+  
+      //         Swal.fire({
+      //           title: "Success!",
+      //           text: "Client status updated successfully!",
+      //           icon: "success",
+      //         });
+      //       } else {
+      //         throw new Error("Failed to update client status");
+      //       }
+      //     }
+      //   } 
+        
+        
+      //   else if (selectedValue === "approved") {
+      //     // Prompt user to select 'received_type' using SweetAlert2
+      //     const { value: receivedType } = await Swal.fire({
+      //       title: "Select Received Type",
+      //       input: "select",
+      //       inputOptions: {
+      //         mofa: "MOFA",
+      //         "recruitment district": "Recruitment District",
+      //       },
+      //       inputPlaceholder: "Select received type",
+      //       showCancelButton: true,
+      //       confirmButtonText: "Save",
+      //       cancelButtonText: "Cancel",
+      //       confirmButtonColor: "#324134",
+      //       cancelButtonColor: "#ccc",
+  
+      //       inputValidator: (value) => {
+      //         if (!value) {
+      //           return "You need to choose a received type";
+      //         }
+      //         // setClient((prev)=>prev.filter((client)=>client.id !== id))
+      //       },
+      //     });
+  
+      //     // If the user selects a received type, continue with the update
+      //     if (receivedType) {
+      //       const response = await axios.put(
+      //         `${url}/clientOrder/${id}`,
+      //         {
+      //           status: selectedValue,
+      //           received_type: receivedType,
+      //         },
+      //         {
+      //           headers: {
+      //             "Content-Type": "application/json",
+      //             Authorization: `Bearer ${window.localStorage.getItem("token")}`,
+      //           },
+      //         }
+      //       );
+  
+      //       // Handle success and error responses
+      //       if (response.status === 200) {
+      //         // Update client status in state
+      //         setClient((prevClients) =>
+      //           prevClients.map((client) =>
+      //             client.id === id
+      //               ? {
+      //                   ...client,
+      //                   status: selectedValue,
+      //                   received_type: receivedType,
+      //                 }
+      //               : client
+      //           )
+      //         );
+              
+      //         Swal.fire({
+      //           title: "Success!",
+      //           text: "Client status updated successfully!",
+      //           icon: "success",
+      //         });
+  
+              // 
+          //     const response = await axios.put(
+          //       `${url}/clientOrder/${id}`,
+          //       {
+          //         status: "processing",
+          //         received_type: receivedType,
+          //       },
+          //       {
+          //         headers: {
+          //           "Content-Type": "application/json",
+          //           Authorization: `Bearer ${window.localStorage.getItem("token")}`,
+          //         },
+          //       }
+          //     );
+          //  console.log(response);
+           
+    //         } else {
+    //           throw new Error("Failed to update client status");
+    //         }
+    //       }
+    //     } else {
+    //       // For other statuses ('pending' or any other), proceed with the update as before
+    //       const response = await axios.put(
+    //         `${url}/clientOrder/${id}`,
+    //         {
+    //           status: selectedValue,
+    //         },
+    //         {
+    //           headers: {
+    //             "Content-Type": "application/json",
+    //             Authorization: `Bearer ${window.localStorage.getItem("token")}`,
+    //           },
+    //         }
+    //       );
+  
+    //       // Handle success and error responses
+    //       if (response.status === 200) {
+    //         // Update client status in state
+  
+    //         setClient((prevClients) =>
+    //           prevClients.map((client) =>
+    //             client.id === id ? { ...client, status: selectedValue } : client
+    //           )
+    //         );
+  
+    //         Swal.fire({
+    //           title: "Success!",
+    //           text: "Client status updated successfully!",
+    //           icon: "success",
+    //         });
+    //       } else {
+    //         throw new Error("Failed to update client status");
+    //       }
+    //     }
+    //   } catch (error) {
+    //     Swal.fire({
+    //       title: "Error!",
+    //       text: "Failed to update client status",
+    //       icon: "error",
+    //     });
+    //   }
+    //   const res = await axios.get(`${url}/client`);
+    //   setClient(res.data.data);
+    // };
+    const handilChange = async (
+      event,
+      id
+    ) => {
+      try {
         const selectedValue = event.target.value;
         let rejectReasonManual = "";
-  
+    
         // Check if selected status is rejected
         if (selectedValue === "rejected") {
           // Prompt user to enter rejection reason using SweetAlert2
@@ -159,7 +360,7 @@ import {
               rejectReasonManual = reason;
             },
           });
-  
+    
           // If the user confirms and entered a reason, continue with the update
           if (value && value.trim() !== "") {
             // Perform the update with the entered reason
@@ -176,7 +377,7 @@ import {
                 },
               }
             );
-  
+    
             // Handle success and error responses
             if (response.status === 200) {
               // Update client status in state
@@ -193,7 +394,7 @@ import {
                   }
                 });
               });
-  
+    
               Swal.fire({
                 title: "Success!",
                 text: "Client status updated successfully!",
@@ -203,92 +404,10 @@ import {
               throw new Error("Failed to update client status");
             }
           }
+        
+       
         } 
-        
-        
-        else if (selectedValue === "approved") {
-          // Prompt user to select 'received_type' using SweetAlert2
-          const { value: receivedType } = await Swal.fire({
-            title: "Select Received Type",
-            input: "select",
-            inputOptions: {
-              mofa: "MOFA",
-              "recruitment district": "Recruitment District",
-            },
-            inputPlaceholder: "Select received type",
-            showCancelButton: true,
-            confirmButtonText: "Save",
-            cancelButtonText: "Cancel",
-            confirmButtonColor: "#324134",
-            cancelButtonColor: "#ccc",
-  
-            inputValidator: (value) => {
-              if (!value) {
-                return "You need to choose a received type";
-              }
-              // setClient((prev)=>prev.filter((client)=>client.id !== id))
-            },
-          });
-  
-          // If the user selects a received type, continue with the update
-          if (receivedType) {
-            const response = await axios.put(
-              `${url}/clientOrder/${id}`,
-              {
-                status: selectedValue,
-                received_type: receivedType,
-              },
-              {
-                headers: {
-                  "Content-Type": "application/json",
-                  Authorization: `Bearer ${window.localStorage.getItem("token")}`,
-                },
-              }
-            );
-  
-            // Handle success and error responses
-            if (response.status === 200) {
-              // Update client status in state
-              setClient((prevClients) =>
-                prevClients.map((client) =>
-                  client.id === id
-                    ? {
-                        ...client,
-                        status: selectedValue,
-                        received_type: receivedType,
-                      }
-                    : client
-                )
-              );
-              
-              Swal.fire({
-                title: "Success!",
-                text: "Client status updated successfully!",
-                icon: "success",
-              });
-  
-              // 
-          //     const response = await axios.put(
-          //       `${url}/clientOrder/${id}`,
-          //       {
-          //         status: "processing",
-          //         received_type: receivedType,
-          //       },
-          //       {
-          //         headers: {
-          //           "Content-Type": "application/json",
-          //           Authorization: `Bearer ${window.localStorage.getItem("token")}`,
-          //         },
-          //       }
-          //     );
-          //  console.log(response);
-           
-            } else {
-              throw new Error("Failed to update client status");
-            }
-          }
-        } else {
-          // For other statuses ('pending' or any other), proceed with the update as before
+        else {
           const response = await axios.put(
             `${url}/clientOrder/${id}`,
             {
@@ -301,17 +420,16 @@ import {
               },
             }
           );
-  
+    
           // Handle success and error responses
           if (response.status === 200) {
             // Update client status in state
-  
             setClient((prevClients) =>
               prevClients.map((client) =>
                 client.id === id ? { ...client, status: selectedValue } : client
               )
             );
-  
+    
             Swal.fire({
               title: "Success!",
               text: "Client status updated successfully!",
@@ -328,8 +446,9 @@ import {
           icon: "error",
         });
       }
-      const res = await axios.get(`${url}/client`);
-      setClient(res.data.data);
+     
+      const res = await axios.get(`${url}/client`)
+      setClient(res.data.data)
     };
     return (
       <div className="w-5/6  m-auto my-10">
