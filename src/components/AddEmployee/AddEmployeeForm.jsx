@@ -143,10 +143,12 @@ export default function AddEmployeeForm() {
           )}
           {/* {title} */}
         </div>
-
-        <div className=" mt-[-35px] ml-[80px] md:block hidden z-50  w-[27px] h-[27px] bg-yellowAcc rounded-full flex justify-center items-center">
+<div className=" md:block hidden">
+  
+<div className=" mt-[-35px] ml-[80px] z-50  w-[27px] h-[27px] bg-yellowAcc rounded-full flex justify-center items-center">
           <img src={icon} className="text-yellowAcc  " />
         </div>
+</div>
         {errors.photo && (
           <div className=" text-red-500 m-auto px-10 mt-[10px] mb-[5px]">{`**${errors.photo.message}`}</div>
         )}
