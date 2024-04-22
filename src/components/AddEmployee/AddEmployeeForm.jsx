@@ -183,7 +183,7 @@ export default function AddEmployeeForm() {
           <div className="m-auto w-[100%] flex flex-col items-center">
             {/* number*/}
             <label className=" text-[22px] px-[9%] py-2 me-auto font-roboto font-semibold capitalize ml-1 md:flex block">
-              number
+              phone
             </label>
             <input
               {...register("phone")}
@@ -237,7 +237,7 @@ export default function AddEmployeeForm() {
             <input
               {...register("password")}
               placeholder="password "
-              type="text"
+              type="password"
               className="xl:w-[365px] m-auto placeholder:text-[20px]   text-[20px] placeholder:text-greenAcc  text-greenAcc  placeholder:font-roboto
                                 font-roboto  focus:outline-none md:flex block lg:w-[280px]  w-[90%] pl-2 h-[50px] border-2 rounded-[10px] bg-transparent border-yellowAcc"
             />

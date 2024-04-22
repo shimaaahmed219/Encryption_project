@@ -19,7 +19,7 @@ export default function RecruitmentArea() {
      
       <div className="w-5/6 m-auto">
         <h1 className="font-tinos my-[50px] leading-9 font-bold text-[32px] text-greenAcc">
-          Recruitment area
+        recruitment district
         </h1>
 
         <div className="w-[431px] h-[51px] m-auto bg-searchbg rounded-[12px] justify-center items-center flex ">

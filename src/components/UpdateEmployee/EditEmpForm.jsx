@@ -123,7 +123,7 @@ export default function EditEmpForm() {
           <div className="w-[115px] h-[115px] relative rounded-full userIconForm flex justify-center items-center ">
             <input
               {...register("photo")}
-              onChange={handleImageChange}
+                   onChange={handleImageChange}
               type="file"
               className=" w-full h-full z-50 m-auto opacity-0 absolute"
             />
@@ -186,7 +186,7 @@ export default function EditEmpForm() {
           {/* number */}
           <div>
             <label className="capitalize  ml-1  text-greenAcc font-semibold block text-[22px]">
-              number
+              phone
             </label>
             <input
               defaultValue={employeeData.phone}
@@ -222,7 +222,7 @@ export default function EditEmpForm() {
           {/* job */}
           <div className="">
             <label className="capitalize  ml-1  text-greenAcc font-semibold block md:text-[22px]">
-              The jop
+              The job
             </label>
             <input
               defaultValue={employeeData.position}
