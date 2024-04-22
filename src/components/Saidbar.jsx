@@ -56,7 +56,7 @@ export default function Saidebar( {handilClose, showSidebar} ) {
 
   return (
     <div
-      className={`${!data && "hidden"} transition-opacity 
+      className={`${!data && "hidden"} z-50 transition-opacity 
       ${!showSidebar ? "hide" : "show"} 
       ${!showSidebar && "hidden"}
 

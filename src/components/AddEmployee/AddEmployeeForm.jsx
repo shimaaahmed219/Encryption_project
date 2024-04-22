@@ -34,7 +34,12 @@ const schema = z.object({
     .string()
     .refine((value) => value.trim() !== "", { message: "This field is required" }),
   photo: z
-    .any()
+  .custom((value) => {
+    if (!value || !value[0]) {
+      throw new Error("Photo is required");
+    }
+    return true;
+  }),
    
     // .refine(
     //     (files) => {
@@ -139,7 +144,7 @@ export default function AddEmployeeForm() {
           {/* {title} */}
         </div>
 
-        <div className=" mt-[-35px] ml-[80px] z-50  w-[27px] h-[27px] bg-yellowAcc rounded-full flex justify-center items-center">
+        <div className=" mt-[-35px] ml-[80px] md:block hidden z-50  w-[27px] h-[27px] bg-yellowAcc rounded-full flex justify-center items-center">
           <img src={icon} className="text-yellowAcc  " />
         </div>
         {errors.photo && (
