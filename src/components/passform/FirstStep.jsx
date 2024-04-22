@@ -18,6 +18,7 @@ export default function FirstStep({
   errors,
   nextStep,
   goToStep,
+  // areFieldsFilled,
   step,
   handleImageChange,
   selectedImage,
@@ -125,10 +126,11 @@ export default function FirstStep({
                       required: {
                         value: true,
                         message: "This field is required",
+                        
                       },
                     })}
                     placeholder="00-00-2000"
-                    type="text"
+                    type="date"
                     className="border-[1px] bg-transparent focus:outline-none md:mt-0 mt-5 mb-4 text-[20px] font-roboto px-5 border-yellowAcc xl:ml-[72px] lg:w-[350px] md:w-[90%] w-[97%] h-[50px] rounded-input"
                   />
                   {/* data of birth error */}
@@ -316,9 +318,12 @@ export default function FirstStep({
         </div>
         <div className="w-full flex justify-center my-10">
           <button
-            className="w-[255px] mb-10  h-[65px] bg-greenAcc text-[32px] text-white font-tinos rounded-input"
+            className={`w-[255px] mb-10  h-[65px] bg-greenAcc text-[32px] text-white font-tinos rounded-input `}
             type="button"
             onClick={nextStep}
+           
+  
+  
           >
             Next
           </button>

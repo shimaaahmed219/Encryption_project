@@ -10,6 +10,7 @@ import {
 } from "@mui/material";
 
 import HeaderFormPage from "../HeaderFormPage";
+
 export default function StepTwo({
   nextStep,
   register,
@@ -79,10 +80,10 @@ export default function StepTwo({
             className=" focus:outline-none font-roboto text-[20px]px-5 text-lg text-hreenAcc rounded-input bg-transparent w-full h-[50px] border-[1px] border-yellowAcc"
           />
           <label className="text-greenAcc font-roboto mb-3 mt-7 text-xl font-bold block">
-            Nationality 
+            Nationality
           </label>
           <input
-          value="Eegyptian"
+            value="Eegyptian"
             type="text"
             className=" focus:outline-none  text-[20px] px-5 rounded-input font-roboto text-lg text-hreenAcc w-full bg-transparent h-[50px] border-[1px] border-yellowAcc"
           />
@@ -97,7 +98,7 @@ export default function StepTwo({
           Back
         </button>
         <button
-          className="md:w-[255px] mb-10  h-[65px] md:bg-greenAcc text-[32px] md:text-white text-greenAcc font-tinos rounded-input"
+          className={`md:w-[255px] mb-10  h-[65px] md:bg-greenAcc text-[32px] md:text-white text-greenAcc `}
           type="button"
           onClick={nextStep}
         >

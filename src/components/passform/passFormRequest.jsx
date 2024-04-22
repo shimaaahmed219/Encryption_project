@@ -45,6 +45,9 @@ export default function PassFormRequest() {
     setStep(stepNumber);
   };
 
+  // Determine if all fields are filled
+  
+
   // fatching data
   const onsubmit = (data) => {
     console.log(data);
@@ -99,6 +102,7 @@ export default function PassFormRequest() {
           nextStep={nextStep}
           handleImageChange={handleImageChange}
           selectedImage={selectedImage}
+         
         />
 
         {/* steep 2 */}
@@ -109,6 +113,7 @@ export default function PassFormRequest() {
           errors={errors}
           nextStep={nextStep}
           prevStep={prevStep}
+         
         />
 
         {/* steep 3 */}
@@ -121,6 +126,7 @@ export default function PassFormRequest() {
           prevStep={prevStep}
           handleImageChange={handleImageChange}
           selectedImage={selectedImage}
+         
         />
         {/* steep  4 */}
         <StepFour
@@ -130,6 +136,7 @@ export default function PassFormRequest() {
           errors={errors}
           nextStep={nextStep}
           prevStep={prevStep}
+         
         />
 
         {/* <pre>{JSON.stringify(watch(), null, 2)}</pre> */}
