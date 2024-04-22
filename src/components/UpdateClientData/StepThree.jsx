@@ -64,37 +64,39 @@ export default function StepThree({register, errors,prevStep,image,nextStep ,ste
               {/* inputs */}
 
               <div className="py-10">
-                <div className="w-6/5 m-auto flex px-5 items-center">
-                  <label className="text-greenAcc mx-3 font-roboto text-[22px] font-medium ">
-                    National ID Card
-                  </label>
-                  <input
-                    {...register("national_id", {
-                      required: {
-                        value: true,
-                        message: "This field is required",
-                      },
-                    })}
-                    className="rounded-input font-roboto text-lg px-5 tracking-wider bg-transparent focus:outline-none border-[1px] border-yellowAcc w-[83%] h-[50px]"
-                  />
-                </div>
-                {errors.national_id && (
-                  <div className="text-red-500 text-[20px] ml-[200px]">
-                    ***{errors.national_id.message}
-                  </div>
-                )}
+              <div className=" m-auto md:flex md:px-5 md:ml-0  justify-center items-center">
+          <label className="text-greenAcc  mx-3 md:ml-0 mr-9 ml-6 font-roboto text-[22px] font-medium ">
+            National ID Card
+          </label>
+          <input
+            {...register("national_id", {
+              required: {
+                value: true,
+                message: "This field is required",
+              },
+            })}
+            className="rounded-input px-5 font-roboto text-[20px] bg-transparent md:ml-0 ml-6 focus:outline-none border-[1px] border-yellowAcc md:w-[70%] w-[83%] h-[50px]"
+          />
+        </div>
+        {errors.national_id && (
+          <div className="text-red-500 text-[15px] my-5 md:ml-[300px]">
+            ***{errors.national_id.message}
+          </div>
+        )}
 
-                <div className="w-5/6 px-5 mx-5 flex items-center my-10">
-                  <label className="text-greenAcc   font-roboto text-[22px] font-medium capitalize ">
-                    university Id
-                  </label>
-                  <input
-                    {...register("university_id")}
-                    type="text"
-                    className="rounded-input text-lg px-5 tracking-wider font-roboto   bg-transparent m-auto focus:outline-none border-[1px] border-yellowAcc w-[65%] h-[50px]"
-                  />
-                </div>
-              </div>
+               
+        <div className="w-5/6 md:px-5 md:mx-5 md:flex items-center mt-[45px]">
+          <label className="text-greenAcc md:ml-11 ml-6 md:mx-10 font-roboto text-[22px] font-medium capitalize ">
+            university Id
+          </label>
+          <input
+            {...register("university_id")}
+            type="text"
+            className="rounded-input px-5 font-roboto text-[20px]  bg-transparent  md:ml-[100px] ml-6 m-auto focus:outline-none w-full border-[1px] border-yellowAcc md:w-[65%] h-[50px]"
+          />
+        </div>
+      </div>
+
 
               {/* fils */}
               <div className="md:flex justify-center gap-8">
@@ -188,21 +190,21 @@ export default function StepThree({register, errors,prevStep,image,nextStep ,ste
             
             </div>
             <div className="my-10 m-auto mt-[50px] flex w-[80%] justify-around">
-              <button
-                className="w-[255px] mb-10  h-[65px] bg-greenAcc text-[32px] text-white font-tinos rounded-input"
-                type="button"
-                onClick={prevStep}
-              >
-                back
-              </button>
-              <button
-                className="w-[255px] mb-10  h-[65px] bg-greenAcc text-[32px] text-white font-tinos rounded-input"
-                type="button"
-                onClick={nextStep}
-              >
-                Next
-              </button>
-            </div>
+      <button
+        className="w-[255px] mb-10  h-[65px] md:bg-greenAcc text-[32px] text-greenAcc md:text-white font-tinos rounded-input"
+        type="button"
+        onClick={prevStep}
+      >
+        back
+      </button>
+      <button
+        className="w-[255px] mb-10  h-[65px] md:bg-greenAcc text-[32px] text-greenAcc md:text-white font-tinos rounded-input"
+        type="button"
+        onClick={nextStep}
+      >
+        Next
+      </button>
+    </div>
             
         <ImageModal
           isOpen={isModalOpen}

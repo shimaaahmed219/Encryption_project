@@ -42,7 +42,45 @@ export default function FirstStep({
           <hr className="w-[100%] h-[1px] my-10 bg-hr" />
           <div className=" md:px-8">
             <CheckboxInput register={register} errors={errors} />
+{/* 
+            <div className="w-[158px] m-auto mb-20 h-[207px] md:hidden block relative mt-10 bg-fileUploud  md:ml[0px]        ">
+        <input
+          {...register("photo", {
+            required: {
+              value: true,
+              message: "This field is required",
+            },
+          })}
+          onChange={(e) => handleImageChange(e, "photo")}
+          type="file"
+          className="opacity-0 w-[158px] absolute  h-[100%] z-50"
+        />
+        {selectedImage["photo"] && (
+          <img
+            src={selectedImage["photo"]}
+            alt="Selected"
+            className="w-full  z-40 absolute h-full object-cover "
+          />
+        )}
+        <img src={uploadImg} className="absolute mt-[50px] ml-[55px]" />
 
+        <h6
+          className={`font-tions font-bold  text-thin text-greenAcc text-[18px] w-full text-center absolute mt-[100px] `}
+        >
+          Upload a photo
+        </h6>
+        <h6
+          className={`font-tions font-bold text-thin text-greenAcc uppercase text-[24px] w-full text-center absolute mt-[120px] `}
+        >
+          4*6 cm
+        </h6>
+        {/* error messge from presonal image */}
+        {/* {errors.photo && ( */}
+        {/* //   <span className="text-red-500 text-[15px] ml-[-5px] absolute mt-[210px]">
+        //     ***{errors.photo?.message}
+        //   </span>
+        // )} */}
+      {/* </div> */} 
             {/* passport department input */}
             <div className="md:px-10 px-3 ">
               {/* passport department */}
@@ -161,7 +199,7 @@ export default function FirstStep({
                         },
                       })}
                       type="text"
-                      className=" rounded-input bg-transparent  mb-3 w-full  h-[50px] border-[1px] focus:outline-none  border-yellowAcc px-[20px] py-[6px]"
+                      className=" rounded-input font-roboto text-[20px]  bg-transparent  mb-3 w-full  h-[50px] border-[1px] focus:outline-none  border-yellowAcc px-[20px] py-[6px]"
                     />
                   </div>
                 </div>
@@ -185,7 +223,7 @@ export default function FirstStep({
                     },
                   })}
                   type="text"
-                  className=" rounded-input bg-transparent focus:outline-none  md:w-[93%] w-[97%] h-[50px] border-[1px] border-yellowAcc  md:pl-[20px] py-[6px]"
+                  className=" rounded-input font-roboto text-[20px] px-[20px] bg-transparent focus:outline-none  md:w-[93%] w-[97%] h-[50px] border-[1px] border-yellowAcc  md:pl-[20px] py-[6px]"
                 />
                 {errors.religion && (
                   <div className=" text-red-500 m-auto text-[15px] mt-[10px] mb-[5px]">{`***${errors.religion.message}`}</div>
@@ -205,7 +243,7 @@ export default function FirstStep({
                         message: "This field is required",
                       },
                     })}
-                    className="w-full h-[50px] mt-6 mb-10  bg-transparent focus:outline-none  px-[20px] py-[6px] border-[1px] border-yellowAcc rounded-input "
+                    className="w-full h-[50px] font-roboto text-[20px] px-[20px] mt-6 mb-10  bg-transparent focus:outline-none   py-[6px] border-[1px] border-yellowAcc rounded-input "
                   />
                   {errors.academic_qualification && (
                     <span className=" text-red-500 text-[15px] m-auto  mt-[10px] mb-[5px]">
@@ -224,7 +262,7 @@ export default function FirstStep({
                         message: "This field is required",
                       },
                     })}
-                    className="w-full h-[50px] mt-5 px-[20px] bg-transparent py-[6px] focus:outline-none  border-[1px] border-yellowAcc rounded-input "
+                    className="w-full font-roboto text-[20px] px-[20px] h-[50px] mt-5  bg-transparent py-[6px] focus:outline-none  border-[1px] border-yellowAcc rounded-input "
                   />
                   {errors.job && (
                     <span className=" text-red-500 text-[15px] m-auto  mt-[10px] mb-[5px]">
@@ -246,7 +284,7 @@ export default function FirstStep({
                         },
                       })}
                       type="text"
-                      className=" w-full h-[50px] mt-4 px-[20px] bg-transparent py-[6px] focus:outline-none  border-[1px] border-yellowAcc rounded-input"
+                      className=" w-full h-[50px] font-roboto text-[20px] px-[20px] mt-4  bg-transparent py-[6px] focus:outline-none  border-[1px] border-yellowAcc rounded-input"
                     />
                     {errors.phone && (
                       <div className=" text-red-500 m-auto text-[15px] mt-[10px] mb-[5px]">{`**${errors.phone.message}`}</div>
@@ -265,7 +303,7 @@ export default function FirstStep({
                         },
                       })}
                       type="text"
-                      className=" w-full h-[50px] px-[20px] bg-transparent mt-4 py-[6px] focus:outline-none  border-[1px] border-yellowAcc rounded-input"
+                      className=" font-roboto text-[20px] px-[20px] w-full h-[50px]  bg-transparent mt-4 py-[6px] focus:outline-none  border-[1px] border-yellowAcc rounded-input"
                     />
                     {errors.home_phone && (
                       <div className=" text-red-500 m-auto text-[15px]  mt-[10px] mb-[5px]">{`**${errors.home_phone.message}`}</div>

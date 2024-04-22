@@ -20,7 +20,7 @@ export default function StepTwo({register,client, errors,prevStep,nextStep ,step
               className="text-greenAcc text-[20px] font-roboto font-bold "
             ></FormLabel>
             <RadioGroup
-            defaultValue={client.marital_status}
+            value={client.marital_status}
               aria-labelledby="demo-radio-buttons-group-label"
               name="radio-buttons-group"
               className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 w-5/6  m-auto  justify-around lg:gap-x-[13rem] font-medium  font-roboto text-xl pt-7 pb-5  "

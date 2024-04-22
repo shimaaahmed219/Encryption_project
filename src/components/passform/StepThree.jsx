@@ -34,7 +34,7 @@ export default function StepThree({
                 message: "This field is required",
               },
             })}
-            className="rounded-input bg-transparent md:ml-0 ml-6 focus:outline-none border-[1px] border-yellowAcc md:w-[70%] w-[83%] h-[50px]"
+            className="rounded-input font-roboto text-[20px] px-[20px] bg-transparent md:ml-0 ml-6 focus:outline-none border-[1px] border-yellowAcc md:w-[70%] w-[83%] h-[50px]"
           />
         </div>
         {errors.national_id && (
@@ -50,7 +50,7 @@ export default function StepThree({
           <input
             {...register("university_id")}
             type="text"
-            className="rounded-input  bg-transparent  md:ml-[100px] ml-6 m-auto focus:outline-none w-full border-[1px] border-yellowAcc md:w-[65%] h-[50px]"
+            className="rounded-input font-roboto text-[20px] px-[20px] bg-transparent  md:ml-[100px] ml-6 m-auto focus:outline-none w-full border-[1px] border-yellowAcc md:w-[65%] h-[50px]"
           />
         </div>
       </div>

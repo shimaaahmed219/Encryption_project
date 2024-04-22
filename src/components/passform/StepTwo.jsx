@@ -64,7 +64,7 @@ export default function StepTwo({
             </RadioGroup>
           </FormControl>
           {errors.marital_status && (
-            <div className=" text-red-500 mb-5 mt-[-14px] text-[15px] m-auto ml-[100px] ">{`**${errors.marital_status.message}`}</div>
+            <div className=" text-red-500 mb-5 mt-[-14px] text-[15px] m-auto md:ml-[100px] ">{`**${errors.marital_status.message}`}</div>
           )}
         </Box>
 
@@ -76,7 +76,7 @@ export default function StepTwo({
           <input
             {...register("husband_name")}
             type="text"
-            className=" focus:outline-none px-5 text-lg text-hreenAcc rounded-input bg-transparent w-full h-[50px] border-[1px] border-yellowAcc"
+            className=" focus:outline-none font-roboto text-[20px]px-5 text-lg text-hreenAcc rounded-input bg-transparent w-full h-[50px] border-[1px] border-yellowAcc"
           />
           <label className="text-greenAcc font-roboto mb-3 mt-7 text-xl font-bold block">
             Nationality 
@@ -84,7 +84,7 @@ export default function StepTwo({
           <input
           value="Eegyptian"
             type="text"
-            className=" focus:outline-none px-5 rounded-input font-roboto text-lg text-hreenAcc w-full bg-transparent h-[50px] border-[1px] border-yellowAcc"
+            className=" focus:outline-none  text-[20px] px-5 rounded-input font-roboto text-lg text-hreenAcc w-full bg-transparent h-[50px] border-[1px] border-yellowAcc"
           />
         </div>
       </div>

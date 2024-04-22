@@ -7,7 +7,7 @@ import StepTwo from "./StepTwo";
 import StepThree from "./StepThree";
 import StepFour from "./StepFour";
 import FirstStep from "./FirstStep";
-
+import Swal from 'sweetalert2';
 export default function PassFormRequest() {
   const [selectedImage, setSelectedImages] = useState({});
   const [step, setStep] = useState(1);
@@ -66,8 +66,25 @@ export default function PassFormRequest() {
           Authorization: `Bearer ${window.localStorage.getItem("token")}`,
         },
       })
-      .then((res) => console.log(res))
-      .catch((error) => console.log(error));
+      .then((res) => {
+        console.log(res)
+        console.log(res);
+        // Show SweetAlert upon successful submission
+        Swal.fire({
+          icon: 'success',
+          title: 'Success',
+          text: 'The citizen has been added successfully!',
+        });
+      })
+      .catch((error) => {
+        console.log(error)
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: 'An error occurred while adding the citizen. Please try again later.',
+        });
+      
+      });
   };
 
   return (
