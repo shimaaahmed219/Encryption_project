@@ -186,9 +186,7 @@ export default function StepThree({register, errors,prevStep,image,nextStep ,ste
               {/* date */}
 
               <div className="w-5/6 m-auto mt-10">
-                <label className="block font-ropoto text-[22px] font-medium text-greenAcc">
-                  Issuer
-                </label>
+              
 
                 <div className="flex">
                   <input

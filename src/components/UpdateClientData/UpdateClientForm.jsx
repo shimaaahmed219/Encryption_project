@@ -242,7 +242,7 @@ export default function UpdateClientForm() {
       
         {/* steep  4 */}
       
-          <div className={`${step === 3 ? "block" : "hidden"}`}>
+          <div className={`${step === 4 ? "block" : "hidden"}`}>
             <StepFour
               register={register}
               errors={errors}

@@ -69,25 +69,7 @@ export default function StepFour({register, errors,prevStep ,step,goToStep}) {
               </p>
             </div>
 
-            <div className="w-5/6 my-5 px-10 py-10 m-auto flex">
-              <div className="flex items-center py-6">
-                <label className="text-[22px] my-2 ml-10 mr-5 text-greenAcc font-roboto font-medium">
-                  Done in
-                </label>
-                <input
-                  type="text"
-                  className="date-input focus:outline-none bg-transparent "
-                  value=" .... /   ..../....   22__"
-                />
-              </div>
-
-              <div className="w-[65%]">
-                <label className="block font-roboto my-5 text-[20px] font-medium mt-[-20px]">
-                  Signature of the student (or legal representative)
-                </label>
-                <input className="w-full border-[1px] border-yellowAcc h-[50px] bg-transparent py-[6px] px-[20px] rounded-input" />
-              </div>
-            </div>
+           
             <div className="my-10 m-auto mt-[50px] flex w-[80%] justify-around">
               <button
                 className="w-[255px] mb-10  h-[65px] bg-greenAcc text-[32px] text-white font-tinos rounded-input"
