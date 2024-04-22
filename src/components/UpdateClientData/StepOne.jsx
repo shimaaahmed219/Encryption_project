@@ -333,7 +333,7 @@ export default function StepOne({
                   },
                 })}
                 placeholder="00-00-2000"
-                type="text"
+                type="date"
                 className="border-[1px]  bg-transparent focus:outline-none md:mt-0 mt-5 mb-4 text-[20px] font-roboto px-5 border-yellowAcc xl:ml-[72px] lg:w-[350px] md:w-[90%] w-[97%] h-[50px] rounded-input"
               />
               {/* data of birth error */}
