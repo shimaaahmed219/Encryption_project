@@ -58,16 +58,7 @@ export default function StepFour({register, errors,prevStep ,step,goToStep}) {
               {/*  */}
               <div className="grid xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 px-10 pt-10 mb-5"></div>
             </div>
-            <Hr />
-            {/* paragraph */}
-            <div className="w-5/6 mt-5 px-10 py-10 m-auto">
-              <p className="font-tinos text-[26px] font-bold">
-                I, the undersigned, declare that all the data shown above, as
-                well as the documents provided , are correct and conform to the
-                situation, and I have not obtained a valid or renewable passport
-                at the present time.
-              </p>
-            </div>
+          
 
            
             <div className="my-10 m-auto mt-[50px] flex w-[80%] justify-around">

@@ -185,25 +185,7 @@ export default function StepThree({register, errors,prevStep,image,nextStep ,ste
            
               {/* date */}
 
-              <div className="w-5/6 m-auto mt-10">
-              
-
-                <div className="flex">
-                  <input
-                    type="text "
-                    className="border-[1px] border-yellowAcc rounded-input w-[276px] h-[50px] bx-[20px] by-[6px] bg-transparent"
-                  />
-
-                  <label className="text-[22px] my-2 ml-10 mr-5 text-greenAcc font-roboto font-medium">
-                    Release Date
-                  </label>
-                  <input
-                    type="text"
-                    className="date-input focus:outline-none bg-transparent "
-                    value=" .... /   ..../....   22__"
-                  />
-                </div>
-              </div>
+            
             </div>
             <div className="my-10 m-auto mt-[50px] flex w-[80%] justify-around">
               <button
