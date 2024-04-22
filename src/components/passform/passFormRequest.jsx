@@ -2,10 +2,11 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import { url } from "../URL";
-import StepOne from "./StepOne";
+// import StepOne from "./StepOne";
 import StepTwo from "./StepTwo";
 import StepThree from "./StepThree";
 import StepFour from "./StepFour";
+import FirstStep from "./FirstStep";
 
 export default function PassFormRequest() {
   const [selectedImage, setSelectedImages] = useState({});
@@ -73,7 +74,7 @@ export default function PassFormRequest() {
     <div>
       <form onSubmit={handleSubmit(onsubmit)}>
         {/* page1 */}
-        <StepOne
+        <FirstStep
           register={register}
           step={step}
           goToStep={goToStep}

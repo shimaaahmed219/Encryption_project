@@ -431,7 +431,7 @@ import {
                   View details
                 </button>
   
-                <Link to={`/updateClient/{user.id}`} className="mr-3 lg:block hidden ">
+                <Link to={`/updateClient/${user.id}`} className="mr-3 lg:block hidden ">
                   <img src={icon1} />
                 </Link>
                 <button

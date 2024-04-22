@@ -190,7 +190,7 @@ export default function UpdateClientForm() {
           <div
             className={` ${
               step === 1 ? "block" : "hidden"
-            } w-[88%] m-auto scroll-px-20`}
+            } w-[88%] m-auto scroll-px-20 `}
           >
             <StepOne
               client={client}

@@ -9,11 +9,9 @@ import img from "../assets/saidbaricon/graph-icon 1.svg";
 import Edit from "../assets/saidbaricon/shape.svg";
 import "./module.css";
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
-import axios from "axios";
-import { url } from "./URL";
 import decimg from "../assets/EncAndEecICONS/Group 2288.svg";
 import Logout from "./Logout/Logout";
+import { useGetProfileDataQuery } from "../rtk/api/apiSlice";
 
 
 
@@ -26,33 +24,16 @@ export default function FexidSidebar() {
     { id: 7, name: "Encryption file", href: "/encryption", src: Encrypted },
     { id: 8, name: "Decrypt file", href: "/Decrypt", src: decimg },
     { id: 9, name: "Employees", href: "/employee", src: employee },
-    { id: 10, name: "forginEmployee", href: "/ForgenEmployee", src: users },
-    { id: 11, name: "recruitment area", href: "/recruitmentArea", src: Settingsicon },
-    { id: 12, name: "passport Employee", href: "/passEployee", src: Settingsicon },
+    { id: 10, name: "mofa", href: "/ForgenEmployee", src: users },
+    { id: 11, name: "recruitment district", href: "/recruitmentArea", src: Settingsicon },
+    { id: 12, name: "passport authority", href: "/passEployee", src: Settingsicon },
   ];
-
-  const [data, setData] = useState({});
-  //   const [close, setClose] = useState(false);
-  useEffect(() => {
-    axios
-      .get(`${url}/auth/myProfile`, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-          Authorization: `Bearer ${window.localStorage.getItem("token")}`,
-        },
-      })
-      .then((res) => setData(res.data.data));
-  }, []);
-  // console.log(data);
-
-  //   const handilClose = () => {
-  //     setClose(true);
-  //   };
-
+  const {data} = useGetProfileDataQuery();
+  console.log(data.data);
   return (
     <>
-      <div
-        className={` w-[311px] h-screen pt-5 pb-10 py-10 bg-greenAcc overflow-y-auto   fixed top-0 left-0 z-50 `}
+      <div 
+        className={`w-[311px] h-screen pt-5 pb-10 py-10 bg-greenAcc overflow-y-auto   fixed top-0 left-0 z-50 `}
       >
         <div
           className={` ${
@@ -60,20 +41,20 @@ export default function FexidSidebar() {
           } flex flex-col  items-center pb-6 bt-3`}
         >
           <div className="w-[65px] h-[67px] rounded-full userIcon flex justify-center items-center ">
-            {data?.photo ? (
+            {data.data?.photo ? (
               <img
                 className="w-[65px] h-[67px] rounded-full"
-                src={`https://epassport-api.preview-ym.com/${data?.photo}`}
+                src={`https://epassport-api.preview-ym.com/${data.data.photo}`}
               />
             ) : (
               ""
             )}
           </div>
           <h2 className={`font-tinos text-yellowAcc capitalize text-[24px]`}>
-            {data?.name}
+            {data.data.name}
           </h2>
           <h6 className={`font-roboto font-light text-email  text-[20px]`}>
-            {data?.email}
+            {data.data?.email}
           </h6>
           <div   className="flex flex-col w-full mt-5  ">
             {links.map((link) => (

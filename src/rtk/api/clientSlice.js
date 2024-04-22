@@ -1,20 +1,24 @@
+import { url } from "../../components/URL";
 
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { url } from '../../components/URL';
 
-export const passFormApi = createApi({
-  reducerPath: 'passFormApi',
-  baseQuery: fetchBaseQuery({ baseUrl: url }), // تحديد عنوان قاعدة الويب API الخاص بك
+const api = createApi({
+  reducerPath: 'clientApi',
+  baseQuery: fetchBaseQuery({ baseUrl: {url} }), 
   endpoints: (builder) => ({
-    submitForm: builder.mutation({
-      query: (formData) => ({
-        url: `/client`,
+    submitClient: builder.mutation({
+      query: (data) => ({
+        url: '/client',
         method: 'POST',
-        body: formData,
-       
+        body: data,
+        headers: {
+          'Content-Type': 'multipart/form-data',
+          Authorization: `Bearer ${window.localStorage.getItem('token')}`,
+        },
       }),
     }),
   }),
 });
 
-export const { useSubmitFormMutation } = passFormApi
+export const { useSubmitClientMutation } = api;
+export default api;

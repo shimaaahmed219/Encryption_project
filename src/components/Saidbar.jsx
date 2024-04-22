@@ -28,9 +28,9 @@ export default function Saidebar( {handilClose, showSidebar} ) {
     { id: 7, name: "Encryption file", href: "/encryption", src: Encrypted },
     { id: 8, name: "Decrypt file", href: "/Decrypt", src: decimg },
     { id: 9, name: "Employees", href: "/employee", src: employee },
-    { id: 10, name: "forginEmployee", href: "/ForgenEmployee", src: users },
-    { id: 11, name: "recruitment", href: "/recruitmentArea", src: Settingsicon },
-    { id: 12, name: "passport Employee", href: "/passEployee", src: Settingsicon },
+    { id: 10, name: "mofa", href: "/ForgenEmployee", src: users },
+    { id: 11, name: "recruitment district", href: "/recruitmentArea", src: Settingsicon },
+    { id: 12, name: "passport authority", href: "/passEployee", src: Settingsicon },
   ];
 
   const { data} = useGetProfileDataQuery();
@@ -55,20 +55,20 @@ export default function Saidebar( {handilClose, showSidebar} ) {
 
       <div className={`flex flex-col  items-center pb-6 bt-3`}>
         <div className="w-[65px] h-[67px] rounded-full userIcon flex justify-center items-center ">
-          {data?.photo ? (
+          {data.data?.photo ? (
             <img
               className="w-[65px] h-[67px] rounded-full"
-              src={`https://epassport-api.preview-ym.com/${data?.photo}`}
+              src={`https://epassport-api.preview-ym.com/${data.data?.photo}`}
             />
           ) : (
             ""
           )}
         </div>
         <h2 className={`font-tinos text-yellowAcc capitalize text-[24px]`}>
-          {data?.name}
+          {data.data?.name}
         </h2>
         <h6 className={`font-roboto font-light text-email  text-[20px]`}>
-          {data?.email}
+          {data.data?.email}
         </h6>
         <div className="flex flex-col w-full mt-5  ">
           {links.map((link) => (

@@ -177,6 +177,7 @@ export default function EmployeeDetails({ search }) {
             <div className="xl:text-[20px] text-[15px] text-greenD ml-[80px] w-[150px]">
               {user.phone}
             </div>
+            {/* <img src={`https://epassport-api.preview-ym.com/${user.photo}`}/> */}
             <div className=" flex gap-x-3 items-center w-[180px] lg:ms-auto ">
               <Switch
                 checked={user.status}
@@ -223,7 +224,7 @@ export default function EmployeeDetails({ search }) {
       </div>
     </div>
     <div className="lg:hidden block">
-    <EmployeDetailsSmScreen visbleEmployees={visbleEmployees} employee={employee} search={search} HandilPageChange={HandilPageChange}/>
+    <EmployeDetailsSmScreen DeleteEmployee={DeleteEmployee} handilemployeeStatus={handilemployeeStatus} visbleEmployees={visbleEmployees} employee={employee} search={search} HandilPageChange={HandilPageChange}/>
     </div>
     </>
   
