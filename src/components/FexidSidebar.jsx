@@ -68,10 +68,10 @@ export default function FexidSidebar() {
               ""
             )}
           </div>
-          <h2 className={`font-tinos text-yellowAcc capitalize text-[17px]`}>
+          <h2 className={`font-tinos text-yellowAcc capitalize text-[18px]`}>
             {data?.name}
           </h2>
-          <h6 className={`font-roboto font-light text-email  text-[15px]`}>
+          <h6 className={`font-roboto font-light text-email  text-[17px]`}>
             {data?.email}
           </h6>
           <div   className="flex flex-col w-full mt-5  ">
@@ -80,7 +80,7 @@ export default function FexidSidebar() {
                 <Link
                  
                   to={link.href}
-                  className={`font-roboto font-medium hover:text-gray-100 flex my-2  capitalize items-center gap-[17px] w-full h-[40px] text-white border-none text-left text-[20px] hover:bg-opacity-10`}
+                  className={`font-roboto font-medium hover:text-gray-100 flex my-2  capitalize items-center gap-[20px] w-full h-[40px] text-white border-none text-left text-[17px] hover:bg-opacity-10`}
                 >
                   <img src={link.src} alt="" width={20} height={20} />
                   {link.name}
