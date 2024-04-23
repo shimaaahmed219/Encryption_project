@@ -48,7 +48,7 @@ const schema = z.object({
     //         }
     //         return files[0].size <= MAX_FILE_SIZE; 
     //     },
-    //     `Photo is required. Only .jpg, .jpeg, .png and .webp formats are supported."`
+    //     `Photo is required.."`
     // )
     // .refine(
     //     (files) => {

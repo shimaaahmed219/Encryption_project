@@ -1,35 +1,30 @@
-
 import { url } from "../URL";
 import { useParams } from "react-router-dom";
-import { useForm} from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Swal from "sweetalert2";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import ChangePassword from "./ChangePassword";
-// import ChangePassword from "./ChangePassword";
-
-const MAX_FILE_SIZE = 5000000;
-const ACCEPTED_IMAGE_TYPES = ["image/jpeg", "image/jpg", "image/png"];
 const schema = z.object({
   name: z.string().min(6).max(50),
   email: z.string().email(),
-  phone: z.string().min(10).max(15),
-
+  
+  phone: z.string().refine((value) => value.trim() !== "", { message: "This field is required" }),
   job: z
     .string()
-    .refine((value) => value.trim() !== "", { message: "Job is required" }),
+   .refine((value) => value.trim() !== "", { message: "This field is required" }),
   photo: z
     .any()
-    .refine(
-      (files) => files?.[0]?.size <= MAX_FILE_SIZE,
-      `this fild is requaird.`
-    )
-    .refine(
-      (files) => ACCEPTED_IMAGE_TYPES.includes(files?.[0]?.type),
-      "Only .jpg, .jpeg, .png and  formats are supported."
-    ),
+    .refine((value) => value.trim() !== "", { message: "This field is required" })
+    // .refine(
+    //   (files) => files?.[0]?.size <= MAX_FILE_SIZE,
+    //   `this fild is requaird.`
+    // )
+    // .refine(
+    //   (files) => ACCEPTED_IMAGE_TYPES.includes(files?.[0]?.type),
+    //   "Only .jpg, .jpeg, .png and  formats are supported."
+    // ),
 });
 
 export default function EditEmpForm() {
@@ -42,7 +37,7 @@ export default function EditEmpForm() {
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
-      setSelectedImage(URL.createObjectURL(file)); // إنشاء عنوان URL للصورة المحددة وتخزينه في الحالة
+      setSelectedImage(URL.createObjectURL(file));
     }
   };
   const [employeeData, setemployeeData] = useState({
@@ -80,9 +75,11 @@ export default function EditEmpForm() {
           setValue(key, res.data.data[key]);
           console.log(res.data.data);
         });
-      });
+      }).catch((error)=>{
+        console.log(error);
+      })
   }, [id]);
-
+console.log(errors);
   // update employee
   const onSubmitForm = async (data) => {
     const formdata = new FormData();
@@ -108,150 +105,125 @@ export default function EditEmpForm() {
             icon: "success",
           });
         }
-        
       });
   };
 
   return (
-    
-    <div className="xl:w-[70%]  m-auto w-[90%] lg:ms-auto  xl:mr-[30px]  mt-5 h-full pt-6 shadow-shadowEmp bg-bgEmp rounded-[20px]">
-      <form
-        onSubmit={handleSubmit(onSubmitForm)}
-        className=" flex-col flex items-center"
-      >
-        <div>
-          <div className="w-[115px] h-[115px] relative rounded-full userIconForm flex justify-center items-center ">
-            <input
-              {...register("photo")}
-                   onChange={handleImageChange}
-              type="file"
-              className=" w-full h-full z-50 m-auto opacity-0 absolute"
-            />
-            {employeeData.photo ? (
-              <img
-                className=" object-cover w-full h-full absolute rounded-full "
-                src={`https://epassport-api.preview-ym.com/${employeeData.photo}`}
-              />
-            ) : (
-              ""
-            )}
-             {selectedImage && (
-            <img
-              src={selectedImage}
-              alt="Selected"
-              className="w-full absolute h-full object-cover rounded-full"
-            />
-          )}
-          </div>
+    <div className="w-[80%] font-roboto text-[18px] h-full text-greenAcc shadow-shadowEmp bg-bgEmp rounded-[20px] my-10">
+      <form onSubmit={handleSubmit(onSubmitForm)}>
+        {/* update image */}
+
+        <div className="w-full  flex flex-col items-center justify-center">
+        <div className="w-[115px] h-[115px] mt-10 mb-5 relative rounded-full userIconForm flex justify-center items-center ">
+             <input
+               {...register("photo")}
+                    onChange={handleImageChange}
+               type="file"
+               className=" w-full h-full z-50 m-auto opacity-0 absolute"
+             />
+             {employeeData.photo ? (
+               <img
+                 className=" object-cover w-full h-full absolute rounded-full "
+                 src={`https:epassport-api.preview-ym.com/${employeeData.photo}`}
+               />
+             ) : (
+               ""
+             )}
+              {selectedImage && (
+             <img
+               src={selectedImage}
+               alt="Selected"
+               className="w-full absolute h-full object-cover rounded-full"
+             />
+           )}
+             {errors.photo && (
+           <div className=" text-red-500 m-auto ml-[-20px] text-[15px] ">{`**${errors.photo.message}`}</div>
+         )}
           
-          {errors.photo && (
-            <div className=" text-red-500 m-auto ml-[-20px] text-[15px] ">{`**${errors.photo.message}`}</div>
-          )}
-        </div>
-        <h2 className={` font-tinos text-greenAcc text-[30px] capitalize`}>
-          {employeeData.name}
-        </h2>
-        <h1
-          className={` font-tinos font-bold text-yellowAcc text-[24px] capitalize`}
-        >
-          {" "}
-          update
-        </h1>
-        <div className="w-[90%] m-auto">
-          <h1 className="font-tinos font-bold text-[26px] text-yellowAcc mb-[-30px] mt-5">
-            Details
-          </h1>
+           </div>
+           <h2 className={` font-tinos text-greenAcc text-[30px] capitalize`}>
+         {employeeData.name}
+       </h2>
+       <h1
+         className={` font-tinos font-bold text-yellowAcc text-[24px] capitalize`}
+       >
+         {" "}
+         update
+       </h1>
         </div>
 
-        <div
-          className={`font-roboto  w-[100%] px-10 justify-between  grid  extramd:grid-cols-2 grid-cols-1 lg:gap-x-32 :gap-x-16 gap-x-8 gap-y-8 mt-10 rounded-[10px]`}
-        >
-          {/* name */}
-          <div className="">
-            <label className="capitalize  ml-1  text-greenAcc font-semibold block  md:text-[22px]">
-              name
-            </label>
-            <input
-              defaultValue={employeeData.name}
-              {...register("name")}
-              placeholder="name"
-              type="text"
-              className="xl:w-[365px]    w-full  text-greenAcc font-semibold    md:text-[22px] pl-2 focus:outline-none h-[50px] border-2 rounded-[10px] bg-transparent border-yellowAcc"
-            />
-            {errors.name && (
-              <div className=" text-red-500 m-auto  mt-[15px] mb-[15px]">{`**${errors.name.message}`}</div>
-            )}
-          </div>
+        {/* inputs */}
+        <div className="flex flex-col md:gap-y-10 w-full px-5 ">
+          <div className=" md:flex w-full justify-around ">
+            {/* name */}
+            <div className=" 2xl:w-[40%] md:md:w-[39%] w-full  flex flex-col  ">
+              <label className="my-2 mx-1">Name</label>
+              <input
+                {...register("name")}
+                type="text"
+                placeholder="name"
+                className="  w-full border-[1px] bg-transparent focus:outline-none rounded-input h-[50px] px-5  border-yellowAcc "
+              />
+              {errors.name && (
+                <div className=" text-red-500 m-auto text-[14px] mt-[15px] mb-[15px]">{`**${errors.name.message}`}</div>
+              )}
+            </div>
 
-          {/* number */}
-          <div>
-            <label className="capitalize  ml-1  text-greenAcc font-semibold block text-[22px]">
-              phone
-            </label>
-            <input
-              defaultValue={employeeData.phone}
-              {...register("phone")}
-              placeholder="enter employee phone number"
-              type="text"
-              className=" pl-2 xl:w-[365px]    w-full    text-greenAcc font-semibold  md:text-[22px]   focus:outline-none h-[50px] border-2 rounded-[10px] bg-transparent border-yellowAcc"
-            />
-            {/* className='xl:w-[365px]   w-[90%] md:text-[22px]  pl-2 focus:outline-none h-[50px] border-2 rounded-[10px] bg-transparent border-yellowAcc' /> */}
-            {errors.phone && (
-              <div className=" text-red-500 m-auto  mt-[15px] mb-[15px]">{`**${errors.phone.message}`}</div>
-            )}
+            {/* phone */}
+            <div className="  2xl:w-[40%] md:w-[39%] w-full flex flex-col ">
+              <label className="my-2 mx-1">phone</label>
+              <input
+                {...register("phone")}
+                type="text"
+                placeholder="phone Number"
+                className=" border-[1px] focus:outline-none bg-transparent rounded-input h-[50px] px-5  border-yellowAcc"
+              />
+              {errors.phone && (
+                <div className=" text-red-500 m-auto text-[15px] mt-[15px] mb-[15px]">{`**${errors.phone.message}`}</div>
+              )}
+            </div>
           </div>
+          <div className="flex flex-col  w-full ">
+            <div className=" md:flex w-full justify-around ">
+              {/* name */}
+              <div className=" 2xl:w-[40%] md:w-[39%] w-full flex flex-col  ">
+                <label className="my-2 mx-1">Email address</label>
+                <input
+                  {...register("email")}
+                  type="text"
+                  placeholder="Email Address"
+                  className="  w-full border-[1px] focus:outline-none bg-transparent rounded-input h-[50px] px-5  border-yellowAcc "
+                />
+                {errors.email && (
+                  <div className=" text-red-500 text-[15px] mt-[15px] mb-[15px]">{`**${errors.email.message}`}</div>
+                )}
+              </div>
 
-          {/* email */}
-          <div>
-            <label className="capitalize  ml-1   text-greenAcc font-semibold block text-[22px]">
-              Email address
-            </label>
-            <input
-              defaultValue={employeeData.email}
-              {...register("email")}
-              placeholder="email Adress "
-              type="text"
-              className="xl:w-[365px]    w-full md:text-[22px]  text-greenAcc font-semibold  pl-2 focus:outline-none h-[50px] border-2 rounded-[10px] bg-transparent border-yellowAcc"
-            />
-            {/* className='xl:w-[365px]   w-[90%] md:text-[22px]  pl-2 focus:outline-none h-[50px] border-2 rounded-[10px] bg-transparent border-yellowAcc' /> */}
-            {errors.email && (
-              <div className=" text-red-500 m-auto  mt-[15px] mb-[15px]">{`**${errors.email.message}`}</div>
-            )}
+              {/* phone */}
+              <div className="  2xl:w-[40%] md:w-[39%] w-full flex flex-col ">
+                <label className="my-2 mx-1">The job</label>
+                <input
+                  {...register("job")}
+                  type="text"
+                  placeholder="job"
+                  className=" border-[1px] bg-transparent focus:outline-none  rounded-input h-[50px] px-5  border-yellowAcc"
+                />
+                {errors.job && (
+                  <div className=" text-red-500 text-[15px] mt-[15px] mb-[15px]">{`**${errors.job.message}`}</div>
+                )}
+              </div>
+            </div>
           </div>
-
-          {/* job */}
-          <div className="">
-            <label className="capitalize  ml-1  text-greenAcc font-semibold block md:text-[22px]">
-              The job
-            </label>
-            <input
-              defaultValue={employeeData.position}
-              {...register("job")}
-              type="text"
-              placeholder="job "
-              className=" pl-2 xl:w-[365px]    w-full text-greenAcc font-semibold  md:text-[22px]   focus:outline-none h-[50px] border-2 rounded-[10px] bg-transparent border-yellowAcc"
-            />
-            {errors.job && (
-              <div className=" text-red-500 m-auto  mt-[15px] mb-[15px]">{`**${errors.job.message}`}</div>
-            )}
+          <div className="w-full flex justify-center">
+            <button
+              type="submit"
+              className={` outline-none:focus-none font-tinos font-bold xl:ms-7  my-[3rem] rounded-[10px] text-[26px] bg-greenAcc sm:w-[198px] w-[150px] h-[50px] text-white`}
+            >
+              save
+            </button>
           </div>
-        </div>
-        <div className="w-full flex justify-center">
-        <button
-          type="submit"
-          className={` font-tinos font-bold xl:ms-7  my-[3rem] rounded-[10px] text-[26px] bg-greenAcc sm:w-[198px] w-[150px] h-[50px] text-white`}
-        >
-          save
-        </button>
-        </div>
-       
-        <div className=" w-[90%] my-5">
-          <h4 className={`font-tinos font-bold text-[26px] text-yellowAcc`}>
-            Change Password
-          </h4>
         </div>
       </form>
-      <ChangePassword/>
     </div>
   );
 }
