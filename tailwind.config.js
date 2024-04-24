@@ -88,6 +88,9 @@ export default {
         'ruwudu': ['Ruwudu', 'sans-serif'],
         'urdo': ['Noto Nastaliq Urdu', 'sans-serif'],
         'Stick': ['Stick No Bills']
+      },
+      width:{
+        'editEmplyeInput':"42%"
       }
     },
   },

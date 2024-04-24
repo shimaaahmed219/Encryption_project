@@ -332,8 +332,9 @@ export default function StepOne({
                     message: "This field is required",
                   },
                 })}
+                // value={client.date_of_birth}
                 placeholder="00-00-2000"
-                type="date"
+                type="text"
                 className="border-[1px]  bg-transparent focus:outline-none md:mt-0 mt-5 mb-4 text-[20px] font-roboto px-5 border-yellowAcc xl:ml-[72px] lg:w-[350px] md:w-[90%] w-[97%] h-[50px] rounded-input"
               />
               {/* data of birth error */}
@@ -529,7 +530,7 @@ export default function StepOne({
       </div>
       <div className="w-full flex justify-center my-10">
         <button
-          className=" mb-10  h-[65px]  text-[32px] text-greenAcc font-tinos rounded-input"
+          className=" mb-10  h-[65px]  text-[32px] md:w-[255px]  md:text-white bg-greenAcc text-greenAcc font-tinos rounded-input"
           type="button"
           onClick={nextStep}
         >

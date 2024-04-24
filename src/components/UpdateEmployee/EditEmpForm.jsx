@@ -6,14 +6,15 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import Swal from "sweetalert2";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import ChangePassword from "./ChangePassword";
 const schema = z.object({
   name: z.string().min(6).max(50),
   email: z.string().email(),
   
   phone: z.string().refine((value) => value.trim() !== "", { message: "This field is required" }),
   job: z
-    .string()
-   .refine((value) => value.trim() !== "", { message: "This field is required" }),
+    .string(),
+  //  .refine((value) => value.trim() !== "", { message: "This field is required" }),
   photo: z
     .any()
     .refine((value) => value.trim() !== "", { message: "This field is required" })
@@ -60,7 +61,7 @@ export default function EditEmpForm() {
       ...employeeData,
     },
   });
-
+console.log("data",employeeData);
   // show employee data
   useEffect(() => {
     axios
@@ -73,7 +74,7 @@ export default function EditEmpForm() {
         setemployeeData(res.data.data);
         Object.keys(res.data.data).forEach((key) => {
           setValue(key, res.data.data[key]);
-          console.log(res.data.data);
+          console.log("set",res.data.data);
         });
       }).catch((error)=>{
         console.log(error);
@@ -153,10 +154,10 @@ console.log(errors);
         </div>
 
         {/* inputs */}
-        <div className="flex flex-col md:gap-y-10 w-full px-5 ">
-          <div className=" md:flex w-full justify-around ">
+        <div className="flex flex-col md:gap-y-3 gap-y-5 w-full px-5 ">
+          <div className=" flex md:flex-row flex-col gap-y-3 w-full justify-around ">
             {/* name */}
-            <div className=" 2xl:w-[40%] md:md:w-[39%] w-full  flex flex-col  ">
+            <div className="  md:w-editEmplyeInput w-full  flex flex-col  ">
               <label className="my-2 mx-1">Name</label>
               <input
                 {...register("name")}
@@ -170,7 +171,7 @@ console.log(errors);
             </div>
 
             {/* phone */}
-            <div className="  2xl:w-[40%] md:w-[39%] w-full flex flex-col ">
+            <div className="   md:w-editEmplyeInput w-full flex flex-col ">
               <label className="my-2 mx-1">phone</label>
               <input
                 {...register("phone")}
@@ -184,9 +185,9 @@ console.log(errors);
             </div>
           </div>
           <div className="flex flex-col  w-full ">
-            <div className=" md:flex w-full justify-around ">
+            <div className=" flex md:flex-row flex-col gap-y-4 w-full justify-around ">
               {/* name */}
-              <div className=" 2xl:w-[40%] md:w-[39%] w-full flex flex-col  ">
+              <div className="  md:w-editEmplyeInput w-full flex flex-col  ">
                 <label className="my-2 mx-1">Email address</label>
                 <input
                   {...register("email")}
@@ -200,7 +201,7 @@ console.log(errors);
               </div>
 
               {/* phone */}
-              <div className="  2xl:w-[40%] md:w-[39%] w-full flex flex-col ">
+              <div className="   md:w-editEmplyeInput w-full flex flex-col ">
                 <label className="my-2 mx-1">The job</label>
                 <input
                   {...register("job")}
@@ -222,8 +223,11 @@ console.log(errors);
               save
             </button>
           </div>
+        
         </div>
+      
       </form>
+      <ChangePassword/>
     </div>
   );
 }

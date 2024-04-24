@@ -63,105 +63,107 @@ export default function ChangePassword() {
   return (
     <>
       <form onSubmit={handleSubmit(changePasswordHandle)}>
-        <div
-          className={` font-medium font-roboto m-auto  px-8 w-[100%] md:text-[22px] grid  extramd:grid-cols-2 grid-cols-1 xl:gap-x-32 lg:gap-x-16 gap-x-8 gap-y-8  rounded-[10px]`}
-        >
-          {/* Current Password */}
-          <div>
-            <label className="capitalize  ml-1  text-greenAcc font-semibold block">
-              Current Password
-            </label>
-            <div className="relative">
-              <input
+        <div className="w-full flex flex-col gap-y-5">
+          <div className="flex md:flex-row flex-col justify-around px-5 md:gap-y-1  gap-y-5">
+          <div className="  md:w-editEmplyeInput w-full  flex flex-col  ">
+              <label className="my-2 mx-1 capitalize">current password</label>
+             
+             <div className="relative flex">
+             <input
                 {...register("current_password")}
-                placeholder=" Enter password"
                 type={showPassword ? "text" : "password"}
-                className="pl-2 xl:w-[365px]    w-full text-greenAcc font-semibold  md:text-[22px]   focus:outline-none h-[50px] border-2 rounded-[10px] bg-transparent border-yellowAcc"
+                placeholder="current password"
+                className="  w-full border-[1px] bg-transparent focus:outline-none rounded-input h-[50px] px-5  border-yellowAcc "
               />
-              <span
+               <span
                 onClick={() => setShowPassword(!showPassword)}
-                className="  absolute bottom-[17px] xl:right-[20px] right-[20px]   cursor-pointer"
+                className="  absolute right-2 top-3 cursor-pointer"
               >
                 {showPassword ? (
-                  <FiEyeOff size={20} color="yellow" />
-                ) : (
                   <FiEye size={20} color="yellow" />
+                ) : (
+                  <FiEyeOff size={20} color="yellow" />
                 )}
               </span>
+             </div>
+             
+              {errors.current_password && (
+                <div className=" text-red-500 m-auto text-[14px] mt-[15px] mb-[15px]">{`**${errors.current_password.message}`}</div>
+              )}
             </div>
-
-            {errors.current_password && (
-              <div className=" text-red-500 m-auto text-[15px] mt-[10px] mb-[5px]">{`**${errors.current_password.message}`}</div>
-            )}
-          </div>
-
-          {/* New Password */}
-
-          <div>
-            <label className="capitalize  ml-1  text-greenAcc font-semibold block">
-              New Password
-            </label>
-            <div className=" relative">
-              <input
+            <div className="  2xl:w-[40%] md:md:w-[39%] w-full  flex flex-col  ">
+              <label className="my-2 mx-1 capitalize">New password</label>
+             <div className="flex relative">
+             <input
                 {...register("new_password")}
-                placeholder="Enter password"
                 type={showPassword ? "text" : "password"}
-                className=" pl-2 xl:w-[365px]    w-full text-greenAcc font-semibold  md:text-[22px]   focus:outline-none h-[50px] border-2 rounded-[10px] bg-transparent border-yellowAcc"
+                placeholder="new password"
+                className=" w-full  border-[1px] bg-transparent focus:outline-none rounded-input h-[50px] px-5  border-yellowAcc "
               />
               <span
                 onClick={() => setShowPassword(!showPassword)}
-                className="  absolute bottom-[17px] xl:right-[20px] right-[20px] cursor-pointer"
+                className="  absolute right-2 top-3 cursor-pointer"
               >
                 {showPassword ? (
-                  <FiEyeOff size={20} color="yellow" />
-                ) : (
                   <FiEye size={20} color="yellow" />
+                ) : (
+                  <FiEyeOff size={20} color="yellow" />
                 )}
               </span>
+             </div>
+            
+              {errors.new_password && (
+                <div className=" text-red-500 m-auto text-[14px] mt-[15px] mb-[15px]">{`**${errors.new_password.message}`}</div>
+              )}
             </div>
 
-            {errors.new_password && (
-              <div className=" text-red-500 m-auto text-[15px] mt-[10px] mb-[5px]">{`**${errors.new_password.message}`}</div>
-            )}
-          </div>
+            </div>
 
-          {/* New Password Confirmation */}
-          <div>
-            <label className="capitalize  ml-1  text-greenAcc font-semibold">
-              New Password Confirmation
-            </label>
-            <input
-              {...register("new_password_confirmation")}
-              placeholder="Enter Password "
-              type={showPassword ? "text" : "password"}
-              className="pl-2 xl:w-[365px]    w-full text-greenAcc font-semibold  md:text-[22px]   focus:outline-none h-[50px] border-2 rounded-[10px] bg-transparent border-yellowAcc"
-            />
-            <div className=" relative">
-              <span
+            <div className="md:flex justify-around px-5">
+          <div className="  md:w-editEmplyeInput w-full  flex flex-col  ">
+              <label className="my-2 mx-1 capitalize">new password confirmation</label>
+           <div className="flex relative">
+              <input
+                {...register("new_password_confirmation")}
+                type={showPassword ? "text" : "password"}
+                placeholder="new password confirmation"
+                className="  w-full border-[1px] bg-transparent focus:outline-none rounded-input h-[50px] px-5  border-yellowAcc "
+              />
+  <span
                 onClick={() => setShowPassword(!showPassword)}
-                className="  absolute bottom-[17px] xl:right-[20px] right-[20px] cursor-pointer"
+                className="  absolute right-2 top-3 cursor-pointer"
               >
                 {showPassword ? (
-                  <FiEyeOff size={20} color="yellow" />
-                ) : (
                   <FiEye size={20} color="yellow" />
+                ) : (
+                  <FiEyeOff size={20} color="yellow" />
                 )}
               </span>
+              </div>
+              {errors.new_password_confirmation && (
+                <div className=" text-red-500 m-auto text-[14px] mt-[15px] mb-[15px]">{`**${errors.new_password_confirmation.message}`}</div>
+              )}
             </div>
-
-            {errors.new_password_confirmation && (
-              <div className=" text-red-500 m-auto text-[15px] mt-[10px] mb-[5px]">{`**${errors.new_password_confirmation.message}`}</div>
-            )}
-          </div>
-        </div>
-        <div className=" flex justify-center">
+            <div className="  md:w-editEmplyeInput w-full  flex flex-col  ">
+             
+           
+            </div>
+         
+            </div>
+            <div className=" flex justify-center">
           <button
             type="submit"
             className={` font-tinos  font-bold xl:ms-7 my-[3rem] rounded-[10px] text-[26px] bg-greenAcc sm:w-[198px] w-[150px] h-[50px] text-white`}
           >
             save
           </button>
-        </div>
+        </div> 
+            </div>
+            
+
+      
+
+        
       </form>
     </>
   );
