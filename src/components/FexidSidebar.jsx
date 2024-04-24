@@ -52,7 +52,7 @@ export default function FexidSidebar() {
   return (
     <>
       <div
-        className={` w-[21%] h-screen pt-5 pb-10 py-10 bg-greenAcc overflow-y-auto   fixed top-0 left-0 z-50 `}
+        className={` lg:w-[21%]  w-[311px] h-screen pt-5 pb-10 py-10 bg-greenAcc overflow-y-auto   fixed top-0 left-0 z-50 `}
       >
         <div
       

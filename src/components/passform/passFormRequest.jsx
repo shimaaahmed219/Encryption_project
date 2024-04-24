@@ -11,7 +11,7 @@ import Swal from 'sweetalert2';
 export default function PassFormRequest() {
   const [selectedImage, setSelectedImages] = useState({});
   const [step, setStep] = useState(1);
-
+  // const [showPassword, setShowPassword] = useState(false);
   // show image
   const handleImageChange = (e, fieldName) => {
     const file = e.target.files[0];
@@ -144,6 +144,7 @@ export default function PassFormRequest() {
           errors={errors}
           nextStep={nextStep}
           prevStep={prevStep}
+          uploadProgress={uploadProgress}
          
         />
 
