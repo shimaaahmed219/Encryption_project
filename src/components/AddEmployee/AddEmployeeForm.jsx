@@ -130,12 +130,12 @@ export default function AddEmployeeForm() {
   };
   console.log(errors);
   return (
-    <div className="w-[80%] font-roboto text-[20px] h-full text-greenAcc shadow-shadowEmp bg-bgEmp rounded-[20px] my-10">
+    <div className="w-[80%] font-roboto text-[22px] h-full text-greenAcc shadow-shadowEmp bg-bgEmp rounded-[20px] my-10">
       <form
         onSubmit={handleSubmit(onsubmit)}
         className=" flex-col flex items-center "
       >
-        <div className=" relative w-[115px] h-[115px] rounded-full userIconForm flex justify-center items-center ">
+        <div className=" relative mt-10 w-[115px] h-[115px] rounded-full userIconForm flex justify-center items-center ">
           <input
             {...register("photo")}
             onChange={handleImageChange}
@@ -161,7 +161,7 @@ export default function AddEmployeeForm() {
           <div className=" text-red-500 m-auto px-10 mt-[10px] mb-[5px]">{`**${errors.photo.message}`}</div>
         )}
         <h2
-          className={` font-tinos text-yellowAcc mt-5  text-[30px] capitalize`}
+          className={` font-tinos text-yellowAcc my-5  text-[30px] capitalize`}
         >
           Profil picture
         </h2>

@@ -306,22 +306,22 @@ import {
         setClient(res.data.data)
       };
     return (
-      <div className="w-5/6  m-auto my-10">
+      <div className="w-[85%] m-auto my-10">
         <TableContainer
           component={Paper}
           className="shadow-employee   rounded-[14px]"
         >
           <Table className="">
             <TableHead className="bg-greenAcc h-[70px]  ">
-              <TableRow className="flex  [&>*:nth-child(1)]:w-[150px]    [&>*:nth-child(2)]:pl-[60px]  [&>*:nth-child(3)]:ml-[-30px] [&>*:nth-child(4)]:ml-[-40px] [&>*:nth-child(1)]:justify-center justify-around items-center ">
+              <TableRow className="flex [&>*:nth-child(1)]:w-[120px]    [&>*:nth-child(2)]:pl-[5px]  [&>*:nth-child(3)]:ml-[-50px] [&>*:nth-child(4)]:ml-[-100px] [&>*:nth-child(1)]:justify-center justify-around items-center ">
                 {colum.map((col) => (
                   <TableCell
                     className="border-none h-[70px] items-center text-white flex"
                     key={col.id}
                   >
-                    <span className="ml-[-20px] text-[24px] font-tinos capitalize font-bold ">
+                    <div className="ml-[-20px] text-[24px] font-tinos capitalize font-bold ">
                       {col.name}
-                    </span>
+                    </div>
                   </TableCell>
                 ))}
               </TableRow>
@@ -343,12 +343,12 @@ import {
               key={user.id}
               className="flex   font-roboto text-[22px]   my-4 bg-white rounded-[14px] shadow-employee lg:h-[70px] items-center px-5"
             >
-              <div className="flex  w-[25%] items-center ">
+              <div className="flex  w-[25%] items-center text-yellowAcc ">
                 <span className="xl:text-[22px] text-[15px] text-yellowAcc ">
-                  {index + 1} -
+                  {index + 1} 
                 </span>
-                <img
-                className="w-[40px] h-[40px] rounded-full"
+                -<img
+                className="w-[40px] mx-2 h-[40px] rounded-full"
                   src={`https://epassport-api.preview-ym.com/${user?.photo}`}
                 />
                 <span className="font-roboto flex  mt-1 xl:text-[15px] text-[15px]  text-greenD mx-3 capitalize">

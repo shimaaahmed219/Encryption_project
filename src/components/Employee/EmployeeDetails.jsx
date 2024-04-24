@@ -21,7 +21,7 @@ import first from "../../assets/employee/First.svg";
 // import '../style/'
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
-import EmployeDetailsSmScreen from "./EmployeDetailsSmScreen";
+// import EmployeDetailsSmScreen from "./EmployeDetailsSmScreen";
 
 const colum = [
   { id: "name", name: "Full Name" },
@@ -139,7 +139,7 @@ export default function EmployeeDetails({ search }) {
             <TableRow className="grid grid-cols-4 ">
               {colum.map((col) => (
                 <TableCell
-                  className="  text-white flex items-center [&:nth-child(3)]:pl-[100px] [&:nth-child(2)]:pl-[50px] [&:nth-child(4)]:text-yellowAcc font-tinos lg:text-[24px] text-[18px] font-bold  xl:[&:nth-child(4)]:px-32 [&:nth-child(4)]:px-[50px] "
+                  className=" px-8 text-white capitalize flex items-center [&:nth-child(3)]:pl-[115px] [&:nth-child(2)]:flex [&:nth-child(2)]:justify-center [&:nth-child(2)]:pl-[30px] [&:nth-child(4)]:text-yellowAcc font-tinos lg:text-[24px] text-[18px] font-bold  xl:[&:nth-child(4)]:justify-center  [&:nth-child(4)]:flex [&:nth-child(4)]:ml-10"
                   key={col.id}
                 >
                   <FormControlLabel
@@ -223,9 +223,9 @@ export default function EmployeeDetails({ search }) {
         />
       </div>
     </div>
-    <div className="lg:hidden block">
-    <EmployeDetailsSmScreen DeleteEmployee={DeleteEmployee} handilemployeeStatus={handilemployeeStatus} visbleEmployees={visbleEmployees} employee={employee} search={search} HandilPageChange={HandilPageChange}/>
-    </div>
+    {/* <div className="lg:hidden block">
+    /<EmployeDetailsSmScreen DeleteEmployee={DeleteEmployee} handilemployeeStatus={handilemployeeStatus} visbleEmployees={visbleEmployees} employee={employee} search={search} HandilPageChange={HandilPageChange}/>
+    </div> */}
     </>
   
   );

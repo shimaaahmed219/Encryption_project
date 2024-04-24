@@ -301,14 +301,14 @@ export default function ForginDesc({ search }) {
     setClient(res.data.data);
   };
   return (
-    <div className="w-5/6  m-auto my-10">
+    <div className="w-[85%] m-auto my-10">
       <TableContainer
         component={Paper}
         className="shadow-employee   rounded-[14px]"
       >
         <Table className="">
           <TableHead className="bg-greenAcc h-[70px]  ">
-            <TableRow className="flex  lg:[&>*:nth-child(1)]:w-[150px]    lg:[&>*:nth-child(3)]:block  [&>*:nth-child(3)]:hidden lg:[&>*:nth-child(2)]:pl-[60px]  [&>*:nth-child(3)]:ml-[-30px] lg:[&>*:nth-child(4)]:ml-[-40px] [&>*:nth-child(1)]:justify-center  md:[&>*:nth-child(5)]:block [&>*:nth-child(5)]:hidden justify-around items-center ">
+            <TableRow className="flex   [&>*:nth-child(1)]:w-[120px]    [&>*:nth-child(2)]:pl-[5px]  [&>*:nth-child(3)]:ml-[-50px] [&>*:nth-child(4)]:ml-[-100px] [&>*:nth-child(1)]:justify-center justify-around items-center ">
               {colum.map((col) => (
                 <TableCell
                   className="border-none h-[70px] items-center text-white flex"
