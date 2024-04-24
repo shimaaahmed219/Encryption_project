@@ -5,7 +5,7 @@ import Hr from "../Hr";
 import HeaderFormPage from "../HeaderFormPage";
 export default function StepFour({
   goToStep,
-  uploadComplete,
+  // uploadComplete,
   prevStep,
   errors,
   register,
@@ -111,13 +111,13 @@ export default function StepFour({
           className="w-[255px] mb-10  h-[65px] md:bg-greenAcc text-[32px] md:text-white text-greenAcc font-tinos rounded-input"
           type="submit"
         >
-          {uploadProgress > 0 ? `Uploading... %` : "Submit"}
+          {uploadProgress > 0 ? `Uploading...${uploadProgress} %` : "Submit"}
           <div className="progress mt-[215px] absolute top-[-100px] left-[50px]">
             {/* <img src={selectedImage["photo"]} alt="Selected" className="w-full z-40 absolute h-full object-cover" /> */}
           </div>
         </button>
       </div>
-      <div
+      {/* <div
         className={`min-h-[780px]  ${
           uploadComplete && "hidden"
         } absolute flex bg-black opacity-30 top-0 justify-center w-full items-center`}
@@ -130,8 +130,8 @@ export default function StepFour({
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-gray-800 font-bold text-lg">
             {uploadProgress}%
           </div>
-        </div>
-      </div>
+        </div> */}
+      {/* </div> */}
     </div>
   );
 }

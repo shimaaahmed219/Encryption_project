@@ -98,7 +98,7 @@ export default function StepTwo({
           Back
         </button>
         <button
-          className={`md:w-[255px] mb-10  h-[65px] md:bg-greenAcc text-[32px] md:text-white text-greenAcc `}
+          className={`md:w-[255px] mb-10  h-[65px] md:bg-greenAcc text-[32px] md:text-white rounded-input text-greenAcc font-tinos `}
           type="button"
           onClick={nextStep}
         >
