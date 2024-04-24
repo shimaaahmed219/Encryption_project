@@ -11,8 +11,7 @@ import Swal from 'sweetalert2';
 export default function PassFormRequest() {
   const [selectedImage, setSelectedImages] = useState({});
   const [step, setStep] = useState(1);
-  const [uploadComplete, setUploadComplete] = useState(false);
-  
+
   // show image
   const handleImageChange = (e, fieldName) => {
     const file = e.target.files[0];
@@ -63,40 +62,40 @@ export default function PassFormRequest() {
       graduation_cert: data.graduation_cert[0],
     };
 
-   
-  axios
-  .post(`${url}/client`, finalData, {
-    headers: {
-      "Content-Type": "multipart/form-data",
-      Authorization: `Bearer ${window.localStorage.getItem("token")}`,
-    },
-    onUploadProgress: (progressEvent) => {
-      const percentCompleted = Math.round(
-        (progressEvent.loaded * 100) / progressEvent.total
-      );
-      setUploadProgress(percentCompleted);
-    },
-  })
-  .then((res) => {
-    setUploadProgress(0);
-    console.log(res);
-    // Show SweetAlert upon successful submission
-    Swal.fire({
-      icon: 'success',
-      title: 'Success',
-      text: 'The citizen has been added successfully!',
-    });
-    setUploadComplete(true); // تعيين uploadComplete إلى true بعد الانتهاء من الرفع بنجاح
-  })
-  .catch((error) => {
-    console.log(error);
-    Swal.fire({
-      icon: 'error',
-      title: 'Error',
-      text: 'An error occurred while adding the citizen. Please try again later.',
-    });
-  })
-      // setUploadComplete(true)
+    axios
+      .post(`${url}/client`, finalData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+          Authorization: `Bearer ${window.localStorage.getItem("token")}`,
+        },
+        onUploadProgress: (progressEvent) => {
+          const percentCompleted = Math.round(
+            (progressEvent.loaded * 100) / progressEvent.total
+          );
+          setUploadProgress(percentCompleted);
+        },
+      })
+      .then((res) => {
+       
+        setUploadProgress(0);
+        console.log(res)
+        console.log(res);
+        // Show SweetAlert upon successful submission
+        Swal.fire({
+          icon: 'success',
+          title: 'Success',
+          text: 'The citizen has been added successfully!',
+        });
+      })
+      .catch((error) => {
+        console.log(error)
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: 'An error occurred while adding the citizen. Please try again later.',
+        });
+      
+      });
   };
 
   return (
@@ -145,8 +144,6 @@ export default function PassFormRequest() {
           errors={errors}
           nextStep={nextStep}
           prevStep={prevStep}
-          uploadProgress={uploadProgress}
-          uploadComplete={uploadComplete}
          
         />
 

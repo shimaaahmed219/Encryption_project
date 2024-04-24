@@ -1,12 +1,10 @@
 /* eslint-disable react/prop-types */
-import HeaderFormPage from "../HeaderFormPage";
+
 import Hr from "../Hr";
 
-
-
-export default function StepFour({register, errors,prevStep ,step,goToStep}) {
+import HeaderFormPage from "../HeaderFormPage";
+export default function StepFour({goToStep,prevStep,errors,register,step}) {
   return (
-   <>
     <div className={`${step === 4 ? "block" : "hidden"}`}>
           <div className=" w-5/6 min-h-[423px] mb-10 py-5 bg-baform shadow-shadowEmp rounded-[20px] m-auto mt-10">
             <HeaderFormPage goToStep={goToStep} step={step} />
@@ -26,7 +24,7 @@ export default function StepFour({register, errors,prevStep ,step,goToStep}) {
                       message: "This field is required",
                     },
                   })}
-                  className="border-[1px] font-roboto text-[20px] px-5 focus:outline-none  border-yellowAcc bg-transparent  w-full rounded-input h-[50px]"
+                  className="border-[1px] px-[20px] font-roboto text-[20px] focus:outline-none  border-yellowAcc bg-transparent  w-full rounded-input h-[50px]"
                 />
                 {errors.age && (
                   <div className="text-[15px] my-5  text-red-500">
@@ -47,10 +45,10 @@ export default function StepFour({register, errors,prevStep ,step,goToStep}) {
                       message: "This field is required",
                     },
                   })}
-                  className="border-[1px] font-roboto text-[20px] px-5 focus:outline-none border-yellowAcc bg-transparent  w-full rounded-input h-[50px]"
+                  className="border-[1px] px-[20px] font-roboto text-[20px] focus:outline-none border-yellowAcc bg-transparent  w-full rounded-input h-[50px]"
                 />
                 {errors.address && (
-                  <div className="text-[15px] my-5 focus:outline-none text-red-500">
+                  <div className="text-[15px]  my-5 focus:outline-none text-red-500">
                     ***{errors.address.message}
                   </div>
                 )}
@@ -108,6 +106,5 @@ export default function StepFour({register, errors,prevStep ,step,goToStep}) {
             </button>
           </div>
         </div>
-   </>
   )
 }
