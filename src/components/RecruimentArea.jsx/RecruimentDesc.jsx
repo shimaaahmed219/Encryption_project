@@ -49,8 +49,6 @@ import {
     const pageSize = 7;
   
   
-  
-    
     const handleOpenModal = (client) => {
       setSelectedClient(client);
       setModalOpen(true);
@@ -74,7 +72,7 @@ import {
           setClient(res.data.data);
         });
     }, []);
-    console.log(cleint);
+    
   
     
     const HandilPageChange = ({ selected }) => {
@@ -308,26 +306,26 @@ import {
     return (
       <div className="w-[85%] m-auto my-10">
         <TableContainer
-          component={Paper}
-          className="shadow-employee   rounded-[14px]"
-        >
-          <Table className="">
-            <TableHead className="bg-greenAcc h-[70px]  ">
-              <TableRow className="flex [&>*:nth-child(1)]:w-[120px]    [&>*:nth-child(2)]:pl-[5px]  [&>*:nth-child(3)]:ml-[-50px] [&>*:nth-child(4)]:ml-[-100px] [&>*:nth-child(1)]:justify-center justify-around items-center ">
-                {colum.map((col) => (
-                  <TableCell
-                    className="border-none h-[70px] items-center text-white flex"
-                    key={col.id}
-                  >
-                    <div className="ml-[-20px] text-[24px] font-tinos capitalize font-bold ">
-                      {col.name}
-                    </div>
-                  </TableCell>
-                ))}
-              </TableRow>
-            </TableHead>
-          </Table>
-        </TableContainer>
+        component={Paper}
+        className="shadow-employee   rounded-[14px]"
+      >
+        <Table className="">
+          <TableHead className="bg-greenAcc h-[70px]  ">
+            <TableRow className="flex   px-5 justify-between items-center [&>*:nth-child(5)]:text-yellowAcc   [&>*:nth-child(1)]:w-[22%]    [&>*:nth-child(2)]:w-[15%]  [&>*:nth-child(3)]:w-[13%] [&>*:nth-child(4)]:w-[15%] [&>*:nth-child(5)]:w-[22%] ">
+              {colum.map((col) => (
+                <TableCell
+                  className="border-none capitaliz items-center  justify-center h-[70px] text-[21px] font-tinos  text-white flex"
+                  key={col.id}
+                >
+                  {/* <div className=" text-[20px]   text-center font-tinos capitalize font-bold "> */}
+                    {col.name}
+                  {/* </div> */}
+                </TableCell>
+              ))}
+            </TableRow>
+          </TableHead>
+        </Table>
+      </TableContainer>
   
         {visbleEmployees.filter((item) => {
           const name = `${item.first_name} ${item.second_name} ${item.third_name}`
@@ -340,82 +338,90 @@ import {
   
           .map((user, index) => (
             <div
-              key={user.id}
-              className="flex   font-roboto text-[22px]   my-4 bg-white rounded-[14px] shadow-employee lg:h-[70px] items-center px-5"
-            >
-              <div className="flex  w-[25%] items-center text-yellowAcc ">
-                <span className="xl:text-[22px] text-[15px] text-yellowAcc ">
-                  {index + 1} 
-                </span>
-                -<img
-                className="w-[40px] mx-2 h-[40px] rounded-full"
-                  src={`https://epassport-api.preview-ym.com/${user?.photo}`}
-                />
-                <span className="font-roboto flex  mt-1 xl:text-[15px] text-[15px]  text-greenD mx-3 capitalize">
-                  {" "}
-                  {user.first_name} {user.second_name} {user.third_name}
-                </span>
-              </div>
-              <div className="text-yellowAcc text-[18px] w-[150px]  text-center">
-                {user.national_id.substring(0, 14)}
-              </div>
-              <div className="xl:text-[20px]  text-[15px]  w-[130px] text-greenD ml-[80px] ">
-                {user.updated_at.substring(0, 10)}
-              </div>
-             
-              <div className="xl:text-[20px] w-[150px] text-center text-[15px]  text-greenD ml-[40px]">
-          {/* status */}
-          <FormControl fullWidth>
-            <InputLabel id="demo-simple-select-label" className="mt-[-10px]">
-              status
-            </InputLabel>
-            <Select
-              labelId="demo-simple-select-label"
-              id="demo-simple-select"
-              value={user.client_order.status}
-              onChange={(event) => handilChange(event ,user.id)}
-              className="h-[30px] focus:outline-none"
-            >
-              <MenuItem value={"approved"}>
-                <div className="flex items-center">
-                  <span className="px-2 py-2 rounded-full bg-approved mr-1"></span>
-                  <span>approved</span>
-                </div>
-              </MenuItem>
-              <MenuItem value={"rejected"}>
-                <div className="flex items-center">
-                  <span className="px-2 py-2 rounded-full bg-rejected mr-1"></span>
-                  <span>rejected</span>
-                </div>
-              </MenuItem>
-              <MenuItem value={"processing"}>
-                <div className="flex items-center">
-                  <span className="px-2 py-2 rounded-full bg-pending mr-1"></span>
-                  <span>pending</span>
-                </div>
-              </MenuItem>
-            </Select>
-          </FormControl>
-        </div>
-              <div className=" flex gap-x-3 items-center  lg:ms-auto ">
+            key={user.id}
+            className="flex justify-between  font-roboto text-[20px]  my-4 bg-white rounded-[14px] shadow-employee lg:h-[70px]  px-5"
+          >
+            {/* name */}
+               <div className=" w-[22%] flex items-center text-yellowAcc">
+               <span className="xl:text-[22px] mx-2 text-[15px] text-yellowAcc ">
+                {index + 1}
+              </span>
+              -
+              <img
+                className="w-[50px] ml-2 h-[50px] rounded-full"
+                src={`https://epassport-api.preview-ym.com/${user?.photo}`}
+              />
+              <span className="  font-roboto flex  mt-1 xl:text-[15px] text-[15px]  text-greenD mx-3 capitalize">
+                {" "}
+                {user.first_name} {user.second_name} {user.third_name}
+              </span>
+               </div>
+                {/* user id nationalty */}
+                <div className=" w-[15%] flex text-yellowAcc  text-[18px] items-center justify-center ">
+               {user.national_id.substring(0, 14)}
+               </div>
+               <div className=" w-[13%] flex justify-center items-center text-[20px] text-greenAcc">
+               {user.updated_at.substring(0, 10)}
+               </div>
+               <div className="  w-[15%] flex items-center justify-center" >
+               <FormControl fullWidth>
+                <InputLabel
+                  id="demo-simple-select-label"
+                  className="mt-[-10px]"
+                >
+                  status
+                </InputLabel>
+                <Select
+                  labelId="demo-simple-select-label"
+                  id="demo-simple-select"
+                  value={user.client_order.status}
+                  onChange={(event) => handilChange(event, user.id)}
+                  className="h-[30px] focus:outline-none"
+                >
+                  <MenuItem value={"approved"}>
+                    <div className="flex items-center">
+                      <span className="px-2 py-2 rounded-full bg-approved mr-1"></span>
+                      <span>approved</span>
+                    </div>
+                  </MenuItem>
+                  <MenuItem value={"rejected"}>
+                    <div className="flex items-center">
+                      <span className="px-2 py-2 rounded-full bg-rejected mr-1"></span>
+                      <span>rejected</span>
+                    </div>
+                  </MenuItem>
+                  <MenuItem value={"processing"}>
+                    <div className="flex items-center">
+                      <span className="px-2 py-2 rounded-full bg-pending mr-1"></span>
+                      <span>pending</span>
+                    </div>
+                  </MenuItem>
+                </Select>
+              </FormControl>
+               </div>
+               {/*  */}
+               <div className="  w-[22%] flex xl:justify-around justify-between items-center">
+               <button
+                onClick={() => handleOpenModal(user)}
+                className="text-[16px] font-normal text-white bg-yellowAcc h-[34px] w-[140px] rounded-[25px] flex items-center justify-center"
+              >
+                View detail
+              </button>
+
+              <Link
+                to={`/updateClient/${user.id}`}
+                className="mr-3 lg:block hidden "
+              >
+                <img src={icon1} />
+              </Link>
               <button
-                  onClick={() => handleOpenModal(user)}
-                  className="text-[16px] font-normal text-white bg-yellowAcc h-[34px] w-[140px] rounded-[25px] flex items-center justify-center"
-                >
-                  View details
-                </button>
-  
-                <Link to={`/updateClient/${user.id}`} className="mr-3 lg:block hidden ">
-                  <img src={icon1} />
-                </Link>
-                <button
-                  onClick={() => handilDeletClient(user.id)}
-                  className="lg:block hidden"
-                >
-                  <img src={icon2} />
-                </button>
-              </div>
-            </div>
+                onClick={() => handilDeletClient(user.id)}
+                className="lg:block hidden"
+              >
+                <img src={icon2} />
+              </button>
+               </div>
+          </div>
           ))}
         {/* pageination */}
         <div className="flex justify-center my-10">
@@ -436,6 +442,8 @@ import {
             nextLinkClassName="flex items-center justify-center text-black"
           />
         </div>
+
+        {/* reject_reason medule */}
         <Dialog open={modalOpen} onClose={handleCloseModal}>
           <DialogTitle style={{color:"green"}}>Request Details</DialogTitle>
           <DialogContent>

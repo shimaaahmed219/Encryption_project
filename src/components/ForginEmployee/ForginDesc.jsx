@@ -126,7 +126,6 @@ export default function ForginDesc({ search }) {
     });
   };
 
-  
   const handilChange = async (event, id) => {
     try {
       const selectedValue = event.target.value;
@@ -197,66 +196,7 @@ export default function ForginDesc({ search }) {
             throw new Error("Failed to update client status");
           }
         }
-      }
-      //         else if (selectedValue === "approved") {
-      //           // Set received_type automatically to "mofa"
-      //           const receivedType = "mofa";
-      //           // setClient((prev)=>prev.filter((client)=>client.id !== id))
-
-      //           const response = await axios.put(
-      //             `${url}/clientOrder/${id}`,
-      //             {
-      //               status: selectedValue,
-      //               received_type: receivedType,
-      //             },
-      //             {
-      //               headers: {
-      //                 "Content-Type": "application/json",
-      //                 Authorization: `Bearer ${window.localStorage.getItem("token")}`,
-      //               },
-
-      //             }
-      //           );
-
-      //           // Handle success and error responses
-      //           if (response.status === 200) {
-      //             // Update client status in state
-      //             setClient((prevClients) =>
-      //               prevClients.map((client) =>
-      //                 client.id === id
-      //                   ? {
-      //                       ...client,
-      //                       status: selectedValue,
-      //                       received_type: receivedType,
-      //                     }
-      //                   : client
-      //               )
-      //             );
-
-      //             Swal.fire({
-      //               title: "Success!",
-      //               text: "Client status updated successfully!",
-      //               icon: "success",
-      //             });
-      //             const response = await axios.put(
-      //               `${url}/clientOrder/${id}`,
-      //               {
-      //                 status: "processing",
-      //                 received_type: receivedType,
-      //               },
-      //               {
-      //                 headers: {
-      //                   "Content-Type": "application/json",
-      //                   Authorization: `Bearer ${window.localStorage.getItem("token")}`,
-      //                 },
-      //               }
-      //             );
-      // console.log(response);
-      //           } else {
-      //             throw new Error("Failed to update client status");
-      //           }
-      //         }
-      else {
+      } else {
         // For other statuses ('pending' or any other), proceed with the update as before
         const response = await axios.put(
           `${url}/clientOrder/${id}`,
@@ -300,23 +240,24 @@ export default function ForginDesc({ search }) {
     const res = await axios.get(`${url}/client`);
     setClient(res.data.data);
   };
+
   return (
     <div className="w-[85%] m-auto my-10">
       <TableContainer
         component={Paper}
-        className="shadow-employee   rounded-[14px]"
+        className="shadow-employee rounded-[14px]"
       >
         <Table className="">
           <TableHead className="bg-greenAcc h-[70px]  ">
-            <TableRow className="flex   [&>*:nth-child(1)]:w-[120px]    [&>*:nth-child(2)]:pl-[5px]  [&>*:nth-child(3)]:ml-[-50px] [&>*:nth-child(4)]:ml-[-100px] [&>*:nth-child(1)]:justify-center justify-around items-center ">
+            <TableRow className="flex   px-5 justify-between items-center [&>*:nth-child(5)]:text-yellowAcc   [&>*:nth-child(1)]:w-[22%]    [&>*:nth-child(2)]:w-[15%]  [&>*:nth-child(3)]:w-[13%] [&>*:nth-child(4)]:w-[15%] [&>*:nth-child(5)]:w-[22%] ">
               {colum.map((col) => (
                 <TableCell
-                  className="border-none h-[70px] items-center text-white flex"
+                  className="border-none capitaliz items-center  justify-center h-[70px] lg:text-[21px] text-[15px] font-tinos  text-white flex"
                   key={col.id}
                 >
-                  <span className="ml-[-20px] lg:text-[24px] font-tinos capitalize font-bold ">
-                    {col.name}
-                  </span>
+                  {/* <div className=" text-[20px]   text-center font-tinos capitalize font-bold "> */}
+                  {col.name}
+                  {/* </div> */}
                 </TableCell>
               ))}
             </TableRow>
@@ -338,30 +279,31 @@ export default function ForginDesc({ search }) {
         .map((user, index) => (
           <div
             key={user.id}
-            className="flex   font-roboto text-[22px]   my-4 bg-white rounded-[14px] shadow-employee lg:h-[70px] items-center px-5"
+            className="flex justify-between  font-roboto text-[20px]  my-4 bg-white rounded-[14px] shadow-employee lg:h-[70px]  px-5"
           >
-            <div className="flex  w-[25%] items-center ">
-              <span className="xl:text-[22px] md:block hidden text-[15px] text-yellowAcc ">
-                {index + 1} -
+            {/* name */}
+            <div className=" w-[22%] flex items-center text-yellowAcc">
+              <span className="xl:text-[22px] mx-2 lg:text-[15px] text-yellowAcc ">
+                {index + 1}
               </span>
+              -
               <img
-                className="w-[40px] h-[40px] md:block hidden rounded-full"
+                className="w-[50px] ml-2 h-[50px] rounded-full"
                 src={`https://epassport-api.preview-ym.com/${user?.photo}`}
               />
-              <span className="font-roboto flex  mt-1 xl:text-[15px] text-[8px]  text-greenD mx-3 capitalize">
+              <span className="  font-roboto flex  mt-1 xl:text-[15px] text-[13px]  text-greenD mx-3 capitalize">
                 {" "}
                 {user.first_name} {user.second_name} {user.third_name}
               </span>
             </div>
-            <div className="text-yellowAcc md:text-[18px] text-[10px] w-[150px]  text-center">
+            {/* user id nationalty */}
+            <div className=" w-[15%] flex text-yellowAcc  lg:text-[18px] text-[14px] items-center justify-center ">
               {user.national_id.substring(0, 14)}
             </div>
-            <div className="xl:text-[20px]  text-[15px] md:block hidden  w-[130px] text-greenD ml-[80px] ">
+            <div className=" w-[13%] flex lg:justify-center items-center text-[20px] text-greenAcc">
               {user.updated_at.substring(0, 10)}
             </div>
-
-            <div className="xl:text-[20px]   w-[150px] text-center text-[15px]  text-greenD ml-[40px]">
-              {/* status */}
+            <div className="  w-[15%] flex items-center justify-center">
               <FormControl fullWidth>
                 <InputLabel
                   id="demo-simple-select-label"
@@ -397,19 +339,16 @@ export default function ForginDesc({ search }) {
                 </Select>
               </FormControl>
             </div>
-            <div className=" flex gap-x-3 items-center  lg:ms-auto ">
-             <div className="md:block hidden">
-             <button
+            {/*  */}
+            <div className="  w-[22%] flex xl:justify-around justify-between items-center">
+              <button
                 onClick={() => handleOpenModal(user)}
-                className="text-[16px] font-normal text-white bg-yellowAcc h-[34px] w-[140px] rounded-[25px] flex items-center justify-center"
+                className="text-[16px] px-3  font-normal text-white bg-yellowAcc h-[34px] xl:w-[140px] rounded-[25px] flex items-center justify-center"
               >
-                View details
+                View detail
               </button>
-</div>
-              <Link
-                to={`/updateClient/${user.id}`}
-                className="mr-3 lg:block hidden "
-              >
+
+              <Link to={`/updateClient/${user.id}`} className="mr-3  ">
                 <img src={icon1} />
               </Link>
               <button

@@ -99,9 +99,9 @@ export default function StepThree({register, errors,prevStep,image,nextStep ,ste
 
 
               {/* fils */}
-              <div className="md:flex justify-center gap-8">
+              <div className="w-[80%]  m-auto grid xl:grid-cols-3 md:grid-cols-2  justify-center gap-8">
                 <div>
-                  <div className="pl-5">
+                  <div className="md:pl-5 pl-[2px]">
                     <label className="block text-yellowAcc my-3 font-roboto text-[22px] font-medium text-center">
                       Birth certificate
                     </label>

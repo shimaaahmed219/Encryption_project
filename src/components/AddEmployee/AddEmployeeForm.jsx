@@ -41,7 +41,7 @@ const schema = z.object({
     .refine((value) => value.trim() !== "", {
       message: "This field is required",
     }),
-  // photo: z.any()
+  photo: z.any()
   // .refine((file) => {
   //   if (file) return false;
 
@@ -128,7 +128,7 @@ export default function AddEmployeeForm() {
       setIsLoading(false); // تحديث حالة التحميل بعد الانتهاء من الطلب، سواء بنجاح أو فشل
     }
   };
-  console.log(errors);
+  console.log("errors:",errors);
   return (
     <div className="w-[80%] font-roboto text-[22px] h-full text-greenAcc shadow-shadowEmp bg-bgEmp rounded-[20px] my-10">
       <form

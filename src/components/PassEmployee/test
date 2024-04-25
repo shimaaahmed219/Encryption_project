@@ -1,0 +1,86 @@
+ <!-- <div
+            key={user.id}
+            className="flex   font-roboto text-[20px]   my-4 bg-white rounded-[14px] shadow-employee lg:h-[70px] items-center px-5"
+          >
+            <div className="flex flex-row  w-[25%] items-center ">
+              <span className="xl:text-[22px] mx-2 text-[15px] text-yellowAcc ">
+                {index + 1}
+              </span>
+              -
+              <img
+                className="w-[50px] ml-2 h-[50px] rounded-full"
+                src={`https://epassport-api.preview-ym.com/${user?.photo}`}
+              />
+              <span className="  font-roboto flex  mt-1 xl:text-[15px] text-[15px]  text-greenD mx-3 capitalize">
+                {" "}
+                {user.first_name} {user.second_name} {user.third_name}
+              </span>
+            </div>
+            <div className="text-yellowAcc text-[18px] w-[150px]  text-center">
+              {user.national_id.substring(0, 14)}
+            </div>
+            <div className="xl:text-[20px]  text-[15px]  w-[130px] text-greenD ml-[80px] ">
+              {user.updated_at.substring(0, 10)}
+            </div>
+            <div className="xl:text-[20px] w-[150px] text-center text-[15px]  text-greenD ml-[40px]">
+              {/* status */}
+              <FormControl fullWidth>
+                <InputLabel
+                  id="demo-simple-select-label"
+                  className="mt-[-10px]"
+                >
+                  status
+                </InputLabel>
+                <Select
+                  labelId="demo-simple-select-label"
+                  id="demo-simple-select"
+                  value={user.client_order.status}
+                  onChange={(event) => handilChange(event, user.id)}
+                  className="h-[30px] focus:outline-none"
+                >
+                  <MenuItem value={"approved"}>
+                    <div className="flex items-center">
+                      <span className="px-2 py-2 rounded-full bg-approved mr-1"></span>
+                      <span>approved</span>
+                    </div>
+                  </MenuItem>
+                  <MenuItem value={"rejected"}>
+                    <div className="flex items-center">
+                      <span className="px-2 py-2 rounded-full bg-rejected mr-1"></span>
+                      <span>rejected</span>
+                    </div>
+                  </MenuItem>
+                  <MenuItem value={"processing"}>
+                    <div className="flex items-center">
+                      <span className="px-2 py-2 rounded-full bg-pending mr-1"></span>
+                      <span>pending</span>
+                    </div>
+                  </MenuItem>
+                </Select>
+              </FormControl>
+            </div>
+
+            {/* details */}
+            <div className=" flex gap-x-3 items-center  lg:ms-auto ">
+              <button
+                onClick={() => handleOpenModal(user)}
+                className="text-[16px] font-normal text-white bg-yellowAcc h-[34px] w-[140px] rounded-[25px] flex items-center justify-center"
+              >
+                View detail
+              </button>
+
+              <Link
+                to={`/updateClient/${user.id}`}
+                className="mr-3 lg:block hidden "
+              >
+                <img src={icon1} />
+              </Link>
+              <button
+                onClick={() => handilDeletClient(user.id)}
+                className="lg:block hidden"
+              >
+                <img src={icon2} />
+              </button>
+            </div>
+          </div>
+        ))} -->

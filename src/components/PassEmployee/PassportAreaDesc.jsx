@@ -46,7 +46,6 @@ export default function PassportAreaDesc({ search }) {
   const [selectedClient, setSelectedClient] = useState(null);
   const pageSize = 7;
 
-  
   // const handlePageChange = ({ selected }: { selected: number }) => {
   //   setCurrentPage(selected);
   // };
@@ -199,10 +198,7 @@ export default function PassportAreaDesc({ search }) {
             throw new Error("Failed to update client status");
           }
         }
-      } 
-      
-      
-      else if (selectedValue === "approved") {
+      } else if (selectedValue === "approved") {
         // Prompt user to select 'received_type' using SweetAlert2
         const { value: receivedType } = await Swal.fire({
           title: "Select Received Type",
@@ -222,7 +218,7 @@ export default function PassportAreaDesc({ search }) {
             if (!value) {
               return "You need to choose a received type";
             }
-            // setClient((prev)=>prev.filter((client)=>client.id !== id))
+           
           },
         });
 
@@ -256,14 +252,13 @@ export default function PassportAreaDesc({ search }) {
                   : client
               )
             );
-            
+
             Swal.fire({
               title: "Success!",
               text: "Client status updated successfully!",
               icon: "success",
             });
 
-            
             const response = await axios.put(
               `${url}/clientOrder/${id}`,
               {
@@ -273,12 +268,13 @@ export default function PassportAreaDesc({ search }) {
               {
                 headers: {
                   "Content-Type": "application/json",
-                  Authorization: `Bearer ${window.localStorage.getItem("token")}`,
+                  Authorization: `Bearer ${window.localStorage.getItem(
+                    "token"
+                  )}`,
                 },
               }
             );
-         console.log(response);
-         
+            console.log(response);
           } else {
             throw new Error("Failed to update client status");
           }
@@ -336,15 +332,15 @@ export default function PassportAreaDesc({ search }) {
       >
         <Table className="">
           <TableHead className="bg-greenAcc h-[70px]  ">
-            <TableRow className="flex  [&>*:nth-child(1)]:w-[120px]    [&>*:nth-child(2)]:pl-[5px]  [&>*:nth-child(3)]:ml-[-50px] [&>*:nth-child(4)]:ml-[-100px] [&>*:nth-child(1)]:justify-center justify-around items-center ">
+            <TableRow className="flex   px-5 justify-between items-center [&>*:nth-child(5)]:text-yellowAcc   [&>*:nth-child(1)]:w-[22%]    [&>*:nth-child(2)]:w-[15%]  [&>*:nth-child(3)]:w-[13%] [&>*:nth-child(4)]:w-[15%] [&>*:nth-child(5)]:w-[22%] ">
               {colum.map((col) => (
                 <TableCell
-                  className="border-none h-[70px] items-center text-white flex"
+                  className="border-none capitaliz items-center  justify-center h-[70px] text-[21px] font-tinos  text-white flex"
                   key={col.id}
                 >
-                  <div className="ml-[-20px] text-[22px] font-tinos capitalize font-bold ">
+                  {/* <div className=" text-[20px]   text-center font-tinos capitalize font-bold "> */}
                     {col.name}
-                  </div>
+                  {/* </div> */}
                 </TableCell>
               ))}
             </TableRow>
@@ -353,26 +349,27 @@ export default function PassportAreaDesc({ search }) {
       </TableContainer>
 
       {visbleEmployees
-
         .filter((item) => {
-          const name = `${item.first_name} ${item.second_name} ${item.third_name} `;
+          const name = `${item.first_name} ${item.second_name} ${item.third_name}`;
           return search.toLowerCase() === ""
             ? item
             : item.first_name.toLowerCase().includes(search) ||
                 item.second_name.toLowerCase().includes(search) ||
                 item.third_name.toLowerCase().includes(search) ||
-                name;
+                name.toLowerCase().includes(search);
         })
         .map((user, index) => (
           <div
             key={user.id}
-            className="flex   font-roboto text-[20px]   my-4 bg-white rounded-[14px] shadow-employee lg:h-[70px] items-center px-5"
+            className="flex justify-between  font-roboto text-[20px]  my-4 bg-white rounded-[14px] shadow-employee lg:h-[70px]  px-5"
           >
-            <div className="flex flex-row  w-[25%] items-center ">
-              <span className="xl:text-[22px] mx-2 text-[15px] text-yellowAcc ">
-                {index + 1} 
+            {/* name */}
+               <div className=" w-[22%] flex items-center text-yellowAcc">
+               <span className="xl:text-[22px] mx-2 text-[15px] text-yellowAcc ">
+                {index + 1}
               </span>
-              -<img
+              -
+              <img
                 className="w-[50px] ml-2 h-[50px] rounded-full"
                 src={`https://epassport-api.preview-ym.com/${user?.photo}`}
               />
@@ -380,16 +377,16 @@ export default function PassportAreaDesc({ search }) {
                 {" "}
                 {user.first_name} {user.second_name} {user.third_name}
               </span>
-            </div>
-            <div className="text-yellowAcc text-[18px] w-[150px]  text-center">
-              {user.national_id.substring(0, 14)}
-            </div>
-            <div className="xl:text-[20px]  text-[15px]  w-[130px] text-greenD ml-[80px] ">
-              {user.updated_at.substring(0, 10)}
-            </div>
-            <div className="xl:text-[20px] w-[150px] text-center text-[15px]  text-greenD ml-[40px]">
-              {/* status */}
-              <FormControl fullWidth>
+               </div>
+               {/* user id nationalty */}
+               <div className=" w-[15%] flex text-yellowAcc  text-[18px] items-center justify-center ">
+               {user.national_id.substring(0, 14)}
+               </div>
+               <div className=" w-[13%] flex justify-center items-center text-[20px] text-greenAcc">
+               {user.updated_at.substring(0, 10)}
+               </div>
+               <div className="  w-[15%] flex items-center justify-center" >
+               <FormControl fullWidth>
                 <InputLabel
                   id="demo-simple-select-label"
                   className="mt-[-10px]"
@@ -423,11 +420,9 @@ export default function PassportAreaDesc({ search }) {
                   </MenuItem>
                 </Select>
               </FormControl>
-            </div>
-
-            {/* details */}
-            <div className=" flex gap-x-3 items-center  lg:ms-auto ">
-              <button
+               </div>
+               <div className="  w-[22%] flex justify-between items-center">
+               <button
                 onClick={() => handleOpenModal(user)}
                 className="text-[16px] font-normal text-white bg-yellowAcc h-[34px] w-[140px] rounded-[25px] flex items-center justify-center"
               >
@@ -446,11 +441,11 @@ export default function PassportAreaDesc({ search }) {
               >
                 <img src={icon2} />
               </button>
-            </div>
+               </div>
           </div>
         ))}
       {/* pageination */}
-      <div className="flex justify-center my-10">
+      <div className="flex justify-center my-10">-
         <ReactPaginate
           previousLabel={<img src={first} />}
           nextLabel={<img src={last} />}

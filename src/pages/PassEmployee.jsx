@@ -16,12 +16,12 @@ export default function PassEmployee() {
 <div className="w-5/6 m-auto">
 <h1 
 className="font-tinos my-[50px]
- leading-9 font-bold text-[32px]
+ leading-9 font-bold md:text-[32px] text-[22px]
   text-greenAcc">
    passport authority
     </h1>
 
-<div className='w-[431px] h-[51px] m-auto bg-searchbg rounded-[12px] justify-center items-center flex '>
+<div className='lg:w-[431px] h-[51px] m-auto bg-searchbg rounded-[12px] justify-center items-center flex '>
             <span className='px-5'>
               <img src={searchicon} />
             </span>
