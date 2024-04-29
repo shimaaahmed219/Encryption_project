@@ -82,7 +82,7 @@ export default function LoginWeb() {
             <img
               src={img}
               alt="enc"
-              className=" my-4 lg:w-[90px] md:w-[70px] sm:w-[50px] m-auto"
+              className=" my-7 lg:w-[90px] md:w-[70px] sm:w-[50px] m-auto"
             />
 
             <h3
@@ -104,9 +104,9 @@ export default function LoginWeb() {
             <img src={img2} alt="img" className="m-auto" />
 
             <h1
-              className={`font-tinos font-bold text-center uppercase text-[48px] text-greenAcc`}
+              className={`font-tinos font-bold mb-[52px] mt-[-5px] text-center uppercase text-[48px] text-greenAcc`}
             >
-              login
+              log in
             </h1>
             <form
               onSubmit={handleSubmit(handilform)}
@@ -116,21 +116,21 @@ export default function LoginWeb() {
                 {...register("email")}
                 type="email"
                 placeholder="Email"
-                className={`block focus:outline-none shadow-form placeholder:text-2xl rounded-input m-auto lg:w-[429px] md:w-[350px] sm:w-[280px] w-[240px] px-5 py-[20px] mb-10 mt-10`}
+                className={`block focus:outline-none h-[55px] shadow-form placeholder:text-2xl rounded-input m-auto lg:w-[429px] md:w-[350px] sm:w-[280px] w-[240px] px-5 py-[20px] mb-5 mt-10`}
               />
               {errors.email && (
-                <div className="text-red-500 mt-[-20px] mb-[15px]">{`**${errors.email.message}`}</div>
+                <div className="text-red-500 mt-[-10px] px-[65px] text-right mb-[15px]">{`**${errors.email.message}`}</div>
               )}
               <div className=" relative flex m-auto lg:w-[429px] md:w-[350px] sm:w-[280px] w-[240px] ">
                 <input
                   {...register("password")}
                   type={showPassword ? "text" : "password"}
                   placeholder="password"
-                  className="block  focus:outline-none  shadow-form placeholder:text-2xl rounded-input m-auto   w-full  px-5 py-[20px] mb-10"
+                  className="block  focus:outline-none h-[55px]  shadow-form placeholder:text-2xl rounded-input m-auto   w-full  px-5 py-[18px] mb-10"
                 />
                 <div
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute top-5 right-2 cursor-pointer "
+                  className="absolute top-4 right-4 cursor-pointer "
                 >
                   {showPassword ? (
                     <FiEye size={20} color="yellow" />
@@ -138,14 +138,15 @@ export default function LoginWeb() {
                     <FiEyeOff size={20} color="yellow" />
                   )}
                 </div>
-                {errors.password && (
-                  <div className="text-red-500 mt-[-20px] mb-[20px]">{`**${errors.password.message}`}</div>
-                )}
-              </div>
 
+              
+              </div>
+              {errors.password && (
+                  <div className="text-red-500 px-[65px] text-right  mt-[-20px] mb-[20px]">{`**${errors.password.message}`}</div>
+                )}
               <button
                 type="submit"
-                className={`font-tinos font-bold md:w-[210px] mt-2 w-[180px] h-[60px] capitalize  text-center text-white text-[32px] bg-greenAcc rounded-input`}
+                className={`font-tinos font-bold md:w-[210px] mt-[15px] w-[180px] h-[60px] capitalize  text-center text-white text-[32px] bg-greenAcc rounded-input`}
               >
                 {isLoading ? "Logging in..." : "Login"}
               </button>

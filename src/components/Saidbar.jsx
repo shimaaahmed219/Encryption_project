@@ -33,6 +33,7 @@ export default function Saidebar( {handilClose, showSidebar} ) {
     { id: 10, name: "mofa", href: "/ForgenEmployee", src: users },
     { id: 11, name: "recruitment district", href: "/recruitmentArea", src: Settingsicon },
     { id: 12, name: "passport authority", href: "/passEployee", src: Settingsicon },
+    // { id: 9, name: "update profile", href: "/addEmployee/:id", src: users },
   ];
 
   
@@ -102,6 +103,16 @@ export default function Saidebar( {handilClose, showSidebar} ) {
               </Link>
             </div>
           ))}
+             <div className="hover:bg-hover px-5 hover:pl-10">
+             <Link
+             
+             to={`/updateProfile/${data?.id}`}
+             className={`font-roboto font-medium  hover:text-gray-100 flex my-2  capitalize items-center gap-[20px] w-full h-[40px] text-white border-none text-left text-[16px] hover:bg-opacity-10`}
+           >
+            <img src={Edit}/>
+          update my profile
+                </Link>
+              </div>
           <Logout />
         </div>
       </div>

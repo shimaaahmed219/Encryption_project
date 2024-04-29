@@ -403,7 +403,7 @@ import {
                <div className="  w-[22%] flex xl:justify-around justify-between items-center">
                <button
                 onClick={() => handleOpenModal(user)}
-                className="text-[16px] font-normal text-white bg-yellowAcc h-[34px] w-[140px] rounded-[25px] flex items-center justify-center"
+                className="text-[16px] font-normal text-white bg-yellowAcc h-[37px] w-[109px] rounded-[25px] flex items-center justify-center"
               >
                 View detail
               </button>

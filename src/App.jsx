@@ -17,6 +17,9 @@ import ForeignEmployee from "./pages/ForeignEmployee";
 import RecruitmentArea from "./pages/RecruitmentArea";
 import UpdateClientData from "./pages/UpdateClientData";
 import Security from "./pages/Security";
+import UpdateMyProfile from "./pages/UpdateMyProfile";
+
+
 
 
 
@@ -45,6 +48,8 @@ export default function App() {
       <Route path="/ForgenEmployee" element={<ForeignEmployee/>} />
       <Route path="/recruitmentArea" element={<RecruitmentArea/>} />
       <Route path="/updateClient/:id" element={<UpdateClientData/>} />
+      <Route path="/updateProfile/:id" element={<UpdateMyProfile/>} />
+     
       <Route path="*" element={<div>not found</div>} />
     </Routes>
     

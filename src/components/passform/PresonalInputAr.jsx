@@ -6,8 +6,8 @@ export default function PresonalInputAr({ register, errors }) {
       {/* presonal data */}
       <div className="md:px-10 md:grid xl:grid-cols-4 lg:grid-cols-3 gap-x-5 md:grid-cols-2 flex flex-col-reverse  pt-5 text-greenAcc font-roboto text-xl m-auto font-medium">
         {/* first name input */}
-        <div className="w-[100%] flex flex-col justify-center items-center">
-          <label className="block py-3 me-auto ml-2">العائله</label>
+        <div className="w-[100%] flex flex-col justify-center ">
+          <label className="block py-3 ms-auto ml-2">العائله</label>
           <input
             {...register("first_name_ar", {
               required: {
@@ -28,8 +28,8 @@ export default function PresonalInputAr({ register, errors }) {
         </div>
 
         {/* father name */}
-        <div className="w-[100%] flex flex-col justify-center items-center">
-          <label className="block  py-3 me-auto ml-2">جد</label>
+        <div className="w-[100%] flex flex-col justify-center ">
+          <label className="block  py-3 ms-auto ml-2">الجد</label>
           <input
             type="text"
             {...register("third_name_ar", {
@@ -50,8 +50,8 @@ export default function PresonalInputAr({ register, errors }) {
         </div>
 
         {/* grandba */}
-        <div className="w-[100%] flex flex-col justify-center items-center">
-          <label className="block py-3 me-auto ml-2">الأب</label>
+        <div className="w-[100%] flex flex-col justify-center ">
+          <label className="block ms-auto py-3  ml-2">الأب</label>
           <input
             {...register("second_name_ar", {
               required: {
@@ -71,8 +71,8 @@ export default function PresonalInputAr({ register, errors }) {
         </div>
 
         {/* family name */}
-        <div className="w-[100%] flex flex-col justify-center items-center">
-          <label className="block py-3 me-auto ml-2">الاسم الأول</label>
+        <div className="w-[100%] flex flex-col justify-center ">
+          <label className="block py-3 ms-auto ml-2">الاسم الأول</label>
           <input
             type="text"
             {...register("last_name_ar", {

@@ -66,7 +66,7 @@ export default function ChangePassword() {
         <div className="w-full flex flex-col gap-y-5">
           <div className="flex md:flex-row flex-col justify-around px-5 md:gap-y-1  gap-y-5">
           <div className="  md:w-editEmplyeInput w-full  flex flex-col  ">
-              <label className="my-2 mx-1 capitalize">current password</label>
+              <label className="my-2 mx-1 font-semibold capitalize">current password</label>
              
              <div className="relative flex">
              <input
@@ -77,7 +77,7 @@ export default function ChangePassword() {
               />
                <span
                 onClick={() => setShowPassword(!showPassword)}
-                className="  absolute right-2 top-3 cursor-pointer"
+                className="  absolute right-4 top-[15px]  cursor-pointer"
               >
                 {showPassword ? (
                   <FiEye size={20} color="yellow" />
@@ -92,7 +92,7 @@ export default function ChangePassword() {
               )}
             </div>
             <div className="  2xl:w-[40%] md:md:w-[39%] w-full  flex flex-col  ">
-              <label className="my-2 mx-1 capitalize">New password</label>
+              <label className="my-2 mx-1 capitalize font-semibold">New password</label>
              <div className="flex relative">
              <input
                 {...register("new_password")}
@@ -102,7 +102,7 @@ export default function ChangePassword() {
               />
               <span
                 onClick={() => setShowPassword(!showPassword)}
-                className="  absolute right-2 top-3 cursor-pointer"
+                className="  absolute  right-4 top-[15px] cursor-pointer"
               >
                 {showPassword ? (
                   <FiEye size={20} color="yellow" />
@@ -121,7 +121,7 @@ export default function ChangePassword() {
 
             <div className="md:flex justify-around px-5">
           <div className="  md:w-editEmplyeInput w-full  flex flex-col  ">
-              <label className="my-2 mx-1 capitalize">new password confirmation</label>
+              <label className="my-2 mx-1 capitalize font-semibold">new password confirmation</label>
            <div className="flex relative">
               <input
                 {...register("new_password_confirmation")}
@@ -131,7 +131,7 @@ export default function ChangePassword() {
               />
   <span
                 onClick={() => setShowPassword(!showPassword)}
-                className="  absolute right-2 top-3 cursor-pointer"
+                className="  absolute  right-4 top-[15px] cursor-pointer"
               >
                 {showPassword ? (
                   <FiEye size={20} color="yellow" />
@@ -151,12 +151,12 @@ export default function ChangePassword() {
          
             </div>
             <div className=" flex justify-center">
-          <button
-            type="submit"
-            className={` font-tinos  font-bold xl:ms-7 my-[3rem] rounded-[10px] text-[26px] bg-greenAcc sm:w-[198px] w-[150px] h-[50px] text-white`}
-          >
-            save
-          </button>
+            <button
+              type="submit"
+              className={` outline-none:focus-none font-tinos font-bold xl:ms-7 leading-6 my-[3rem] rounded-[10px] text-[26px] bg-greenAcc sm:w-[198px] w-[150px] h-[50px] text-white`}
+            >
+              save
+            </button>
         </div> 
             </div>
             

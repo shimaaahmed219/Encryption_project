@@ -385,8 +385,8 @@ export default function PassportAreaDesc({ search }) {
                <div className=" w-[13%] flex justify-center items-center text-[20px] text-greenAcc">
                {user.updated_at.substring(0, 10)}
                </div>
-               <div className="  w-[15%] flex items-center justify-center" >
-               <FormControl fullWidth>
+               <div className="  w-[158px]  flex items-center justify-center" >
+               <FormControl fullWidth style={{height:"35px"}}>
                 <InputLabel
                   id="demo-simple-select-label"
                   className="mt-[-10px]"
@@ -421,10 +421,10 @@ export default function PassportAreaDesc({ search }) {
                 </Select>
               </FormControl>
                </div>
-               <div className="  w-[22%] flex justify-between items-center">
+               <div className="  w-[18%] flex justify-between items-center">
                <button
                 onClick={() => handleOpenModal(user)}
-                className="text-[16px] font-normal text-white bg-yellowAcc h-[34px] w-[140px] rounded-[25px] flex items-center justify-center"
+                className="text-[16px] font-normal text-white bg-yellowAcc h-[37px] w-[109px] rounded-[25px] flex items-center justify-center"
               >
                 View detail
               </button>

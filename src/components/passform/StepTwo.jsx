@@ -10,6 +10,7 @@ import {
 } from "@mui/material";
 
 import HeaderFormPage from "../HeaderFormPage";
+import { useState ,useEffect } from "react";
 
 export default function StepTwo({
   nextStep,
@@ -18,17 +19,42 @@ export default function StepTwo({
   step,
   goToStep,
   errors,
+data
+  
 }) {
+
+  const [fieldsFilled, setFieldsFilled] = useState(false); // حالة محلية لتتبع ما إذا كانت الحقول فارغة أم لا
+
+  
+  const checkFieldsFilled = () => {
+    if (data) {
+      setFieldsFilled(true);
+    } else {
+      setFieldsFilled(false);
+    }
+    console.log("maritalStatus",data);
+  };
+
+  
+  useEffect(() => {
+    checkFieldsFilled();
+  }, [data]);
+
+
+ 
+
+
+
   return (
     <div
       className={`bg-bg min-h-screen w-full  ${
         step === 2 ? "block" : "hidden"
       } `}
     >
-      <div className="bg-baform flex flex-col   shadow-shadowEmp w-6/6 pl-6 pt-10 pb-[55px] md:mx-20 mx-5 min-h-[520px] rounded-[20px] m-auto my-10">
+      <div className="bg-baform flex flex-col     shadow-shadowEmp   pt-6 pb-[55px] md:mx-[80px] mx-5 min-h-[520px] rounded-[20px] m-auto my-10">
         <HeaderFormPage goToStep={goToStep} step={step} />
-        <hr className="h-[1px] w-full bg-slate-600 my-8" />
-        <Box className="">
+        <hr className="h-[1px] w-full bg-slate-600 mt-6" />
+        <Box className="my-5">
           <FormControl className="flex flex-row items-center gap-x-5">
             <FormLabel
               id="demo-radio-buttons-group-label "
@@ -69,7 +95,7 @@ export default function StepTwo({
           )}
         </Box>
 
-        <div className="  md:pr-0 pr-[20px] md:mx-20">
+        <div className="  md:pr-0 mt-[-10px] pr-[20px] md:mx-20">
           {/* husband name */}
           <label className="text-greenAcc font-roboto my-3 text-xl font-bold block">
             Husband name /
@@ -77,7 +103,7 @@ export default function StepTwo({
           <input
             {...register("husband_name")}
             type="text"
-            className=" focus:outline-none font-roboto text-[20px]px-5 text-lg text-hreenAcc rounded-input bg-transparent w-full h-[50px] border-[1px] border-yellowAcc"
+            className=" focus:outline-none font-roboto text-[20px] px-5 text-lg text-hreenAcc rounded-input bg-transparent w-full h-[50px] border-[1px] border-yellowAcc"
           />
           <label className="text-greenAcc font-roboto mb-3 mt-7 text-xl font-bold block">
             Nationality
@@ -91,16 +117,18 @@ export default function StepTwo({
       </div>
       <div className="my-10 m-auto mt-[50px] flex w-[80%] justify-around">
         <button
-          className="md:w-[255px] mb-10  h-[65px] md:bg-greenAcc text-[32px] md:text-white text-greenAcc font-tinos rounded-input"
+          className="md:w-[255px] mb-10  h-[65px] text-[32px] md:text-greenAcc border-4 hover:bg-greenAcc hover:text-white font-bold border-greenAcc font-tinos rounded-input"
           type="button"
           onClick={prevStep}
         >
           Back
         </button>
         <button
-          className={`md:w-[255px] mb-10  h-[65px] md:bg-greenAcc text-[32px] md:text-white rounded-input text-greenAcc font-tinos `}
+          className={`md:w-[255px] mb-10  h-[65px] md:bg-greenAcc text-[32px] md:text-white font-bold  rounded-input text-greenAcc font-tinos `}
           type="button"
+          // disabled={!fieldsFilled}
           onClick={nextStep}
+       
         >
           Next
         </button>

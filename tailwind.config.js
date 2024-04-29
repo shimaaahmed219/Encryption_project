@@ -55,7 +55,7 @@ export default {
         'gradiant': '#fffbeb',
       'approved':'#00FC19',
       'rejected':'#FF0000',
-      'pending':'#BFBCBC',
+      'pending':'#dcdCdC',
       
 
 

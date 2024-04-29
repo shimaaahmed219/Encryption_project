@@ -343,7 +343,7 @@ export default function ForginDesc({ search }) {
             <div className="  w-[22%] flex xl:justify-around justify-between items-center">
               <button
                 onClick={() => handleOpenModal(user)}
-                className="text-[16px] px-3  font-normal text-white bg-yellowAcc h-[34px] xl:w-[140px] rounded-[25px] flex items-center justify-center"
+                className="text-[16px] px-3  font-normal text-white bg-yellowAcc  h-[37px] xl:w-[109px]  rounded-[25px] flex items-center justify-center"
               >
                 View detail
               </button>

@@ -10,6 +10,7 @@ import {
   Radio,
   RadioGroup,
 } from "@mui/material";
+
 import HeaderStepOne from "./HeaderStepOne";
 import PresonalnputsName from "./PresonalnputsName";
 import PresonalInputAr from "./PresonalInputAr";
@@ -18,11 +19,13 @@ export default function FirstStep({
   errors,
   nextStep,
   goToStep,
-  // areFieldsFilled,
   step,
   handleImageChange,
   selectedImage,
 }) {
+
+  
+
   return (
     <div
       className={` ${
@@ -40,48 +43,10 @@ export default function FirstStep({
         {/* form body */}
         <div className="w-[95%] m-auto min-h-screen my-10 px-2 py-5 bg-baform rounded-[30px]">
           <HeaderFormPage goToStep={goToStep} step={step} />
-          <hr className="w-[100%] h-[1px] my-10 bg-hr" />
+          <hr className="w-[100%] h-[1px] my-5 bg-hr" />
           <div className=" md:px-8">
             <CheckboxInput register={register} errors={errors} />
-{/* 
-            <div className="w-[158px] m-auto mb-20 h-[207px] md:hidden block relative mt-10 bg-fileUploud  md:ml[0px]        ">
-        <input
-          {...register("photo", {
-            required: {
-              value: true,
-              message: "This field is required",
-            },
-          })}
-          onChange={(e) => handleImageChange(e, "photo")}
-          type="file"
-          className="opacity-0 w-[158px] absolute  h-[100%] z-50"
-        />
-        {selectedImage["photo"] && (
-          <img
-            src={selectedImage["photo"]}
-            alt="Selected"
-            className="w-full  z-40 absolute h-full object-cover "
-          />
-        )}
-        <img src={uploadImg} className="absolute mt-[50px] ml-[55px]" />
 
-        <h6
-          className={`font-tions font-bold  text-thin text-greenAcc text-[18px] w-full text-center absolute mt-[100px] `}
-        >
-          Upload a photo
-        </h6>
-        <h6
-          className={`font-tions font-bold text-thin text-greenAcc uppercase text-[24px] w-full text-center absolute mt-[120px] `}
-        >
-          4*6 cm
-        </h6>
-        {/* error messge from presonal image */}
-        {/* {errors.photo && ( */}
-        {/* //   <span className="text-red-500 text-[15px] ml-[-5px] absolute mt-[210px]">
-        //     ***{errors.photo?.message}
-        //   </span>
-        // )} */}
-      {/* </div> */} 
             {/* passport department input */}
             <div className="md:px-10 px-3 ">
               {/* passport department */}
@@ -94,6 +59,7 @@ export default function FirstStep({
                   </label>
                   <input
                     {...register("passports_department", {
+                     
                       required: {
                         value: true,
                         message: "This field is required",
@@ -114,7 +80,9 @@ export default function FirstStep({
             </div>
             <PresonalnputsName register={register} errors={errors} />
             <PresonalInputAr register={register} errors={errors} />
-            <div className="xl:flex mt-8  py-5">
+
+
+            <div className="xl:flex mt-8  justify-center items-centerpy-5">
               <div className="md:flex md:px-10 pt-[15px] items-center text-greenAcc lg:w-[60%] w-full font-roboto">
                 <label className="font-roboto w-[150px] mt-[-20px] md:mb-0 my-5  mx-5 md:text-[22px] text-[17px] py-2 font-semibold text-greenAcc">
                   Date of birth
@@ -142,7 +110,7 @@ export default function FirstStep({
                   )}
                 </div>
               </div>
-              <div className="flex flex-col md:w-[40%]   justify-around md:px-10 items-center mt-[30px] ">
+              <div className="flex flex-col md:w-[40%]   justify-around md:px-10 items-center  ">
                 <div>
                   <FormControl className="flex flex-row items-center gap-x-5">
                     <FormLabel
@@ -254,7 +222,7 @@ export default function FirstStep({
                   )}
                 </div>
                 <div>
-                  <label className=" text-greenAcc font-roboto font-bold text-[20px] mt-5 ">
+                  <label className=" text-greenAcc font-roboto font-bold text-[20px] mt-2 ">
                     Profession
                   </label>
                   <input
@@ -273,7 +241,7 @@ export default function FirstStep({
                   )}
                 </div>
 
-                <div className="grid md:grid-cols-2 mt-10 gap-x-16">
+                <div className="grid md:grid-cols-2 mt-5 gap-x-16">
                   <div className="py-3">
                     <label className=" block text-greenAcc font-roboto font-bold text-[20px] mt-2 mb-2  ">
                       Work phone

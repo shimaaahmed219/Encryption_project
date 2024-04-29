@@ -1,0 +1,35 @@
+ <div>
+              <span className="xl:text-[22px] text-[15px] text-yellowAcc ">
+                {index + 1} -
+              </span>
+              <span className="font-roboto xl:text-[22px] text-[15px] text-greenD mx-3 capitalize">
+                {user.name}{" "}
+              </span>
+            </div>
+            <div className="text-yellowAcc text-[18px]"><a href={`mailto:${user.email}`}>{user.email}</a></div>
+            <div className="xl:text-[20px] text-[15px] text-greenD ml-[80px] w-[150px]">
+              {user.phone}
+            </div>
+            <div className=" flex gap-x-3 items-center w-[180px] lg:ms-auto ">
+              <Switch
+                checked={user.status}
+                onChange={() => handilemployeeStatus(user.id, user.status)}
+                style={{ color: "#F6C90E" }}
+                className=""
+              />
+
+              <Link
+                to={`/EditEmployee/${user.id}`}
+                className="mr-3  "
+              >
+                <img src={icon1} />
+              </Link>
+              <Link
+                to=""
+                onClick={() => DeleteEmployee(user.id)}
+                className=""
+              >
+                {" "}
+                <img src={icon2} />
+              </Link>
+            </div>

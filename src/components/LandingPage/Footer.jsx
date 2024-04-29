@@ -15,29 +15,29 @@ export default function Footer() {
             </h6>
             <h6 className="my-2">
               <MailOutlineIcon className="text-gray-400" />
-              <span className="text-white mx-2 font-thin"><Link to="/">eagensi@mail.com</Link></span>
+              <span className=" mx-2 font-thin  text-yellowAcc"><Link to="/">eagensi@mail.com</Link></span>
             </h6>
             <h6 className="my-2">
               <LocalPhoneIcon className="text-gray-500 " />
-              <span className="text-white mx-2">011234567</span>
+              <span className= "mx-2 text-yellowAcc">011234567</span>
             </h6>
           </div>
 
           {/*  */}
           <div className=" xl:my-0 py-7">
-            <h6 className="text-yellowAcc text-[20px] font-roboto capitalize font-light">
+            <h6 className="text-white text-[20px] font-roboto capitalize font-light">
               Navigation
             </h6>
             <div className="w-[153px] flex-col flex text-white font-ropoto text-[20px]">
-              <Link to="">Home </Link>
-              <Link to="">About Us </Link>
-              <Link to="">What We Do </Link>
-              <Link to="">To The Power of 10 Donate </Link>
+              <Link to="/" className="hover:text-yellowAcc">Home </Link>
+              <Link to="/about">About Us </Link>
+              <Link to="/service">What We Do </Link>
+              <Link to="/security">To The Power of 10 Donate </Link>
             </div>
           </div>
           {/*  */}
           <div className="xl:my-0 py-7">
-            <h6 className="text-yellowAcc text-[20px] font-roboto capitalize font-light">
+            <h6 className="text-white text-[20px] font-roboto capitalize font-light">
               What We Do
             </h6>
             <div className=" flex-col flex text-white font-ropoto text-[20px]">
@@ -54,17 +54,17 @@ export default function Footer() {
           {/*  */}
 
           <div className="xl:my-0 py-7">
-            <h6 className="text-yellowAcc xl:ml-[60px] text-[20px] font-roboto capitalize font-light">
+            <h6 className="text-white font-semibold xl:ml-[60px] xxl:text-[20px] text-[18px] font-roboto capitalize ">
               TALK TO US
             </h6>
-            <div className=" flex-col flex xl:ml-[60px] text-white font-ropoto text-[20px]">
+            <div className=" flex-col flex xl:ml-[60px] font-ropoto text-[20px]">
               <ul>
-                <li>support@ercom.com</li>
-                <li>+66 2399 1145</li>
-                <li>Contact Us</li>
-                <li>Facebook</li>
-                <li>Linkedin</li>
-                <li>Twitter</li>
+                <li><Link className="text-yellowAcc"> support@ercom.com</Link></li>
+                <li><Link className="text-yellowAcc">+66 2399 1145</Link></li>
+                <li><Link className="text-yellowAcc">Contact Us</Link></li>
+                <li><Link className="text-yellowAcc">Facebook</Link></li>
+                <li><Link className="text-yellowAcc">Linkedin</Link></li>
+                <li><Link className="text-yellowAcc">Twitter</Link></li>
               </ul>
             </div>
           </div>

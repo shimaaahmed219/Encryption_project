@@ -42,32 +42,9 @@ const schema = z.object({
       message: "This field is required",
     }),
   photo: z.any()
-  // .refine((file) => {
-  //   if (file) return false;
 
-  // }, {
-  //   message: "The photo field must be an image with .jpg, .jpeg, .png, or .webp extension."
-  // })
-
-  // .refine(
-  //     (files) => {
-  //         if (!files || !files[0]) {
-  //             return false;
-  //         }
-  //         return files[0].size <= MAX_FILE_SIZE;
-  //     },
-  //     `Photo is required.."`
-  // )
-  // .refine(
-  //     (files) => {
-  //         if (!files || !files[0]) {
-  //             return false;
-  //         }
-  //         return ACCEPTED_IMAGE_TYPES.includes(files[0].type);
-  //     },
-  //     "Photo is required. Only .jpg, .jpeg, .png and .webp formats are supported."
-  // ),
 });
+
 export default function AddEmployeeForm() {
   const [selectedImage, setSelectedImage] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -75,7 +52,7 @@ export default function AddEmployeeForm() {
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
-      setSelectedImage(URL.createObjectURL(file)); // إنشاء عنوان URL للصورة المحددة وتخزينه في الحالة
+      setSelectedImage(URL.createObjectURL(file));
     }
   };
   const {
@@ -94,7 +71,7 @@ export default function AddEmployeeForm() {
     formdata.append("position", data.job);
     formdata.append("photo", data.photo[0]);
     formdata.append("phone", data.phone);
-    // تحديث حالة التحميل عند بدء إرسال الطلب
+   setIsLoading(true)
 
     try {
       const response = await axios.post(`${url}/employee`, formdata, {
@@ -125,9 +102,10 @@ export default function AddEmployeeForm() {
         });
       }
     } finally {
-      setIsLoading(false); // تحديث حالة التحميل بعد الانتهاء من الطلب، سواء بنجاح أو فشل
+      setIsLoading(false); 
     }
   };
+  console.log(isLoading);
   console.log("errors:",errors);
   return (
     <div className="w-[80%] font-roboto text-[22px] h-full text-greenAcc shadow-shadowEmp bg-bgEmp rounded-[20px] my-10">
@@ -169,7 +147,7 @@ export default function AddEmployeeForm() {
           <div className=" flex md:flex-row flex-col gap-y-3 w-full justify-around ">
             {/* name */}
             <div className="  md:w-editEmplyeInput w-full  flex flex-col  ">
-              <label className="my-2 mx-1">Name</label>
+              <label className="my-2 mx-1 font-semibold">Name</label>
               <input
                 {...register("name")}
                 type="text"
@@ -183,7 +161,7 @@ export default function AddEmployeeForm() {
 
             {/* phone */}
             <div className="   md:w-editEmplyeInput w-full flex flex-col ">
-              <label className="my-2 mx-1">phone</label>
+              <label className="my-2 mx-1  font-semibold">phone</label>
               <input
                 {...register("phone")}
                 type="text"
@@ -199,7 +177,7 @@ export default function AddEmployeeForm() {
             <div className=" flex md:flex-row flex-col gap-y-4 w-full justify-around ">
               {/* name */}
               <div className="  md:w-editEmplyeInput w-full flex flex-col  ">
-                <label className="my-2 mx-1">Email address</label>
+                <label className="my-2 mx-1  font-semibold">Email address</label>
                 <input
                   {...register("email")}
                   type="text"
@@ -213,7 +191,7 @@ export default function AddEmployeeForm() {
 
               {/* phone */}
               <div className="   md:w-editEmplyeInput w-full flex flex-col ">
-                <label className="my-2 mx-1">The job</label>
+                <label className="my-2 mx-1  font-semibold">The job</label>
                 <input
                   {...register("job")}
                   type="text"
@@ -230,7 +208,7 @@ export default function AddEmployeeForm() {
             <div className=" flex md:flex-row flex-col gap-y-4 w-full justify-around ">
               {/* name */}
               <div className="  md:w-editEmplyeInput w-full flex flex-col  ">
-                <label className="my-2 mx-1">Password</label>
+                <label className="my-2 mx-1 font-semibold">Password</label>
                 <div className="flex relative">
                   <input
                     {...register("password")}
@@ -240,7 +218,7 @@ export default function AddEmployeeForm() {
                   />
                   <span
                     onClick={() => setShowPassword(!showPassword)}
-                    className="  absolute right-2 top-3 cursor-pointer"
+                    className="  absolute right-3 top-4 cursor-pointer"
                   >
                     {showPassword ? (
                       <FiEye size={20} color="yellow" />
@@ -261,10 +239,36 @@ export default function AddEmployeeForm() {
         </div>
 
         <button
-          className={` font-tinos m-auto  my-[3rem] rounded-[10px] text-[26px] bg-greenAcc w-[240px] h-[57px] text-white`}
-        >
-          {isLoading ? "Loading..." : "add Employee"}
-        </button>
+          className={` font-tinos m-auto flex items-center justify-center my-[3rem] rounded-[10px] text-[26px] bg-greenAcc w-[240px] h-[57px] text-white`}
+       disabled={isLoading}
+       >
+  
+
+  
+  {isLoading ? (
+    <svg
+      className="animate-spin  mr-3 h-6 w-6 text-white"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+    >
+      <circle
+        className="opacity-25"
+        cx="12"
+        cy="12"
+        r="10"
+        stroke="currentColor"
+        strokeWidth="4"
+      ></circle>
+      <path
+        className="opacity-75"
+        fill="currentColor"
+        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647zM20 12a8 8 0 01-8 8v4c4.627 0 10-5.373 10-12h-4zm-2-5.291A7.962 7.962 0 0120 12h4c0-3.042-1.135-5.824-3-7.938l-3 2.647z"
+      ></path>
+    </svg>
+  ) : null}
+  {isLoading ? "Adding.." : "add Employee"}
+</button>
       </form>
     </div>
   );

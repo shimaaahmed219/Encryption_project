@@ -87,6 +87,18 @@ export default function FexidSidebar() {
                 </Link>
               </div>
             ))}
+
+                <div className="hover:bg-hover px-5 hover:pl-10">
+             <Link
+             
+             to={`/updateProfile/${data?.id}`}
+             className={`font-roboto font-medium  hover:text-gray-100 flex my-2  capitalize items-center gap-[20px] w-full h-[40px] text-white border-none text-left text-[16px] hover:bg-opacity-10`}
+           >
+            <img src={Edit}/>
+          update my profile
+                </Link>
+              </div>
+           
             <Logout />
           </div>
         </div>

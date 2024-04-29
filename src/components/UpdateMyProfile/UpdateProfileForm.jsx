@@ -1,3 +1,5 @@
+
+
 import { url } from "../URL";
 import { useParams } from "react-router-dom";
 import { useForm } from "react-hook-form";
@@ -6,7 +8,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import Swal from "sweetalert2";
 import axios from "axios";
 import { useEffect, useState } from "react";
-
+import ChangePassword from "./ChangePassword";
 const schema = z.object({
   name: z.string().min(6).max(50),
   email: z.string().email(),
@@ -28,7 +30,7 @@ const schema = z.object({
     // ),
 });
 
-export default function EditEmpForm() {
+export default function UpdateProfileForm() {
   const { id } = useParams();
   // console.log(id);
 
@@ -158,7 +160,7 @@ console.log(errors);
           <div className=" flex md:flex-row flex-col gap-y-3 w-full justify-around ">
             {/* name */}
             <div className="  md:w-editEmplyeInput w-full  flex flex-col  ">
-              <label className="my-2 mx-1">Name</label>
+              <label className="my-2 mx-1 font-semibold">Name</label>
               <input
                 {...register("name")}
                 type="text"
@@ -172,7 +174,7 @@ console.log(errors);
 
             {/* phone */}
             <div className="   md:w-editEmplyeInput w-full flex flex-col ">
-              <label className="my-2 mx-1">phone</label>
+              <label className="my-2 mx-1 font-semibold">phone</label>
               <input
                 {...register("phone")}
                 type="text"
@@ -188,7 +190,7 @@ console.log(errors);
             <div className=" flex md:flex-row flex-col gap-y-4 w-full justify-around ">
               {/* name */}
               <div className="  md:w-editEmplyeInput w-full flex flex-col  ">
-                <label className="my-2 mx-1">Email address</label>
+                <label className="my-2 mx-1 font-semibold">Email address</label>
                 <input
                   {...register("email")}
                   type="text"
@@ -202,7 +204,7 @@ console.log(errors);
 
               {/* phone */}
               <div className="   md:w-editEmplyeInput w-full flex flex-col ">
-                <label className="my-2 mx-1">The job</label>
+                <label className="my-2 mx-1 font-semibold">The job</label>
                 <input
                   {...register("job")}
                   type="text"
@@ -218,7 +220,7 @@ console.log(errors);
           <div className="w-full flex justify-center">
             <button
               type="submit"
-              className={` outline-none:focus-none font-tinos font-bold xl:ms-7  my-[3rem] rounded-[10px] text-[26px] bg-greenAcc sm:w-[198px] w-[150px] h-[50px] text-white`}
+              className={` outline-none:focus-none font-tinos font-bold xl:ms-7 leading-6 my-[3rem] rounded-[10px] text-[26px] bg-greenAcc sm:w-[198px] w-[150px] h-[50px] text-white`}
             >
               save
             </button>
@@ -227,7 +229,7 @@ console.log(errors);
         </div>
       
       </form>
-   
+      <ChangePassword/>
     </div>
   );
 }

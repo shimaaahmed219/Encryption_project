@@ -7,11 +7,11 @@ import StepTwo from "./StepTwo";
 import StepThree from "./StepThree";
 import StepFour from "./StepFour";
 import FirstStep from "./FirstStep";
-import Swal from 'sweetalert2';
+import Swal from "sweetalert2";
 export default function PassFormRequest() {
   const [selectedImage, setSelectedImages] = useState({});
   const [step, setStep] = useState(1);
-
+  
   // show image
   const handleImageChange = (e, fieldName) => {
     const file = e.target.files[0];
@@ -28,6 +28,7 @@ export default function PassFormRequest() {
     register,
     handleSubmit,
     formState: { errors },
+ getValues,
   } = useForm();
 
   // next step
@@ -46,6 +47,7 @@ export default function PassFormRequest() {
   };
 
   // Determine if all fields are filled
+
   
   const [uploadProgress, setUploadProgress] = useState(0);
   // fatching data
@@ -76,28 +78,31 @@ export default function PassFormRequest() {
         },
       })
       .then((res) => {
-       
         setUploadProgress(0);
-        console.log(res)
+        console.log(res);
         console.log(res);
         // Show SweetAlert upon successful submission
         Swal.fire({
-          icon: 'success',
-          title: 'Success',
-          text: 'The citizen has been added successfully!',
+          icon: "success",
+          title: "Success",
+          text: "The citizen has been added successfully!",
         });
       })
       .catch((error) => {
-        console.log(error)
+        console.log(error);
         Swal.fire({
-          icon: 'error',
-          title: 'Error',
-          text: 'An error occurred while adding the citizen. Please try again later.',
+          icon: "error",
+          title: "Error",
+          text: "An error occurred while adding the citizen. Please try again later.",
         });
-      
       });
   };
 
+  const data = getValues("marital_status")
+  console.log(data);
+  
+
+  
   return (
     <div>
       <form onSubmit={handleSubmit(onsubmit)}>
@@ -110,7 +115,7 @@ export default function PassFormRequest() {
           nextStep={nextStep}
           handleImageChange={handleImageChange}
           selectedImage={selectedImage}
-         uploadProgress={uploadProgress}
+          uploadProgress={uploadProgress}
         />
 
         {/* steep 2 */}
@@ -121,7 +126,9 @@ export default function PassFormRequest() {
           errors={errors}
           nextStep={nextStep}
           prevStep={prevStep}
-         
+      getValues={getValues}
+      data={data}
+       
         />
 
         {/* steep 3 */}
@@ -134,7 +141,6 @@ export default function PassFormRequest() {
           prevStep={prevStep}
           handleImageChange={handleImageChange}
           selectedImage={selectedImage}
-         
         />
         {/* steep  4 */}
         <StepFour
@@ -144,7 +150,6 @@ export default function PassFormRequest() {
           errors={errors}
           nextStep={nextStep}
           prevStep={prevStep}
-         
         />
 
         {/* <pre>{JSON.stringify(watch(), null, 2)}</pre> */}
