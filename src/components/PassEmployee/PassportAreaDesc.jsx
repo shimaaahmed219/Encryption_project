@@ -431,7 +431,7 @@ export default function PassportAreaDesc({ search }) {
 
               <Link
                 to={`/updateClient/${user.id}`}
-                className="mx-3  "
+                className="sm:mx-3  "
               >
                 <img src={icon1} className="w-[50px] h-[50px]"/>
               </Link>
