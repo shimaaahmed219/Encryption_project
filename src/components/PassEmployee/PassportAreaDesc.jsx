@@ -365,12 +365,12 @@ export default function PassportAreaDesc({ search }) {
           >
             {/* name */}
                <div className=" w-[22%] flex items-center text-yellowAcc">
-               <span className="xl:text-[22px] mx-2 text-[15px] text-yellowAcc ">
+               <span className="xl:text-[22px] sm:flex hidden mx-2 text-[15px] text-yellowAcc ">
                 {index + 1}
               </span>
               -
               <img
-                className="w-[50px]  h-[50px] rounded-full"
+                className="md:w-[50px]  md:h-[50px] w-[25px] h-[25px] rounded-full"
                 src={`https://epassport-api.preview-ym.com/${user?.photo}`}
               />
               <span className="  font-roboto flex  mt-1 xl:text-[15px] text-[10px]  text-greenD mx-3 capitalize">
