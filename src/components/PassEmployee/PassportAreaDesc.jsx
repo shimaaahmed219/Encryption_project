@@ -379,7 +379,7 @@ export default function PassportAreaDesc({ search }) {
               </span>
                </div>
                {/* user id nationalty */}
-               <div className=" w-[15%]  flex text-yellowAcc  xl:text-[18px] text-[12px]  items-center justify-center ">
+               <div className=" sm:w-[15%]  w-[20%] flex text-yellowAcc  xl:text-[18px] text-[12px]  items-center justify-center ">
                {user.national_id.substring(0, 14)}
                </div>
                <div className=" w-[13%] xl:flex hidden   justify-center items-center text-[20px] text-greenAcc">
