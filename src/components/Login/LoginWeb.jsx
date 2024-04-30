@@ -116,17 +116,23 @@ export default function LoginWeb() {
                 {...register("email")}
                 type="email"
                 placeholder="Email"
-                className={`block focus:outline-none h-[55px] shadow-form placeholder:text-2xl rounded-input m-auto lg:w-[429px] md:w-[350px] sm:w-[280px] w-[240px] px-5 py-[20px] mb-5 mt-10`}
+                className={`block focus:outline-none h-[55px] shadow-form placeholder:text-2xl
+                 rounded-input m-auto lg:w-[429px] md:w-[350px] sm:w-[280px] w-[240px] px-5 py-[20px]
+                  mb-5 mt-10`}
               />
               {errors.email && (
-                <div className="text-red-500 mt-[-10px] px-[65px] text-right mb-[15px]">{`**${errors.email.message}`}</div>
+                <div className="text-red-500 mt-[-10px] px-[65px] text-right mb-[15px]">
+                  {`**${errors.email.message}`}
+                  </div>
               )}
               <div className=" relative flex m-auto lg:w-[429px] md:w-[350px] sm:w-[280px] w-[240px] ">
                 <input
                   {...register("password")}
                   type={showPassword ? "text" : "password"}
                   placeholder="password"
-                  className="block  focus:outline-none h-[55px]  shadow-form placeholder:text-2xl rounded-input m-auto   w-full  px-5 py-[18px] mb-10"
+                  className="block  focus:outline-none h-[55px] 
+                   shadow-form placeholder:text-2xl rounded-input m-auto 
+                     w-full  px-5 py-[18px] mb-10"
                 />
                 <div
                   onClick={() => setShowPassword(!showPassword)}
@@ -142,7 +148,9 @@ export default function LoginWeb() {
               
               </div>
               {errors.password && (
-                  <div className="text-red-500 px-[65px] text-right  mt-[-20px] mb-[20px]">{`**${errors.password.message}`}</div>
+                  <div className="text-red-500 px-[65px] text-right  mt-[-20px] mb-[20px]">
+                    {`**${errors.password.message}`}
+                    </div>
                 )}
               <button
                 type="submit"

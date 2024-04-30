@@ -49,12 +49,16 @@ export default function AddEmployeeForm() {
   const [selectedImage, setSelectedImage] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+
+
+
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
       setSelectedImage(URL.createObjectURL(file));
     }
   };
+
   const {
     register,
     handleSubmit,
@@ -62,6 +66,8 @@ export default function AddEmployeeForm() {
   } = useForm({
     resolver: zodResolver(schema),
   });
+
+
   const onsubmit = async (data) => {
     const formdata = new FormData();
 
@@ -72,7 +78,6 @@ export default function AddEmployeeForm() {
     formdata.append("photo", data.photo[0]);
     formdata.append("phone", data.phone);
    setIsLoading(true)
-
     try {
       const response = await axios.post(`${url}/employee`, formdata, {
         headers: {
@@ -152,10 +157,12 @@ export default function AddEmployeeForm() {
                 {...register("name")}
                 type="text"
                 placeholder="name"
-                className="  w-full border-[1px] bg-transparent focus:outline-none rounded-input h-[50px] px-5  border-yellowAcc "
+                className="  w-full border-[1px] bg-transparent focus:outline-none
+                 rounded-input h-[50px] px-5  border-yellowAcc "
               />
               {errors.name && (
-                <div className=" text-red-500  text-[14px] mt-[15px] mb-[15px]">{`**${errors.name.message}`}</div>
+                <div className=" text-red-500  text-[14px] mt-[15px] mb-[15px]">
+                  {`**${errors.name.message}`}</div>
               )}
             </div>
 
@@ -166,10 +173,12 @@ export default function AddEmployeeForm() {
                 {...register("phone")}
                 type="text"
                 placeholder="phone Number"
-                className=" border-[1px] focus:outline-none bg-transparent rounded-input h-[50px] px-5  border-yellowAcc"
+                className=" border-[1px] focus:outline-none bg-transparent rounded-input
+                 h-[50px] px-5  border-yellowAcc"
               />
               {errors.phone && (
-                <div className=" text-red-500  text-[15px] mt-[15px] mb-[15px]">{`**${errors.phone.message}`}</div>
+                <div className=" text-red-500  text-[15px] mt-[15px] mb-[15px]">
+                  {`**${errors.phone.message}`}</div>
               )}
             </div>
           </div>

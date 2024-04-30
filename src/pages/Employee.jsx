@@ -6,6 +6,8 @@ import searchicon from "../assets/employee/shape (3).svg";
 import { Link } from "react-router-dom";
 import Nav from "../components/Nav";
 import EmployeeDetails from "../components/Employee/EmployeeDetails";
+
+
 export default function Empolyee() {
   const [search, setSearch] = useState("");
   console.log(search);

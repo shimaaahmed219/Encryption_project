@@ -13,24 +13,16 @@ const schema = z.object({
   
   phone: z.string().refine((value) => value.trim() !== "", { message: "This field is required" }),
   job: z
-    .string(),
-  //  .refine((value) => value.trim() !== "", { message: "This field is required" }),
+    .string()
+   .refine((value) => value.trim() !== "", { message: "This field is required" }),
   photo: z
     .any()
     .refine((value) => value.trim() !== "", { message: "This field is required" })
-    // .refine(
-    //   (files) => files?.[0]?.size <= MAX_FILE_SIZE,
-    //   `this fild is requaird.`
-    // )
-    // .refine(
-    //   (files) => ACCEPTED_IMAGE_TYPES.includes(files?.[0]?.type),
-    //   "Only .jpg, .jpeg, .png and  formats are supported."
-    // ),
+    
 });
 
 export default function EditEmpForm() {
-  const { id } = useParams();
-  // console.log(id);
+  const { id } = useParams(); 
 
   // add defolt value in inputs
   const [selectedImage, setSelectedImage] = useState(null);
@@ -110,12 +102,14 @@ console.log(errors);
   };
 
   return (
-    <div className="w-[80%] font-roboto text-[18px] h-full text-greenAcc shadow-shadowEmp bg-bgEmp rounded-[20px] my-10">
+    <div className="w-[80%] font-roboto text-[18px] h-full text-greenAcc
+     shadow-shadowEmp bg-bgEmp rounded-[20px] my-10">
       <form onSubmit={handleSubmit(onSubmitForm)}>
         {/* update image */}
 
         <div className="w-full  flex flex-col items-center justify-center">
-        <div className="w-[115px] h-[115px] mt-10 mb-5 relative rounded-full userIconForm flex justify-center items-center ">
+        <div className="w-[115px] h-[115px] mt-10 mb-5 relative rounded-full
+         userIconForm flex justify-center items-center ">
              <input
                {...register("photo")}
                     onChange={handleImageChange}
@@ -166,7 +160,8 @@ console.log(errors);
                 className="  w-full border-[1px] bg-transparent focus:outline-none rounded-input h-[50px] px-5  border-yellowAcc "
               />
               {errors.name && (
-                <div className=" text-red-500 m-auto text-[14px] mt-[15px] mb-[15px]">{`**${errors.name.message}`}</div>
+                <div className=" text-red-500 m-auto text-[14px] mt-[15px] mb-[15px]">
+                  {`**${errors.name.message}`}</div>
               )}
             </div>
 
@@ -180,7 +175,8 @@ console.log(errors);
                 className=" border-[1px] focus:outline-none bg-transparent rounded-input h-[50px] px-5  border-yellowAcc"
               />
               {errors.phone && (
-                <div className=" text-red-500 m-auto text-[15px] mt-[15px] mb-[15px]">{`**${errors.phone.message}`}</div>
+                <div className=" text-red-500 m-auto text-[15px] mt-[15px] mb-[15px]">
+                  {`**${errors.phone.message}`}</div>
               )}
             </div>
           </div>

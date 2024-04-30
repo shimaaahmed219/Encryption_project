@@ -332,7 +332,7 @@ export default function PassportAreaDesc({ search }) {
       >
         <Table className="">
           <TableHead className="bg-greenAcc h-[70px]  ">
-            <TableRow className="flex   px-5 justify-between items-center [&>*:nth-child(5)]:text-yellowAcc   [&>*:nth-child(1)]:w-[22%]    [&>*:nth-child(2)]:w-[15%]  [&>*:nth-child(3)]:w-[13%] [&>*:nth-child(4)]:w-[15%] [&>*:nth-child(5)]:w-[22%] ">
+            <TableRow className="flex   px-5 justify-between items-center xl:[&>*:nth-child(3)]:block [&>*:nth-child(3)]:hidden  lg:[&>*:nth-child(4)]:block  [&>*:nth-child(4)]:hidden  [&>*:nth-child(4)]:bg-green-200  [&>*:nth-child(5)]:bg-red-200   [&>*:nth-child(1)]:w-[22%]    [&>*:nth-child(2)]:w-[15%]  [&>*:nth-child(3)]:w-[13%] [&>*:nth-child(4)]:w-[15%] [&>*:nth-child(5)]:w-[18%] ">
               {colum.map((col) => (
                 <TableCell
                   className="border-none capitaliz items-center  justify-center h-[70px] text-[21px] font-tinos  text-white flex"
@@ -361,32 +361,32 @@ export default function PassportAreaDesc({ search }) {
         .map((user, index) => (
           <div
             key={user.id}
-            className="flex justify-between  font-roboto text-[20px]  my-4 bg-white rounded-[14px] shadow-employee lg:h-[70px]  px-5"
+            className="flex justify-between  font-roboto xl:text-[20px]  my-4 bg-white rounded-[14px] shadow-employee lg:h-[70px]  lg:px-5"
           >
             {/* name */}
-               <div className=" w-[22%] flex items-center text-yellowAcc">
+               <div className=" w-[22%] bg-red-200 flex items-center text-yellowAcc">
                <span className="xl:text-[22px] mx-2 text-[15px] text-yellowAcc ">
                 {index + 1}
               </span>
               -
               <img
-                className="w-[50px] ml-2 h-[50px] rounded-full"
+                className="w-[50px]  h-[50px] rounded-full"
                 src={`https://epassport-api.preview-ym.com/${user?.photo}`}
               />
-              <span className="  font-roboto flex  mt-1 xl:text-[15px] text-[15px]  text-greenD mx-3 capitalize">
+              <span className="  font-roboto flex  mt-1 xl:text-[15px] text-[10px]  text-greenD mx-3 capitalize">
                 {" "}
                 {user.first_name} {user.second_name} {user.third_name}
               </span>
                </div>
                {/* user id nationalty */}
-               <div className=" w-[15%] flex text-yellowAcc  text-[18px] items-center justify-center ">
+               <div className=" w-[15%]  bg-red-200 flex text-yellowAcc  xl:text-[18px] text-[12px]  items-center justify-center ">
                {user.national_id.substring(0, 14)}
                </div>
-               <div className=" w-[13%] flex justify-center items-center text-[20px] text-greenAcc">
+               <div className=" w-[13%] xl:flex hidden bg-red-200  justify-center items-center text-[20px] text-greenAcc">
                {user.updated_at.substring(0, 10)}
                </div>
-               <div className="  w-[158px]  flex items-center justify-center" >
-               <FormControl fullWidth style={{height:"35px"}}>
+               <div className="   w-[15%] bg-red-200  lg:flex hidden  items-center justify-center" >
+               <FormControl sx={{ width: 158 }}>
                 <InputLabel
                   id="demo-simple-select-label"
                   className="mt-[-10px]"
@@ -421,7 +421,7 @@ export default function PassportAreaDesc({ search }) {
                 </Select>
               </FormControl>
                </div>
-               <div className="  w-[18%] flex justify-between items-center">
+               <div className="  lg:w-[18%] w-[22%] bg-red-300 flex justify-between items-center">
                <button
                 onClick={() => handleOpenModal(user)}
                 className="text-[16px] font-normal text-white bg-yellowAcc h-[37px] w-[109px] rounded-[25px] flex items-center justify-center"
@@ -431,15 +431,15 @@ export default function PassportAreaDesc({ search }) {
 
               <Link
                 to={`/updateClient/${user.id}`}
-                className="mr-3 lg:block hidden "
+                className="mx-3  "
               >
-                <img src={icon1} />
+                <img src={icon1} className="w-[25px] h-[25px]"/>
               </Link>
               <button
                 onClick={() => handilDeletClient(user.id)}
-                className="lg:block hidden"
+                className=""
               >
-                <img src={icon2} />
+                <img src={icon2} className="w-[50px] h-[50px]" />
               </button>
                </div>
           </div>

@@ -11,7 +11,7 @@ import Swal from "sweetalert2";
 export default function PassFormRequest() {
   const [selectedImage, setSelectedImages] = useState({});
   const [step, setStep] = useState(1);
-  
+
   // show image
   const handleImageChange = (e, fieldName) => {
     const file = e.target.files[0];
@@ -28,7 +28,7 @@ export default function PassFormRequest() {
     register,
     handleSubmit,
     formState: { errors },
- getValues,
+    getValues,
   } = useForm();
 
   // next step
@@ -48,7 +48,6 @@ export default function PassFormRequest() {
 
   // Determine if all fields are filled
 
-  
   const [uploadProgress, setUploadProgress] = useState(0);
   // fatching data
   const onsubmit = (data) => {
@@ -98,11 +97,9 @@ export default function PassFormRequest() {
       });
   };
 
-  const data = getValues("marital_status")
+  const data = getValues("marital_status");
   console.log(data);
-  
 
-  
   return (
     <div>
       <form onSubmit={handleSubmit(onsubmit)}>
@@ -126,9 +123,8 @@ export default function PassFormRequest() {
           errors={errors}
           nextStep={nextStep}
           prevStep={prevStep}
-      getValues={getValues}
-      data={data}
-       
+          getValues={getValues}
+          data={data}
         />
 
         {/* steep 3 */}

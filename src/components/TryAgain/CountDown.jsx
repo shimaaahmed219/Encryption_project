@@ -40,10 +40,12 @@ export default function Countdown() {
 
 
   return (
-    <div className='md:w-3/6  w-6/6 h-full  flex justify-center flex-col lg:mr-[230px] text-greenAcc m-auto'>
+    <div className='md:w-3/6  w-6/6 h-full  flex justify-center
+     flex-col lg:mr-[230px] text-greenAcc m-auto'>
 
       <h2 className={`font-urdo lg:text-4xl text-3xl leading-extra-loose`}>Sorry, your account has been</h2>
-      <h2 className={` font-urdo lg:text-4xl text-3xl leading-extra-loose mt-4`}>disabled for <span className='text-yellowAcc'>5 minutes</span></h2>
+      <h2 className={` font-urdo lg:text-4xl text-3xl leading-extra-loose mt-4`}>
+        disabled for <span className='text-yellowAcc'>5 minutes</span></h2>
 
 
 
@@ -51,7 +53,8 @@ export default function Countdown() {
         <h2 className=''>{formatTime(seconds)}</h2>
       </div>
       <div>
-        <button className='w-[219px] h-[70px] text-2xl  text-white bg-greenAcc rounded-xl'>< AutorenewIcon />  Try again</button>
+        <button className='w-[219px] h-[70px] text-2xl  text-white bg-greenAcc rounded-xl'>
+          < AutorenewIcon />  Try again</button>
       </div>
 
     </div>

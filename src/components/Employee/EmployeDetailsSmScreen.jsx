@@ -32,8 +32,8 @@ export default function EmployeDetailsSmScreen({ visbleEmployees,handilemployeeS
   const pageSize = 7;
   const colum = [
     { id: "name", name: " Name" },
-    { id: "details", name: "details" },
     { id: "options", name: "options" },
+    { id: "details", name: "details" },
   ];
 
   return (
@@ -45,10 +45,10 @@ export default function EmployeDetailsSmScreen({ visbleEmployees,handilemployeeS
         >
           <Table className="">
             <TableHead className="bg-greenAcc border-none h-[70px]  ">
-              <TableRow className="flex ml-5 justify-around h-[70px] items-center">
+              <TableRow className="flex  justify-around h-[70px] items-center">
                 {colum.map((col) => (
                   <TableCell
-                    className=" text-white [&:nth-child(3)]:pl-[60px] font-tinos border-none text-center  font-bold   "
+                    className=" text-white  font-tinos border-none text-center  font-bold   "
                     key={col.id}
                   >
                     <FormControlLabel
@@ -56,7 +56,7 @@ export default function EmployeDetailsSmScreen({ visbleEmployees,handilemployeeS
                       control={<Checkbox style={{ color: "#F6C90E" }} />}
                       label=""
                     />
-                    <span className="ml-[-20px]">{col.name}</span>
+                    <div className="pl-10">{col.name}</div>
                   </TableCell>
                 ))}
               </TableRow>
@@ -74,18 +74,12 @@ export default function EmployeDetailsSmScreen({ visbleEmployees,handilemployeeS
               key={user.id}
               className="  font-roboto lg:text-[22px]  flex justify-around  my-4 py-2 bg-white rounded-[14px] shadow-employee lg:h-[70px] items-center "
             >
-              <div className=" w-[28%] font-roboto xl:text-[22px] sm:text-[15px] text-[10px] text-greenD  capitalize">
+              <div className="  font-roboto xl:text-[22px] sm:text-[15px] text-[10px] text-greenD  capitalize">
                 {user.name}{" "}
               </div>
 
-              <Link
-                onClick={() => handleModalOpen(user)}
-                className="xl:text-[20px] cursor-pointer text-white text-[15px] p-2 rounded-full bg-yellowAcc bold  text-center"
-              >
-                Details
-              </Link>
 
-              <div className=" w-[30%] flex justify-end">
+              <div className="  flex justify-end">
               <Switch
                   checked={user.status}
                   onChange={() => handilemployeeStatus(user.id, user.status)}
@@ -105,7 +99,15 @@ export default function EmployeDetailsSmScreen({ visbleEmployees,handilemployeeS
                 </Link>
                
               </div>
-            
+            <div>
+              
+            <Link
+                onClick={() => handleModalOpen(user)}
+                className="xl:text-[20px] cursor-pointer text-white text-[15px] p-2 rounded-full bg-yellowAcc bold  text-center"
+              >
+                Details
+              </Link>
+            </div>
             </div>
           ))}
       </div>

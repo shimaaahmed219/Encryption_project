@@ -54,6 +54,7 @@ export default function EmployeeDetails({ search }) {
   };
   const startIndex = carrentPage * pageSize;
   const visbleEmployees = employee
+
     .slice(startIndex, startIndex + pageSize)
     .sort((a, b) => a.name.localeCompare(b.name));
 
@@ -138,11 +139,14 @@ export default function EmployeeDetails({ search }) {
               <TableRow className="flex justify-around  ">
                 {colum.map((col) => (
                   <TableCell
-                    className=" w-[25%] text-white  font-tinos lg:[&:nth-child(3)]:block [&:nth-child(3)]:hidden [&:nth-child(4)]:text-yellowAcc  font-bold border-none [&:nth-child(2)]:text-left [&:nth-child(2)]:ms-[120px] [&:nth-child(3)]:ms-[-50px] text-center  text-[24px] "
+                    className=" w-[25%] text-white  font-tinos lg:[&:nth-child(3)]:block 
+                    [&:nth-child(3)]:hidden [&:nth-child(4)]:text-yellowAcc
+                      font-bold border-none [&:nth-child(2)]:text-left [&:nth-child(2)]:ms-[120px]
+                       [&:nth-child(3)]:ms-[-50px] text-center  text-[24px] "
                     key={col.id}
                   >
                     <FormControlLabel
-                    className=""
+                      className=""
                       control={<Checkbox style={{ color: "#F6C90E" }} />}
                       label=""
                     />
@@ -174,7 +178,9 @@ export default function EmployeeDetails({ search }) {
                 </span>
               </div>
               <div className="text-yellowAcc w-[25%] text-[18px] lg:ps-[120px] ps-10 text-left  ">
-                <a href={`mailto:${user.email}`}>{user.email.substring(0,12,)}...</a>
+                <a href={`mailto:${user.email}`}>
+                  {user.email.substring(0, 12)}...
+                </a>
               </div>
               <div className="xl:text-[20px] w-[25%] lg:block hidden text-[15px] ml-[58px] text-greenD text-center">
                 {user.phone}
@@ -187,10 +193,7 @@ export default function EmployeeDetails({ search }) {
                   className=""
                 />
 
-                <Link
-                  to={`/EditEmployee/${user.id}`}
-                  className="mr-3  "
-                >
+                <Link to={`/EditEmployee/${user.id}`} className="mr-3  ">
                   <img src={icon1} />
                 </Link>
                 <Link
@@ -225,8 +228,15 @@ export default function EmployeeDetails({ search }) {
         </div>
       </div>
       <div className="lg:hidden block">
-    <EmployeDetailsSmScreen  DeleteEmployee={DeleteEmployee}  handilemployeeStatus={handilemployeeStatus} visbleEmployees={visbleEmployees} employee={employee} search={search} HandilPageChange={HandilPageChange}/>
-    </div>
+        <EmployeDetailsSmScreen
+          DeleteEmployee={DeleteEmployee}
+          handilemployeeStatus={handilemployeeStatus}
+          visbleEmployees={visbleEmployees}
+          employee={employee}
+          search={search}
+          HandilPageChange={HandilPageChange}
+        />
+      </div>
     </>
   );
 }

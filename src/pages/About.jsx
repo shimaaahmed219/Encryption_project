@@ -64,13 +64,18 @@ export default function About() {
 
       <div className=" grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 w-5/6 justify-between m-auto text-center md:my-[200px] my-[50px]">
         {technology.map((item) => (
+
           <div key={item.id} className="w-full my-10">
             <div className="bg-yellowAcc w-[155px] h-[155px] m-auto  rounded-full flex justify-center items-center">
+            
+            
               <img className="w-[73px] h-[91px]" src={item.src} />
             </div>
+           
             <h1 className="sm:text-[28px] text-[24px] leading-8 text-greenAcc my-3 font-tinos font-bold">
               {item.name}
             </h1>
+           
             <p className="sm:w-[312px] m-auto mb-10 leading-7 font-normal sm:text-[24px] text-[20px] font-roboto text-p">
               {item.des}
             </p>
