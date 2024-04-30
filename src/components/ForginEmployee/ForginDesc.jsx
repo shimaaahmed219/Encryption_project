@@ -242,21 +242,21 @@ export default function ForginDesc({ search }) {
   };
 
   return (
-    <div className="w-[85%] m-auto my-10">
+    <div className="w-[85%]  m-auto my-10">
       <TableContainer
         component={Paper}
-        className="shadow-employee rounded-[14px]"
+        className="shadow-employee   rounded-[14px]"
       >
         <Table className="">
           <TableHead className="bg-greenAcc h-[70px]  ">
-            <TableRow className="flex   px-5 justify-between items-center [&>*:nth-child(5)]:text-yellowAcc   [&>*:nth-child(1)]:w-[22%]    [&>*:nth-child(2)]:w-[15%]  [&>*:nth-child(3)]:w-[13%] [&>*:nth-child(4)]:w-[15%] [&>*:nth-child(5)]:w-[22%] ">
+            <TableRow className="flex   px-5 justify-between items-center xl:[&>*:nth-child(3)]:block [&>*:nth-child(3)]:hidden  lg:[&>*:nth-child(4)]:block  [&>*:nth-child(4)]:hidden      [&>*:nth-child(1)]:w-[22%]    [&>*:nth-child(2)]:w-[15%]  [&>*:nth-child(3)]:w-[13%] [&>*:nth-child(4)]:w-[15%] lg:[&>*:nth-child(5)]:w-[18%] [&>*:nth-child(5)]:w-[30%] ">
               {colum.map((col) => (
                 <TableCell
-                  className="border-none capitaliz items-center  justify-center h-[70px] lg:text-[21px] text-[15px] font-tinos  text-white flex"
+                  className="border-none capitaliz items-center  justify-center h-[70px] text-[14px] md:text-[21px] font-tinos  text-white flex"
                   key={col.id}
                 >
                   {/* <div className=" text-[20px]   text-center font-tinos capitalize font-bold "> */}
-                  {col.name}
+                    {col.name}
                   {/* </div> */}
                 </TableCell>
               ))}
@@ -275,36 +275,35 @@ export default function ForginDesc({ search }) {
                 item.third_name.toLowerCase().includes(search) ||
                 name.toLowerCase().includes(search);
         })
-
         .map((user, index) => (
           <div
             key={user.id}
-            className="flex justify-between  font-roboto text-[20px]  my-4 bg-white rounded-[14px] shadow-employee lg:h-[70px]  px-5"
+            className="flex justify-between  font-roboto xl:text-[20px]  my-4 bg-white rounded-[14px] shadow-employee lg:h-[70px]  lg:px-5"
           >
             {/* name */}
-            <div className=" w-[22%] flex items-center text-yellowAcc">
-              <span className="xl:text-[22px] mx-2 lg:text-[15px] text-yellowAcc ">
+               <div className=" w-[22%] flex items-center text-yellowAcc">
+               <span className="xl:text-[22px] sm:flex hidden mx-2 text-[15px] text-yellowAcc ">
                 {index + 1}
               </span>
               -
               <img
-                className="w-[50px] ml-2 h-[50px] rounded-full"
+                className="md:w-[50px]  md:h-[50px] w-[25px] h-[25px] rounded-full"
                 src={`https://epassport-api.preview-ym.com/${user?.photo}`}
               />
-              <span className="  font-roboto flex  mt-1 xl:text-[15px] text-[13px]  text-greenD mx-3 capitalize">
+              <span className="  font-roboto flex  mt-1 xl:text-[15px] text-[10px]  text-greenD mx-3 capitalize">
                 {" "}
                 {user.first_name} {user.second_name} {user.third_name}
               </span>
-            </div>
-            {/* user id nationalty */}
-            <div className=" w-[15%] flex text-yellowAcc  lg:text-[18px] text-[14px] items-center justify-center ">
-              {user.national_id.substring(0, 14)}
-            </div>
-            <div className=" w-[13%] flex lg:justify-center items-center text-[20px] text-greenAcc">
-              {user.updated_at.substring(0, 10)}
-            </div>
-            <div className="  w-[15%] flex items-center justify-center">
-              <FormControl fullWidth>
+               </div>
+               {/* user id nationalty */}
+               <div className=" sm:w-[15%]  w-[20%] flex text-yellowAcc  xl:text-[18px] text-[12px]  items-center justify-center ">
+               {user.national_id.substring(0, 14)}
+               </div>
+               <div className=" w-[13%] xl:flex hidden   justify-center items-center text-[20px] text-greenAcc">
+               {user.updated_at.substring(0, 10)}
+               </div>
+               <div className="   w-[15%] lg:flex hidden  items-center justify-center" >
+               <FormControl sx={{ width: 158 }}>
                 <InputLabel
                   id="demo-simple-select-label"
                   className="mt-[-10px]"
@@ -338,30 +337,32 @@ export default function ForginDesc({ search }) {
                   </MenuItem>
                 </Select>
               </FormControl>
-            </div>
-            {/*  */}
-            <div className="  w-[22%] flex xl:justify-around justify-between items-center">
-              <button
+               </div>
+               <div className="  lg:w-[18%] w-[30%] flex justify-between items-center">
+               <button
                 onClick={() => handleOpenModal(user)}
-                className="text-[16px] px-3  font-normal text-white bg-yellowAcc  h-[37px] xl:w-[109px]  rounded-[25px] flex items-center justify-center"
+                className="md:text-[16px] px-2 text-[10px] font-normal text-white bg-yellowAcc sm:h-[37px] h-[20px]  md:w-[109px] rounded-[10px] md:rounded-[25px] flex items-center justify-center"
               >
-                View detail
+                <span className="md:flex hidden mx-1">View</span> detail
               </button>
 
-              <Link to={`/updateClient/${user.id}`} className="mr-3  ">
-                <img src={icon1} />
+              <Link
+                to={`/updateClient/${user.id}`}
+                className="sm:mx-3 mx-1  "
+              >
+                <img src={icon1} className="w-[25px] h-[25px]"/>
               </Link>
               <button
                 onClick={() => handilDeletClient(user.id)}
-                className="lg:block hidden"
+                className=""
               >
-                <img src={icon2} />
+                <img src={icon2} className="w-[25px] h-[25px]" />
               </button>
-            </div>
+               </div>
           </div>
         ))}
       {/* pageination */}
-      <div className="flex justify-center my-10">
+      <div className="flex justify-center my-10">-
         <ReactPaginate
           previousLabel={<img src={first} />}
           nextLabel={<img src={last} />}
@@ -380,16 +381,21 @@ export default function ForginDesc({ search }) {
         />
       </div>
       <Dialog open={modalOpen} onClose={handleCloseModal}>
-        <DialogTitle style={{ color: "green" }}>Request Details</DialogTitle>
+        <DialogTitle
+          style={{ fontFamily: "roboto", color: "green", fontSize: "25px" }}
+        >
+          Request Details
+        </DialogTitle>
         <DialogContent>
           {/* Display request status and reason for rejection */}
           {selectedClient && (
             <>
-              <p style={{ fontFamily: "Roboto", fontWeight: "bold" }}>
+              <p style={{ fontFamily: "roboto", fontWeight: "bold" }}>
+                {" "}
                 Request Status: {selectedClient.client_order.status}
               </p>
               {selectedClient.client_order.status === "rejected" && (
-                <p style={{ fontFamily: "Roboto", fontWeight: "bold" }}>
+                <p style={{ fontFamily: "roboto", fontWeight: "bold" }}>
                   Reason for Rejection:{" "}
                   {selectedClient.client_order.reject_reason}
                 </p>

@@ -433,13 +433,13 @@ export default function PassportAreaDesc({ search }) {
                 to={`/updateClient/${user.id}`}
                 className="sm:mx-3 mx-1  "
               >
-                <img src={icon1} className="w-[30px] h-[30px]"/>
+                <img src={icon1} className="w-[25px] h-[25px]"/>
               </Link>
               <button
                 onClick={() => handilDeletClient(user.id)}
                 className=""
               >
-                <img src={icon2} className="w-[30px] h-[30px]" />
+                <img src={icon2} className="w-[25px] h-[25px]" />
               </button>
                </div>
           </div>
