@@ -335,7 +335,7 @@ export default function PassportAreaDesc({ search }) {
             <TableRow className="flex   px-5 justify-between items-center xl:[&>*:nth-child(3)]:block [&>*:nth-child(3)]:hidden  lg:[&>*:nth-child(4)]:block  [&>*:nth-child(4)]:hidden      [&>*:nth-child(1)]:w-[22%]    [&>*:nth-child(2)]:w-[15%]  [&>*:nth-child(3)]:w-[13%] [&>*:nth-child(4)]:w-[15%] [&>*:nth-child(5)]:w-[18%] ">
               {colum.map((col) => (
                 <TableCell
-                  className="border-none capitaliz items-center  justify-center h-[70px] text-[21px] font-tinos  text-white flex"
+                  className="border-none capitaliz items-center  justify-center h-[70px] text-[14px] md:text-[21px] font-tinos  text-white flex"
                   key={col.id}
                 >
                   {/* <div className=" text-[20px]   text-center font-tinos capitalize font-bold "> */}
