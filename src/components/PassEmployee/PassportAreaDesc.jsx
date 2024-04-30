@@ -332,7 +332,7 @@ export default function PassportAreaDesc({ search }) {
       >
         <Table className="">
           <TableHead className="bg-greenAcc h-[70px]  ">
-            <TableRow className="flex   px-5 justify-between items-center xl:[&>*:nth-child(3)]:block [&>*:nth-child(3)]:hidden  lg:[&>*:nth-child(4)]:block  [&>*:nth-child(4)]:hidden      [&>*:nth-child(1)]:w-[22%]    [&>*:nth-child(2)]:w-[15%]  [&>*:nth-child(3)]:w-[13%] [&>*:nth-child(4)]:w-[15%] [&>*:nth-child(5)]:w-[18%] ">
+            <TableRow className="flex   px-5 justify-between items-center xl:[&>*:nth-child(3)]:block [&>*:nth-child(3)]:hidden  lg:[&>*:nth-child(4)]:block  [&>*:nth-child(4)]:hidden      [&>*:nth-child(1)]:w-[22%]    [&>*:nth-child(2)]:w-[15%]  [&>*:nth-child(3)]:w-[13%] [&>*:nth-child(4)]:w-[15%] lg:[&>*:nth-child(5)]:w-[18%] [&>*:nth-child(5)]:w-[25%] ">
               {colum.map((col) => (
                 <TableCell
                   className="border-none capitaliz items-center  justify-center h-[70px] text-[14px] md:text-[21px] font-tinos  text-white flex"
@@ -421,7 +421,7 @@ export default function PassportAreaDesc({ search }) {
                 </Select>
               </FormControl>
                </div>
-               <div className="  lg:w-[18%] w-[22%] flex justify-between items-center">
+               <div className="  lg:w-[18%] w-[25%] flex justify-between items-center">
                <button
                 onClick={() => handleOpenModal(user)}
                 className="md:text-[16px] px-2 text-[10px] font-normal text-white bg-yellowAcc h-[37px] md:w-[109px] rounded-[10px] md:rounded-[25px] flex items-center justify-center"
@@ -431,7 +431,7 @@ export default function PassportAreaDesc({ search }) {
 
               <Link
                 to={`/updateClient/${user.id}`}
-                className="sm:mx-3  "
+                className="sm:mx-3 mx-1  "
               >
                 <img src={icon1} className="w-[50px] h-[50px]"/>
               </Link>
