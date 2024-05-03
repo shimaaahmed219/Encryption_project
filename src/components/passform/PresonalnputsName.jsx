@@ -16,7 +16,7 @@ export default function PresonalnputsName({ register, errors }) {
               },
             })}
             type="text"
-            className={` xl:w-[240px] w-full bg-transparent focus:outline-none   h-[50px] px-[20px] py-[6px] rounded-input border-[1px] border-yellowAcc `}
+            className={` xl:w-[240px] w-full bg-transparent focus:outline-none  text-[18px] h-[50px] px-[20px] py-[6px] rounded-input border-[1px] border-yellowAcc `}
           />
           {/* set first name error */}
           {errors.first_name && (
@@ -38,7 +38,7 @@ export default function PresonalnputsName({ register, errors }) {
                 message: "This field is required",
               },
             })}
-            className={` xl:w-[240px] bg-transparent w-[99%] h-[50px] focus:outline-none  px-[20px] py-[6px] rounded-input border-[1px] border-yellowAcc `}
+            className={` xl:w-[240px] bg-transparent text-[18px] w-[99%] h-[50px] focus:outline-none  px-[20px] py-[6px] rounded-input border-[1px] border-yellowAcc `}
           />
 
           {/* set secons name errors */}
@@ -60,7 +60,7 @@ export default function PresonalnputsName({ register, errors }) {
               },
             })}
             type="text"
-            className={` xl:w-[240px] bg-transparent w-[99%] h-[50px] focus:outline-none   px-[20px] py-[6px] rounded-input border-[1px] border-yellowAcc `}
+            className={` xl:w-[240px] bg-transparent w-[99%] h-[50px] text-[18px] focus:outline-none   px-[20px] py-[6px] rounded-input border-[1px] border-yellowAcc `}
           />
           {/* third name errors */}
           {errors.third_name && (
@@ -81,7 +81,7 @@ export default function PresonalnputsName({ register, errors }) {
                 message: "This field is required",
               },
             })}
-            className={` xl:w-[240px]  w-[95%] h-[50px] bg-transparent focus:outline-none  px-[20px] py-[6px] rounded-input border-[1px] border-yellowAcc `}
+            className={` xl:w-[240px] text-[18px]  w-[95%] h-[50px] bg-transparent focus:outline-none  px-[20px] py-[6px] rounded-input border-[1px] border-yellowAcc `}
           />
           {/* set last name errors */}
           {errors.last_name && (

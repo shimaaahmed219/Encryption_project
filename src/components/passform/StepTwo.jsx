@@ -10,7 +10,7 @@ import {
 } from "@mui/material";
 
 import HeaderFormPage from "../HeaderFormPage";
-import { useState ,useEffect } from "react";
+import { useState, useEffect } from "react";
 
 export default function StepTwo({
   nextStep,
@@ -19,32 +19,19 @@ export default function StepTwo({
   step,
   goToStep,
   errors,
-data
-  
+ watch,
 }) {
-
-  const [fieldsFilled, setFieldsFilled] = useState(false); // حالة محلية لتتبع ما إذا كانت الحقول فارغة أم لا
-
   
-  const checkFieldsFilled = () => {
-    if (data) {
-      setFieldsFilled(true);
-    } else {
-      setFieldsFilled(false);
-    }
-    console.log("maritalStatus",data);
-  };
 
-  
-  useEffect(() => {
-    checkFieldsFilled();
-  }, [data]);
+  const [isStepValid2 ,setIsStepValid2]=useState(false)  
+  const watchAllFields = watch()
 
-
- 
-
-
-
+  useEffect(()=>{
+    const isFormValid =
+    watchAllFields.marital_status !==null
+    setIsStepValid2(isFormValid);
+  },[watchAllFields])
+  // console.log(isStepValid2,watchAllFields);
   return (
     <div
       className={`bg-bg min-h-screen w-full  ${
@@ -103,7 +90,7 @@ data
           <input
             {...register("husband_name")}
             type="text"
-            className=" focus:outline-none font-roboto text-[20px] px-5 text-lg text-hreenAcc rounded-input bg-transparent w-full h-[50px] border-[1px] border-yellowAcc"
+            className=" focus:outline-none font-roboto text-[18px] px-5 text-lg text-hreenAcc rounded-input bg-transparent w-full h-[50px] border-[1px] border-yellowAcc"
           />
           <label className="text-greenAcc font-roboto mb-3 mt-7 text-xl font-bold block">
             Nationality
@@ -111,7 +98,7 @@ data
           <input
             value="Eegyptian"
             type="text"
-            className=" focus:outline-none  text-[20px] px-5 rounded-input font-roboto text-lg text-hreenAcc w-full bg-transparent h-[50px] border-[1px] border-yellowAcc"
+            className=" focus:outline-none text-[18px] px-5 rounded-input font-roboto text-lg text-hreenAcc w-full bg-transparent h-[50px] border-[1px] border-yellowAcc"
           />
         </div>
       </div>
@@ -124,11 +111,10 @@ data
           Back
         </button>
         <button
-          className={`md:w-[255px] mb-10  h-[65px] md:bg-greenAcc text-[32px] md:text-white font-bold  rounded-input text-greenAcc font-tinos `}
+          className={`md:w-[255px] mb-10  h-[65px] md:bg-greenAcc ${!isStepValid2 && 'bg-gray-500' } text-[32px] md:text-white font-bold  rounded-input text-greenAcc font-tinos `}
           type="button"
-          // disabled={!fieldsFilled}
           onClick={nextStep}
-       
+          disabled={!isStepValid2}
         >
           Next
         </button>

@@ -91,6 +91,10 @@ export default {
       },
       width:{
         'editEmplyeInput':"42%"
+      },
+      fontSize:{
+        label:"17px",
+        lebelInputs:"17px"
       }
     },
   },

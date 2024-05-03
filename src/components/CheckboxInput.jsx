@@ -15,7 +15,7 @@ export default function CheckboxInput({ register }) {
     <div className=" ">
       <FormControl>
         {/* {errors.type&& (
-                            <div className=" text-red-500 mx-5 text-[20px]  ">{`**${errors.type.message}`}</div>
+                            <div className=" text-red-500 mx-5 text-[17px]  ">{`**${errors.type.message}`}</div>
                         )} */}
         <FormLabel id="demo-radio-buttons-group-label"></FormLabel>
         <RadioGroup
@@ -43,7 +43,7 @@ export default function CheckboxInput({ register }) {
             label={
               <span
                 style={{
-                  fontSize: "20px",
+                  fontSize: "17px",
                   fontFamily: "Roboto",
                   color: "#324134",
                 }}
@@ -72,7 +72,7 @@ export default function CheckboxInput({ register }) {
             label={
               <span
                 style={{
-                  fontSize: "20px",
+                  fontSize: "17px",
                   fontFamily: "Roboto",
                   color: "#324134",
                 }}
@@ -101,7 +101,7 @@ export default function CheckboxInput({ register }) {
             label={
               <span
                 style={{
-                  fontSize: "20px",
+                  fontSize: "17px",
                   fontFamily: "Roboto",
                   color: "#324134",
                 }}
@@ -130,7 +130,7 @@ export default function CheckboxInput({ register }) {
             label={
               <span
                 style={{
-                  fontSize: "20px",
+                  fontSize: "17px",
                   fontFamily: "Roboto",
                   color: "#324134",
                 }}

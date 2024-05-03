@@ -1,11 +1,12 @@
 
+
 /* eslint-disable react/prop-types */
 /* eslint-disable react/prop-types */
 /* eslint-disable react/prop-types */
 import HeaderFormPage from "../HeaderFormPage";
 import upload from "../../assets/passForm/uploadfile.svg";
 import Hr from "../Hr";
-// import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function StepThree({
   register,
@@ -16,8 +17,22 @@ export default function StepThree({
   step,
   handleImageChange,
   selectedImage,
+  watch,
 }) {
- 
+  const [isStepValid ,setIsStepValid]=useState(false)  
+  const watchAllFields = watch()
+  useEffect(() => {
+    const isFormValid =
+      watchAllFields.national_id !== "" &&
+      watchAllFields.birth_cert?.length > 0;
+      watchAllFields.national_id_photo?.length > 0;
+      watchAllFields.graduation_cert?.length > 0;
+    
+      
+  
+    setIsStepValid(isFormValid);
+  }, [watchAllFields]);
+  
   return (
     <div className={`${step === 3 ? "block" : "hidden"}`}>
       <div className="w-[85%] shadow-shadowEmp mt-10 bg-baform min-h-[778px] m-auto py-7  rounded-[20px] justify-center ">
@@ -38,7 +53,7 @@ export default function StepThree({
                   message: "This field is required",
                 },
               })}
-              className="rounded-input font-roboto text-[20px] px-[20px] bg-transparent md:ml-0 ml-6 focus:outline-none border-[1px] border-yellowAcc md:w-[70%] w-[83%] h-[50px]"
+              className="rounded-input font-roboto text-[18px] px-[20px] bg-transparent md:ml-0 ml-6 focus:outline-none border-[1px] border-yellowAcc md:w-[70%] w-[83%] h-[50px]"
             />
           </div>
           {errors.national_id && (
@@ -54,7 +69,7 @@ export default function StepThree({
             <input
               {...register("university_id")}
               type="text"
-              className="rounded-input font-roboto text-[20px] px-[20px] bg-transparent  md:ml-[100px] ml-6 m-auto focus:outline-none w-full border-[1px] border-yellowAcc md:w-[65%] h-[50px]"
+              className="rounded-input font-roboto text-[18px] px-[20px] bg-transparent  md:ml-[100px] ml-6 m-auto focus:outline-none w-full border-[1px] border-yellowAcc md:w-[65%] h-[50px]"
             />
           </div>
         </div>
@@ -111,12 +126,7 @@ export default function StepThree({
               </label>
               <div className="w-[236px] h-[200px] rounded-[7px] bg-fileUploud relative">
                 <input
-                  {...register("national_id_photo", {
-                    required: {
-                      value: true,
-                      message: "This field is required",
-                    },
-                  })}
+                  {...register("national_id_photo")}
                   onChange={(e) => handleImageChange(e, "national_id_photo")}
                   type="file"
                   className="opacity-0 w-full h-full absolute z-50"
@@ -137,11 +147,11 @@ export default function StepThree({
                 )}
               </div>
             </div>
-            {errors.national_id_photo && (
+            {/* {errors.national_id_photo && (
               <div className="text-red-500 mx-5 text-[15px] my-2">
                 ***{errors.national_id_photo.message}
               </div>
-            )}
+            )} */}
           </div>
           <div>
             <div className="md:pl-5 pl-[2px]">
@@ -194,10 +204,10 @@ export default function StepThree({
           back
         </button>
         <button
-          className="w-[255px] mb-10  h-[65px] md:bg-greenAcc text-[32px] text-greenAcc md:text-white font-tinos rounded-input"
+          className="w-[255px] mb-10  h-[65px] md:bg-greenAcc text-[32px] ${!isStepValid && 'bg-gray-500' } text-greenAcc md:text-white font-tinos rounded-input"
           type="button"
           onClick={nextStep}
-          // disabled={!fieldsFilled}
+          disabled={!isStepValid}
         >
           Next
         </button>

@@ -3,12 +3,14 @@ import FexidSidebar from "../components/FexidSidebar";
 import Nav from "../components/Nav";
 
 import icon from "../assets/navImg/Group (1).svg";
+import { useState } from "react";
 export default function AddEmployee() {
+  const [isLoading, setIsLoading] = useState(false);
   return (
     // </div>
     <div className="min-h-screen bg-bg">
       <div className="xl:flex  flex-row">
-        <div className=" w-[26%] min-h-screen xl:block hidden">
+        <div className=" w-[26%] min-h-screen z-30 xl:block hidden">
           <FexidSidebar />
         </div>
         <div className=" py-2 w-full h-full">
@@ -36,10 +38,26 @@ export default function AddEmployee() {
           <hr className="w-full h-[0.15rem] bg-greenAcc my-2" />
           <div className="w-full h-full flex justify-center items-center p-1">
             {/* <h1 className={`${rob.className} ms-[50px]  text-[26px]  capitalize text-greenAcc`}>Edit Employee </h1> */}
-            <AddEmployeeForm />
+            <AddEmployeeForm setIsLoading={setIsLoading} isLoading={isLoading} />
           </div>
         </div>
       </div>
+      {isLoading && (
+  <div>
+    <div className="w-full z-40 min-h-[900px] absolute left-0 top-0 bg-black opacity-85"></div>
+    <div className="w-full h-full top-0 left-0 absolute flex flex-col justify-center items-center">
+      <div className="mt-[-60px] text-white text-[20px] capitalize z-50 font-tinos">Loading...</div>
+      <div className="absolute top-0 flex  justify-center items-center h-full w-full z-50">
+       
+     
+        <div className="h-[25px] w-[30%] border-[1px] py-[5px] px-2 border-white animate-pulse">
+          <div className="bg-approved w-full h-full rounded-full"></div>
+        </div>
+   
+      </div>
+    </div>
+  </div>
+)}
     </div>
   );
 }

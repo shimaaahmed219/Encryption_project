@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useForm } from "react-hook-form";
 import icon from "../../assets/AddEmployee/edit-2.svg";
 import { z } from "zod";
@@ -45,9 +46,9 @@ const schema = z.object({
 
 });
 
-export default function AddEmployeeForm() {
+export default function AddEmployeeForm({setIsLoading,isLoading}) {
   const [selectedImage, setSelectedImage] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
+  
   const [showPassword, setShowPassword] = useState(false);
 
 
@@ -110,10 +111,10 @@ export default function AddEmployeeForm() {
       setIsLoading(false); 
     }
   };
-  console.log(isLoading);
+  
   console.log("errors:",errors);
   return (
-    <div className="w-[80%] font-roboto text-[22px] h-full text-greenAcc shadow-shadowEmp bg-bgEmp rounded-[20px] my-10">
+    <div className="w-[80%] font-roboto text-[20px] h-full text-greenAcc shadow-shadowEmp bg-bgEmp rounded-[20px] my-10">
       <form
         onSubmit={handleSubmit(onsubmit)}
         className=" flex-col flex items-center "
@@ -134,7 +135,7 @@ export default function AddEmployeeForm() {
           )}
           {/* {title} */}
           <div className=" md:block hidden">
-            <div className=" bottom-[10px] right-[-2px] z-50 absolute w-[27px] h-[27px] bg-yellowAcc rounded-full flex justify-center items-center">
+            <div className=" bottom-[10px] right-[-2px] z-30 absolute w-[27px] h-[27px] bg-yellowAcc rounded-full flex justify-center items-center">
               <img src={icon} className="text-yellowAcc  " />
             </div>
           </div>
@@ -158,7 +159,7 @@ export default function AddEmployeeForm() {
                 type="text"
                 placeholder="name"
                 className="  w-full border-[1px] bg-transparent focus:outline-none
-                 rounded-input h-[50px] px-5  border-yellowAcc "
+                 rounded-input h-[50px] px-5 text-[18px]  border-yellowAcc "
               />
               {errors.name && (
                 <div className=" text-red-500  text-[14px] mt-[15px] mb-[15px]">
@@ -173,7 +174,7 @@ export default function AddEmployeeForm() {
                 {...register("phone")}
                 type="text"
                 placeholder="phone Number"
-                className=" border-[1px] focus:outline-none bg-transparent rounded-input
+                className=" border-[1px] text-[18px] focus:outline-none bg-transparent rounded-input
                  h-[50px] px-5  border-yellowAcc"
               />
               {errors.phone && (
@@ -191,7 +192,7 @@ export default function AddEmployeeForm() {
                   {...register("email")}
                   type="text"
                   placeholder="email@example.com"
-                  className="  w-full border-[1px] focus:outline-none bg-transparent rounded-input h-[50px] px-5  border-yellowAcc "
+                  className="  w-full border-[1px] text-[18px] focus:outline-none bg-transparent rounded-input h-[50px] px-5  border-yellowAcc "
                 />
                 {errors.email && (
                   <div className=" text-red-500 text-[15px] mt-[15px] mb-[15px]">{`**${errors.email.message}`}</div>
@@ -205,7 +206,7 @@ export default function AddEmployeeForm() {
                   {...register("job")}
                   type="text"
                   placeholder="job"
-                  className=" border-[1px] bg-transparent focus:outline-none  rounded-input h-[50px] px-5  border-yellowAcc"
+                  className=" border-[1px] bg-transparent text-[18px] focus:outline-none  rounded-input h-[50px] px-5  border-yellowAcc"
                 />
                 {errors.job && (
                   <div className=" text-red-500 text-[15px] mt-[15px] mb-[15px]">{`**${errors.job.message}`}</div>
@@ -217,13 +218,13 @@ export default function AddEmployeeForm() {
             <div className=" flex md:flex-row flex-col gap-y-4 w-full justify-around ">
               {/* name */}
               <div className="  md:w-editEmplyeInput w-full flex flex-col  ">
-                <label className="my-2 mx-1 font-semibold">Password</label>
+                <label className="my-2 mx-1 font-semibold text-[20px]">Password</label>
                 <div className="flex relative">
                   <input
                     {...register("password")}
                     type={showPassword ? "text" : "password"}
                     placeholder="new password"
-                    className=" w-full  border-[1px] bg-transparent focus:outline-none rounded-input h-[50px] px-5  border-yellowAcc "
+                    className=" w-full  border-[1px] bg-transparent text-[18px] focus:outline-none rounded-input h-[50px] px-5  border-yellowAcc "
                   />
                   <span
                     onClick={() => setShowPassword(!showPassword)}
@@ -249,12 +250,12 @@ export default function AddEmployeeForm() {
 
         <button
           className={` font-tinos m-auto flex items-center justify-center my-[3rem] rounded-[10px] text-[26px] bg-greenAcc w-[240px] h-[57px] text-white`}
-       disabled={isLoading}
+    
        >
   
 
   
-  {isLoading ? (
+  {/* {isLoading ? (
     <svg
       className="animate-spin  mr-3 h-6 w-6 text-white"
       xmlns="http://www.w3.org/2000/svg"
@@ -275,7 +276,9 @@ export default function AddEmployeeForm() {
         d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647zM20 12a8 8 0 01-8 8v4c4.627 0 10-5.373 10-12h-4zm-2-5.291A7.962 7.962 0 0120 12h4c0-3.042-1.135-5.824-3-7.938l-3 2.647z"
       ></path>
     </svg>
-  ) : null}
+  ) : null} */}
+  
+
   {isLoading ? "Adding.." : "add Employee"}
 </button>
       </form>

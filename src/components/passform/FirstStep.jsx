@@ -14,6 +14,7 @@ import {
 import HeaderStepOne from "./HeaderStepOne";
 import PresonalnputsName from "./PresonalnputsName";
 import PresonalInputAr from "./PresonalInputAr";
+import { useEffect, useState } from "react";
 export default function FirstStep({
   register,
   errors,
@@ -22,10 +23,36 @@ export default function FirstStep({
   step,
   handleImageChange,
   selectedImage,
+  watch
 }) {
 
-  
+const [isStepValid ,setIsStepValid]=useState(false)  
+const watchAllFields = watch()
+useEffect(() => {
+  const isFormValid =
+    watchAllFields.passports_department !== "" &&
+    watchAllFields.date_of_birth !== "" &&
+    watchAllFields.first_name !== "" &&
+    watchAllFields.second_name !== "" &&
+    watchAllFields.third_name !== "" &&
+    watchAllFields.last_name !== "" &&
+    watchAllFields.first_name_ar !== "" &&
+    watchAllFields.second_name_ar !== "" &&
+    watchAllFields.third_name_ar !== "" &&
+    watchAllFields.last_name_ar !== "" &&
+    watchAllFields.photo?.length > 0;
+    watchAllFields.phone !== "" &&
+    watchAllFields.home_phone!== "" &&
+    watchAllFields.gender!== "" &&
+    watchAllFields.academic_qualification!== "" &&
+    watchAllFields.religion!== "" &&
+    watchAllFields.job!== ""
+    
 
+  setIsStepValid(isFormValid);
+}, [watchAllFields]);
+
+// console.log(isStepValid,watchAllFields);
   return (
     <div
       className={` ${
@@ -66,7 +93,7 @@ export default function FirstStep({
                       },
                     })}
                     type="type"
-                    className=" my-1 bg-transparent focus:outline-none md:w-[350px]  w-full h-[50px] px-[20px]   py-[6px] border-[1px] rounded-input border-yellowAcc"
+                    className=" my-1 bg-transparent text-[18px] focus:outline-none md:w-[350px]  w-full h-[50px] px-[20px]   py-[6px] border-[1px] rounded-input border-yellowAcc"
                   />
                 </div>
 
@@ -99,7 +126,7 @@ export default function FirstStep({
                     })}
                     placeholder="00-00-2000"
                     type="date"
-                    className="border-[1px] bg-transparent focus:outline-none md:mt-0 mt-5 mb-4 text-[20px] font-roboto px-5 border-yellowAcc xl:ml-[72px] lg:w-[350px] md:w-[90%] w-[97%] h-[50px] rounded-input"
+                    className="border-[1px] bg-transparent text-[18px] focus:outline-none md:mt-0 mt-5 mb-4  font-roboto px-5 border-yellowAcc xl:ml-[72px] lg:w-[350px] md:w-[90%] w-[97%] h-[50px] rounded-input"
                   />
                   {/* data of birth error */}
                   {errors.date_of_birth && (
@@ -169,7 +196,7 @@ export default function FirstStep({
                         },
                       })}
                       type="text"
-                      className=" rounded-input font-roboto text-[20px]  bg-transparent  mb-3 w-full  h-[50px] border-[1px] focus:outline-none  border-yellowAcc px-[20px] py-[6px]"
+                      className=" rounded-input font-roboto text-[18px]  bg-transparent  mb-3 w-full  h-[50px] border-[1px] focus:outline-none  border-yellowAcc px-[20px] py-[6px]"
                     />
                   </div>
                 </div>
@@ -193,7 +220,7 @@ export default function FirstStep({
                     },
                   })}
                   type="text"
-                  className=" rounded-input font-roboto text-[20px] px-[20px] bg-transparent focus:outline-none  md:w-[93%] w-[97%] h-[50px] border-[1px] border-yellowAcc  md:pl-[20px] py-[6px]"
+                  className=" rounded-input text-[18px] font-roboto  px-[20px] bg-transparent focus:outline-none  md:w-[93%] w-[97%] h-[50px] border-[1px] border-yellowAcc  md:pl-[20px] py-[6px]"
                 />
                 {errors.religion && (
                   <div className=" text-red-500 m-auto text-[15px] mt-[10px] mb-[5px]">{`***${errors.religion.message}`}</div>
@@ -213,7 +240,7 @@ export default function FirstStep({
                         message: "This field is required",
                       },
                     })}
-                    className="w-full h-[50px] font-roboto text-[20px] px-[20px] mt-6 mb-10  bg-transparent focus:outline-none   py-[6px] border-[1px] border-yellowAcc rounded-input "
+                    className="w-full h-[50px] font-roboto text-[18px] px-[20px] mt-6 mb-10  bg-transparent focus:outline-none   py-[6px] border-[1px] border-yellowAcc rounded-input "
                   />
                   {errors.academic_qualification && (
                     <span className=" text-red-500 text-[15px] m-auto  mt-[10px] mb-[5px]">
@@ -232,7 +259,7 @@ export default function FirstStep({
                         message: "This field is required",
                       },
                     })}
-                    className="w-full font-roboto text-[20px] px-[20px] h-[50px] mt-5  bg-transparent py-[6px] focus:outline-none  border-[1px] border-yellowAcc rounded-input "
+                    className="w-full font-roboto text-[18px] px-[20px] h-[50px] mt-5  bg-transparent py-[6px] focus:outline-none  border-[1px] border-yellowAcc rounded-input "
                   />
                   {errors.job && (
                     <span className=" text-red-500 text-[15px] m-auto  mt-[10px] mb-[5px]">
@@ -254,7 +281,7 @@ export default function FirstStep({
                         },
                       })}
                       type="text"
-                      className=" w-full h-[50px] font-roboto text-[20px] px-[20px] mt-4  bg-transparent py-[6px] focus:outline-none  border-[1px] border-yellowAcc rounded-input"
+                      className=" w-full h-[50px] font-roboto text-[18px] px-[20px] mt-4  bg-transparent py-[6px] focus:outline-none  border-[1px] border-yellowAcc rounded-input"
                     />
                     {errors.phone && (
                       <div className=" text-red-500 m-auto text-[15px] mt-[10px] mb-[5px]">{`**${errors.phone.message}`}</div>
@@ -273,7 +300,7 @@ export default function FirstStep({
                         },
                       })}
                       type="text"
-                      className=" font-roboto text-[20px] px-[20px] w-full h-[50px]  bg-transparent mt-4 py-[6px] focus:outline-none  border-[1px] border-yellowAcc rounded-input"
+                      className=" font-roboto text-[18px] px-[20px] w-full h-[50px]  bg-transparent mt-4 py-[6px] focus:outline-none  border-[1px] border-yellowAcc rounded-input"
                     />
                     {errors.home_phone && (
                       <div className=" text-red-500 m-auto text-[15px]  mt-[10px] mb-[5px]">{`**${errors.home_phone.message}`}</div>
@@ -286,10 +313,10 @@ export default function FirstStep({
         </div>
         <div className="w-full flex justify-center my-10">
           <button
-            className={`w-[255px] mb-10  h-[65px] bg-greenAcc text-[32px] text-white font-tinos rounded-input `}
+            className={`w-[255px] mb-10  h-[65px] bg-greenAcc ${!isStepValid && 'bg-gray-500' } text-[32px] text-white font-tinos rounded-input `}
             type="button"
             onClick={nextStep}
-           
+            disabled={!isStepValid}
   
   
           >

@@ -25,22 +25,22 @@ export default function Footer() {
 
           {/*  */}
           <div className=" xl:my-0 py-7">
-            <h6 className="text-white text-[20px] font-roboto capitalize font-light">
+            <h6 className="text-white text-[18px] my-1 font-roboto capitalize font-semibold ">
               Navigation
             </h6>
-            <div className="w-[153px] flex-col flex text-white font-ropoto text-[20px]">
+            <div className="w-[153px] flex-col flex text-white font-ropoto  leading-6 text-[16px]">
               <Link to="/" className="hover:text-yellowAcc">Home </Link>
-              <Link to="/about">About Us </Link>
-              <Link to="/service">What We Do </Link>
-              <Link to="/security">To The Power of 10 Donate </Link>
+              <Link to="/about"  className="hover:text-yellowAcc">About Us </Link>
+              <Link to="/service"  className="hover:text-yellowAcc">What We Do </Link>
+              <Link to="/security"  className="hover:text-yellowAcc">To The Power of 10 Donate </Link>
             </div>
           </div>
           {/*  */}
           <div className="xl:my-0 py-7">
-            <h6 className="text-white text-[20px] font-roboto capitalize font-light">
+            <h6 className="text-white text-[18px] font-roboto font-semibold capitalize ">
               What We Do
             </h6>
-            <div className=" flex-col flex text-white font-ropoto text-[20px]">
+            <div className=" flex-col flex text-white font-ropoto leading-6 my-1 text-[16px]">
               <ul>
                 <li>Encouraging Testing</li>
                 <li>Strengthening Advocacy</li>
@@ -54,11 +54,11 @@ export default function Footer() {
           {/*  */}
 
           <div className="xl:my-0 py-7">
-            <h6 className="text-white font-semibold xl:ml-[60px] xxl:text-[20px] text-[18px] font-roboto capitalize ">
+            <h6 className="text-white font-semibold my-1 xl:ml-[60px] xxl:text-[20px] text-[18px] font-roboto capitalize ">
               TALK TO US
             </h6>
-            <div className=" flex-col flex xl:ml-[60px] font-ropoto text-[20px]">
-              <ul>
+            <div className=" flex-col flex xl:ml-[60px] font-ropoto text-[16px]">
+              <ul className="leading-6">
                 <li><Link className="text-yellowAcc"> support@ercom.com</Link></li>
                 <li><Link className="text-yellowAcc">+66 2399 1145</Link></li>
                 <li><Link className="text-yellowAcc">Contact Us</Link></li>

@@ -31,8 +31,8 @@ export default function FexidSidebar() {
     { id: 12, name: "passport authority", href: "/passEployee", src: Settingsicon },
   ];
 
-  const [data, setData] = useState({});
-  //   const [close, setClose] = useState(false);
+  const [data, setData] = useState(null);
+
   useEffect(() => {
     axios
       .get(`${url}/auth/myProfile`, {
@@ -43,12 +43,8 @@ export default function FexidSidebar() {
       })
       .then((res) => setData(res.data.data));
   }, []);
-  // console.log(data);
-
-  //   const handilClose = () => {
-  //     setClose(true);
-  //   };
-
+  
+console.log(data);
   return (
     <>
       <div

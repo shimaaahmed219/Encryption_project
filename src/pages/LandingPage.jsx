@@ -38,7 +38,7 @@ export default function LandingPage() {
             </p>
             <div className="flex lg:justify-start justify-center ">
               <Link
-                to=""
+                to="/service"
                 className="h-[60px] md:w-[255px] w-[200px] bg-greenAcc mt-[50px] mb-[100px] text-white font-tinos Our services flex items-center justify-center rounded-input md:text-[28px] text-[22px] py-[6px] font-bold "
               >
                 Our services
@@ -92,9 +92,9 @@ export default function LandingPage() {
             five centuries, but also the leap into electronic typesetting,
             remaining essentially unchanged.
           </p>
-          <button className="w-[166px] h-[53px] font-tinos hover:px-10 hover:bg-gray-50 font-bold mt-[40px] bg-yellowAcc rounded-[25px] text-white text-[22px] hover:text-[18px] hover:bg-bgEmp hover:text-greenAcc items-center flex justify-center">
+          <Link   to="/service" className="w-[166px] h-[53px] font-tinos hover:px-10 hover:bg-gray-50 font-bold mt-[40px] bg-yellowAcc rounded-[25px] text-white text-[22px] hover:text-[18px] hover:bg-bgEmp hover:text-greenAcc items-center flex justify-center">
             see more
-          </button>
+          </Link>
         </div>
       </div>
 
@@ -136,9 +136,9 @@ export default function LandingPage() {
               typesetting, remaining essentially unchange
             </p>
             <div className="w-full flex lg:justify-start justify-center">
-            <button className="w-[166px] h-[53px]  hover:text-yellowAcc hover:bg-bgEmp bg-yellowAcc font-tinos text-white rounded-[25px]   text-[24px] font-bold">
+            <Link to="/security" className="w-[166px] h-[53px] flex justify-center items-center hover:text-yellowAcc hover:bg-bgEmp bg-yellowAcc font-tinos text-white rounded-[25px]   text-[24px] font-bold">
               see more
-            </button>
+            </Link>
             </div>
            
           </div>
