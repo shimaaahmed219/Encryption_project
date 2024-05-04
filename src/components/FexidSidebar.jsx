@@ -58,7 +58,7 @@ console.log(data);
             {data?.photo ? (
               <img
                 className="w-[65px] h-[67px] rounded-full"
-                src={`https://epassport-api.preview-ym.com/${data?.photo}`}
+                src={`${data?.photo}`}
               />
             ) : (
               ""

@@ -320,10 +320,12 @@ export default function PassportAreaDesc({ search }) {
         icon: "error",
       });
     }
+   
     const res = await axios.get(`${url}/client`);
     setClient(res.data.data);
   };
 
+  
   return (
     <div className="w-[85%]  m-auto my-10">
       <TableContainer
@@ -445,7 +447,7 @@ export default function PassportAreaDesc({ search }) {
           </div>
         ))}
       {/* pageination */}
-      <div className="flex justify-center my-10">-
+      <div className="flex justify-center my-10">
         <ReactPaginate
           previousLabel={<img src={first} />}
           nextLabel={<img src={last} />}

@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { url } from "../URL";
 import { useParams } from "react-router-dom";
 import { useForm } from "react-hook-form";
@@ -10,19 +11,25 @@ import { useEffect, useState } from "react";
 const schema = z.object({
   name: z.string().min(6).max(50),
   email: z.string().email(),
-  
-  phone: z.string().refine((value) => value.trim() !== "", { message: "This field is required" }),
+
+  phone: z
+    .string()
+    .refine((value) => value.trim() !== "", {
+      message: "This field is required",
+    }),
   job: z
     .string()
-   .refine((value) => value.trim() !== "", { message: "This field is required" }),
+    .refine((value) => value.trim() !== "", {
+      message: "This field is required",
+    }),
   photo: z
     .any()
-    .refine((value) => value.trim() !== "", { message: "This field is required" })
-    
+    .refine((value) => value !== "", { message: "This field is required" }),
 });
 
-export default function EditEmpForm() {
-  const { id } = useParams(); 
+
+export default function EditEmpForm({ setIsLoading, isLoading }) {
+  const { id } = useParams();
 
   // add defolt value in inputs
   const [selectedImage, setSelectedImage] = useState(null);
@@ -49,11 +56,12 @@ export default function EditEmpForm() {
     formState: { errors },
   } = useForm({
     resolver: zodResolver(schema),
+    mode: "all",
     defaultValues: {
       ...employeeData,
     },
   });
-console.log("data",employeeData);
+  console.log("data", employeeData);
   // show employee data
   useEffect(() => {
     axios
@@ -66,13 +74,14 @@ console.log("data",employeeData);
         setemployeeData(res.data.data);
         Object.keys(res.data.data).forEach((key) => {
           setValue(key, res.data.data[key]);
-          console.log("set",res.data.data);
+          console.log("set", res.data.data);
         });
-      }).catch((error)=>{
-        console.log(error);
       })
+      .catch((error) => {
+        console.log(error);
+      });
   }, [id]);
-console.log(errors);
+  console.log(errors);
   // update employee
   const onSubmitForm = async (data) => {
     const formdata = new FormData();
@@ -81,70 +90,75 @@ console.log(errors);
     formdata.append("position", data.job);
     formdata.append("photo", data.photo[0]);
     formdata.append("phone", data.phone);
-
-    axios
-      .post(`${url}/employee/${id}`, formdata, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-          Authorization: `Bearer ${window.localStorage.getItem("token")}`,
-        },
-      })
-      .then((res) => {
-        // console.log(res);
+    setIsLoading(true);
+    try {
+        const res = await axios.post(`${url}/employee/${id}`, formdata, {
+            headers: {
+                "Content-Type": "multipart/form-data",
+                Authorization: `Bearer ${window.localStorage.getItem("token")}`,
+            },
+        });
+        console.log(res.data);
         if (res.status === 200) {
-          Swal.fire({
-            title: "Good job!",
-            text: "You clicked the button!",
-            icon: "success",
-          });
+            Swal.fire({
+                title: "Good job!",
+                text: "You clicked the button!",
+                icon: "success",
+            });
         }
-      });
-  };
+    } catch (error) {
+        // handle error
+    }
+    setIsLoading(false);
+};
 
   return (
-    <div className="w-[80%] font-roboto text-[18px] h-full text-greenAcc
-     shadow-shadowEmp bg-bgEmp rounded-[20px] my-10">
+    <div
+      className="w-[80%] font-roboto text-[18px] h-full text-greenAcc
+     shadow-shadowEmp bg-bgEmp rounded-[20px] my-10"
+    >
       <form onSubmit={handleSubmit(onSubmitForm)}>
         {/* update image */}
 
         <div className="w-full  flex flex-col items-center justify-center">
-        <div className="w-[115px] h-[115px] mt-10 mb-5 relative rounded-full
-         userIconForm flex justify-center items-center ">
-             <input
-               {...register("photo")}
-                    onChange={handleImageChange}
-               type="file"
-               className=" w-full h-full z-50 m-auto opacity-0 absolute"
-             />
-             {employeeData.photo ? (
-               <img
-                 className=" object-cover w-full h-full absolute rounded-full "
-                 src={`https:epassport-api.preview-ym.com/${employeeData.photo}`}
-               />
-             ) : (
-               ""
-             )}
-              {selectedImage && (
-             <img
-               src={selectedImage}
-               alt="Selected"
-               className="w-full absolute h-full object-cover rounded-full"
-             />
-           )}
-             {errors.photo && (
-           <div className=" text-red-500 m-auto ml-[-20px] text-[15px] ">{`**${errors.photo.message}`}</div>
-         )}
-          
-           </div>
-           <h2 className={` font-tinos text-greenAcc text-[30px] capitalize`}>
-         {employeeData.name}
-       </h2>
-       <h1
-         className={` font-tinos font-bold text-yellowAcc text-[24px] capitalize`}
-       >
-         {" "}
-         update
-       </h1>
+          <div
+            className="w-[115px] h-[115px] mt-10 mb-5 relative rounded-full
+         userIconForm flex justify-center items-center "
+          >
+            <input
+              {...register("photo")}
+              onChange={handleImageChange}
+              type="file"
+              className=" w-full h-full z-50 m-auto opacity-0 absolute"
+            />
+            {employeeData.photo ? (
+              <img
+                className=" object-cover w-full h-full absolute rounded-full "
+                src={`https:epassport-api.preview-ym.com/${employeeData.photo}`}
+              />
+            ) : (
+              ""
+            )}
+            {selectedImage && (
+              <img
+                src={selectedImage}
+                alt="Selected"
+                className="w-full absolute h-full object-cover rounded-full"
+              />
+            )}
+            {errors.photo && (
+              <div className=" text-red-500 m-auto ml-[-20px] text-[15px] ">{`**${errors.photo.message}`}</div>
+            )}
+          </div>
+          <h2 className={` font-tinos text-greenAcc text-[30px] capitalize`}>
+            {employeeData.name}
+          </h2>
+          <h1
+            className={` font-tinos font-bold text-yellowAcc text-[24px] capitalize`}
+          >
+            {" "}
+            update
+          </h1>
         </div>
 
         {/* inputs */}
@@ -161,7 +175,8 @@ console.log(errors);
               />
               {errors.name && (
                 <div className=" text-red-500 m-auto text-[14px] mt-[15px] mb-[15px]">
-                  {`**${errors.name.message}`}</div>
+                  {`**${errors.name.message}`}
+                </div>
               )}
             </div>
 
@@ -176,7 +191,8 @@ console.log(errors);
               />
               {errors.phone && (
                 <div className=" text-red-500 m-auto text-[15px] mt-[15px] mb-[15px]">
-                  {`**${errors.phone.message}`}</div>
+                  {`**${errors.phone.message}`}
+                </div>
               )}
             </div>
           </div>
@@ -213,17 +229,15 @@ console.log(errors);
           </div>
           <div className="w-full flex justify-center">
             <button
+            disabled={isLoading}
               type="submit"
               className={` outline-none:focus-none font-tinos font-bold xl:ms-7  my-[3rem] rounded-[10px] text-[26px] bg-greenAcc sm:w-[198px] w-[150px] h-[50px] text-white`}
             >
               save
             </button>
           </div>
-        
         </div>
-      
       </form>
-   
     </div>
   );
 }

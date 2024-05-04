@@ -1,6 +1,6 @@
-import NavLandingPage from "../components/LandingPage/NavLandingPage"
+import NavLandingPage from "../components/LandingPage/NavLandingPage";
 import "./style/landingPage.css";
-import star from "../assets/landingPage/star.svg"
+import star from "../assets/landingPage/star.svg";
 import smallStar from "../assets/landingPage/Vector2.svg";
 import employee from "../assets/landingPage/work.png";
 import tru from "../assets/landingPage/true.svg";
@@ -8,7 +8,6 @@ import mob from "../assets/landingPage/mob.svg";
 import g4 from "../assets/landingPage/G4.svg";
 import t from "../assets/landingPage/t.svg";
 import img from "../assets/landingPage/Group.svg";
-
 
 import { Link } from "react-router-dom";
 import LandingFut from "../components/LandingPage/LandingFut";
@@ -53,27 +52,26 @@ export default function LandingPage() {
                 <img src={g4} className="" />
               </div>
               <div className="md:block hidden">
-              <div className="flex items-center mx-3 ">
-                <img src={mob} className="absolute  " />
-                <img src={tru} className="absolute mt-[160px] ml-[-30px]" />
-                <img src={t} className="absolute mt-[160px] ml-[-15px]" />
+                <div className="flex items-center mx-3 ">
+                  <img src={mob} className="absolute  " />
+                  <img src={tru} className="absolute mt-[160px] ml-[-30px]" />
+                  <img src={t} className="absolute mt-[160px] ml-[-15px]" />
+                </div>
               </div>
-              </div>
-              
             </div>
           </div>
         </div>
-        <LandingSvg/>
+        <LandingSvg />
       </div>
-      <LandingPolygon/>
+      <LandingPolygon />
 
       {/* Our website features */}
-      <LandingFut/>
+      <LandingFut />
 
       <div className="w-full min-h-[456px] bg-bg my-5 py-10">
         <div className="w-5/6 min-h-[456px] m-auto grid md:grid-cols-2 grid-cols-1 gap-x-16  items-center md:justify-between justify-center ">
           <img src={employee} className="m-auto" />
-          <Title/>
+          <Title />
         </div>
       </div>
 
@@ -92,7 +90,10 @@ export default function LandingPage() {
             five centuries, but also the leap into electronic typesetting,
             remaining essentially unchanged.
           </p>
-          <Link   to="/service" className="w-[166px] h-[53px] font-tinos hover:px-10 hover:bg-gray-50 font-bold mt-[40px] bg-yellowAcc rounded-[25px] text-white text-[22px] hover:text-[18px] hover:bg-bgEmp hover:text-greenAcc items-center flex justify-center">
+          <Link
+            to="/service"
+            className="w-[166px] h-[53px] font-tinos hover:px-10 hover:bg-gray-50 font-bold mt-[40px] bg-yellowAcc rounded-[25px] text-white text-[22px] hover:text-[18px] hover:bg-bgEmp hover:text-greenAcc items-center flex justify-center"
+          >
             see more
           </Link>
         </div>
@@ -100,7 +101,6 @@ export default function LandingPage() {
 
       {/* Security */}
 
-    
       <div className="w-full min-h-[376px] bg-bg my-[100px] py-10 md:px-20">
         <div className=" flex lg:flex-row w-full  flex-col justify-center items-center">
           <div className=" flex  m-auto  pl-5 items-center gap-x-5 lg:w-3/6 w-6/6  h-[456px] ">
@@ -110,21 +110,20 @@ export default function LandingPage() {
               <img src={img} className="mt-[170px] absolute ml-[-20px]" />
               <img src={g4} className="" />
             </div>
-           <div className="md:block hidden">
-             
-           <div className="flex items-center mx-3 ">
-              <img
-                src={smallStar}
-                className=" absolute ml-[140px] mt-[-55px] "
-              />
-              <img src={star} className="absolute ml-[120px] " />
+            <div className="md:block hidden">
+              <div className="flex items-center mx-3 ">
+                <img
+                  src={smallStar}
+                  className=" absolute ml-[140px] mt-[-55px] "
+                />
+                <img src={star} className="absolute ml-[120px] " />
 
-              <img src={mob} className="absolute" />
-              <img src={tru} className="absolute mt-[160px] ml-[-30px]" />
-              <img src={t} className="absolute mt-[160px] ml-[-15px]" />
+                <img src={mob} className="absolute" />
+                <img src={tru} className="absolute mt-[160px] ml-[-30px]" />
+                <img src={t} className="absolute mt-[160px] ml-[-15px]" />
+              </div>
             </div>
           </div>
-           </div>
           <div className="lg:w-3/6 w-6/6 lg:text-left  lg:ml-[-120px] md:px-6 md:my-0 my-10 md:text-left  ">
             <h1 className="text-yellowAcc lg:text-left text-center px-5 font-tinos lg:hover:text-[42px] lg:text-[40px] text-[27px]  md:text-[28px] font-bold lg:w-[550px]  leading-[45px] mb-2">
               Our website is characterized by complete data protection
@@ -136,17 +135,19 @@ export default function LandingPage() {
               typesetting, remaining essentially unchange
             </p>
             <div className="w-full flex lg:justify-start justify-center">
-            <Link to="/security" className="w-[166px] h-[53px] flex justify-center items-center hover:text-yellowAcc hover:bg-bgEmp bg-yellowAcc font-tinos text-white rounded-[25px]   text-[24px] font-bold">
-              see more
-            </Link>
+              <Link
+                to="/security"
+                className="w-[166px] h-[53px] flex justify-center items-center hover:text-yellowAcc hover:bg-bgEmp bg-yellowAcc font-tinos text-white rounded-[25px]   text-[24px] font-bold"
+              >
+                see more
+              </Link>
             </div>
-           
           </div>
         </div>
       </div>
 
       {/* footer */}
-      <Footer/>
+      <Footer />
     </div>
-  )
+  );
 }

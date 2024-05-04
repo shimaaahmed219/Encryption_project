@@ -1,7 +1,7 @@
 import img from "../../assets/login/Group (2).svg";
 import img2 from "../../assets/navImg/Group (1).svg";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "../../pages/style/login.css";
 import Swal from "sweetalert2";
 import { FiEye, FiEyeOff } from "react-icons/fi";
@@ -20,14 +20,22 @@ export default function LoginWeb() {
   const [loginAttempts, setLoginAttempts] = useState(0);
   const [showPassword, setShowPassword] = useState(false);
   const [loginUser, { isLoading }] = useLoginUserMutation();
-
+  const [isValid, setIsValid] = useState(false);
+  
   const {
     register,
     handleSubmit,
     formState: { errors },
+    watch,
   } = useForm({
     resolver: zodResolver(schima),
+    mode: "all",
   });
+  const isWatched = watch();
+  useEffect(() => {
+    const checkValid = isWatched.email !== "" && isWatched.password !== "";
+    setIsValid(checkValid);
+  }, [isWatched]);
 
   // handil login function
   const handilform = async (data) => {
@@ -123,7 +131,7 @@ export default function LoginWeb() {
               {errors.email && (
                 <div className="text-red-500 mt-[-10px] px-[65px] text-right mb-[15px]">
                   {`**${errors.email.message}`}
-                  </div>
+                </div>
               )}
               <div className=" relative flex m-auto lg:w-[429px] md:w-[350px] sm:w-[280px] w-[240px] ">
                 <input
@@ -144,24 +152,39 @@ export default function LoginWeb() {
                     <FiEyeOff size={20} color="yellow" />
                   )}
                 </div>
-
-              
               </div>
               {errors.password && (
-                  <div className="text-red-500 px-[65px] text-right  mt-[-20px] mb-[20px]">
-                    {`**${errors.password.message}`}
-                    </div>
-                )}
+                <div className="text-red-500 px-[65px] text-right  mt-[-20px] mb-[20px]">
+                  {`**${errors.password.message}`}
+                </div>
+              )}
               <button
                 type="submit"
-                className={`font-tinos font-bold md:w-[210px] mt-[15px] w-[180px] h-[60px] capitalize  text-center text-white text-[32px] bg-greenAcc rounded-input`}
+                className={` ${!isValid &&"bg-gray-500"}  bg-greenAcc font-tinos font-bold md:w-[210px]  mt-[15px] w-[180px] h-[60px] capitalize  text-center text-white text-[32px] rounded-input`}
+              disabled={!isValid}
               >
-                {isLoading ? "Logging in..." : "Login"}
+               login
+                
               </button>
             </form>
           </div>
         </div>
       </div>
+      {isLoading&& (
+  <div>
+    <div className="w-full h-screen absolute left-0 top-0 bg-black opacity-85"></div>
+    <div className="w-full h-full top-0 left-0 absolute flex flex-col justify-center items-center">
+      <div className="mt-[-60px] text-white text-[20px] capitalize font-tinos">Loading...</div>
+      <div className="absolute top-0 flex justify-center items-center h-full w-full z-50">
+        <span className="bg-white px-[2px] rounded-full mx-1"></span>
+        <div className="h-[25px] w-[30%] border-[1px] py-[5px] px-2 border-white animate-pulse">
+          <div className="bg-approved w-full h-full rounded-full"></div>
+        </div>
+        <span className="bg-white px-[6px] rounded-full mx-1"></span>
+      </div>
+    </div>
+  </div>
+)}
     </div>
   );
 }

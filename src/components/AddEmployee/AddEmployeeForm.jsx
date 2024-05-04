@@ -6,7 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import axios from "axios";
 import { url } from "../URL";
 import Swal from "sweetalert2";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FiEye, FiEyeOff } from "react-icons/fi";
 // const MAX_FILE_SIZE = 5000000;
 // const ACCEPTED_IMAGE_TYPES = [
@@ -17,11 +17,9 @@ import { FiEye, FiEyeOff } from "react-icons/fi";
 // ];
 
 const schema = z.object({
-  name: z
-    .string()
-    .refine((value) => value.trim() !== "", {
-      message: "This field is required",
-    }),
+  name: z.string().refine((value) => value.trim() !== "", {
+    message: "This field is required",
+  }),
   email: z.string().email(),
   password: z
     .string()
@@ -32,26 +30,20 @@ const schema = z.object({
     .regex(/.*[!@#$%^&*()_+{}[\]:;<>,.?~\\/-].*/, {
       message: "Password must contain at least one special character",
     }),
-  phone: z
-    .string()
-    .refine((value) => value.trim() !== "", {
-      message: "This field is required",
-    }),
-  job: z
-    .string()
-    .refine((value) => value.trim() !== "", {
-      message: "This field is required",
-    }),
-  photo: z.any()
-
+  phone: z.string().refine((value) => value.trim() !== "", {
+    message: "This field is required",
+  }),
+  job: z.string().refine((value) => value.trim() !== "", {
+    message: "This field is required",
+  }),
+  photo: z.any(),
 });
 
-export default function AddEmployeeForm({setIsLoading,isLoading}) {
+export default function AddEmployeeForm({ setIsLoading, isLoading }) {
   const [selectedImage, setSelectedImage] = useState(null);
-  
+
   const [showPassword, setShowPassword] = useState(false);
-
-
+  const [isValid, setIsValid] = useState(false);
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -64,10 +56,22 @@ export default function AddEmployeeForm({setIsLoading,isLoading}) {
     register,
     handleSubmit,
     formState: { errors },
+    watch,
   } = useForm({
     resolver: zodResolver(schema),
+    mode: "onTouched",
   });
-
+  const watching = watch();
+  useEffect(() => {
+    const checkIsValid =
+      watching.name !== "" &&
+      watching.password !== "" &&
+      watching.email !== "" &&
+      watching.phone !== "" &&
+      watching.position !== "" &&
+      watching.photo?.length > 0;
+    setIsValid(checkIsValid);
+  }, [watching]);
 
   const onsubmit = async (data) => {
     const formdata = new FormData();
@@ -78,7 +82,7 @@ export default function AddEmployeeForm({setIsLoading,isLoading}) {
     formdata.append("position", data.job);
     formdata.append("photo", data.photo[0]);
     formdata.append("phone", data.phone);
-   setIsLoading(true)
+    setIsLoading(true);
     try {
       const response = await axios.post(`${url}/employee`, formdata, {
         headers: {
@@ -108,11 +112,11 @@ export default function AddEmployeeForm({setIsLoading,isLoading}) {
         });
       }
     } finally {
-      setIsLoading(false); 
+      setIsLoading(false);
     }
   };
-  
-  console.log("errors:",errors);
+
+  console.log("errors:", errors);
   return (
     <div className="w-[80%] font-roboto text-[20px] h-full text-greenAcc shadow-shadowEmp bg-bgEmp rounded-[20px] my-10">
       <form
@@ -163,7 +167,8 @@ export default function AddEmployeeForm({setIsLoading,isLoading}) {
               />
               {errors.name && (
                 <div className=" text-red-500  text-[14px] mt-[15px] mb-[15px]">
-                  {`**${errors.name.message}`}</div>
+                  {`**${errors.name.message}`}
+                </div>
               )}
             </div>
 
@@ -179,7 +184,8 @@ export default function AddEmployeeForm({setIsLoading,isLoading}) {
               />
               {errors.phone && (
                 <div className=" text-red-500  text-[15px] mt-[15px] mb-[15px]">
-                  {`**${errors.phone.message}`}</div>
+                  {`**${errors.phone.message}`}
+                </div>
               )}
             </div>
           </div>
@@ -187,7 +193,9 @@ export default function AddEmployeeForm({setIsLoading,isLoading}) {
             <div className=" flex md:flex-row flex-col gap-y-4 w-full justify-around ">
               {/* name */}
               <div className="  md:w-editEmplyeInput w-full flex flex-col  ">
-                <label className="my-2 mx-1  font-semibold">Email address</label>
+                <label className="my-2 mx-1  font-semibold">
+                  Email address
+                </label>
                 <input
                   {...register("email")}
                   type="text"
@@ -218,7 +226,9 @@ export default function AddEmployeeForm({setIsLoading,isLoading}) {
             <div className=" flex md:flex-row flex-col gap-y-4 w-full justify-around ">
               {/* name */}
               <div className="  md:w-editEmplyeInput w-full flex flex-col  ">
-                <label className="my-2 mx-1 font-semibold text-[20px]">Password</label>
+                <label className="my-2 mx-1 font-semibold text-[20px]">
+                  Password
+                </label>
                 <div className="flex relative">
                   <input
                     {...register("password")}
@@ -249,40 +259,12 @@ export default function AddEmployeeForm({setIsLoading,isLoading}) {
         </div>
 
         <button
-          className={` font-tinos m-auto flex items-center justify-center my-[3rem] rounded-[10px] text-[26px] bg-greenAcc w-[240px] h-[57px] text-white`}
-    
-       >
-  
-
-  
-  {/* {isLoading ? (
-    <svg
-      className="animate-spin  mr-3 h-6 w-6 text-white"
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-    >
-      <circle
-        className="opacity-25"
-        cx="12"
-        cy="12"
-        r="10"
-        stroke="currentColor"
-        strokeWidth="4"
-      ></circle>
-      <path
-        className="opacity-75"
-        fill="currentColor"
-        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647zM20 12a8 8 0 01-8 8v4c4.627 0 10-5.373 10-12h-4zm-2-5.291A7.962 7.962 0 0120 12h4c0-3.042-1.135-5.824-3-7.938l-3 2.647z"
-      ></path>
-    </svg>
-  ) : null} */}
-  
-
-  {isLoading ? "Adding.." : "add Employee"}
-</button>
+          className={` font-tinos m-auto flex  items-center justify-center my-[3rem] rounded-[10px] text-[26px] bg-greenAcc w-[240px] h-[57px] text-white`}
+          disabled={!isValid}
+        >
+          {isLoading ? "Adding.." : "add Employee"}
+        </button>
       </form>
     </div>
   );
 }
-

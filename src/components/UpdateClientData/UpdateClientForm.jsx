@@ -15,7 +15,7 @@ import StepThree from "./StepThree";
 export default function UpdateClientForm() {
   // get client id
   const { id } = useParams();
-
+const [isLoding,setIsLoading] =useState()
   // add multi step
   const [step, setStep] = useState(1);
 
@@ -65,7 +65,7 @@ export default function UpdateClientForm() {
     handleSubmit,
     setValue,
     formState: { errors },
-    // watch,
+    watch,
   } = useForm({ mode: "all" });
   // console.log("errors", errors);
 
@@ -249,6 +249,7 @@ export default function UpdateClientForm() {
               prevStep={prevStep}
               step={step}
               goToStep={goToStep}
+              watch={watch}
             />
           </div>
     

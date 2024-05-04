@@ -38,26 +38,28 @@ export default function AddEmployee() {
           <hr className="w-full h-[0.15rem] bg-greenAcc my-2" />
           <div className="w-full h-full flex justify-center items-center p-1">
             {/* <h1 className={`${rob.className} ms-[50px]  text-[26px]  capitalize text-greenAcc`}>Edit Employee </h1> */}
-            <AddEmployeeForm setIsLoading={setIsLoading} isLoading={isLoading} />
+            <AddEmployeeForm
+              setIsLoading={setIsLoading}
+              isLoading={isLoading}
+            />
           </div>
         </div>
       </div>
       {isLoading && (
-  <div>
-    <div className="w-full z-40 min-h-[900px] absolute left-0 top-0 bg-black opacity-85"></div>
-    <div className="w-full h-full top-0 left-0 absolute flex flex-col justify-center items-center">
-      <div className="mt-[-60px] text-white text-[20px] capitalize z-50 font-tinos">Loading...</div>
-      <div className="absolute top-0 flex  justify-center items-center h-full w-full z-50">
-       
-     
-        <div className="h-[25px] w-[30%] border-[1px] py-[5px] px-2 border-white animate-pulse">
-          <div className="bg-approved w-full h-full rounded-full"></div>
+        <div>
+          <div className="w-full z-40 min-h-[900px] absolute left-0 top-0 bg-black opacity-85"></div>
+          <div className="w-full h-full top-0 left-0 absolute flex flex-col justify-center items-center">
+            <div className="mt-[-60px] text-white text-[20px] capitalize z-50 font-tinos">
+              Adding...
+            </div>
+            <div className="absolute top-0 flex  justify-center items-center h-full w-full z-50">
+              <div className="h-[25px] w-[30%] border-[1px] py-[5px] px-2 border-white animate-pulse">
+                <div className="bg-approved w-full h-full rounded-full"></div>
+              </div>
+            </div>
+          </div>
         </div>
-   
-      </div>
-    </div>
-  </div>
-)}
+      )}
     </div>
   );
 }

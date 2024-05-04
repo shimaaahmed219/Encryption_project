@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import {  Route, Routes, useLocation } from "react-router-dom";
 import LandingPage from "./pages/LandingPage";
 import About from "./pages/About";
 import Service from "./pages/Service";
@@ -18,6 +18,7 @@ import RecruitmentArea from "./pages/RecruitmentArea";
 import UpdateClientData from "./pages/UpdateClientData";
 import Security from "./pages/Security";
 import UpdateMyProfile from "./pages/UpdateMyProfile";
+import { useEffect } from "react";
 
 
 
@@ -26,9 +27,16 @@ import UpdateMyProfile from "./pages/UpdateMyProfile";
 
 
 export default function App() {
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
+
   return (
     <>
-    <BrowserRouter>
+    
     <Routes>
       <Route path="/" element={<LandingPage/>}/>
       <Route path="/about" element={<About/>}/>
@@ -53,7 +61,7 @@ export default function App() {
       <Route path="*" element={<div>not found</div>} />
     </Routes>
     
-    </BrowserRouter>
+    
     </>
   )
 }
