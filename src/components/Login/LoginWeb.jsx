@@ -21,7 +21,7 @@ export default function LoginWeb() {
   const [showPassword, setShowPassword] = useState(false);
   const [loginUser, { isLoading }] = useLoginUserMutation();
   const [isValid, setIsValid] = useState(false);
-  
+
   const {
     register,
     handleSubmit,
@@ -160,31 +160,47 @@ export default function LoginWeb() {
               )}
               <button
                 type="submit"
-                className={` ${!isValid &&"bg-gray-500"}  bg-greenAcc font-tinos font-bold md:w-[210px]  mt-[15px] w-[180px] h-[60px] capitalize  text-center text-white text-[32px] rounded-input`}
-              disabled={!isValid}
+                className={` ${
+                  !isValid && "bg-gray-500"
+                }  bg-greenAcc font-tinos font-bold md:w-[210px]  mt-[15px] w-[180px] h-[60px] capitalize  text-center text-white text-[32px] rounded-input`}
+                disabled={!isValid}
               >
-               login
-                
+                login
               </button>
             </form>
           </div>
         </div>
       </div>
-      {isLoading&& (
-  <div>
-    <div className="w-full h-screen absolute left-0 top-0 bg-black opacity-85"></div>
-    <div className="w-full h-full top-0 left-0 absolute flex flex-col justify-center items-center">
-      <div className="mt-[-60px] text-white text-[20px] capitalize font-tinos">Loading...</div>
-      <div className="absolute top-0 flex justify-center items-center h-full w-full z-50">
-        <span className="bg-white px-[2px] rounded-full mx-1"></span>
-        <div className="h-[25px] w-[30%] border-[1px] py-[5px] px-2 border-white animate-pulse">
-          <div className="bg-approved w-full h-full rounded-full"></div>
+      {isLoading && (
+        <div>
+          <div className="w-full h-screen absolute left-0 top-0 bg-black opacity-85"></div>
+          <div className="w-full h-full top-0 left-0 absolute flex flex-col justify-center items-center">
+            <div className="mt-[-60px] text-white text-[20px] capitalize font-tinos">
+              Loading...
+            </div>
+            <svg
+              className="animate-spin h-12 w-12 text-gray-600"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <circle
+                className="opacity-25"
+                cx="12"
+                cy="12"
+                r="10"
+                stroke="currentColor"
+                strokeWidth="4"
+              ></circle>
+              <path
+                className="opacity-75"
+                fill="currentColor"
+                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 4.418 3.582 8 8 8v-4zm10-1.395A7.957 7.957 0 0120 12h4c0 4.418-3.582 8-8 8v-4zm-14-.896A7.957 7.957 0 014 12H0c0 4.418 3.582 8 8 8v-4z"
+              ></path>
+            </svg>
+          </div>
         </div>
-        <span className="bg-white px-[6px] rounded-full mx-1"></span>
-      </div>
-    </div>
-  </div>
-)}
+      )}
     </div>
   );
 }

@@ -36,6 +36,7 @@ export default {
         // => @media (min-width: 1536px) { ... }
       },
       colors: {
+        "Dashboard":'hsl(128, 14%, 33%,63%)',
         "greenAcc": "#324134",
         "hover":"#556c58",
         "greenD": " #141D15",
@@ -43,6 +44,7 @@ export default {
       
         "bg": "#EBEBEB",
         "oddRow": " #F8F8F8",
+  
         "email": " #778D86",
         "bgEmp": " #ffffff99",
         'fileUploud': "#D9D9D9",
