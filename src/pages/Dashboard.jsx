@@ -27,7 +27,7 @@ export default function Dashboard() {
       ) : (
 
         <div className="w-full min-h-screen flex justify-between bg-bg">
-        <div className="md:block hidden">
+        <div className="lg:block hidden">
         <FexidSidebar />
         </div>
           
