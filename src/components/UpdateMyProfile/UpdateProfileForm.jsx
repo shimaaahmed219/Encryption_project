@@ -18,8 +18,8 @@ const schema = z.object({
     .string(),
   //  .refine((value) => value.trim() !== "", { message: "This field is required" }),
   photo: z
-    .any()
-    .refine((value) => value.trim() !== "", { message: "This field is required" })
+    .any(),
+    // .refine((value) => value.trim() !== "", { message: "This field is required" })
     // .refine(
     //   (files) => files?.[0]?.size <= MAX_FILE_SIZE,
     //   `this fild is requaird.`
