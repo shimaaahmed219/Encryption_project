@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 
 
 import { url } from "../URL";
@@ -30,7 +31,7 @@ const schema = z.object({
     // ),
 });
 
-export default function UpdateProfileForm() {
+export default function UpdateProfileForm({setIsLoading}) {
   const { id } = useParams();
   // console.log(id);
 
@@ -91,25 +92,27 @@ console.log(errors);
     formdata.append("position", data.job);
     formdata.append("photo", data.photo[0]);
     formdata.append("phone", data.phone);
-
-    axios
-      .post(`${url}/employee/${id}`, formdata, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-          Authorization: `Bearer ${window.localStorage.getItem("token")}`,
-        },
-      })
-      .then((res) => {
-        // console.log(res);
+    setIsLoading(true);
+    try {
+        const res = await axios.post(`${url}/employee/${id}`, formdata, {
+            headers: {
+                "Content-Type": "multipart/form-data",
+                Authorization: `Bearer ${window.localStorage.getItem("token")}`,
+            },
+        });
+        console.log(res.data);
         if (res.status === 200) {
-          Swal.fire({
-            title: "Good job!",
-            text: "You clicked the button!",
-            icon: "success",
-          });
+            Swal.fire({
+                title: "Good job!",
+                text: "You clicked the button!",
+                icon: "success",
+            });
         }
-      });
-  };
+    } catch (error) {
+        // handle error
+    }
+    setIsLoading(false);
+};
 
   return (
     <div className="w-[80%] font-roboto text-[18px] h-full text-greenAcc shadow-shadowEmp bg-bgEmp rounded-[20px] my-10">

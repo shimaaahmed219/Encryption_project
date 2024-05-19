@@ -7,7 +7,7 @@ export default function PresonalInputAr({ register, errors }) {
       <div className="md:px-10 md:grid xl:grid-cols-4 lg:grid-cols-3 gap-x-5 md:grid-cols-2 flex flex-col-reverse  pt-5 text-greenAcc font-roboto text-xl m-auto font-medium">
         {/* first name input */}
         <div className="w-[100%] flex flex-col justify-center ">
-          <label className="block py-3 ms-auto ml-2">العائله</label>
+          <label className="block py-2  text-label font-semibold ms-auto ml-2">العائله</label>
           <input
             {...register("first_name_ar", {
               required: {
@@ -29,7 +29,7 @@ export default function PresonalInputAr({ register, errors }) {
 
         {/* father name */}
         <div className="w-[100%] flex flex-col justify-center ">
-          <label className="block  py-3 ms-auto ml-2">الجد</label>
+          <label className="block  py-2 font-semibold  text-label ms-auto ml-2">الجد</label>
           <input
             type="text"
             {...register("third_name_ar", {
@@ -51,7 +51,7 @@ export default function PresonalInputAr({ register, errors }) {
 
         {/* grandba */}
         <div className="w-[100%] flex flex-col justify-center ">
-          <label className="block ms-auto py-3  ml-2">الأب</label>
+          <label className="block ms-auto py-2  text-label font-semibold  ml-2">الأب</label>
           <input
             {...register("second_name_ar", {
               required: {
@@ -72,7 +72,7 @@ export default function PresonalInputAr({ register, errors }) {
 
         {/* family name */}
         <div className="w-[100%] flex flex-col justify-center ">
-          <label className="block py-3 ms-auto ml-2">الاسم الأول</label>
+          <label className="block py-2  text-label font-semibold ms-auto ml-2">الاسم الأول</label>
           <input
             type="text"
             {...register("last_name_ar", {

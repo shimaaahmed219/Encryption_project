@@ -38,7 +38,7 @@ export default function LandingFut() {
 
 
         {/* Ease of use.  */}
-        <div className="xl:w-[326px] md:w-[400px] border-b-2 border-yellowAcc min-h-[146px] lg:m-auto md:m-auto xl:my-0 lg:my-10 my-10 bg-bg rounded-[20px] px-[20px] pt-[20px]">
+        <div className="xl:w-[326px]  md:w-[400px] border-b-2 border-yellowAcc min-h-[146px] lg:m-auto md:m-auto xl:my-0 lg:my-10 my-10 bg-bg rounded-[20px] px-[20px] pt-[20px]">
           {/* icon */}
           <img src={setIcon} className="mt-[-43px] ml-[10px] mb-2" />
 

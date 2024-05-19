@@ -16,7 +16,7 @@ const HeaderFormPage = ({step}) => {
         >
           1
         </div>
-        <h5 className="xl:w-[126px] leading-6 text-start capitalize font-tinos font-bold md:text-[20px] text-[18px] text-greenAcc">
+        <h5 className="xl:w-[126px] leading-6 text-start capitalize font-tinos font-bold md:twxt-header text-[18px] text-greenAcc">
           Personal information
         </h5>
       </button>
@@ -31,7 +31,7 @@ const HeaderFormPage = ({step}) => {
         >
           2
         </div>
-        <h5 className="xl:w-[150px] leading-6 text-start capitalize font-tinos font-bold md:text-[20px] text-[18px] text-greenAcc">Annats marital status</h5>
+        <h5 className="xl:w-[150px] leading-6 text-start capitalize font-tinos font-bold md:twxt-header text-[18px] text-greenAcc">Annats marital status</h5>
       </button>
       <button
         className={`flex items-center xl:my-0 my-5  `}
@@ -44,7 +44,7 @@ const HeaderFormPage = ({step}) => {
         >
           3
         </div>
-        <h5 className="w-[150px] text-start leading-6 capitalize font-tinos font-bold md:text-[20px] text-[18px] text-greenAcc">
+        <h5 className="w-[150px] text-start leading-6 capitalize font-tinos font-bold md:twxt-header text-[18px] text-greenAcc">
           {" "}
           I need proof of identity
         </h5>
@@ -60,7 +60,7 @@ const HeaderFormPage = ({step}) => {
         >
           4
         </div>
-        <h5 className="xl:w-[405px] mf:ml-0  text-start capitalize font-tinos font-bold md:text-[20px] text-[17px] text-greenAcc">
+        <h5 className="xl:w-[405px] mf:ml-0  text-start capitalize font-tinos font-bold md:twxt-header text-[17px] text-greenAcc">
           {" "}
           Names of those who can be reviewed when necessary in the A.S.C
         </h5>

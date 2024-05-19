@@ -28,7 +28,7 @@ export default function Empolyee() {
         <div className=" w-5/6 m-auto gap-y-7 flex md:flex-row flex-col items-center gap-x-[61px]  ">
           {/* add employee button */}
           <Link to="/addEmployee">
-            <button className="w-[267px] h-[60px] bg-greenAcc text-white rounded-input font-roboto text-[24px] font-thin items-center flex justify-center">
+            <button className="w-[267px] h-[60px]  hover:text-yellowAcc bg-greenAcc text-white rounded-input font-roboto text-button font-thin items-center flex justify-center">
               {" "}
               <span className=" pr-3">+</span>Add an employee
             </button>

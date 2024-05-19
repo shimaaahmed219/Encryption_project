@@ -81,7 +81,7 @@ useEffect(() => {
               <div className="">
                 <div className="md:flex md:gap-x-6 items-center">
                   {/* passport department input */}
-                  <label className=" font-roboto mr-5 md:my-1  mb-[80px]  md:text-[22px] text-[15px] text-greenAcc md:font-semibold">
+                  <label className=" font-roboto mr-5 md:my-1  mb-[80px]  md:text-label text-[15px] text-greenAcc md:font-semibold">
                     Passports Department
                   </label>
                   <input
@@ -93,7 +93,7 @@ useEffect(() => {
                       },
                     })}
                     type="type"
-                    className=" my-1 bg-transparent text-[18px] focus:outline-none md:w-[350px]  w-full h-[50px] px-[20px]   py-[6px] border-[1px] rounded-input border-yellowAcc"
+                    className=" my-1 bg-transparent text-input focus:outline-none md:w-[350px]  w-full h-[50px] px-[20px]   py-[6px] border-[1px] rounded-input border-yellowAcc"
                   />
                 </div>
 
@@ -111,7 +111,7 @@ useEffect(() => {
 
             <div className="xl:flex mt-8  justify-center items-centerpy-5">
               <div className="md:flex md:px-10 pt-[15px] items-center text-greenAcc lg:w-[60%] w-full font-roboto">
-                <label className="font-roboto w-[150px] mt-[-20px] md:mb-0 my-5  mx-5 md:text-[22px] text-[17px] py-2 font-semibold text-greenAcc">
+                <label className="font-roboto text-[17px] w-[150px] mt-[-20px] md:mb-0 my-5  mx-5 md:text-label py-2 font-semibold text-greenAcc">
                   Date of birth
                 </label>
 
@@ -126,7 +126,7 @@ useEffect(() => {
                     })}
                     placeholder="00-00-2000"
                     type="date"
-                    className="border-[1px] bg-transparent text-[18px] focus:outline-none md:mt-0 mt-5 mb-4  font-roboto px-5 border-yellowAcc xl:ml-[72px] lg:w-[350px] md:w-[90%] w-[97%] h-[50px] rounded-input"
+                    className="border-[1px] bg-transparent text-input focus:outline-none md:mt-0 mt-5 mb-4  font-roboto px-5 border-yellowAcc xl:ml-[72px] lg:w-[350px] md:w-[90%] w-[97%] h-[50px] rounded-input"
                   />
                   {/* data of birth error */}
                   {errors.date_of_birth && (
@@ -142,7 +142,7 @@ useEffect(() => {
                   <FormControl className="flex flex-row items-center gap-x-5">
                     <FormLabel
                       id="demo-radio-buttons-group-label "
-                      className="text-greenAcc text-[20px] font-roboto font-bold "
+                      className="text-greenAcc text-label font-roboto font-bold "
                     >
                       Gender
                     </FormLabel>
@@ -182,7 +182,7 @@ useEffect(() => {
             {/* Place of birth  */}
             <div className=" lg:grid lg:grid-cols-2  py-1">
               <div className="md:px-10 mt-5  font-roboto  items-center md:text-[20px] text-[15px] text-greenAcc">
-                <label className="block my-3 mb-5 text-greenAcc font-roboto font-bold">
+                <label className="block my-3 mb-5 text-label text-greenAcc font-roboto font-bold">
                   {" "}
                   Place of birth (department / governorate)
                 </label>
@@ -196,7 +196,7 @@ useEffect(() => {
                         },
                       })}
                       type="text"
-                      className=" rounded-input font-roboto text-[18px]  bg-transparent  mb-3 w-full  h-[50px] border-[1px] focus:outline-none  border-yellowAcc px-[20px] py-[6px]"
+                      className=" rounded-input font-roboto text-input  bg-transparent  mb-3 w-full  h-[50px] border-[1px] focus:outline-none  border-yellowAcc px-[20px] py-[6px]"
                     />
                   </div>
                 </div>
@@ -208,7 +208,7 @@ useEffect(() => {
               </div>
 
               <div className=" my-[20px] pt-2 font-roboto md:ml-5 items-center text-[20px] text-greenAcc">
-                <label className="block  pb-6 font-bold text-greenAcc font-roboto">
+                <label className="block text-label pb-6 font-bold text-greenAcc font-roboto">
                   Religion
                 </label>
                 {/* <div className="items-center flex"> */}
@@ -220,7 +220,7 @@ useEffect(() => {
                     },
                   })}
                   type="text"
-                  className=" rounded-input text-[18px] font-roboto  px-[20px] bg-transparent focus:outline-none  md:w-[93%] w-[97%] h-[50px] border-[1px] border-yellowAcc  md:pl-[20px] py-[6px]"
+                  className=" rounded-input text-input font-roboto  px-[20px] bg-transparent focus:outline-none  md:w-[93%] w-[97%] h-[50px] border-[1px] border-yellowAcc  md:pl-[20px] py-[6px]"
                 />
                 {errors.religion && (
                   <div className=" text-red-500 m-auto text-[15px] mt-[10px] mb-[5px]">{`***${errors.religion.message}`}</div>
@@ -230,7 +230,7 @@ useEffect(() => {
             <div>
               <div className="flex flex-col md:px-10 my-5">
                 <div>
-                  <label className=" text-greenAcc font-roboto  font-bold text-[20px] mt-2 mb-2">
+                  <label className=" text-greenAcc font-roboto  font-bold text-label mt-2 mb-2">
                     Latest educational qualification and its date
                   </label>
                   <input
@@ -249,7 +249,7 @@ useEffect(() => {
                   )}
                 </div>
                 <div>
-                  <label className=" text-greenAcc font-roboto font-bold text-[20px] mt-2 ">
+                  <label className=" text-greenAcc font-roboto font-bold text-[20px] text-label mt-2 ">
                     Profession
                   </label>
                   <input
@@ -259,7 +259,7 @@ useEffect(() => {
                         message: "This field is required",
                       },
                     })}
-                    className="w-full font-roboto text-[18px] px-[20px] h-[50px] mt-5  bg-transparent py-[6px] focus:outline-none  border-[1px] border-yellowAcc rounded-input "
+                    className="w-full font-roboto text-input px-[20px] h-[50px] mt-5  bg-transparent py-[6px] focus:outline-none  border-[1px] border-yellowAcc rounded-input "
                   />
                   {errors.job && (
                     <span className=" text-red-500 text-[15px] m-auto  mt-[10px] mb-[5px]">
@@ -270,7 +270,7 @@ useEffect(() => {
 
                 <div className="grid md:grid-cols-2 mt-5 gap-x-16">
                   <div className="py-3">
-                    <label className=" block text-greenAcc font-roboto font-bold text-[20px] mt-2 mb-2  ">
+                    <label className=" block text-greenAcc font-roboto font-bold text-label mt-2 mb-2  ">
                       Work phone
                     </label>
                     <input
@@ -289,7 +289,7 @@ useEffect(() => {
                   </div>
 
                   <div className="py-3">
-                    <label className=" block text-greenAcc font-roboto font-bold text-[20px] mt-2 mb-2 ">
+                    <label className=" block text-greenAcc font-roboto font-bold text-label mt-2 mb-2 ">
                       Home phone
                     </label>
                     <input
@@ -300,7 +300,7 @@ useEffect(() => {
                         },
                       })}
                       type="text"
-                      className=" font-roboto text-[18px] px-[20px] w-full h-[50px]  bg-transparent mt-4 py-[6px] focus:outline-none  border-[1px] border-yellowAcc rounded-input"
+                      className=" font-roboto text-input px-[20px] w-full h-[50px]  bg-transparent mt-4 py-[6px] focus:outline-none  border-[1px] border-yellowAcc rounded-input"
                     />
                     {errors.home_phone && (
                       <div className=" text-red-500 m-auto text-[15px]  mt-[10px] mb-[5px]">{`**${errors.home_phone.message}`}</div>
@@ -313,10 +313,11 @@ useEffect(() => {
         </div>
         <div className="w-full flex justify-center my-10">
           <button
-            className={`w-[255px] mb-10  h-[65px] bg-greenAcc ${!isStepValid && 'bg-gray-500' } text-[32px] text-white font-tinos rounded-input `}
+              disabled={!isStepValid}
+            className={`w-[255px] mb-10  h-[65px] ${!isStepValid ? 'bg-gray-500':' bg-greenAcc' } text-[32px] text-white font-tinos rounded-input `}
             type="button"
             onClick={nextStep}
-            disabled={!isStepValid}
+        
   
   
           >

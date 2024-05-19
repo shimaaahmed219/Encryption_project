@@ -139,14 +139,14 @@ export default function EmployeeDetails({ search }) {
               <TableRow className="flex justify-around  ">
                 {colum.map((col) => (
                   <TableCell
-                    className=" w-[25%] text-white  font-tinos lg:[&:nth-child(3)]:block 
+                    className=" w-[25%] text-white  font-tinos lg:[&:nth-child(1)]:ml-[-45px] lg:[&:nth-child(3)]:block 
                     [&:nth-child(3)]:hidden [&:nth-child(4)]:text-yellowAcc
-                      font-bold border-none [&:nth-child(2)]:text-left [&:nth-child(2)]:ms-[120px]
-                       [&:nth-child(3)]:ms-[-50px] text-center  text-[24px] "
+                      font-bold border-none [&:nth-child(2)]:text-left [&:nth-child(2)]:ms-[160px]
+                       [&:nth-child(3)]:ms-[-40px] text-center  text-employee capitalize "
                     key={col.id}
                   >
                     <FormControlLabel
-                      className=""
+                      className="mr-[-4px] mt-[-5px]"
                       control={<Checkbox style={{ color: "#F6C90E" }} />}
                       label=""
                     />
@@ -167,17 +167,17 @@ export default function EmployeeDetails({ search }) {
           .map((user, index) => (
             <div
               key={user.id}
-              className="flex font-roboto lg:text-[22px] text-[15px] justify-around my-4 bg-white rounded-[14px] shadow-employee lg:h-[70px] items-center px-5"
+              className="flex font-roboto lg:text-name text-[15px] justify-around my-4 bg-white rounded-[14px] shadow-employee lg:h-[70px] items-center px-5"
             >
               <div className="w-[25%] flex">
-                <span className="xl:text-[22px] lg:block hidden text-[15px] text-yellowAcc ">
+                <span className="xl:text-name lg:block hidden text-[15px] text-yellowAcc ">
                   {index + 1} -
                 </span>
-                <span className="font-roboto xl:text-[22px] text-[15px] text-greenD mx-3 capitalize">
+                <span className="font-roboto xl:text-name text-[15px] text-greenD mx-3 capitalize">
                   {user.name}{" "}
                 </span>
               </div>
-              <div className="text-yellowAcc w-[25%] text-[18px] lg:ps-[120px] ps-10 text-left  ">
+              <div className="text-yellowAcc w-[25%] text-email lg:ps-[120px] ps-10 text-left  ">
                 <a href={`mailto:${user.email}`}>
                   {user.email.substring(0, 12)}...
                 </a>

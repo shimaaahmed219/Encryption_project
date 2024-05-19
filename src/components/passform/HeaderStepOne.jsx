@@ -17,11 +17,11 @@ export default function HeaderStepOne({
       <div className="md:w-3/6 w-full mt-20 ">
         <div className=" text-center lg:ml-[-90px] flex flex-col justify-center  items-center">
           <h3
-            className={`font-tinos font-bold md:text-[26px] text-center leading-8 `}
+            className={`font-tinos font-bold md:text-[24px] text-center leading-8 `}
           >
             Request to issue a regular Egyptian passport
           </h3>
-          <h5 className="font-roboto font-medium md:text-[24px] leading-7 mt-3 ">
+          <h5 className="font-roboto font-medium md:text-[22px] leading-7 mt-3 ">
             (Form No. 19 Passports) is possible
           </h5>
         </div>
@@ -49,12 +49,12 @@ export default function HeaderStepOne({
         <img src={uploadImg} className="absolute mt-[50px] ml-[55px]" />
 
         <h6
-          className={`font-tions font-bold  text-thin text-greenAcc text-[18px] w-full text-center absolute mt-[100px] `}
+          className={`font-tions font-bold  text-thin text-greenAcc text-input w-full text-center absolute mt-[100px] `}
         >
           Upload a photo
         </h6>
         <h6
-          className={`font-tions font-bold text-thin text-greenAcc uppercase text-[24px] w-full text-center absolute mt-[120px] `}
+          className={`font-tions font-bold text-thin text-greenAcc uppercase text-label w-full text-center absolute mt-[130px] `}
         >
           4*6 cm
         </h6>

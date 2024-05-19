@@ -18,7 +18,7 @@ export default function NavLandingPage() {
   };
 
   return (
-    <div className="w-5/6 m-auto  items-center justify-between py-10 h-70px flex ">
+    <div className="w-5/6 m-auto  items-center justify-between pt-5 pb-10 h-70px flex ">
       <div className="flex ">
         <img src={icon} className="md:block hidden" />
         <h1
@@ -29,8 +29,8 @@ export default function NavLandingPage() {
         </h1>
       </div>
 
-      <nav className="xl:block hidden ms-auto">
-        <ul className="flex text-greenAcc justify-between gap-x-14 font-tinos font-bold text-[24px] items-center">
+      <nav className="xl:block hidden ms-auto items-center">
+        <ul className="flex text-greenAcc justify-between gap-x-14 font-tinos font-bold text-[20px] items-center">
           <li
             className={` 
             ${

@@ -8,13 +8,13 @@ import mob from "../assets/landingPage/mob.svg";
 import g4 from "../assets/landingPage/G4.svg";
 import t from "../assets/landingPage/t.svg";
 import img from "../assets/landingPage/Group.svg";
-
 import { Link } from "react-router-dom";
 import LandingFut from "../components/LandingPage/LandingFut";
 import Footer from "../components/LandingPage/Footer";
 import Title from "../components/LandingPage/Title";
 import LandingSvg from "../components/LandingPage/svg/LandingSvg";
 import LandingPolygon from "../components/LandingPage/svg/LandingPolygon";
+import AnimatedText from "../components/LandingPage/AnimatedText";
 
 export default function LandingPage() {
   return (
@@ -28,17 +28,17 @@ export default function LandingPage() {
         <div className="flex md:flex-row flex-col justify-between w-5/6 m-auto my-10 ">
           {/* title and image */}
           <div className=" md:w-3/6 w-6/6   ">
-            <h1 className="font-bold leading-[45px] font-tinos text-yellowAcc text-[40px]">
-              Obtain your passport easily through our website
+            <h1 className="font-bold leading-[45px] xl:pr-20 font-tinos text-yellowAcc ">
+            <AnimatedText  text="Obtain your passport easily through our website" />
             </h1>
-            <p className="md:w-[430px]  text-greenAcc text-[20px] font-roboto font-normal my-4">
+            <p className="md:w-[430px] font-extralight mt-5 text-[20px] font-roboto text-pa  my-4">
               From the small stuff to the big picture, organizes the work know
               what to do, why it matters, and how to get it done.
             </p>
             <div className="flex lg:justify-start justify-center ">
               <Link
                 to="/service"
-                className="h-[60px] md:w-[255px] w-[200px] bg-greenAcc mt-[50px] mb-[100px] text-white font-tinos Our services flex items-center justify-center rounded-input md:text-[28px] text-[22px] py-[6px] font-bold "
+                className="h-[60px] hover:text-yellowAcc hover:opacity-90 md:w-[255px] w-[200px] bg-greenAcc mt-[50px] mb-[100px] text-white font-tinos Our services flex items-center justify-center rounded-input md:text-[28px] text-[22px] py-[6px] font-bold "
               >
                 Our services
               </Link>

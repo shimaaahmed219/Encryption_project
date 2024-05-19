@@ -19,11 +19,11 @@ export default {
         xsm: "600px",
 
         md: "775px",
-        mmd:"850px",
-                // => @media (min-width: 768px) { ... }
+        mmd: "850px",
+        // => @media (min-width: 768px) { ... }
         extramd: "900px",
-        xxmd:'1050',
-        xxlg:'1150',
+        xxmd: '1050',
+        xxlg: '1150',
         extralg: "1072px",
         lg: "1073px",
         // => @media (min-width: 1024px) { ... }
@@ -36,15 +36,16 @@ export default {
         // => @media (min-width: 1536px) { ... }
       },
       colors: {
-        "Dashboard":'hsl(128, 14%, 33%,63%)',
+        "Dashboard": 'hsl(128, 14%, 33%,63%)',
         "greenAcc": "#324134",
-        "hover":"#556c58",
+        "hover": "#556c58",
         "greenD": " #141D15",
         "yellowAcc": " #F6C90E",
-      
+        "pa":"#67816B",
+
         "bg": "#EBEBEB",
         "oddRow": " #F8F8F8",
-  
+
         "email": " #778D86",
         "bgEmp": " #ffffff99",
         'fileUploud': "#D9D9D9",
@@ -55,10 +56,10 @@ export default {
         'p': '#ACACAC',
         'landingBg': '#F2F2F2BF',
         'gradiant': '#fffbeb',
-      'approved':'#00FC19',
-      'rejected':'#FF0000',
-      'pending':'#dcdCdC',
-      
+        'approved': '#00FC19',
+        'rejected': '#FF0000',
+        'pending': '#dcdCdC',
+
 
 
 
@@ -91,14 +92,32 @@ export default {
         'urdo': ['Noto Nastaliq Urdu', 'sans-serif'],
         'Stick': ['Stick No Bills']
       },
-      width:{
-        'editEmplyeInput':"42%"
+      width: {
+        'editEmplyeInput': "42%"
       },
-      fontSize:{
-        label:"17px",
-        lebelInputs:"17px"
-      }
+      fontSize: {
+        label: "17px",
+        input:"16px",
+        header:"18px",
+        form: "20px",
+        lebelInputs: "17px",
+        employee: "21px",
+        name: "17px",
+        button: "20px",
+        email: "17px"
+      },
+      animation: {
+        fadeIn: 'fadeIn 0.5s ease-in forwards',
+      },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+      },
+
     },
+
   },
   plugins: [],
 };
