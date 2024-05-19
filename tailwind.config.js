@@ -99,6 +99,7 @@ export default {
         label: "17px",
         input:"16px",
         header:"18px",
+        placeholder:"15px",
         form: "20px",
         lebelInputs: "17px",
         employee: "21px",

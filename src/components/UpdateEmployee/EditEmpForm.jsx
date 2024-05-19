@@ -81,7 +81,7 @@ export default function EditEmpForm({ setIsLoading, isLoading }) {
         console.log(error);
       });
   }, [id]);
-  console.log(errors);
+ 
   // update employee
   const onSubmitForm = async (data) => {
     const formdata = new FormData();
@@ -150,7 +150,7 @@ export default function EditEmpForm({ setIsLoading, isLoading }) {
               <div className=" text-red-500 m-auto ml-[-20px] text-[15px] ">{`**${errors.photo.message}`}</div>
             )}
           </div>
-          <h2 className={` font-tinos text-greenAcc text-[30px] capitalize`}>
+          <h2 className={` font-tinos text-greenAcc text-[25px] capitalize`}>
             {employeeData.name}
           </h2>
           <h1
@@ -166,12 +166,12 @@ export default function EditEmpForm({ setIsLoading, isLoading }) {
           <div className=" flex md:flex-row flex-col gap-y-3 w-full justify-around ">
             {/* name */}
             <div className="  md:w-editEmplyeInput w-full  flex flex-col  ">
-              <label className="my-2 mx-1">Name</label>
+              <label className="my-2 mx-1 text-label font-semibold">Name</label>
               <input
                 {...register("name")}
                 type="text"
                 placeholder="name"
-                className="  w-full border-[1px] bg-transparent focus:outline-none rounded-input h-[50px] px-5  border-yellowAcc "
+                className="  w-full text-input border-[1px] bg-transparent focus:outline-none rounded-input h-[50px] px-5  border-yellowAcc "
               />
               {errors.name && (
                 <div className=" text-red-500 m-auto text-[14px] mt-[15px] mb-[15px]">
@@ -182,12 +182,12 @@ export default function EditEmpForm({ setIsLoading, isLoading }) {
 
             {/* phone */}
             <div className="   md:w-editEmplyeInput w-full flex flex-col ">
-              <label className="my-2 mx-1">phone</label>
+              <label className="my-2 mx-1 text-label font-semibold">phone</label>
               <input
                 {...register("phone")}
                 type="text"
                 placeholder="phone Number"
-                className=" border-[1px] focus:outline-none bg-transparent rounded-input h-[50px] px-5  border-yellowAcc"
+                className=" border-[1px] text-input focus:outline-none bg-transparent rounded-input h-[50px] px-5  border-yellowAcc"
               />
               {errors.phone && (
                 <div className=" text-red-500 m-auto text-[15px] mt-[15px] mb-[15px]">
@@ -200,12 +200,12 @@ export default function EditEmpForm({ setIsLoading, isLoading }) {
             <div className=" flex md:flex-row flex-col gap-y-4 w-full justify-around ">
               {/* name */}
               <div className="  md:w-editEmplyeInput w-full flex flex-col  ">
-                <label className="my-2 mx-1">Email address</label>
+                <label className="my-2 mx-1 text-label font-semibold">Email address</label>
                 <input
                   {...register("email")}
                   type="text"
                   placeholder="Email Address"
-                  className="  w-full border-[1px] focus:outline-none bg-transparent rounded-input h-[50px] px-5  border-yellowAcc "
+                  className="  w-full border-[1px] text-input focus:outline-none bg-transparent rounded-input h-[50px] px-5  border-yellowAcc "
                 />
                 {errors.email && (
                   <div className=" text-red-500 text-[15px] mt-[15px] mb-[15px]">{`**${errors.email.message}`}</div>
@@ -214,12 +214,12 @@ export default function EditEmpForm({ setIsLoading, isLoading }) {
 
               {/* phone */}
               <div className="   md:w-editEmplyeInput w-full flex flex-col ">
-                <label className="my-2 mx-1">The job</label>
+                <label className="my-2 mx-1 text-label font-semibold">The job</label>
                 <input
                   {...register("job")}
                   type="text"
                   placeholder="job"
-                  className=" border-[1px] bg-transparent focus:outline-none  rounded-input h-[50px] px-5  border-yellowAcc"
+                  className=" border-[1px] text-input bg-transparent focus:outline-none  rounded-input h-[50px] px-5  border-yellowAcc"
                 />
                 {errors.job && (
                   <div className=" text-red-500 text-[15px] mt-[15px] mb-[15px]">{`**${errors.job.message}`}</div>

@@ -147,7 +147,7 @@ console.log(errors);
          )}
           
            </div>
-           <h2 className={` font-tinos text-greenAcc text-[30px] capitalize`}>
+           <h2 className={` font-tinos text-greenAcc text-[25px] capitalize`}>
          {employeeData.name}
        </h2>
        <h1
@@ -163,12 +163,12 @@ console.log(errors);
           <div className=" flex md:flex-row flex-col gap-y-3 w-full justify-around ">
             {/* name */}
             <div className="  md:w-editEmplyeInput w-full  flex flex-col  ">
-              <label className="my-2 mx-1 font-semibold">Name</label>
+              <label className="my-2 mx-1 text-label font-semibold">Name</label>
               <input
                 {...register("name")}
                 type="text"
                 placeholder="name"
-                className="  w-full border-[1px] bg-transparent focus:outline-none rounded-input h-[50px] px-5  border-yellowAcc "
+                className="  w-full border-[1px] text-input bg-transparent focus:outline-none rounded-input h-[50px] px-5  border-yellowAcc "
               />
               {errors.name && (
                 <div className=" text-red-500 m-auto text-[14px] mt-[15px] mb-[15px]">{`**${errors.name.message}`}</div>
@@ -177,12 +177,12 @@ console.log(errors);
 
             {/* phone */}
             <div className="   md:w-editEmplyeInput w-full flex flex-col ">
-              <label className="my-2 mx-1 font-semibold">phone</label>
+              <label className="my-2 mx-1 font-semibold text-label">phone</label>
               <input
                 {...register("phone")}
                 type="text"
                 placeholder="phone Number"
-                className=" border-[1px] focus:outline-none bg-transparent rounded-input h-[50px] px-5  border-yellowAcc"
+                className=" border-[1px] text-input focus:outline-none bg-transparent rounded-input h-[50px] px-5  border-yellowAcc"
               />
               {errors.phone && (
                 <div className=" text-red-500 m-auto text-[15px] mt-[15px] mb-[15px]">{`**${errors.phone.message}`}</div>
@@ -193,12 +193,12 @@ console.log(errors);
             <div className=" flex md:flex-row flex-col gap-y-4 w-full justify-around ">
               {/* name */}
               <div className="  md:w-editEmplyeInput w-full flex flex-col  ">
-                <label className="my-2 mx-1 font-semibold">Email address</label>
+                <label className="my-2 mx-1 font-semibold text-label">Email address</label>
                 <input
                   {...register("email")}
                   type="text"
                   placeholder="Email Address"
-                  className="  w-full border-[1px] focus:outline-none bg-transparent rounded-input h-[50px] px-5  border-yellowAcc "
+                  className="  w-full border-[1px] text-input focus:outline-none bg-transparent rounded-input h-[50px] px-5  border-yellowAcc "
                 />
                 {errors.email && (
                   <div className=" text-red-500 text-[15px] mt-[15px] mb-[15px]">{`**${errors.email.message}`}</div>
@@ -212,7 +212,7 @@ console.log(errors);
                   {...register("job")}
                   type="text"
                   placeholder="job"
-                  className=" border-[1px] bg-transparent focus:outline-none  rounded-input h-[50px] px-5  border-yellowAcc"
+                  className=" border-[1px] bg-transparent text-input focus:outline-none  rounded-input h-[50px] px-5  border-yellowAcc"
                 />
                 {errors.job && (
                   <div className=" text-red-500 text-[15px] mt-[15px] mb-[15px]">{`**${errors.job.message}`}</div>

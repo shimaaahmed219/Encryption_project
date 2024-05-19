@@ -157,13 +157,13 @@ export default function AddEmployeeForm({ setIsLoading, isLoading }) {
           <div className=" flex md:flex-row flex-col gap-y-3 w-full justify-around ">
             {/* name */}
             <div className="  md:w-editEmplyeInput w-full  flex flex-col  ">
-              <label className="my-2 mx-1 font-semibold">Name</label>
+              <label className="my-2 mx-1 text-label font-semibold">Name</label>
               <input
                 {...register("name")}
                 type="text"
                 placeholder="name"
-                className="  w-full border-[1px] bg-transparent focus:outline-none
-                 rounded-input h-[50px] px-5 text-[18px]  border-yellowAcc "
+                className=" text-input w-full border-[1px] bg-transparent focus:outline-none
+                 rounded-input h-[50px] px-5   border-yellowAcc "
               />
               {errors.name && (
                 <div className=" text-red-500  text-[14px] mt-[15px] mb-[15px]">
@@ -174,12 +174,12 @@ export default function AddEmployeeForm({ setIsLoading, isLoading }) {
 
             {/* phone */}
             <div className="   md:w-editEmplyeInput w-full flex flex-col ">
-              <label className="my-2 mx-1  font-semibold">phone</label>
+              <label className="my-2 mx-1 text-label  font-semibold">phone</label>
               <input
                 {...register("phone")}
                 type="text"
                 placeholder="phone Number"
-                className=" border-[1px] text-[18px] focus:outline-none bg-transparent rounded-input
+                className=" border-[1px] text-input focus:outline-none bg-transparent rounded-input
                  h-[50px] px-5  border-yellowAcc"
               />
               {errors.phone && (
@@ -193,14 +193,14 @@ export default function AddEmployeeForm({ setIsLoading, isLoading }) {
             <div className=" flex md:flex-row flex-col gap-y-4 w-full justify-around ">
               {/* name */}
               <div className="  md:w-editEmplyeInput w-full flex flex-col  ">
-                <label className="my-2 mx-1  font-semibold">
+                <label className="my-2 mx-1 text-label font-semibold">
                   Email address
                 </label>
                 <input
                   {...register("email")}
                   type="text"
                   placeholder="email@example.com"
-                  className="  w-full border-[1px] text-[18px] focus:outline-none bg-transparent rounded-input h-[50px] px-5  border-yellowAcc "
+                  className="  w-full border-[1px] text-input focus:outline-none bg-transparent rounded-input h-[50px] px-5  border-yellowAcc "
                 />
                 {errors.email && (
                   <div className=" text-red-500 text-[15px] mt-[15px] mb-[15px]">{`**${errors.email.message}`}</div>
@@ -209,12 +209,12 @@ export default function AddEmployeeForm({ setIsLoading, isLoading }) {
 
               {/* phone */}
               <div className="   md:w-editEmplyeInput w-full flex flex-col ">
-                <label className="my-2 mx-1  font-semibold">The job</label>
+                <label className="my-2 mx-1 text-label  font-semibold">The job</label>
                 <input
                   {...register("job")}
                   type="text"
                   placeholder="job"
-                  className=" border-[1px] bg-transparent text-[18px] focus:outline-none  rounded-input h-[50px] px-5  border-yellowAcc"
+                  className=" border-[1px] bg-transparent text-input focus:outline-none  rounded-input h-[50px] px-5  border-yellowAcc"
                 />
                 {errors.job && (
                   <div className=" text-red-500 text-[15px] mt-[15px] mb-[15px]">{`**${errors.job.message}`}</div>
@@ -226,7 +226,7 @@ export default function AddEmployeeForm({ setIsLoading, isLoading }) {
             <div className=" flex md:flex-row flex-col gap-y-4 w-full justify-around ">
               {/* name */}
               <div className="  md:w-editEmplyeInput w-full flex flex-col  ">
-                <label className="my-2 mx-1 font-semibold text-[20px]">
+                <label className="my-2 mx-1 text-label font-semibold">
                   Password
                 </label>
                 <div className="flex relative">
@@ -234,7 +234,7 @@ export default function AddEmployeeForm({ setIsLoading, isLoading }) {
                     {...register("password")}
                     type={showPassword ? "text" : "password"}
                     placeholder="new password"
-                    className=" w-full  border-[1px] bg-transparent text-[18px] focus:outline-none rounded-input h-[50px] px-5  border-yellowAcc "
+                    className=" w-full  border-[1px] bg-transparent text-input focus:outline-none rounded-input h-[50px] px-5  border-yellowAcc "
                   />
                   <span
                     onClick={() => setShowPassword(!showPassword)}
@@ -259,7 +259,7 @@ export default function AddEmployeeForm({ setIsLoading, isLoading }) {
         </div>
 
         <button
-          className={` font-tinos m-auto flex  items-center justify-center my-[3rem] rounded-[10px] text-[26px] bg-greenAcc w-[240px] h-[57px] text-white`}
+          className={` font-tinos m-auto flex  items-center justify-center my-[3rem] rounded-[10px] text-[22px] bg-greenAcc w-[240px] h-[57px] text-white`}
           disabled={!isValid}
         >
           {isLoading ? "Adding.." : "add Employee"}

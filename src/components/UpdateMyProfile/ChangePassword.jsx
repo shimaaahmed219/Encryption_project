@@ -66,14 +66,14 @@ export default function ChangePassword() {
         <div className="w-full flex flex-col gap-y-5">
           <div className="flex md:flex-row flex-col justify-around px-5 md:gap-y-1  gap-y-5">
           <div className="  md:w-editEmplyeInput w-full  flex flex-col  ">
-              <label className="my-2 mx-1 font-semibold capitalize">current password</label>
+              <label className="my-2 mx-1 text-label font-semibold capitalize">current password</label>
              
              <div className="relative flex">
              <input
                 {...register("current_password")}
                 type={showPassword ? "text" : "password"}
                 placeholder="current password"
-                className="  w-full border-[1px] bg-transparent focus:outline-none rounded-input h-[50px] px-5  border-yellowAcc "
+                className="  w-full text-input border-[1px] bg-transparent focus:outline-none rounded-input h-[50px] px-5  border-yellowAcc "
               />
                <span
                 onClick={() => setShowPassword(!showPassword)}
@@ -92,13 +92,13 @@ export default function ChangePassword() {
               )}
             </div>
             <div className="  2xl:w-[40%] md:md:w-[39%] w-full  flex flex-col  ">
-              <label className="my-2 mx-1 capitalize font-semibold">New password</label>
+              <label className="my-2 mx-1 text-label capitalize font-semibold">New password</label>
              <div className="flex relative">
              <input
                 {...register("new_password")}
                 type={showPassword ? "text" : "password"}
                 placeholder="new password"
-                className=" w-full  border-[1px] bg-transparent focus:outline-none rounded-input h-[50px] px-5  border-yellowAcc "
+                className=" w-full  border-[1px] text-input bg-transparent focus:outline-none rounded-input h-[50px] px-5  border-yellowAcc "
               />
               <span
                 onClick={() => setShowPassword(!showPassword)}
@@ -121,13 +121,13 @@ export default function ChangePassword() {
 
             <div className="md:flex justify-around px-5">
           <div className="  md:w-editEmplyeInput w-full  flex flex-col  ">
-              <label className="my-2 mx-1 capitalize font-semibold">new password confirmation</label>
+              <label className="my-2 mx-1 capitalize text-label font-semibold">new password confirmation</label>
            <div className="flex relative">
               <input
                 {...register("new_password_confirmation")}
                 type={showPassword ? "text" : "password"}
                 placeholder="new password confirmation"
-                className="  w-full border-[1px] bg-transparent focus:outline-none rounded-input h-[50px] px-5  border-yellowAcc "
+                className="  w-full border-[1px] text-input bg-transparent focus:outline-none rounded-input h-[50px] px-5  border-yellowAcc "
               />
   <span
                 onClick={() => setShowPassword(!showPassword)}
