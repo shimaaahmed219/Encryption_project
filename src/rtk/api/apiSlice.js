@@ -6,6 +6,8 @@ export const apiSlice = createApi({
   reducerPath: "api",
   baseQuery: fetchBaseQuery({ baseUrl: url }),
   endpoints: (builder) => ({
+
+
     // login
     loginUser: builder.mutation({
       query: (credentials) => ({
@@ -28,6 +30,17 @@ export const apiSlice = createApi({
       }),
     }),
 
+    // add employee
+    addEmployee: builder.mutation({
+      query: (data) => ({
+        url: '/employee',
+        method: 'POST',
+        body: data,
+        headers: {
+          Authorization: `Bearer ${window.localStorage.getItem('token')}`,
+        },
+      }),
+    }),
     // my Profile
     getProfileData: builder.query({
       query: () => ({
@@ -58,6 +71,7 @@ export const {
   useLoginUserMutation,
   useLogoutUserMutation,
   useGetProfileDataQuery,
+  useAddEmployeeMutation,
  useDeleteClientMutation,
 
 } = apiSlice;

@@ -105,7 +105,11 @@ export default {
         employee: "21px",
         name: "17px",
         button: "20px",
-        email: "17px"
+        email: "17px",
+        inputFile:"px"
+      },
+      height:{
+input:"45px"
       },
       animation: {
         fadeIn: 'fadeIn 0.5s ease-in forwards',

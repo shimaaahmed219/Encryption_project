@@ -84,21 +84,21 @@ export default function StepTwo({
 
         <div className="  md:pr-0 mt-[-10px] pr-[20px] md:mx-20">
           {/* husband name */}
-          <label className="text-greenAcc font-roboto my-3 text-xl font-bold block">
+          <label className="text-greenAcc  font-roboto my-3 text-label font-bold block">
             Husband name /
           </label>
           <input
             {...register("husband_name")}
             type="text"
-            className=" focus:outline-none font-roboto text-[18px] px-5 text-lg text-hreenAcc rounded-input bg-transparent w-full h-[50px] border-[1px] border-yellowAcc"
+            className=" focus:outline-none font-roboto text-input  px-5 text-lg text-greenAcc rounded-input bg-transparent w-full h-[50px] border-[1px] border-yellowAcc"
           />
-          <label className="text-greenAcc font-roboto mb-3 mt-7 text-xl font-bold block">
+          <label className="text-greenAcc font-roboto mb-3  ms-2 mt-7 text-label font-bold block">
             Nationality
           </label>
           <input
             value="Eegyptian"
             type="text"
-            className=" focus:outline-none text-[18px] px-5 rounded-input font-roboto text-lg text-hreenAcc w-full bg-transparent h-[50px] border-[1px] border-yellowAcc"
+            className=" focus:outline-none  px-5 rounded-input font-roboto  text-hreenAcc w-full bg-transparent h-[50px] border-[1px] border-yellowAcc"
           />
         </div>
       </div>

@@ -13,7 +13,7 @@ export default function Empolyee() {
   console.log(search);
 
   return (
-    <div className="bg-bg min-h-screen w-6/6 py-4">
+    <div className="bg-bg min-h-screen w-6/6 py-1">
       <Nav />
       <hr className="w-6/6 h-[0.15rem] bg-greenAcc my-4" />
 

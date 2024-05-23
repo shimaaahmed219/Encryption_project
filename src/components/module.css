@@ -2,7 +2,7 @@
     background:url('../assets/saidbaricon/Group 2353.svg')
 }
 .userIconForm{
-    background:url('../assets/formIcon/Group (3).svg') 
+    background:url('../assets/formIcon/Group (3).svg')center;
 }
 ::-webkit-scrollbar {
   width: 8px; 

@@ -167,7 +167,7 @@ export default function EmployeeDetails({ search }) {
           .map((user, index) => (
             <div
               key={user.id}
-              className="flex font-roboto lg:text-name text-[15px] justify-around my-4 bg-white rounded-[14px] shadow-employee lg:h-[70px] items-center px-5"
+              className="flex font-roboto lg:text-name text-[15px] justify-around my-4 bg-white rounded-[14px] shadow-employee lg:h-[55px] items-center px-5"
             >
               <div className="w-[25%] flex">
                 <span className="xl:text-name lg:block hidden text-[15px] text-yellowAcc ">

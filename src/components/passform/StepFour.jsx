@@ -31,9 +31,9 @@ export default function StepFour({
       <div className=" w-5/6 min-h-[423px] mb-10 py-5 bg-baform shadow-shadowEmp rounded-[20px] m-auto mt-10">
         <HeaderFormPage goToStep={goToStep} step={step} />
         <Hr />
-        <div className="grid gap-x-20   lg:grid-cols-2 grid-cols-1 px-10 pt-10 mb-5">
+        {/* <div className="grid gap-x-20   lg:grid-cols-2 grid-cols-1 px-10 pt-10 mb-5"> */}
           {/* name input */}
-
+{/* 
           <div>
             <label className="block font-roboto my-2 text-[20px] text-greenAcc">
               The age
@@ -53,10 +53,10 @@ export default function StepFour({
                 ***{errors.age.message}
               </div>
             )}
-          </div>
+          </div> */}
 
           {/* address input */}
-          <div>
+          {/* <div>
             <label className="block my-2 font-roboto text-[20px] text-greenAcc">
               The address
             </label>
@@ -74,11 +74,56 @@ export default function StepFour({
                 ***{errors.address.message}
               </div>
             )}
-          </div>
-        </div>
+          </div> */}
+        {/* </div> */}
         {/*  */}
 
-        <div className="md:block hidden"></div>
+        <div className=" mt-20">
+<div className="flex justify-center gap-x-6">
+<label className="block font-roboto my-2 text-[20px] text-greenAcc">
+              The age
+            </label>
+            <input
+              type="text"
+              {...register("age", {
+                required: {
+                  value: true,
+                  message: "This field is required",
+                },
+              })}
+              className="border-[1px] px-[20px] font-roboto text-[18px] focus:outline-none  border-yellowAcc bg-transparent  w-[80%] rounded-input h-[50px]"
+            />
+            {errors.age && (
+              <div className="text-[15px] my-5  text-red-500">
+                ***{errors.age.message}
+              </div>
+            )}
+</div>
+<div className="flex justify-center gap-x-6 my-10">
+<label className="block font-roboto my-2 text-[20px] text-greenAcc">
+address
+            </label>
+            <input
+              type="text"
+              {...register("address", {
+                required: {
+                  value: true,
+                  message: "This field is required",
+                },
+              })}
+              className="border-[1px] px-[20px] font-roboto text-[18px] focus:outline-none  border-yellowAcc bg-transparent  w-[80%] rounded-input h-[50px]"
+            />
+            {errors.address && (
+              <div className="text-[15px] my-5  text-red-500">
+                ***{errors.address.message}
+              </div>
+            )}
+</div>
+
+       
+
+        </div>
+        
       </div>
       {/* <Hr /> */}
 

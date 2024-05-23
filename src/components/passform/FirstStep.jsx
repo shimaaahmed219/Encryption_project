@@ -30,23 +30,23 @@ const [isStepValid ,setIsStepValid]=useState(false)
 const watchAllFields = watch()
 useEffect(() => {
   const isFormValid =
-    watchAllFields.passports_department !== "" &&
-    watchAllFields.date_of_birth !== "" &&
-    watchAllFields.first_name !== "" &&
-    watchAllFields.second_name !== "" &&
-    watchAllFields.third_name !== "" &&
-    watchAllFields.last_name !== "" &&
-    watchAllFields.first_name_ar !== "" &&
-    watchAllFields.second_name_ar !== "" &&
-    watchAllFields.third_name_ar !== "" &&
-    watchAllFields.last_name_ar !== "" &&
-    watchAllFields.photo?.length > 0;
-    watchAllFields.phone !== "" &&
-    watchAllFields.home_phone!== "" &&
-    watchAllFields.gender!== "" &&
-    watchAllFields.academic_qualification!== "" &&
-    watchAllFields.religion!== "" &&
-    watchAllFields.job!== ""
+    watchAllFields.passports_department !== "" 
+    // watchAllFields.date_of_birth !== "" &&
+    // watchAllFields.first_name !== "" &&
+    // watchAllFields.second_name !== "" &&
+    // watchAllFields.third_name !== "" &&
+    // watchAllFields.last_name !== "" &&
+    // watchAllFields.first_name_ar !== "" &&
+    // watchAllFields.second_name_ar !== "" &&
+    // watchAllFields.third_name_ar !== "" &&
+    // watchAllFields.last_name_ar !== "" &&
+    // watchAllFields.photo?.length > 0;
+    // watchAllFields.phone !== "" &&
+    // watchAllFields.home_phone!== "" &&
+    // watchAllFields.gender!== "" &&
+    // watchAllFields.academic_qualification!== "" &&
+    // watchAllFields.religion!== "" &&
+    // watchAllFields.job!== ""
     
 
   setIsStepValid(isFormValid);
