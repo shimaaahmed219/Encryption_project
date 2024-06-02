@@ -181,7 +181,7 @@ const [isLoding,setIsLoading] =useState()
         });
       });
   };
-
+console.log("errors",errors);
   return (
     <div>
       <form onSubmit={handleSubmit(onsubmit)}>

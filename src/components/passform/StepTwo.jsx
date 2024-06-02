@@ -90,7 +90,7 @@ export default function StepTwo({
           <input
             {...register("husband_name")}
             type="text"
-            className=" focus:outline-none font-roboto text-input  px-5 text-lg text-greenAcc rounded-input bg-transparent w-full h-[50px] border-[1px] border-yellowAcc"
+            className=" focus:outline-none font-roboto text-input  px-5 text-lg text-greenAcc rounded-input bg-transparent w-full h-input border-[1px] border-yellowAcc"
           />
           <label className="text-greenAcc font-roboto mb-3  ms-2 mt-7 text-label font-bold block">
             Nationality
@@ -98,13 +98,13 @@ export default function StepTwo({
           <input
             value="Eegyptian"
             type="text"
-            className=" focus:outline-none  px-5 rounded-input font-roboto  text-hreenAcc w-full bg-transparent h-[50px] border-[1px] border-yellowAcc"
+            className=" focus:outline-none  px-5 rounded-input font-roboto  text-hreenAcc w-full bg-transparent h-input border-[1px] border-yellowAcc"
           />
         </div>
       </div>
       <div className="my-10 m-auto mt-[50px] flex w-[80%] justify-around">
         <button
-          className="md:w-[255px] mb-10  h-[65px] text-[32px] md:text-greenAcc border-4 hover:bg-greenAcc hover:text-white font-bold border-greenAcc font-tinos rounded-input"
+          className="md:w-[255px] mb-10   h-[65px] text-[32px] md:text-greenAcc border-4 hover:bg-greenAcc hover:text-white font-bold md:border-greenAcc font-tinos rounded-input"
           type="button"
           onClick={prevStep}
         >

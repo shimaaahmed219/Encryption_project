@@ -285,6 +285,7 @@ import { url } from "../URL";
 import Swal from "sweetalert2";
 import { useEffect, useState } from "react";
 import { FiEye, FiEyeOff } from "react-icons/fi";
+import iconAdd from "../../assets/AddEmployee/Group.svg"
 // import { useAddEmployeeMutation } from "../../rtk/api/apiSlice";
 // const MAX_FILE_SIZE = 5000000;
 // const ACCEPTED_IMAGE_TYPES = [
@@ -401,13 +402,16 @@ export default function AddEmployeeForm({ setIsLoading, isLoading }) {
         onSubmit={handleSubmit(onsubmit)}
         className=" flex-col flex items-center "
       >
-        <div className=" relative mt-5 w-[100px] h-[100px] rounded-full userIconForm flex justify-center items-center ">
+        {/* userIconForm */}
+        <div className=" relative mt-5 w-[80px] h-[80px] bg-greenAcc rounded-full  flex justify-center items-center ">
+          <img src={iconAdd} className="w-[80%]"/>
           <input
             {...register("photo")}
             onChange={handleImageChange}
             type="file"
             className="w-full h-full absolute z-40 opacity-0"
           />
+
           {selectedImage && (
             <img
               src={selectedImage}
@@ -427,11 +431,11 @@ export default function AddEmployeeForm({ setIsLoading, isLoading }) {
           <div className=" text-red-500 m-auto px-10 mt-[10px] mb-[5px]">{`**${errors.photo.message}`}</div>
         )}
         <h2
-          className={` font-tinos text-yellowAcc my-2  text-[25px] capitalize`}
+          className={` font-tinos text-yellowAcc my-2   text-[23px] capitalize`}
         >
           Profil picture
         </h2>
-        <div className="flex flex-col md:gap-y-3 gap-y-5 w-full px-5 ">
+        <div className="flex flex-col md:gap-y-3 gap-y-5 w-full px-5 mt-[-5px] ">
           <div className=" flex md:flex-row flex-col gap-y-3 w-full justify-around ">
             {/* name */}
             <div className="  md:w-editEmplyeInput w-full  flex flex-col  ">
@@ -541,7 +545,7 @@ export default function AddEmployeeForm({ setIsLoading, isLoading }) {
         </div>
 
         <button
-          className={` font-tinos m-auto flex  items-center justify-center my-[3rem] rounded-[10px] text-[22px] bg-greenAcc w-[240px] h-[57px] text-white`}
+          className={` font-tinos m-auto flex  items-center justify-center my-[2rem] rounded-[10px] text-[22px] bg-greenAcc w-[240px] h-[57px] text-white`}
           disabled={!isValid}
         >
           {isLoading ? "Adding.." : "add Employee"}

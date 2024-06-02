@@ -93,7 +93,7 @@ useEffect(() => {
                       },
                     })}
                     type="type"
-                    className=" my-1 bg-transparent text-input focus:outline-none md:w-[350px]  w-full h-[50px] px-[20px]   py-[6px] border-[1px] rounded-input border-yellowAcc"
+                    className=" my-1 bg-transparent text-input focus:outline-none md:w-[350px]  w-full h-input px-[20px]   py-[6px] border-[1px] rounded-input border-yellowAcc"
                   />
                 </div>
 
@@ -126,7 +126,7 @@ useEffect(() => {
                     })}
                     placeholder="00-00-2000"
                     type="date"
-                    className="border-[1px] bg-transparent text-input focus:outline-none md:mt-0 mt-5 mb-4  font-roboto px-5 border-yellowAcc xl:ml-[72px] lg:w-[350px] md:w-[90%] w-[97%] h-[50px] rounded-input"
+                    className="border-[1px] bg-transparent text-input focus:outline-none md:mt-0 mt-5 mb-4  font-roboto px-5 border-yellowAcc xl:ml-[72px] lg:w-[350px] md:w-[90%] w-[97%] h-input rounded-input"
                   />
                   {/* data of birth error */}
                   {errors.date_of_birth && (
@@ -196,7 +196,7 @@ useEffect(() => {
                         },
                       })}
                       type="text"
-                      className=" rounded-input font-roboto text-input  bg-transparent  mb-3 w-full  h-[50px] border-[1px] focus:outline-none  border-yellowAcc px-[20px] py-[6px]"
+                      className=" rounded-input font-roboto text-input  bg-transparent  mb-3 w-full  h-input border-[1px] focus:outline-none  border-yellowAcc px-[20px] py-[6px]"
                     />
                   </div>
                 </div>
@@ -220,7 +220,7 @@ useEffect(() => {
                     },
                   })}
                   type="text"
-                  className=" rounded-input text-input font-roboto  px-[20px] bg-transparent focus:outline-none  md:w-[93%] w-[97%] h-[50px] border-[1px] border-yellowAcc  md:pl-[20px] py-[6px]"
+                  className=" rounded-input text-input font-roboto  px-[20px] bg-transparent focus:outline-none  md:w-[93%] w-[97%] h-input border-[1px] border-yellowAcc  md:pl-[20px] py-[6px]"
                 />
                 {errors.religion && (
                   <div className=" text-red-500 m-auto text-[15px] mt-[10px] mb-[5px]">{`***${errors.religion.message}`}</div>
@@ -240,7 +240,7 @@ useEffect(() => {
                         message: "This field is required",
                       },
                     })}
-                    className="w-full h-[50px] font-roboto text-[18px] px-[20px] mt-6 mb-10  bg-transparent focus:outline-none   py-[6px] border-[1px] border-yellowAcc rounded-input "
+                    className="w-full h-input font-roboto text-[18px] px-[20px] mt-6 mb-10  bg-transparent focus:outline-none   py-[6px] border-[1px] border-yellowAcc rounded-input "
                   />
                   {errors.academic_qualification && (
                     <span className=" text-red-500 text-[15px] m-auto  mt-[10px] mb-[5px]">
@@ -259,7 +259,7 @@ useEffect(() => {
                         message: "This field is required",
                       },
                     })}
-                    className="w-full font-roboto text-input px-[20px] h-[50px] mt-5  bg-transparent py-[6px] focus:outline-none  border-[1px] border-yellowAcc rounded-input "
+                    className="w-full font-roboto text-input px-[20px] h-input mt-5  bg-transparent py-[6px] focus:outline-none  border-[1px] border-yellowAcc rounded-input "
                   />
                   {errors.job && (
                     <span className=" text-red-500 text-[15px] m-auto  mt-[10px] mb-[5px]">
@@ -281,7 +281,7 @@ useEffect(() => {
                         },
                       })}
                       type="text"
-                      className=" w-full h-[50px] font-roboto text-[18px] px-[20px] mt-4  bg-transparent py-[6px] focus:outline-none  border-[1px] border-yellowAcc rounded-input"
+                      className=" w-full h-input font-roboto text-[18px] px-[20px] mt-4  bg-transparent py-[6px] focus:outline-none  border-[1px] border-yellowAcc rounded-input"
                     />
                     {errors.phone && (
                       <div className=" text-red-500 m-auto text-[15px] mt-[10px] mb-[5px]">{`**${errors.phone.message}`}</div>
@@ -300,7 +300,7 @@ useEffect(() => {
                         },
                       })}
                       type="text"
-                      className=" font-roboto text-input px-[20px] w-full h-[50px]  bg-transparent mt-4 py-[6px] focus:outline-none  border-[1px] border-yellowAcc rounded-input"
+                      className=" font-roboto text-input px-[20px] w-full h-input  bg-transparent mt-4 py-[6px] focus:outline-none  border-[1px] border-yellowAcc rounded-input"
                     />
                     {errors.home_phone && (
                       <div className=" text-red-500 m-auto text-[15px]  mt-[10px] mb-[5px]">{`**${errors.home_phone.message}`}</div>

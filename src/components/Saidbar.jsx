@@ -96,7 +96,7 @@ export default function Saidebar( {handilClose, showSidebar} ) {
               <Link
              
                 to={link.href}
-                className={`font-roboto font-medium hover:text-gray-100 flex my-2  capitalize items-center gap-[20px] w-full h-[40px] text-white border-none text-left text-[16px] hover:bg-opacity-10`}
+                className={`font-roboto font-medium hover:text-gray-100 flex my-1  capitalize items-center gap-[20px] w-full h-[40px] text-white border-none text-left text-[16px] hover:bg-opacity-10`}
               >
                 <img src={link.src} alt="" width={20} height={20} />
                 {link.name}

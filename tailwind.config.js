@@ -106,7 +106,7 @@ export default {
         name: "17px",
         button: "20px",
         email: "17px",
-        inputFile:"px"
+        inputFile:"19px"
       },
       height:{
 input:"45px"

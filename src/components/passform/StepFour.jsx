@@ -31,58 +31,14 @@ export default function StepFour({
       <div className=" w-5/6 min-h-[423px] mb-10 py-5 bg-baform shadow-shadowEmp rounded-[20px] m-auto mt-10">
         <HeaderFormPage goToStep={goToStep} step={step} />
         <Hr />
-        {/* <div className="grid gap-x-20   lg:grid-cols-2 grid-cols-1 px-10 pt-10 mb-5"> */}
-          {/* name input */}
-{/* 
-          <div>
-            <label className="block font-roboto my-2 text-[20px] text-greenAcc">
-              The age
-            </label>
-            <input
-              type="text"
-              {...register("age", {
-                required: {
-                  value: true,
-                  message: "This field is required",
-                },
-              })}
-              className="border-[1px] px-[20px] font-roboto text-[18px] focus:outline-none  border-yellowAcc bg-transparent  w-full rounded-input h-[50px]"
-            />
-            {errors.age && (
-              <div className="text-[15px] my-5  text-red-500">
-                ***{errors.age.message}
-              </div>
-            )}
-          </div> */}
-
-          {/* address input */}
-          {/* <div>
-            <label className="block my-2 font-roboto text-[20px] text-greenAcc">
-              The address
-            </label>
-            <input
-              {...register("address", {
-                required: {
-                  value: true,
-                  message: "This field is required",
-                },
-              })}
-              className="border-[1px] px-[20px] font-roboto text-[18px]  focus:outline-none border-yellowAcc bg-transparent  w-full rounded-input h-[50px]"
-            />
-            {errors.address && (
-              <div className="text-[15px]  my-5 focus:outline-none text-red-500">
-                ***{errors.address.message}
-              </div>
-            )}
-          </div> */}
-        {/* </div> */}
-        {/*  */}
-
         <div className=" mt-20">
-<div className="flex justify-center gap-x-6">
+<div className="flex md:flex-row flex-col items-center justify-center gap-x-6">
+<div className=" md:w-[100px] w-[80%]">
 <label className="block font-roboto my-2 text-[20px] text-greenAcc">
               The age
             </label>
+</div>
+
             <input
               type="text"
               {...register("age", {
@@ -99,10 +55,12 @@ export default function StepFour({
               </div>
             )}
 </div>
-<div className="flex justify-center gap-x-6 my-10">
+<div className="flex md:flex-row flex-col items-center  justify-center gap-x-6 my-10">
+<div className=" md:w-[100px] w-[80%]">
 <label className="block font-roboto my-2 text-[20px] text-greenAcc">
 address
             </label>
+</div>
             <input
               type="text"
               {...register("address", {

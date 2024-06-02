@@ -73,11 +73,11 @@ export default function ChangePassword() {
                 {...register("current_password")}
                 type={showPassword ? "text" : "password"}
                 placeholder="current password"
-                className="  w-full text-input border-[1px] bg-transparent focus:outline-none rounded-input h-[50px] px-5  border-yellowAcc "
+                className="  w-full text-input border-[1px] bg-transparent focus:outline-none rounded-input h-input px-5  border-yellowAcc "
               />
                <span
                 onClick={() => setShowPassword(!showPassword)}
-                className="  absolute right-4 top-[15px]  cursor-pointer"
+                className="  absolute right-4 top-[12px]  cursor-pointer"
               >
                 {showPassword ? (
                   <FiEye size={20} color="yellow" />
@@ -98,11 +98,11 @@ export default function ChangePassword() {
                 {...register("new_password")}
                 type={showPassword ? "text" : "password"}
                 placeholder="new password"
-                className=" w-full  border-[1px] text-input bg-transparent focus:outline-none rounded-input h-[50px] px-5  border-yellowAcc "
+                className=" w-full  border-[1px] text-input bg-transparent focus:outline-none rounded-input h-input px-5  border-yellowAcc "
               />
               <span
                 onClick={() => setShowPassword(!showPassword)}
-                className="  absolute  right-4 top-[15px] cursor-pointer"
+                className="  absolute  right-4 top-[12px] cursor-pointer"
               >
                 {showPassword ? (
                   <FiEye size={20} color="yellow" />
@@ -127,11 +127,11 @@ export default function ChangePassword() {
                 {...register("new_password_confirmation")}
                 type={showPassword ? "text" : "password"}
                 placeholder="new password confirmation"
-                className="  w-full border-[1px] text-input bg-transparent focus:outline-none rounded-input h-[50px] px-5  border-yellowAcc "
+                className="  w-full border-[1px] text-input bg-transparent focus:outline-none rounded-input h-input px-5  border-yellowAcc "
               />
   <span
                 onClick={() => setShowPassword(!showPassword)}
-                className="  absolute  right-4 top-[15px] cursor-pointer"
+                className="  absolute  right-4 top-[12px] cursor-pointer"
               >
                 {showPassword ? (
                   <FiEye size={20} color="yellow" />
@@ -153,7 +153,7 @@ export default function ChangePassword() {
             <div className=" flex justify-center">
             <button
               type="submit"
-              className={` outline-none:focus-none font-tinos font-bold xl:ms-7 leading-6 my-[3rem] rounded-[10px] text-[26px] bg-greenAcc sm:w-[198px] w-[150px] h-[50px] text-white`}
+              className={` outline-none:focus-none hover:opacity-90 hover:text-yellowAcc font-tinos font-bold xl:ms-7 leading-6 my-[2rem] rounded-[10px] text-[26px] bg-greenAcc sm:w-[198px] w-[150px] h-[50px] text-white`}
             >
               save
             </button>

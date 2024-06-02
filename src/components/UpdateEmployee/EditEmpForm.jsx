@@ -122,7 +122,7 @@ export default function EditEmpForm({ setIsLoading, isLoading }) {
 
         <div className="w-full  flex flex-col items-center justify-center">
           <div
-            className="w-[115px] h-[115px] mt-10 mb-5 relative rounded-full
+            className="w-[115px] h-[115px] mt-6 mb-5 relative rounded-full
          userIconForm flex justify-center items-center "
           >
             <input
@@ -171,7 +171,7 @@ export default function EditEmpForm({ setIsLoading, isLoading }) {
                 {...register("name")}
                 type="text"
                 placeholder="name"
-                className="  w-full text-input border-[1px] bg-transparent focus:outline-none rounded-input h-[50px] px-5  border-yellowAcc "
+                className="  w-full text-input border-[1px] bg-transparent focus:outline-none rounded-input h-input px-5  border-yellowAcc "
               />
               {errors.name && (
                 <div className=" text-red-500 m-auto text-[14px] mt-[15px] mb-[15px]">
@@ -187,7 +187,7 @@ export default function EditEmpForm({ setIsLoading, isLoading }) {
                 {...register("phone")}
                 type="text"
                 placeholder="phone Number"
-                className=" border-[1px] text-input focus:outline-none bg-transparent rounded-input h-[50px] px-5  border-yellowAcc"
+                className=" border-[1px] text-input focus:outline-none bg-transparent rounded-input h-input px-5  border-yellowAcc"
               />
               {errors.phone && (
                 <div className=" text-red-500 m-auto text-[15px] mt-[15px] mb-[15px]">
@@ -205,7 +205,7 @@ export default function EditEmpForm({ setIsLoading, isLoading }) {
                   {...register("email")}
                   type="text"
                   placeholder="Email Address"
-                  className="  w-full border-[1px] text-input focus:outline-none bg-transparent rounded-input h-[50px] px-5  border-yellowAcc "
+                  className="  w-full border-[1px] text-input focus:outline-none bg-transparent rounded-input h-input px-5  border-yellowAcc "
                 />
                 {errors.email && (
                   <div className=" text-red-500 text-[15px] mt-[15px] mb-[15px]">{`**${errors.email.message}`}</div>
@@ -219,7 +219,7 @@ export default function EditEmpForm({ setIsLoading, isLoading }) {
                   {...register("job")}
                   type="text"
                   placeholder="job"
-                  className=" border-[1px] text-input bg-transparent focus:outline-none  rounded-input h-[50px] px-5  border-yellowAcc"
+                  className=" border-[1px] text-input bg-transparent focus:outline-none  rounded-input h-input px-5  border-yellowAcc"
                 />
                 {errors.job && (
                   <div className=" text-red-500 text-[15px] mt-[15px] mb-[15px]">{`**${errors.job.message}`}</div>
@@ -231,7 +231,7 @@ export default function EditEmpForm({ setIsLoading, isLoading }) {
             <button
             disabled={isLoading}
               type="submit"
-              className={` outline-none:focus-none font-tinos font-bold xl:ms-7  my-[3rem] rounded-[10px] text-[26px] bg-greenAcc sm:w-[198px] w-[150px] h-[50px] text-white`}
+              className={` outline-none:focus-none font-tinos font-bold xl:ms-7  my-[2rem] rounded-[10px] text-[26px] bg-greenAcc sm:w-[198px] w-[150px] h-[55px] text-white`}
             >
               save
             </button>
