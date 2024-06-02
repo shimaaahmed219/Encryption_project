@@ -13,7 +13,7 @@ export default function Navbar() {
     console.log(showDropDowen);
   };
   return (
-    <div className="w-5/6 m-auto my-5  z-50 items-center justify-between  h-[70px] flex ">
+    <div className="w-5/6 m-auto my-5  z-50 items-center justify-between  h-[40px] flex ">
       <div className="flex ">
         <h1
           className={` font-tinos text-[24px]   items-center gap-x-8 text-white md:mt-3 mt-[-30px] ml-3  text-xl`}
@@ -23,7 +23,7 @@ export default function Navbar() {
       </div>
 
       <nav className="xl:block hidden ms-auto">
-        <ul className="flex text-white justify-between gap-x-14 font-tinos font-bold text-[24px] items-center">
+        <ul className="flex text-white justify-between gap-x-14 font-tinos font-bold text-[20px] items-center">
           <li
             className={`relative ${
               location.pathname === "/" ? "border-b-2 border-yellowAcc" : ""
