@@ -1,11 +1,10 @@
-/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-
-import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 import axios from "axios";
-import Swal from "sweetalert2";
 import { url } from "../URL";
-export default function Status({ setClient, user }) {
+import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
+import Swal from "sweetalert2";
+
+export default function MofaStatus({ setClient, user }) {
   const handilChange = async (event, id) => {
     try {
       const selectedValue = event.target.value;
@@ -76,86 +75,6 @@ export default function Status({ setClient, user }) {
             throw new Error("Failed to update client status");
           }
         }
-      } else if (selectedValue === "approved") {
-        // Prompt user to select 'received_type' using SweetAlert2
-        const { value: receivedType } = await Swal.fire({
-          title: "Select Received Type",
-          input: "select",
-          inputOptions: {
-            mofa: "MOFA",
-            "recruitment district": "Recruitment District",
-          },
-          inputPlaceholder: "Select received type",
-          showCancelButton: true,
-          confirmButtonText: "Save",
-          cancelButtonText: "Cancel",
-          confirmButtonColor: "#324134",
-          cancelButtonColor: "#ccc",
-
-          inputValidator: (value) => {
-            if (!value) {
-              return "You need to choose a received type";
-            }
-          },
-        });
-
-        // If the user selects a received type, continue with the update
-        if (receivedType) {
-          const response = await axios.put(
-            `${url}/clientOrder/${id}`,
-            {
-              status: selectedValue,
-              received_type: receivedType,
-            },
-            {
-              headers: {
-                "Content-Type": "application/json",
-                Authorization: `Bearer ${window.localStorage.getItem("token")}`,
-              },
-            }
-          );
-
-          // Handle success and error responses
-          if (response.status === 200) {
-            // Update client status in state
-            setClient((prevClients) =>
-              prevClients.map((client) =>
-                client.id === id
-                  ? {
-                      ...client,
-                      status: selectedValue,
-                      received_type: receivedType,
-                    }
-                  : client
-              )
-            );
-
-            Swal.fire({
-              title: "Success!",
-              text: "Client status updated successfully!",
-              icon: "success",
-            });
-
-            const response = await axios.put(
-              `${url}/clientOrder/${id}`,
-              {
-                status: "processing",
-                received_type: receivedType,
-              },
-              {
-                headers: {
-                  "Content-Type": "application/json",
-                  Authorization: `Bearer ${window.localStorage.getItem(
-                    "token"
-                  )}`,
-                },
-              }
-            );
-            console.log(response);
-          } else {
-            throw new Error("Failed to update client status");
-          }
-        }
       } else {
         // For other statuses ('pending' or any other), proceed with the update as before
         const response = await axios.put(
@@ -174,7 +93,6 @@ export default function Status({ setClient, user }) {
         // Handle success and error responses
         if (response.status === 200) {
           // Update client status in state
-
           setClient((prevClients) =>
             prevClients.map((client) =>
               client.id === id ? { ...client, status: selectedValue } : client
@@ -197,7 +115,8 @@ export default function Status({ setClient, user }) {
         icon: "error",
       });
     }
-    const res = await axios.get(`${url}/client?type=passport authority`);
+
+    const res = await axios.get(`${url}/client?type=mofa`);
     setClient(res.data.data);
   };
 
@@ -237,4 +156,3 @@ export default function Status({ setClient, user }) {
     </>
   );
 }
-``
