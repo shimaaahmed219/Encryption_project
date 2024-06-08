@@ -203,7 +203,7 @@ export default function Status({ setClient, user }) {
 
   return (
     <>
-      <FormControl sx={{ width: 158 }}>
+      <FormControl sx={{ width: 158  }}>
         <InputLabel id="demo-simple-select-label" className="mt-[-10px]">
           status
         </InputLabel>

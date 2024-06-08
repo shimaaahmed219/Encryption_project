@@ -19,7 +19,6 @@ import UpdateClientData from "./pages/UpdateClientData";
 import Security from "./pages/Security";
 import UpdateMyProfile from "./pages/UpdateMyProfile";
 import { useEffect } from "react";
-import File from "./pages/File";
 
 
 
@@ -58,7 +57,7 @@ export default function App() {
       <Route path="/recruitmentArea" element={<RecruitmentArea/>} />
       <Route path="/updateClient/:id" element={<UpdateClientData/>} />
       <Route path="/updateProfile/:id" element={<UpdateMyProfile/>} />
-      <Route path="/file" element={<File/>}/>
+      {/* <Route path="/file" element={<File/>}/> */}
       <Route path="*" element={<div>not found</div>} />
     </Routes>
     
