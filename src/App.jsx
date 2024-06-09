@@ -19,6 +19,7 @@ import UpdateClientData from "./pages/UpdateClientData";
 import Security from "./pages/Security";
 import UpdateMyProfile from "./pages/UpdateMyProfile";
 import { useEffect } from "react";
+import EncriptionData from "./pages/EncriptionData";
 
 
 
@@ -47,7 +48,7 @@ export default function App() {
       <Route path="/addEmployee" element={<AddEmployee/>}/>
       <Route path="/employee" element={<Employee/>}/>
       <Route path="/EditEmployee/:id" element={<EditEmployee />} />
-      <Route path="/EncryptedFiles" element={<EncryptedFiles/>} />
+      <Route path="/EncryptedFiles/:id" element={<EncryptedFiles/>} />
       <Route path="/decrypt" element={<Decrypt/>} />
       <Route path="/Encryption" element={<Encryption/>} />
       <Route path="/tryagain" element={<TryAgain/>} />
@@ -57,7 +58,7 @@ export default function App() {
       <Route path="/recruitmentArea" element={<RecruitmentArea/>} />
       <Route path="/updateClient/:id" element={<UpdateClientData/>} />
       <Route path="/updateProfile/:id" element={<UpdateMyProfile/>} />
-      {/* <Route path="/file" element={<File/>}/> */}
+      <Route path="/encriptionData" element={<EncriptionData/>}/>
       <Route path="*" element={<div>not found</div>} />
     </Routes>
     

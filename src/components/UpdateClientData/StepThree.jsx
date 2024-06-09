@@ -86,9 +86,9 @@ export default function StepThree({
                       `https://epassport-api.preview-ym.com/${image?.national_id_photo}`
                     )
                   }
-                  className=" right-[-10px] bottom-[-8px] w-[30px] h-[30px] flex justify-center items-center rounded-full bg-yellowAcc absolute"
+                  className=" right-[-10px] top-[-8px] w-[25px] h-[25px] flex justify-center items-center rounded-[5px] bg-gray-200 absolute"
                 >
-                  <FiEye className="text-white   " />
+                  <FiEye className="text-gray-400   " />
                 </button>
               </div>
             </div>
@@ -161,7 +161,7 @@ export default function StepThree({
                       `https://epassport-api.preview-ym.com/${image?.birth_cert}`
                     )
                   }
-                  className=" right-[-10px] bottom-[-8px] w-[30px] h-[30px] flex justify-center items-center rounded-full bg-yellowAcc absolute"
+                  className=" right-[-10px] top-[-8px] w-[25px] h-[25px] flex justify-center items-center rounded-[5px] bg-gray-200 absolute"
                 >
                   <FiEye className="text-white   " />
                 </button>
@@ -176,19 +176,28 @@ export default function StepThree({
               </label>
               <div className="w-[200px] h-[150px] rounded-[7px] bg-fileUploud relative">
                 <input
-                  // {...register("national_id_photo")}
-                  // onChange={(e) => handleImageChange(e, "national_id_photo")}
+                  {...register("army_cert")}
                   type="file"
                   className="opacity-0 w-full h-full absolute z-50"
                 />
 
-                {/* {selectedImage["national_id_photo"] && (
+<div className="absolute text-center ">
                   <img
-                    src={selectedImage["national_id_photo"]}
-                    alt="Selected"
-                    className="w-full  z-40 absolute h-full object-cover "
+                    className=" w-[200px] h-[150px] rounded-[7px]"
+                    src={`https://epassport-api.preview-ym.com/${image?.army_cert}`}
                   />
-                )} */}
+                </div>
+                <button
+                  type="button"
+                  onClick={() =>
+                    openModal(
+                      `https://epassport-api.preview-ym.com/${image?.army_cert}`
+                    )
+                  }
+                  className=" right-[-10px] top-[-8px] w-[25px] h-[25px] flex justify-center items-center rounded-[5px] bg-gray-200 absolute"
+                >
+                  <FiEye className="text-white   " />
+                </button>
               </div>
             </div>
             {/* {errors.national_id_photo && (
@@ -222,7 +231,7 @@ export default function StepThree({
                       `https://epassport-api.preview-ym.com/${image?.graduation_cert}`
                     )
                   }
-                  className=" right-[-10px] bottom-[-8px] w-[30px] h-[30px] flex justify-center items-center rounded-full bg-yellowAcc absolute"
+                  className=" right-[-10px] top-[-8px] w-[25px] h-[25px] flex justify-center items-center rounded-[5px] bg-gray-200 absolute"
                 >
                   <FiEye className="text-white   " />
                 </button>

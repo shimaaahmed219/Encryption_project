@@ -1,20 +1,20 @@
 
-import Settingsicon from "../assets/saidbaricon/Group (1).svg";
-import Encrypted from "../assets/saidbaricon/encrypted-icon (1) 1.svg";
-import employee from "../assets/saidbaricon/business-team-icon 1.svg";
-import users from "../assets/saidbaricon/male-add-icon 1.svg";
+
 import img from "../assets/saidbaricon/graph-icon 1.svg";
 import Edit from "../assets/saidbaricon/shape.svg";
 import "./module.css";
 import { Link } from "react-router-dom";
 // import Logout from "./Logout";
-import decimg from "../assets/EncAndEecICONS/Group 2288.svg";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import { IconButton } from "@mui/material";
 import Logout from "./Logout/Logout";
 import { useState ,useEffect } from "react";
 import axios from "axios";
 import { url } from "./URL";
+import AdminLinks from "./Sidebar/AdminLinks";
+import RecruitmentDstrict from "./Sidebar/RecruitmentDstrict";
+import MofaLinka from "./Sidebar/MofaLinka";
+import PassportAuthorityLinks from "./Sidebar/PassportAuthorityLinks";
 
 
 
@@ -24,16 +24,10 @@ import { url } from "./URL";
 export default function Saidebar( {handilClose, showSidebar} ) {
   const links = [
     { id: 1, name: "Statistics", href: "/", src: img },
-    { id: 2, name: "All Encrypted files", href:"/EncryptedFiles", src: Encrypted },
     { id: 5, name: "Add request", href: "/passForm", src: Edit },
-    { id: 9, name: "add employee", href: "/addEmployee", src: users },
-    { id: 7, name: "Encryption file", href: "/encryption", src: Encrypted },
-    { id: 8, name: "Decrypt file", href: "/Decrypt", src: decimg },
-    { id: 9, name: "Employees", href: "/employee", src: employee },
-    { id: 10, name: "mofa", href: "/ForgenEmployee", src: users },
-    { id: 11, name: "recruitment district", href: "/recruitmentArea", src: Settingsicon },
-    { id: 12, name: "passport authority", href: "/passEployee", src: Settingsicon },
-    // { id: 9, name: "update profile", href: "/addEmployee/:id", src: users },
+
+    // { id: 7, name: "Encryption file", href: "/encryption", src: Encrypted },
+    // { id: 8, name: "Decrypt file", href: "/Decrypt", src: decimg },
   ];
 
   
@@ -87,9 +81,12 @@ export default function Saidebar( {handilClose, showSidebar} ) {
         <h2 className={`font-tinos text-yellowAcc capitalize text-[20px]`}>
           {data?.name}
         </h2>
+       
+
         <h6 className={`font-roboto font-light text-email  text-[17px]`}>
-          {data?.email}
+          {data?.user_type}
         </h6>
+
         <div className="flex flex-col w-full mt-5  ">
           {links.map((link) => (
             <div   key={link.id} className="hover:bg-hover px-5 hover:pl-10">
@@ -103,6 +100,31 @@ export default function Saidebar( {handilClose, showSidebar} ) {
               </Link>
             </div>
           ))}
+
+{data && data.user_type === "admin" ? (
+<div className="flex flex-col w-full ">
+              <AdminLinks/>
+              </div>
+            ) : null}
+
+            {data && data.user_type === "recruitment district" ? (
+              <div className="flex flex-col w-full ">
+               <RecruitmentDstrict/>
+              </div>
+            ) : null}
+
+            {data && data.user_type === "mofa" ? (
+              <div className="flex flex-col w-full ">
+             <MofaLinka/>
+              </div>
+            ) : null}
+
+{data && data.user_type === "passport authority" ? (
+              <div className="flex flex-col w-full ">
+                <PassportAuthorityLinks/>
+              </div>
+            ) : null}
+
              <div className="hover:bg-hover px-5 hover:pl-10">
              <Link
              
@@ -113,7 +135,9 @@ export default function Saidebar( {handilClose, showSidebar} ) {
           update my profile
                 </Link>
               </div>
-          <Logout />
+     <div className="">
+     <Logout />
+     </div>
         </div>
       </div>
     </div>

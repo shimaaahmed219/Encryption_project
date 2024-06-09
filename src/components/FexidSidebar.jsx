@@ -1,10 +1,7 @@
+// import Settingsicon from "../assets/saidbaricon/Group (1).svg";
+// import Encrypted from "../assets/saidbaricon/encrypted-icon (1) 1.svg";
+// import employee from "../assets/saidbaricon/business-team-icon 1.svg";
 
-
-
-import Settingsicon from "../assets/saidbaricon/Group (1).svg";
-import Encrypted from "../assets/saidbaricon/encrypted-icon (1) 1.svg";
-import employee from "../assets/saidbaricon/business-team-icon 1.svg";
-import users from "../assets/saidbaricon/male-add-icon 1.svg";
 import img from "../assets/saidbaricon/graph-icon 1.svg";
 import Edit from "../assets/saidbaricon/shape.svg";
 import "./module.css";
@@ -12,23 +9,20 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { url } from "./URL";
-import decimg from "../assets/EncAndEecICONS/Group 2288.svg";
+// import decimg from "../assets/EncAndEecICONS/Group 2288.svg";
 import Logout from "./Logout/Logout";
-
-
+import AdminLinks from "./Sidebar/AdminLinks";
+import MofaLinka from "./Sidebar/MofaLinka";
+import PassportAuthorityLinks from "./Sidebar/PassportAuthorityLinks";
+import RecruitmentDstrict from "./Sidebar/RecruitmentDstrict";
 
 export default function FexidSidebar() {
   const links = [
     { id: 1, name: "Statistics", href: "/", src: img },
-    { id: 2, name: "All Encrypted files", href: "/EncryptedFiles", src: Encrypted },
     { id: 5, name: "Add request", href: "/passForm", src: Edit },
-    { id: 9, name: "add employee", href: "/addEmployee", src: users },
-    { id: 7, name: "Encryption file", href: "/encryption", src: Encrypted },
-    { id: 8, name: "Decrypt file", href: "/Decrypt", src: decimg },
-    { id: 9, name: "Employees", href: "/employee", src: employee },
-    { id: 10, name: "mofa", href: "/ForgenEmployee", src: users },
-    { id: 11, name: "recruitment district", href: "/recruitmentArea", src: Settingsicon },
-    { id: 12, name: "passport authority", href: "/passEployee", src: Settingsicon },
+
+    // { id: 7, name: "Encryption file", href: "/encryption", src: Encrypted },
+    // { id: 8, name: "Decrypt file", href: "/Decrypt", src: decimg },
   ];
 
   const [data, setData] = useState(null);
@@ -43,16 +37,18 @@ export default function FexidSidebar() {
       })
       .then((res) => setData(res.data.data));
   }, []);
-  
-console.log(data);
+
+  console.log(data);
+
   return (
     <>
       <div
         className={` lg:w-[21%]  w-[311px] h-screen pt-5 pb-10 py-10 bg-greenAcc overflow-y-auto   fixed top-0 left-0 z-50 `}
       >
         <div
-      
-            className={`${!data && "hidden"} transition-opacity  flex flex-col  items-center pb-6 bt-3`}
+          className={`${
+            !data && "hidden"
+          } transition-opacity  flex flex-col  items-center pb-6 bt-3`}
         >
           <div className="w-[65px] h-[67px] rounded-full userIcon flex justify-center items-center ">
             {data?.photo ? (
@@ -68,13 +64,12 @@ console.log(data);
             {data?.name}
           </h2>
           <h6 className={`font-roboto font-light text-email  text-[17px]`}>
-            {data?.email}
+            {data?.user_type}
           </h6>
-          <div   className="flex flex-col w-full mt-5  ">
+          <div className="flex flex-col w-full mt-5  ">
             {links.map((link) => (
               <div key={link.id} className="hover:bg-hover px-5 hover:pl-10">
                 <Link
-                 
                   to={link.href}
                   className={`font-roboto  hover:text-gray-100 flex my-1  capitalize items-center gap-[20px] w-full h-[40px] text-white border-none text-left text-[16px] hover:bg-opacity-10`}
                 >
@@ -84,22 +79,45 @@ console.log(data);
               </div>
             ))}
 
-                <div className="hover:bg-hover px-5 hover:pl-10">
-             <Link
-             
-             to={`/updateProfile/${data?.id}`}
-             className={`font-roboto font-medium  hover:text-gray-100 flex my-2  capitalize items-center gap-[20px] w-full h-[40px] text-white border-none text-left text-[16px] hover:bg-opacity-10`}
-           >
-            <img src={Edit}/>
-          update my profile
-                </Link>
+            {data && data.user_type === "admin" ? (
+              <div className="flex flex-col w-full ">
+                <AdminLinks />
               </div>
-           
-            <Logout />
+            ) : null}
+
+            {data && data.user_type === "recruitment district" ? (
+              <div className="flex flex-col w-full ">
+              <RecruitmentDstrict/>
+              </div>
+            ) : null}
+
+            {data && data.user_type === "mofa" ? (
+              <div className="flex flex-col w-full ">
+                <MofaLinka />
+              </div>
+            ) : null}
+
+            {data && data.user_type === "passport authority" ? (
+              <div className="flex flex-col w-full ">
+                <PassportAuthorityLinks/>
+              </div>
+            ) : null}
+
+            <div className="hover:bg-hover px-5 hover:pl-10">
+              <Link
+                to={`/updateProfile/${data?.id}`}
+                className={`font-roboto font-medium  hover:text-gray-100 flex my-2  capitalize items-center gap-[20px] w-full h-[40px] text-white border-none text-left text-[16px] hover:bg-opacity-10`}
+              >
+                <img src={Edit} />
+                update my profile
+              </Link>
+            </div>
+            <div className="">
+              <Logout />
+            </div>
           </div>
         </div>
       </div>
     </>
   );
 }
-

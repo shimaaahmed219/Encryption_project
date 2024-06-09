@@ -62,6 +62,7 @@ const onsubmit = (data) => {
       birth_cert: data.birth_cert[0],
       national_id_photo: data.national_id_photo[0],
       graduation_cert: data.graduation_cert[0],
+      army_cert:data.army_cert[0]
   };
 
   axios

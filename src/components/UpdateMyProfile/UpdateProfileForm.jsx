@@ -10,6 +10,7 @@ import Swal from "sweetalert2";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import ChangePassword from "./ChangePassword";
+import iconAdd from "../../assets/AddEmployee/Group.svg";
 const schema = z.object({
   name: z.string().min(6).max(50),
   email: z.string().email(),
@@ -115,12 +116,14 @@ console.log(errors);
 };
 
   return (
-    <div className="w-[80%] font-roboto text-[18px] h-full text-greenAcc shadow-shadowEmp bg-bgEmp rounded-[20px] my-10">
+    <div className="lg:w-[70%] w-[80%] font-roboto text-[18px] h-full text-greenAcc shadow-shadowEmp bg-bgEmp rounded-[20px] my-10">
       <form onSubmit={handleSubmit(onSubmitForm)}>
         {/* update image */}
 
         <div className="w-full  flex flex-col items-center justify-center">
-        <div className="w-[115px] h-[115px] mt-6 mb-5 relative rounded-full userIconForm flex justify-center items-center ">
+        <div className="w-[80px] h-[80px] mt-6 mb-5 relative rounded-full bg-greenAcc flex justify-center items-center ">
+        <img src={iconAdd} className="w-[80%]" />
+            
              <input
                {...register("photo")}
                     onChange={handleImageChange}
@@ -143,15 +146,15 @@ console.log(errors);
              />
            )}
              {errors.photo && (
-           <div className=" text-red-500 m-auto ml-[-20px] text-[15px] ">{`**${errors.photo.message}`}</div>
+           <div className=" text-red-500 m-auto ml-[-20px]  text-[15px] ">{`**${errors.photo.message}`}</div>
          )}
           
            </div>
-           <h2 className={` font-tinos text-greenAcc text-[25px] capitalize`}>
+           <h2 className={` font-tinos text-greenAcc mt-[-20px] text-[20px] capitalize`}>
          {employeeData.name}
        </h2>
        <h1
-         className={` font-tinos font-bold text-yellowAcc text-[24px] capitalize`}
+         className={` font-tinos font-bold text-yellowAcc text-[20px] capitalize`}
        >
          {" "}
          update

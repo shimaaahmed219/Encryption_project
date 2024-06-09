@@ -109,7 +109,7 @@ export default {
         inputFile:"19px"
       },
       height:{
-input:"45px"
+input:"42px"
       },
       animation: {
         fadeIn: 'fadeIn 0.5s ease-in forwards',

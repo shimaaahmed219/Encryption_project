@@ -100,7 +100,8 @@ const [isLoding,setIsLoading] =useState()
           key === "photo" ||
           key === "national_id_photo" ||
           key === "graduation_cert" ||
-          key === "birth_cert"
+          key === "birth_cert"||
+          key === "army_cert"
         ) {
           // return setValue(key, null);
         } else {
@@ -131,6 +132,7 @@ const [isLoding,setIsLoading] =useState()
           "national_id_photo",
           "birth_cert",
           "graduation_cert",
+          "army_cert"
         ].includes(key)
       ) {
         formdata.append(key, value);
@@ -143,6 +145,7 @@ const [isLoding,setIsLoading] =useState()
       "national_id_photo",
       "birth_cert",
       "graduation_cert",
+      "army_cert"
     ];
     imageFields.forEach((field) => {
       // Check if the field has a value before appending it

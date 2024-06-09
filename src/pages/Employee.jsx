@@ -25,7 +25,7 @@ export default function Empolyee() {
         </h2>
       </div>
       <form>
-        <div className=" w-5/6 m-auto gap-y-7 flex md:flex-row flex-col items-center gap-x-[61px]  ">
+        <div className=" w-[70%] m-auto gap-y-7 flex md:flex-row flex-col items-center gap-x-[61px]  ">
           {/* add employee button */}
           <Link to="/addEmployee">
             <button className="w-[267px] h-[60px]  hover:text-yellowAcc bg-greenAcc text-white rounded-input font-roboto text-button font-thin items-center flex justify-center">

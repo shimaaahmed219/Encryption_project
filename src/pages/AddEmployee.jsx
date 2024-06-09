@@ -47,7 +47,7 @@ export default function AddEmployee() {
       </div>
       {isLoading && (
         <div>
-          <div className="w-full z-40 min-h-[900px] absolute left-0 top-0 bg-black opacity-85"></div>
+          <div className="w-full z-40 h-screen fixed left-0 top-0 bg-black opacity-85"></div>
           <div className="w-full h-full top-0 left-0 absolute flex flex-col justify-center items-center">
             <div className="mt-[-60px] text-white text-[20px] capitalize z-50 font-tinos">
               Adding...

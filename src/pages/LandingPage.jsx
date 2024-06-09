@@ -134,10 +134,10 @@ export default function LandingPage() {
               only five centuries, but also the leap into electronic
               typesetting, remaining essentially unchange
             </p>
-            <div className="w-full flex lg:justify-start justify-center">
+            <div className="w-full flex lg:justify-start lg:ml-4 justify-center">
               <Link
                 to="/security"
-                className="w-[166px] h-[53px] flex justify-center items-center hover:text-yellowAcc hover:bg-bgEmp bg-yellowAcc font-tinos text-white rounded-[25px]   text-[24px] font-bold"
+                className="w-[166px] h-[53px] flex justify-center items-center  hover:bg-greenAcc bg-yellowAcc font-tinos text-white rounded-[25px]   text-[24px] font-bold"
               >
                 see more
               </Link>

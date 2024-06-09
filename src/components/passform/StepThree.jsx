@@ -25,7 +25,7 @@ export default function StepThree({
       watchAllFields.birth_cert?.length > 0;
     watchAllFields.national_id_photo?.length > 0;
     watchAllFields.graduation_cert?.length > 0;
-
+    watchAllFields.army_cert?.length > 0;
     setIsStepValid(isFormValid);
   }, [watchAllFields]);
 
@@ -168,8 +168,13 @@ export default function StepThree({
               </label>
               <div className="w-[200px] h-[150px] rounded-[7px] bg-fileUploud relative">
                 <input
-                  // {...register("national_id_photo")}
-                  // onChange={(e) => handleImageChange(e, "national_id_photo")}
+                  {...register("army_cert",{
+                    required: {
+                      value: true,
+                      message: "This field is required",
+                    }
+                  })}
+                  onChange={(e) => handleImageChange(e, "army_cert")}
                   type="file"
                   className="opacity-0 w-full h-full absolute z-50"
                 />
@@ -180,20 +185,20 @@ export default function StepThree({
                     <h3>4*6 CM</h3>
                   </div>
                 </div>
-                {/* {selectedImage["national_id_photo"] && (
+                {selectedImage["army_cert"] && (
                   <img
-                    src={selectedImage["national_id_photo"]}
+                    src={selectedImage["army_cert"]}
                     alt="Selected"
                     className="w-full  z-40 absolute h-full object-cover "
                   />
-                )} */}
+                )}
               </div>
             </div>
-            {/* {errors.national_id_photo && (
+            {errors.army_cert && (
               <div className="text-red-500 mx-5 text-[15px] my-2">
-                ***{errors.national_id_photo.message}
+                ***{errors.army_cert.message}
               </div>
-            )} */}
+            )}
           </div>
           <div>
             <div className="md:pl-5 pl-[2px]">

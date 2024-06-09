@@ -7,7 +7,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import Swal from "sweetalert2";
 import axios from "axios";
 import { useEffect, useState } from "react";
-
+import iconAdd from "../../assets/AddEmployee/Group.svg";
 const schema = z.object({
   name: z.string().min(6).max(50),
   email: z.string().email(),
@@ -17,14 +17,17 @@ const schema = z.object({
     .refine((value) => value.trim() !== "", {
       message: "This field is required",
     }),
+    user_type:z.any(),
   job: z
     .string()
     .refine((value) => value.trim() !== "", {
       message: "This field is required",
     }),
+   
   photo: z
     .any()
     .refine((value) => value !== "", { message: "This field is required" }),
+   
 });
 
 
@@ -46,6 +49,7 @@ export default function EditEmpForm({ setIsLoading, isLoading }) {
     phone: "",
     position: "",
     photo: "",
+    user_type:"",
   });
 
   // from apdate
@@ -88,8 +92,10 @@ export default function EditEmpForm({ setIsLoading, isLoading }) {
     formdata.append("name", data.name);
     formdata.append("email", data.email);
     formdata.append("position", data.job);
+    formdata.append("user_type", data.user_type);
     formdata.append("photo", data.photo[0]);
     formdata.append("phone", data.phone);
+   
     setIsLoading(true);
     try {
         const res = await axios.post(`${url}/employee/${id}`, formdata, {
@@ -114,7 +120,7 @@ export default function EditEmpForm({ setIsLoading, isLoading }) {
 
   return (
     <div
-      className="w-[80%] font-roboto text-[18px] h-full text-greenAcc
+      className="xl:w-[70%] w-[80%] font-roboto text-[18px] h-full text-greenAcc
      shadow-shadowEmp bg-bgEmp rounded-[20px] my-10"
     >
       <form onSubmit={handleSubmit(onSubmitForm)}>
@@ -122,9 +128,10 @@ export default function EditEmpForm({ setIsLoading, isLoading }) {
 
         <div className="w-full  flex flex-col items-center justify-center">
           <div
-            className="w-[115px] h-[115px] mt-6 mb-5 relative rounded-full
-         userIconForm flex justify-center items-center "
+            className="w-[80px] h-[80px] mt-6 mb-5 relative rounded-full
+         bg-greenAcc flex justify-center items-center "
           >
+             <img src={iconAdd} className="w-[80%]" />
             <input
               {...register("photo")}
               onChange={handleImageChange}
@@ -150,11 +157,11 @@ export default function EditEmpForm({ setIsLoading, isLoading }) {
               <div className=" text-red-500 m-auto ml-[-20px] text-[15px] ">{`**${errors.photo.message}`}</div>
             )}
           </div>
-          <h2 className={` font-tinos text-greenAcc text-[25px] capitalize`}>
+          <h2 className={` font-tinos text-greenAcc text-[22px] mt-[-20px] capitalize`}>
             {employeeData.name}
           </h2>
           <h1
-            className={` font-tinos font-bold text-yellowAcc text-[24px] capitalize`}
+            className={` font-tinos font-bold text-yellowAcc text-[20px] capitalize`}
           >
             {" "}
             update
@@ -225,7 +232,49 @@ export default function EditEmpForm({ setIsLoading, isLoading }) {
                   <div className=" text-red-500 text-[15px] mt-[15px] mb-[15px]">{`**${errors.job.message}`}</div>
                 )}
               </div>
+              
             </div>
+            {/* <div className="   md:w-editEmplyeInput w-full flex flex-col ">
+              <label className="my-2 mx-1 text-label font-semibold">
+                 user type
+                </label>
+                <select
+                  {...register("user_type")}
+                  name="user_type"
+                  className="bg-transparent focus:outline-none rounded-input h-input px-5 text-input font-greenAcc  border-[1px] border-yellowAcc"
+                >
+                  <option value="admin">Admin</option>
+                  <option value="passport authority">passport authority</option>
+                  <option value="mofa">mofa</option>
+                  <option value="mofa">recruitment district</option>
+                </select>
+              </div> */}
+                <div className=" flex md:flex-row flex-col gap-y-3 w-full justify-around ">
+            {/* name */}
+            <div className="  md:w-editEmplyeInput w-full  flex flex-col  ">
+            <label className="my-3 mx-1 text-label font-semibold">
+                 user type
+                </label>
+                <select
+                  {...register("user_type")}
+                  name="user_type"
+                  className="bg-transparent focus:outline-none rounded-input h-input px-5 text-input font-greenAcc  border-[1px] border-yellowAcc"
+                >
+                  <option value="admin">Admin</option>
+                  <option value="passport authority">passport authority</option>
+                  <option value="mofa">mofa</option>
+                  <option value="recruitment district">recruitment district</option>
+                </select>
+             
+              
+            </div>
+
+            {/* phone */}
+            <div className="   md:w-editEmplyeInput w-full flex flex-col ">
+            
+            
+            </div>
+          </div>
           </div>
           <div className="w-full flex justify-center">
             <button

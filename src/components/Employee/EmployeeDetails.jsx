@@ -129,7 +129,7 @@ export default function EmployeeDetails({ search }) {
 
   return (
     <>
-      <div className="w-5/6  m-auto my-10 lg:block hidden">
+      <div className="w-[70%]  m-auto my-10 lg:block hidden">
         <TableContainer
           component={Paper}
           className="shadow-employee   rounded-[14px]"

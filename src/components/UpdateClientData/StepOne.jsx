@@ -65,7 +65,7 @@ export default function StepOne({
           <input
             {...register("photo")}
             type="file"
-            className="opacity-0 absolute w-[6/6] h-[90%] 10-[10%] z-50"
+            className="opacity-0 absolute bottom-0 w-[6/6] h-[92%] 10-[10%] z-50"
           />
 
           <img
@@ -75,9 +75,9 @@ export default function StepOne({
           <button
             type="button"
             onClick={handleOpenDialog}
-            className=" right-[-10px] top-[-8px] w-[30px] h-[30px] flex justify-center items-center rounded-full bg-yellowAcc absolute"
+            className=" right-[-10px] top-[-8px] w-[30px] h-[30px] flex justify-center items-center rounded-full bg-gray-200 absolute"
           >
-            <FiEye className="text-white   " />
+            <FiEye className="  text-gray-500 " />
           </button>
         </div>
       </div>
@@ -103,7 +103,7 @@ export default function StepOne({
               className="absolutew-[158px] h-[207px]"
               src={`https://epassport-api.preview-ym.com/${image?.photo}`}
             />
-            <button
+            {/* <button
               type="button"
               onClick={handleOpenDialog}
               className=" right-[0px] top-[-8px] w-[30px] h-[30px] flex justify-center items-center rounded-full absolute"
@@ -113,7 +113,7 @@ export default function StepOne({
                 // onMouseLeave={() => setHovered(false)}
                 className="text-yellowAcc  mt-3 "
               />
-            </button>
+            </button> */}
           </div>
         </div>
 
