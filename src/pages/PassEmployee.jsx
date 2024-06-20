@@ -4,6 +4,7 @@ import searchicon from "../assets/employee/shape (3).svg";
 import Nav from "../components/Nav";
 import Hr from "../components/Hr";
 import PassportAreaDesc from "../components/PassEmployee/PassportAreaDesc";
+// import Test from "../components/Test";
 
 export default function PassEmployee() {
   const [search, setSearch] = useState("");
@@ -34,7 +35,8 @@ export default function PassEmployee() {
           />
         </div>
       </div>
-      <PassportAreaDesc search={search} />
+      <PassportAreaDesc search={search} />/
+      {/* <Test  search={search}/> */}
     </div>
   );
 }

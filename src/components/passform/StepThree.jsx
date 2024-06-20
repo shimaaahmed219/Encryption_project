@@ -244,14 +244,14 @@ export default function StepThree({
       </div>
       <div className="my-10 m-auto mt-[50px] flex w-[80%] justify-around">
         <button
-          className="w-[255px] capitalize mb-10  h-[65px] md:bg-greenAcc text-[32px] text-greenAcc md:text-white font-tinos rounded-input"
+          className="lg:w-[255px] w-[180px] capitalize mb-10 h-[50px] md:h-[65px]  lg:text-[32px] text-[20px] text-greenAcc  font-tinos rounded-input"
           type="button"
           onClick={prevStep}
         >
           back
         </button>
         <button
-          className="w-[255px] mb-10  h-[65px] md:bg-greenAcc text-[32px] ${!isStepValid && 'bg-gray-500' } text-greenAcc md:text-white font-tinos rounded-input"
+          className={`lg:w-[255px] w-[180px] mb-10  h-[50px] md:h-[65px] ${!isStepValid ? 'bg-gray-500':' bg-greenAcc' } lg:text-[32px] text-[20px] text-white font-tinos rounded-input `}
           type="button"
           onClick={nextStep}
           disabled={!isStepValid}

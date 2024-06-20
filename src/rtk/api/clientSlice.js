@@ -1,24 +1,30 @@
-import { url } from "../../components/URL";
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import { url } from "../../components/URL"; 
 
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-
-const api = createApi({
-  reducerPath: 'clientApi',
-  baseQuery: fetchBaseQuery({ baseUrl: {url} }), 
+export const api = createApi({
+  reducerPath: "clientApi",
+  baseQuery: fetchBaseQuery({
+    baseUrl: url,
+    prepareHeaders: (headers) => {
+      const token = window.localStorage.getItem("token");
+      if (token) {
+        headers.set("Authorization", `Bearer ${token}`);
+      }
+      return headers;
+    },
+  }),
   endpoints: (builder) => ({
-    submitClient: builder.mutation({
-      query: (data) => ({
-        url: '/client',
-        method: 'POST',
-        body: data,
-        headers: {
-          'Content-Type': 'multipart/form-data',
-          Authorization: `Bearer ${window.localStorage.getItem('token')}`,
-        },
+    getClient: builder.query({
+      query: () => "/client?type=passport authority",
+    }),
+    deleteClient: builder.mutation({
+      query: (id) => ({
+        url: `/client/${id}`,
+        method: "DELETE",
       }),
+     
     }),
   }),
 });
 
-export const { useSubmitClientMutation } = api;
-export default api;
+export const { useGetClientQuery, useDeleteClientMutation } = api;

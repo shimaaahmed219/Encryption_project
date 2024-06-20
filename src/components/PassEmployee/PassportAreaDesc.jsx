@@ -47,7 +47,9 @@ export default function PassportAreaDesc({ search }) {
   const [selectedClient, setSelectedClient] = useState(null);
   const pageSize = 7;
 
-  // const handlePageChange = ({ selected }: { selected: number }) => {
+
+  
+  // const handlePageChange = ({ selected }: { selected}) => {
   //   setCurrentPage(selected);
   // };
 
@@ -83,8 +85,7 @@ export default function PassportAreaDesc({ search }) {
   };
   const startIndex = carrentPage * pageSize;
   const visbleEmployees = cleint
-    .slice(startIndex, startIndex + pageSize)
-    .sort((a, b) => a.first_name.localeCompare(b.first_name));
+    .slice(startIndex, startIndex + pageSize).sort((a, b) => a.first_name.localeCompare(b.first_name));
 
   // delet client
   const handilDeletClient = (id) => {

@@ -18,7 +18,7 @@ const schema = z.object({
       message: "This field is required",
     }),
     user_type:z.any(),
-  job: z
+  position: z
     .string()
     .refine((value) => value.trim() !== "", {
       message: "This field is required",
@@ -91,7 +91,7 @@ export default function EditEmpForm({ setIsLoading, isLoading }) {
     const formdata = new FormData();
     formdata.append("name", data.name);
     formdata.append("email", data.email);
-    formdata.append("position", data.job);
+    formdata.append("position", data.position);
     formdata.append("user_type", data.user_type);
     formdata.append("photo", data.photo[0]);
     formdata.append("phone", data.phone);
@@ -223,13 +223,13 @@ export default function EditEmpForm({ setIsLoading, isLoading }) {
               <div className="   md:w-editEmplyeInput w-full flex flex-col ">
                 <label className="my-2 mx-1 text-label font-semibold">The job</label>
                 <input
-                  {...register("job")}
+                  {...register("position")}
                   type="text"
                   placeholder="job"
                   className=" border-[1px] text-input bg-transparent focus:outline-none  rounded-input h-input px-5  border-yellowAcc"
                 />
-                {errors.job && (
-                  <div className=" text-red-500 text-[15px] mt-[15px] mb-[15px]">{`**${errors.job.message}`}</div>
+                {errors.position && (
+                  <div className=" text-red-500 text-[15px] mt-[15px] mb-[15px]">{`**${errors.position.message}`}</div>
                 )}
               </div>
               

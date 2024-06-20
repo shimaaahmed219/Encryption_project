@@ -1,12 +1,35 @@
 import { Link } from "react-router-dom";
 import users from "../../assets/saidbaricon/male-add-icon 1.svg";
 import employee from "../../assets/saidbaricon/business-team-icon 1.svg";
+import Edit from "../../assets/saidbaricon/shape.svg"
 import { RiAdminFill } from "react-icons/ri";
 import "../style/scrol.css";
 import { Dashboard } from "@mui/icons-material";
 export default function AdminLinks() {
   return (
     <>
+
+<div className="hover:bg-hover px-5 hover:pl-10">
+        <Link
+          to="/dashboard"
+          className="links font-roboto hover:text-gray-100 flex my-1 capitalize items-center gap-[20px] w-full h-[40px] text-white border-none text-left text-[16px] hover:bg-opacity-10"
+        >
+          {/* <img src={employee} alt="user icon" width={20} height={20} /> */}
+          <Dashboard />
+          Dashboard
+        </Link>
+      </div>
+      {/* { id: 5, name: "Add request", href: "/passForm", src: Edit } */}
+
+      <div className="hover:bg-hover px-5 hover:pl-10">
+        <Link
+          to="/passForm"
+          className="links font-roboto hover:text-gray-100 flex my-1 capitalize items-center gap-[20px] w-full h-[40px] text-white border-none text-left text-[16px] hover:bg-opacity-10"
+        >
+          <img src={Edit} alt="user icon" width={20} height={20} />
+          Add request
+        </Link>
+      </div>
       <div className="hover:bg-hover px-5 hover:pl-10">
         <Link
           to="/Employee"
@@ -36,16 +59,7 @@ export default function AdminLinks() {
           Accepted citizens
         </Link>
       </div>
-      <div className="hover:bg-hover px-5 hover:pl-10">
-        <Link
-          to="/dashboard"
-          className="links font-roboto hover:text-gray-100 flex my-1 capitalize items-center gap-[20px] w-full h-[40px] text-white border-none text-left text-[16px] hover:bg-opacity-10"
-        >
-          {/* <img src={employee} alt="user icon" width={20} height={20} /> */}
-          <Dashboard />
-          Dashboard
-        </Link>
-      </div>
+    
       <div className="hover:bg-hover px-4 hover:pl-10">
         <Link
           to="/passEployee"

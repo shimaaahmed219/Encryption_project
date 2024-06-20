@@ -16,20 +16,11 @@ const schema = z.object({
   email: z.string().email(),
   
   phone: z.string().refine((value) => value.trim() !== "", { message: "This field is required" }),
-  job: z
+  position: z
     .string(),
   //  .refine((value) => value.trim() !== "", { message: "This field is required" }),
   photo: z
     .any(),
-    // .refine((value) => value.trim() !== "", { message: "This field is required" })
-    // .refine(
-    //   (files) => files?.[0]?.size <= MAX_FILE_SIZE,
-    //   `this fild is requaird.`
-    // )
-    // .refine(
-    //   (files) => ACCEPTED_IMAGE_TYPES.includes(files?.[0]?.type),
-    //   "Only .jpg, .jpeg, .png and  formats are supported."
-    // ),
 });
 
 export default function UpdateProfileForm({setIsLoading}) {
@@ -90,7 +81,7 @@ console.log(errors);
     const formdata = new FormData();
     formdata.append("name", data.name);
     formdata.append("email", data.email);
-    formdata.append("position", data.job);
+    formdata.append("position", data.position);
     formdata.append("photo", data.photo[0]);
     formdata.append("phone", data.phone);
     setIsLoading(true);
@@ -212,13 +203,13 @@ console.log(errors);
               <div className="   md:w-editEmplyeInput w-full flex flex-col ">
                 <label className="my-2 mx-1 font-semibold">The job</label>
                 <input
-                  {...register("job")}
+                  {...register("position")}
                   type="text"
                   placeholder="job"
                   className=" border-[1px] bg-transparent text-input focus:outline-none  rounded-input h-input px-5  border-yellowAcc"
                 />
-                {errors.job && (
-                  <div className=" text-red-500 text-[15px] mt-[15px] mb-[15px]">{`**${errors.job.message}`}</div>
+                {errors.position && (
+                  <div className=" text-red-500 text-[15px] mt-[15px] mb-[15px]">{`**${errors.position.message}`}</div>
                 )}
               </div>
             </div>

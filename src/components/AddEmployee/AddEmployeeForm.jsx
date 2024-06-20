@@ -1,6 +1,3 @@
-
-
-
 /* eslint-disable react/prop-types */
 import { useForm } from "react-hook-form";
 import icon from "../../assets/AddEmployee/edit-2.svg";
@@ -67,6 +64,7 @@ export default function AddEmployeeForm({ setIsLoading, isLoading }) {
     resolver: zodResolver(schema),
     mode: "onTouched",
   });
+
   const watching = watch();
   useEffect(() => {
     const checkIsValid =
@@ -265,8 +263,8 @@ export default function AddEmployeeForm({ setIsLoading, isLoading }) {
 
               {/* phone */}
               <div className="   md:w-editEmplyeInput w-full flex flex-col ">
-              <label className="my-2 mx-1 text-label font-semibold">
-                 user type
+                <label className="my-2 mx-1 text-label font-semibold">
+                  user type
                 </label>
                 <select
                   {...register("user_type")}
@@ -276,7 +274,9 @@ export default function AddEmployeeForm({ setIsLoading, isLoading }) {
                   <option value="admin">Admin</option>
                   <option value="passport authority">passport authority</option>
                   <option value="mofa">mofa</option>
-                  <option value="recruitment district">recruitment district</option>
+                  <option value="recruitment district">
+                    recruitment district
+                  </option>
                 </select>
               </div>
             </div>
@@ -284,7 +284,8 @@ export default function AddEmployeeForm({ setIsLoading, isLoading }) {
         </div>
 
         <button
-          className={` font-tinos m-auto flex  items-center justify-center my-[2rem] rounded-[10px] text-[22px] bg-greenAcc w-[240px] h-[57px] text-white`}
+          // className={`lg:w-[255px] w-[180px] mb-10  h-[50px] md:h-[65px] ${!isValid ? 'bg-gray-500':' bg-greenAcc' } lg:text-[32px] text-[20px] text-white font-tinos rounded-input `}
+          className={` font-tinos m-auto flex  ${!isValid ? 'bg-gray-500':' bg-greenAcc' } items-center justify-center my-[2rem] rounded-[10px] text-[22px]  w-[240px] h-[57px] text-white`}
           disabled={!isValid}
         >
           {isLoading ? "Adding.." : "add Employee"}

@@ -28,7 +28,7 @@ export default function StepTwo({
 
   useEffect(()=>{
     const isFormValid =
-    watchAllFields.marital_status !==null
+    watchAllFields.marital_status !== null
     setIsStepValid2(isFormValid);
   },[watchAllFields])
   // console.log(isStepValid2,watchAllFields);
@@ -104,17 +104,18 @@ export default function StepTwo({
       </div>
       <div className="my-10 m-auto mt-[50px] flex w-[80%] justify-around">
         <button
-          className="md:w-[255px] mb-10   h-[65px] text-[32px] md:text-greenAcc border-4 hover:bg-greenAcc hover:text-white font-bold md:border-greenAcc font-tinos rounded-input"
+          className="mlg:w-[255px] w-[180px] mb-10   h-[50px] md:h-[65px] lg:text-[32px] text-[20px] text-greenAcc  font-tinos rounded-input font-semibold"
           type="button"
           onClick={prevStep}
         >
           Back
         </button>
         <button
-          className={`md:w-[255px] mb-10  h-[65px] md:bg-greenAcc ${!isStepValid2 && 'bg-gray-500' } text-[32px] md:text-white font-bold  rounded-input text-greenAcc font-tinos `}
+        disabled={!isStepValid2}
+        className={`lg:w-[255px] w-[180px] mb-10 h-[50px] font-semibold md:h-[65px] ${!isStepValid2 ? 'bg-gray-500':' bg-greenAcc' } lg:text-[32px] text-[20px] text-white font-tinos rounded-input `}
           type="button"
           onClick={nextStep}
-          disabled={!isStepValid2}
+          
         >
           Next
         </button>

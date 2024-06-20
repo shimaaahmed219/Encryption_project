@@ -5,12 +5,12 @@ const HeaderFormPage = ({step}) => {
 
   return (
     <div className="xl:flex lg:grid px-3 lg:grid-cols-2 justify-between">
-      <button
-        className={`flex items-center xl:my-0 my-5  xl:justify-between xl:w-[170px] `}
+      <div
+        className={`flex items-center cursor-pointer xl:my-0 my-5  xl:justify-between xl:w-[170px] `}
         // onClick={() => goToStep(1)}
       >
         <div
-          className={`w-[29px] mx-2  h-[29px] rounded-full bg-fileUploud flex justify-center items-center ${
+          className={`w-[29px] mx-2  h-[29px] cursor-pointer rounded-full bg-fileUploud flex justify-center items-center ${
             isPageOpen(1) ? "bg-yellowAcc text-white" : ""
           } font-roboto text-lg`}
         >
@@ -19,8 +19,8 @@ const HeaderFormPage = ({step}) => {
         <h5 className="xl:w-[126px] leading-6 text-start capitalize font-tinos font-bold md:twxt-header text-[18px] text-greenAcc">
           Personal information
         </h5>
-      </button>
-      <button
+      </div>
+      <div
         className={`flex items-center xl:my-0 my-5  xl:justify-between `}
         // onClick={() => goToStep(2)}
       >
@@ -32,9 +32,9 @@ const HeaderFormPage = ({step}) => {
           2
         </div>
         <h5 className="xl:w-[150px] leading-6 text-start capitalize font-tinos font-bold md:twxt-header text-[18px] text-greenAcc">Annats marital status</h5>
-      </button>
-      <button
-        className={`flex items-center xl:my-0 my-5  `}
+      </div>
+      <div
+        className={`flex items-center cursor-pointer xl:my-0 my-5  `}
         // onClick={() => goToStep(3)}
       >
         <div
@@ -48,9 +48,9 @@ const HeaderFormPage = ({step}) => {
           {" "}
           I need proof of identity
         </h5>
-      </button>
-      <button
-        className={`flex items-center xl:my-0 my-5 `}
+      </div>
+      <div
+        className={`flex items-center cursor-pointer xl:my-0 my-5 `}
         // onClick={() => goToStep(4)}
       >
         <div
@@ -64,7 +64,7 @@ const HeaderFormPage = ({step}) => {
           {" "}
           Names of those who can be reviewed when necessary in the A.S.C
         </h5>
-      </button>
+      </div>
     </div>
   );
 };

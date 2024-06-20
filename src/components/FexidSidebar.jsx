@@ -1,6 +1,4 @@
-// import Settingsicon from "../assets/saidbaricon/Group (1).svg";
-// import Encrypted from "../assets/saidbaricon/encrypted-icon (1) 1.svg";
-// import employee from "../assets/saidbaricon/business-team-icon 1.svg";
+
 
 import img from "../assets/saidbaricon/graph-icon 1.svg";
 import Edit from "../assets/saidbaricon/shape.svg";
@@ -9,7 +7,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { url } from "./URL";
-// import decimg from "../assets/EncAndEecICONS/Group 2288.svg";
+
 import Logout from "./Logout/Logout";
 import AdminLinks from "./Sidebar/AdminLinks";
 import MofaLinka from "./Sidebar/MofaLinka";
@@ -18,11 +16,8 @@ import RecruitmentDstrict from "./Sidebar/RecruitmentDstrict";
 
 export default function FexidSidebar() {
   const links = [
-    { id: 1, name: "Statistics", href: "/", src: img },
-    { id: 5, name: "Add request", href: "/passForm", src: Edit },
-
-    // { id: 7, name: "Encryption file", href: "/encryption", src: Encrypted },
-    // { id: 8, name: "Decrypt file", href: "/Decrypt", src: decimg },
+    { id: 1, name: "Home", href: "/", src: img },
+  
   ];
 
   const [data, setData] = useState(null);
@@ -48,13 +43,13 @@ export default function FexidSidebar() {
         <div
           className={`${
             !data && "hidden"
-          } transition-opacity  flex flex-col  items-center pb-6 bt-3`}
+          } transition-opacity mt-2 flex flex-col  items-center pb-6 bt-3`}
         >
           <div className="w-[65px] h-[67px] rounded-full userIcon flex justify-center items-center ">
             {data?.photo ? (
               <img
                 className="w-[65px] h-[67px] rounded-full"
-                src={`${data?.photo}`}
+                src={`https://epassport-api.preview-ym.com/${data?.photo}`}
               />
             ) : (
               ""
@@ -66,7 +61,7 @@ export default function FexidSidebar() {
           <h6 className={`font-roboto font-light text-email  text-[17px]`}>
             {data?.user_type}
           </h6>
-          <div className="flex flex-col w-full mt-5  ">
+          <div className="flex flex-col w-full  ">
             {links.map((link) => (
               <div key={link.id} className="hover:bg-hover px-5 hover:pl-10">
                 <Link

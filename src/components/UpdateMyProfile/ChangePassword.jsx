@@ -1,12 +1,10 @@
-
 import { zodResolver } from "@hookform/resolvers/zod";
-import {  useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { url } from "../URL";
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FiEye, FiEyeOff } from "react-icons/fi";
-
 
 const schema = z.object({
   current_password: z
@@ -40,14 +38,25 @@ const schema = z.object({
 
 export default function ChangePassword() {
   const [showPassword, setShowPassword] = useState(false);
-  
+  const [isValid, setIsValid] = useState(false);
   const {
     register,
     handleSubmit,
     formState: { errors },
+    watch,
   } = useForm({
     resolver: zodResolver(schema),
   });
+
+  const watchedPassword = watch();
+
+  useEffect(() => {
+    const watchisValid =
+      watchedPassword.current_password !== "" &&
+      watchedPassword.new_password !== "" &&
+      watchedPassword.new_password_confirmation !== "";
+    setIsValid(watchisValid);
+  }, [watchedPassword]);
 
   const changePasswordHandle = async (data) => {
     axios
@@ -65,105 +74,102 @@ export default function ChangePassword() {
       <form onSubmit={handleSubmit(changePasswordHandle)}>
         <div className="w-full flex flex-col gap-y-5">
           <div className="flex md:flex-row flex-col justify-around px-5 md:gap-y-1  gap-y-5">
-          <div className="  md:w-editEmplyeInput w-full  flex flex-col  ">
-              <label className="my-2 mx-1 text-label font-semibold capitalize">current password</label>
-             
-             <div className="relative flex">
-             <input
-                {...register("current_password")}
-                type={showPassword ? "text" : "password"}
-                placeholder="current password"
-                className="  w-full text-input border-[1px] bg-transparent focus:outline-none rounded-input h-input px-5  border-yellowAcc "
-              />
-               <span
-                onClick={() => setShowPassword(!showPassword)}
-                className="  absolute right-4 top-[12px]  cursor-pointer"
-              >
-                {showPassword ? (
-                  <FiEye size={20} color="yellow" />
-                ) : (
-                  <FiEyeOff size={20} color="yellow" />
-                )}
-              </span>
-             </div>
-             
+            <div className="  md:w-editEmplyeInput w-full  flex flex-col  ">
+              <label className="my-2 mx-1 text-label font-semibold capitalize">
+                current password
+              </label>
+
+              <div className="relative flex">
+                <input
+                  {...register("current_password")}
+                  type={showPassword ? "text" : "password"}
+                  placeholder="current password"
+                  className="  w-full text-input border-[1px] bg-transparent focus:outline-none rounded-input h-input px-5  border-yellowAcc "
+                />
+                <span
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="  absolute right-4 top-[12px]  cursor-pointer"
+                >
+                  {showPassword ? (
+                    <FiEye size={20} color="yellow" />
+                  ) : (
+                    <FiEyeOff size={20} color="yellow" />
+                  )}
+                </span>
+              </div>
+
               {errors.current_password && (
                 <div className=" text-red-500 m-auto text-[14px] mt-[15px] mb-[15px]">{`**${errors.current_password.message}`}</div>
               )}
             </div>
             <div className="  2xl:w-[40%] md:md:w-[39%] w-full  flex flex-col  ">
-              <label className="my-2 mx-1 text-label capitalize font-semibold">New password</label>
-             <div className="flex relative">
-             <input
-                {...register("new_password")}
-                type={showPassword ? "text" : "password"}
-                placeholder="new password"
-                className=" w-full  border-[1px] text-input bg-transparent focus:outline-none rounded-input h-input px-5  border-yellowAcc "
-              />
-              <span
-                onClick={() => setShowPassword(!showPassword)}
-                className="  absolute  right-4 top-[12px] cursor-pointer"
-              >
-                {showPassword ? (
-                  <FiEye size={20} color="yellow" />
-                ) : (
-                  <FiEyeOff size={20} color="yellow" />
-                )}
-              </span>
-             </div>
-            
+              <label className="my-2 mx-1 text-label capitalize font-semibold">
+                New password
+              </label>
+              <div className="flex relative">
+                <input
+                  {...register("new_password")}
+                  type={showPassword ? "text" : "password"}
+                  placeholder="new password"
+                  className=" w-full  border-[1px] text-input bg-transparent focus:outline-none rounded-input h-input px-5  border-yellowAcc "
+                />
+                <span
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="  absolute  right-4 top-[12px] cursor-pointer"
+                >
+                  {showPassword ? (
+                    <FiEye size={20} color="yellow" />
+                  ) : (
+                    <FiEyeOff size={20} color="yellow" />
+                  )}
+                </span>
+              </div>
+
               {errors.new_password && (
                 <div className=" text-red-500 m-auto text-[14px] mt-[15px] mb-[15px]">{`**${errors.new_password.message}`}</div>
               )}
             </div>
+          </div>
 
-            </div>
-
-            <div className="md:flex justify-around px-5">
-          <div className="  md:w-editEmplyeInput w-full  flex flex-col  ">
-              <label className="my-2 mx-1 capitalize text-label font-semibold">new password confirmation</label>
-           <div className="flex relative">
-              <input
-                {...register("new_password_confirmation")}
-                type={showPassword ? "text" : "password"}
-                placeholder="new password confirmation"
-                className="  w-full border-[1px] text-input bg-transparent focus:outline-none rounded-input h-input px-5  border-yellowAcc "
-              />
-  <span
-                onClick={() => setShowPassword(!showPassword)}
-                className="  absolute  right-4 top-[12px] cursor-pointer"
-              >
-                {showPassword ? (
-                  <FiEye size={20} color="yellow" />
-                ) : (
-                  <FiEyeOff size={20} color="yellow" />
-                )}
-              </span>
+          <div className="md:flex justify-around px-5">
+            <div className="  md:w-editEmplyeInput w-full  flex flex-col  ">
+              <label className="my-2 mx-1 capitalize text-label font-semibold">
+                new password confirmation
+              </label>
+              <div className="flex relative">
+                <input
+                  {...register("new_password_confirmation")}
+                  type={showPassword ? "text" : "password"}
+                  placeholder="new password confirmation"
+                  className="  w-full border-[1px] text-input bg-transparent focus:outline-none rounded-input h-input px-5  border-yellowAcc "
+                />
+                <span
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="  absolute  right-4 top-[12px] cursor-pointer"
+                >
+                  {showPassword ? (
+                    <FiEye size={20} color="yellow" />
+                  ) : (
+                    <FiEyeOff size={20} color="yellow" />
+                  )}
+                </span>
               </div>
               {errors.new_password_confirmation && (
                 <div className=" text-red-500 m-auto text-[14px] mt-[15px] mb-[15px]">{`**${errors.new_password_confirmation.message}`}</div>
               )}
             </div>
-            <div className="  md:w-editEmplyeInput w-full  flex flex-col  ">
-             
-           
-            </div>
-         
-            </div>
-            <div className=" flex justify-center">
+            <div className="  md:w-editEmplyeInput w-full  flex flex-col  "></div>
+          </div>
+          <div className=" flex justify-center">
             <button
               type="submit"
-              className={` outline-none:focus-none hover:opacity-90 hover:text-yellowAcc font-tinos font-bold xl:ms-7 leading-6 my-[2rem] rounded-[10px] text-[26px] bg-greenAcc sm:w-[198px] w-[150px] h-[50px] text-white`}
-            >
+              className={` outline-none:focus-none ${!isValid ? 'bg-gray-500':' bg-greenAcc  hover:text-yellowAcc' } hover:opacity-90 font-tinos font-bold xl:ms-7 leading-6 my-[2rem] rounded-[10px] text-[26px] sm:w-[198px] w-[150px] h-[50px] text-white`}
+           disabled={!isValid}
+           >
               save
             </button>
-        </div> 
-            </div>
-            
-
-      
-
-        
+          </div>
+        </div>
       </form>
     </>
   );

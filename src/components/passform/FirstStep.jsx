@@ -249,7 +249,7 @@ useEffect(() => {
                   )}
                 </div>
                 <div>
-                  <label className=" text-greenAcc font-roboto font-bold text-[20px] text-label mt-2 ">
+                  <label className=" text-greenAcc font-roboto font-bold text-label mt-2 ">
                     Profession
                   </label>
                   <input

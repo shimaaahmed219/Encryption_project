@@ -17,7 +17,6 @@ export default {
         xs: "300px",
         sm: "500px",
         xsm: "600px",
-
         md: "775px",
         mmd: "850px",
         // => @media (min-width: 768px) { ... }
@@ -27,11 +26,9 @@ export default {
         extralg: "1072px",
         lg: "1073px",
         // => @media (min-width: 1024px) { ... }
-
         xlb: "1290",
         xl: "1280px",
         // => @media (min-width: 1280px) { ... }
-
         "2xl": "1536px",
         // => @media (min-width: 1536px) { ... }
       },
@@ -42,10 +39,8 @@ export default {
         "greenD": " #141D15",
         "yellowAcc": " #F6C90E",
         "pa":"#67816B",
-
         "bg": "#EBEBEB",
         "oddRow": " #F8F8F8",
-
         "email": " #778D86",
         "bgEmp": " #ffffff99",
         'fileUploud': "#D9D9D9",
@@ -75,7 +70,6 @@ export default {
       boxShadow: {
         "3xl": "0px 15px 15px -5px rgba(56, 56, 56, 0.80)",
         "4xl": "0px 10px 10px 0px rgba(0, 0, 0, 0.25)",
-
 
         form: "0px 5px 10px 0px rgba(0, 0, 0, 0.25)",
         select: ` 0px 10px 10px 0px rgba(0, 0, 0, 0.25)`,
@@ -109,7 +103,7 @@ export default {
         inputFile:"19px"
       },
       height:{
-input:"42px"
+        input:"42px"
       },
       animation: {
         fadeIn: 'fadeIn 0.5s ease-in forwards',

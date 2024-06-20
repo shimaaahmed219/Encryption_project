@@ -23,11 +23,7 @@ import PassportAuthorityLinks from "./Sidebar/PassportAuthorityLinks";
 // eslint-disable-next-line react/prop-types
 export default function Saidebar( {handilClose, showSidebar} ) {
   const links = [
-    { id: 1, name: "Statistics", href: "/", src: img },
-    { id: 5, name: "Add request", href: "/passForm", src: Edit },
-
-    // { id: 7, name: "Encryption file", href: "/encryption", src: Encrypted },
-    // { id: 8, name: "Decrypt file", href: "/Decrypt", src: decimg },
+    { id: 1, name: "Home", href: "/", src: img },
   ];
 
   
@@ -63,12 +59,12 @@ export default function Saidebar( {handilClose, showSidebar} ) {
           onClick={handilClose}
           edge="start"
         >
-          <ChevronLeftIcon className="ms-auto" />
+          <ChevronLeftIcon className="ms-auto mt-[-20px]" />
         </IconButton>
       </div>
 
       <div className={`flex flex-col  items-center pb-6 bt-3`}>
-        <div className="w-[65px] h-[67px] rounded-full userIcon flex justify-center items-center ">
+        <div className="w-[65px] mt-[-20px] h-[67px] rounded-full userIcon flex justify-center items-center ">
           {data?.photo ? (
             <img
               className="w-[65px] h-[67px] rounded-full"
@@ -87,7 +83,7 @@ export default function Saidebar( {handilClose, showSidebar} ) {
           {data?.user_type}
         </h6>
 
-        <div className="flex flex-col w-full mt-5  ">
+        <div className="flex flex-col w-full   ">
           {links.map((link) => (
             <div   key={link.id} className="hover:bg-hover px-5 hover:pl-10">
               <Link
