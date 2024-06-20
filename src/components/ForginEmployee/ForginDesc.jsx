@@ -75,11 +75,11 @@ export default function ForginDesc({ search }) {
   const startIndex = carrentPage * pageSize;
   const visbleEmployees = cleint
     .slice(startIndex, startIndex + pageSize)
-    .sort((a, b) =>
-      ` ${a.first_name} ${a.second_name} ${a.third_name}`.localeCompare(
-        ` ${b.first_name} ${b.second_name} ${b.third_name}`
-      )
-    );
+    // .sort((a, b) =>
+    //   ` ${a.first_name} ${a.second_name} ${a.third_name}`.localeCompare(
+    //     ` ${b.first_name} ${b.second_name} ${b.third_name}`
+    //   )
+    // );
 
   const handilDeletClient = (id) => {
     // checked delete

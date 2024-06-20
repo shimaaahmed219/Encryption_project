@@ -49,11 +49,8 @@ export default function EncriptionDataTable({ search }) {
   const startIndex = carrentPage * pageSize;
   const visbleEmployees = client
     .slice(startIndex, startIndex + pageSize)
-    .sort((a, b) =>
-      ` ${a.first_name} ${a.last_name} `.localeCompare(
-        ` ${b.first_name} ${b.last_name} `
-      )
-    );
+    
+    
 
   return (
     <div className="w-[70%]  m-auto my-10">

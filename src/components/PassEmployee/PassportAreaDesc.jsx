@@ -85,7 +85,8 @@ export default function PassportAreaDesc({ search }) {
   };
   const startIndex = carrentPage * pageSize;
   const visbleEmployees = cleint
-    .slice(startIndex, startIndex + pageSize).sort((a, b) => a.first_name.localeCompare(b.first_name));
+    .slice(startIndex, startIndex + pageSize)
+    // .sort((a, b) => a.first_name.localeCompare(b.first_name));
 
   // delet client
   const handilDeletClient = (id) => {
