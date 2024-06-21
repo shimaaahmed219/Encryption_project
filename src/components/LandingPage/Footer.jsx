@@ -31,8 +31,8 @@ export default function Footer() {
             <div className="w-[153px] flex-col flex text-white font-ropoto  leading-6 text-[16px]">
               <Link to="/" className="hover:text-yellowAcc">Home </Link>
               <Link to="/about"  className="hover:text-yellowAcc">About Us </Link>
-              <Link to="/service"  className="hover:text-yellowAcc">What We Do </Link>
-              <Link to="/security"  className="hover:text-yellowAcc">To The Power of 10 Donate </Link>
+              <Link to="/service"  className="hover:text-yellowAcc">service </Link>
+              <Link to="/security"  className="hover:text-yellowAcc">security </Link>
             </div>
           </div>
           {/*  */}
@@ -42,12 +42,11 @@ export default function Footer() {
             </h6>
             <div className=" flex-col flex text-white font-ropoto leading-6 my-1 text-[16px]">
               <ul>
-                <li>Encouraging Testing</li>
-                <li>Strengthening Advocacy</li>
-                <li>Sharing Information</li>
-                <li>Building Leadership</li>
-                <li>Engaging With Global Fund</li>
-                <li>Shining a Light</li>
+                <li>Providing an electronic </li>
+                  <li>passport service</li>
+                <li>Data encryption</li>
+                <li>Decrypt data</li>
+               
               </ul>
             </div>
           </div>

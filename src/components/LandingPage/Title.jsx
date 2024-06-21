@@ -8,10 +8,9 @@ export default function Title() {
             We have a work team with many skills
             </h1>
             <p className=" xl:w-[496px] min-h-[91px] leading-7   lg:text-[20px] md:text-[18px] text-[16px]  font-roboto text-greenAcc  md:font-normal font-thin ">
-            text ever since when an unknown printer took a galley of type and
-              scrambled it to make a type specimen book. It has survived not
-              only five centuries, but also the leap into electronic
-              typesetting, remaining essentially unchanged.
+            There is a working team for the application that is sure of
+             the user s ease of use and ensures that
+             there are no errors during the operation of the system
             </p>
           </div>
     

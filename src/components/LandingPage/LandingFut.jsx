@@ -28,8 +28,7 @@ export default function LandingFut() {
 
           {/* description */}
           <p className="font-roboto text-[13px] text-p font-normal pb-3 md:w-[252px]">
-            The practice of protecting information using encrypted algorithms,
-            hashes, and signatures.
+          The application encrypts sensitive citizen data, which enhances the security of your data
           </p>
         </div>
 
@@ -49,8 +48,7 @@ export default function LandingFut() {
 
           {/* description */}
           <p className="font-roboto text-[13px] text-p font-normal pb-3 md:w-[252px]">
-            The practice of protecting information using encrypted algorithms,
-            hashes, and signatures.
+          The application is characterized by ease of use, smoothness, and ease of obtaining the passport electronically
           </p>
         </div>
 
@@ -66,8 +64,7 @@ export default function LandingFut() {
 
           {/* description */}
           <p className="font-roboto text-[13px] text-p font-normal pb-3 md:w-[252px]">
-            The practice of protecting information using encrypted algorithms,
-            hashes, and signatures.
+          The application also has a data decryption feature to ensure data protection
           </p>
         </div>
       </div>
