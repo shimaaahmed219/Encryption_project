@@ -36,11 +36,13 @@ export default function Security() {
             <img src={icon2} className=" m-auto absolute top-[220px] " />
           </div>
         </div>
-        <p className="lg:w-[800px] m-auto mt-20 my-[50px] md:pb:0  pb-20 md:text-[28px] text-[24px] font-roboto font-normal md:leading-[47px] text-center text-greenAcc">
-          text ever since when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries, but also the leap into electronic typesetting,
-          remaining essentially unchanged.
+        <p className="lg:w-[800px] m-auto mt-20 my-[50px] md:pb:0  pb-20 md:text-[24px] text-[24px] font-roboto font-normal md:leading-[47px] text-center text-greenAcc">
+        Citizens data is protected through the
+               encryption process for sensitive data, 
+               through which the data is strengthened and privacy is
+                maintained. Data is sent and received encrypted between
+                 the parties concerned
+               with approval and review of the data.
         </p>
       </div>
       <Footer />
