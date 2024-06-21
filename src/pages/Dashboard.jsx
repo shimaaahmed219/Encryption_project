@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useState, useEffect } from "react";
 import FexidSidebar from "../components/FexidSidebar";
 import { url } from "../components/URL";
@@ -7,8 +8,9 @@ import Hr from "../components/Hr";
 import DshboardBody from "../components/Dashboard/DshboardBody";
 export default function Dashboard() {
   const [data, setData] = useState(null);
-  //   const [close, setClose] = useState(false);
+  //   const [close, setClose] = useState(false)
   useEffect(() => {
+   
     axios
       .get(`${url}/auth/myProfile`, {
         headers: {
@@ -20,26 +22,24 @@ export default function Dashboard() {
   }, []);
   return (
     <>
+   
       {!data ? (
         <div className="w-full min-h-screen flex  text-[30px] font-tinos font-semibold text-greenAcc justify-center items-center">
-<h1>You are not authorized to access the dashboard</h1>
+          <h1>loading.....</h1>
         </div>
       ) : (
-
         <div className="w-full min-h-screen flex justify-between bg-bg">
-        <div className="lg:block hidden">
-        <FexidSidebar />
-        </div>
-          
-          <div className="w-[100%] ms-auto ">
-            <Nav/>
-            <Hr/>
-            <div className="mx-10">
-            <DshboardBody/>
-            </div>
-      
+          <div className="lg:block hidden">
+            <FexidSidebar />
           </div>
 
+          <div className="w-[100%] ms-auto ">
+            <Nav />
+            <Hr />
+            <div className="mx-10">
+              <DshboardBody />
+            </div>
+          </div>
         </div>
       )}
     </>

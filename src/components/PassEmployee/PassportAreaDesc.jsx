@@ -188,7 +188,7 @@ console.log("client",cleint);
               />
               <span className="  font-roboto flex  mt-1 xl:text-[14px] text-[10px]  text-greenD mx-3 capitalize">
                 {" "}
-                {user.first_name} {user.second_name} {user.third_name}
+              <Link to={`/user/${user.id}`}> {user.first_name} {user.second_name} {user.third_name}</Link> 
               </span>
             </div>
             {/* user id nationalty */}

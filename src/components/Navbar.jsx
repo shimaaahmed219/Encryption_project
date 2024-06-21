@@ -3,6 +3,7 @@ import { useState } from "react";
 import NavDropDowen from "./LandingPage/NavDropDowen";
 import { useGetProfileDataQuery } from "../rtk/api/apiSlice";
 import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
+import icon from "../assets/navImg/Group (1).svg";
 export default function Navbar() {
   const location = useLocation();
   const [showDropDowen, setShowDropDowen] = useState(false);
@@ -15,11 +16,18 @@ export default function Navbar() {
   return (
     <div className="w-5/6 m-auto my-5  z-50 items-center justify-between  h-[40px] flex ">
       <div className="flex ">
+      <img
+            src={icon}
+            alt="enc-img"
+            className="  mt-1 ms-auto md:block hidden transition ease-in-out delay-150 duration-700 "
+          />
         <h1
-          className={` font-tinos text-[24px]   items-center gap-x-8 text-white md:mt-3 mt-[-30px] ml-3  text-xl`}
+          className={` font-tinos text-[24px]   items-center gap-x-8 text-white md:mt-4 mt-[-30px] ml-3  text-xl`}
         >
           <span className="text-yellowAcc text-[20px] ">E-</span>passport
+       
         </h1>
+       
       </div>
 
       <nav className="xl:block hidden ms-auto">

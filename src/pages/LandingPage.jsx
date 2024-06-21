@@ -29,10 +29,12 @@ export default function LandingPage() {
           {/* title and image */}
           <div className=" md:w-3/6 w-6/6   ">
             <h1 className="font-bold leading-[45px] xl:pr-20 font-tinos text-yellowAcc ">
-            <AnimatedText  text="Obtain your passport easily through our website" />
+              <AnimatedText text="Obtain your passport easily through our website" />
             </h1>
             <p className="md:w-[430px] font-extralight mt-5 text-[19px] font-roboto text-pa  my-4">
-            The application saves you time and effort and is approved electronically by the relevant authorities without going to government offices.
+              The application saves you time and effort and is approved
+              electronically by the relevant authorities without going to
+              government offices.
             </p>
             <div className="flex lg:justify-start justify-center ">
               <Link
@@ -90,9 +92,9 @@ export default function LandingPage() {
             remaining essentially unchanged. */}
             Obtain your passport easily through our website
             <p>
-            The application saves you time and effort and is
-             approved electronically by the relevant 
-            authorities without going to government offices.
+              The application saves you time and effort and is approved
+              electronically by the relevant authorities without going to
+              government offices.
             </p>
           </p>
           <Link
@@ -134,16 +136,10 @@ export default function LandingPage() {
               Our website is characterized by complete data protection
             </h1>
             <p className=" lg:w-[576px] min-h-[91px] lg:text-left md:text-center px-5  lg:text-[20px] md:text-[18px] text-[20px] my-7 font-roboto text-greenAcc  font-normal leading-7">
-              {/* text ever since when an unknown printer took a galley of type and
-              scrambled it to make a type specimen book. It has survived not
-              only five centuries, but also the leap into electronic
-              typesetting, remaining essentially unchange */}
-              Citizens data is protected through the
-               encryption process for sensitive data, 
-               through which the data is strengthened and privacy is
-                maintained. Data is sent and received encrypted between
-                 the parties concerned
-               with approval and review of the data.
+              Citizens data is protected through the encryption process for
+              sensitive data, through which the data is strengthened and privacy
+              is maintained. Data is sent and received encrypted between the
+              parties concerned with approval and review of the data.
             </p>
             <div className="w-full flex lg:justify-start lg:ml-4 justify-center">
               <Link

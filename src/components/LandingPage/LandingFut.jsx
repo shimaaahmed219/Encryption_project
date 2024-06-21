@@ -53,7 +53,7 @@ export default function LandingFut() {
         </div>
 
         {/* ******************************************* */}
-        <div className="xl:w-[326px] border-b-2 border-yellowAcc md:w-[400px] min-h-[146px] xl:ml-0 md:ml-[290px] ml-0  md:ms-auto xl:my-0 lg:my-10 my-10 bg-bg rounded-[20px] px-[20px] pt-[20px]">
+        <div className="  xl:w-[326px] border-b-2 border-yellowAcc md:w-[400px] min-h-[146px] xl:ml-0 md:ml-[290px] ml-0  md:ms-auto xl:my-0 lg:my-10 my-10 bg-bg rounded-[20px] px-[20px] pt-[20px]">
           {/* icon */}
           <img src={decIcon} className="mt-[-43px] ml-[10px] mb-2" />
 
