@@ -8,7 +8,6 @@ import AddEmployee from "./pages/AddEmployee";
 import Employee from "./pages/Employee";
 import EditEmployee from "./pages/EditEmployee";
 import EncryptedFiles from "./pages/EncryptedFiles";
-import Decrypt from "./pages/Decrypt";
 import Encryption from "./pages/Encryption";
 import TryAgain from "./pages/TryAgain";
 import PassportFormReq from "./pages/PassportFormReq";
@@ -45,16 +44,26 @@ export default function App() {
     <>
       <Routes>
         <Route path="/login" element={<Login />} />
-        <Route path="/tryagain" element={<TryAgain />}/>
-        <Route path="/" element={<LandingPage/>} />
-        <Route path="/about" element={<About/>} />
+        <Route path="/tryagain" element={<TryAgain />} />
+        <Route path="/passform" element={<PassportFormReq />} />
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/about" element={<About />} />
         <Route path="/service" element={<Service />} />
         <Route path="/security" element={<Security />} />
-        <Route path="/passform" element={<PassportFormReq />} />
         <Route path="/Dashboard" element={<Dashboard />} />
+        <Route path="/addEmployee" element={<AddEmployee />} />
+        <Route path="/employee" element={<Employee />} />
+        <Route path="/EditEmployee/:id" element={<EditEmployee />} />
+        <Route path="/EncryptedFiles/:id" element={<EncryptedFiles />} />
+        <Route path="/Encryption" element={<Encryption />} />
+        <Route path="/passEployee" element={<PassEmployee />} />
+        <Route path="/ForgenEmployee" element={<ForeignEmployee />} />
+        <Route path="/recruitmentArea" element={<RecruitmentArea />} />
+        <Route path="/updateClient/:id" element={<UpdateClientData />} />
+        <Route path="/updateProfile/:id" element={<UpdateMyProfile />} />
+        <Route path="/encriptionData" element={<EncriptionData />} />
 
-
-        {data.user_type === "admin" && (
+        {/* {data.user_type === "admin" && (
           <>
             <Route path="/addEmployee" element={<AddEmployee />} />
             <Route path="/employee" element={<Employee />} />
@@ -90,7 +99,7 @@ export default function App() {
             <Route path="/recruitmentArea" element={<RecruitmentArea />} />
             <Route path="/updateProfile/:id" element={<UpdateMyProfile />} />
           </>
-        )}
+        )} */}
         <Route
           path="*"
           element={
