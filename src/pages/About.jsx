@@ -14,19 +14,19 @@ export default function About() {
       id: 1,
       src: encIcon,
       name: "Encryption technology.",
-      des: "The practice of protecting information using encrypted algorithms, hashes, and signatures",
+      des: " The application encrypts sensitive data, which enhances the security of your data",
     },
     {
       id: 2,
       src: decIcon,
       name: "Decryption technology.",
-      des: "The practice of protecting information using encrypted algorithms, hashes, and signatures",
+      des: "  The application also has a data decryption feature to ensure data protection",
     },
     {
       id: 3,
       src: use,
       name: "Ease of use.",
-      des: "The practice of protecting information using encrypted algorithms, hashes, and signatures",
+      des: "The application is characterized by ease of use, smoothness,",
     },
   ];
 
@@ -48,11 +48,8 @@ export default function About() {
           <h1 className="md:text-[48px] ml-10 sm:text-[30] text-[25px] font-tinos sm:mt-0 mt-[-270px] sm:text-left  font-bold">
             Our mission
           </h1>
-          <p className="lg:w-[475px] md:w-[350px] sm:pr-0 sm:w-[475px] w-[250px] pr-6 ml-10 md:mb-0 mb-[50px] m-auto lg:text-[24px] md:text-[20px] text-[15px] font-normal text-greenAcc leading-8 font-roboto">
-            text ever since when an unknown printer took a galley of type and
-            scrambled it to make a type specimen book. It has survived not only
-            five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged.
+          <p className="lg:w-[475px] md:w-[350px] sm:pr-0 sm:w-[475px] w-[250px] text-greenAcc pr-6 ml-10 md:mb-0 mb-[50px] m-auto lg:text-[19px] md:text-[17px] text-[15px] font-normal  leading-8 font-roboto">
+          Receiving the data after the citizen enters his data, reviewing and protecting it, sending the data electronically to the competent authorities, encrypted until approved by all parties, and communicating with the citizen if there is a deficiency or error in the sent data. There is a decryption feature after sending the approval.
           </p>
         </div>
         <div className="px-10">
@@ -76,7 +73,7 @@ export default function About() {
               {item.name}
             </h1>
            
-            <p className="sm:w-[312px] m-auto mb-10 leading-7 font-normal sm:text-[24px] text-[20px] font-roboto text-p">
+            <p className="sm:w-[312px] m-auto mb-10 leading-7 font-normal sm:text-[20px] text-[20px] font-roboto text-p">
               {item.des}
             </p>
           </div>
