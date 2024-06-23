@@ -1,4 +1,4 @@
-import { Route, Routes, useLocation } from "react-router-dom";
+import {  Route, Routes, useLocation } from "react-router-dom";
 import LandingPage from "./pages/LandingPage";
 import About from "./pages/About";
 import Service from "./pages/Service";
@@ -40,6 +40,8 @@ export default function App() {
       .then((res) => setData(res.data.data));
   }, []);
 
+  
+
   return (
     <>
       <Routes>
@@ -50,8 +52,8 @@ export default function App() {
         <Route path="/about" element={<About />} />
         <Route path="/service" element={<Service />} />
         <Route path="/security" element={<Security />} />
-        {/* <Route path="/Dashboard" element={<Dashboard />} /> */}
-        {/* <Route path="/addEmployee" element={<AddEmployee />} />
+        <Route path="/Dashboard" element={<Dashboard />} /> 
+        <Route path="/addEmployee" element={data?.user_type === "admin" ||data?.user_type === "recruitment district"?<AddEmployee />:<LandingPage/> }/>
         <Route path="/employee" element={<Employee />} />
         <Route path="/EditEmployee/:id" element={<EditEmployee />} />
         <Route path="/EncryptedFiles/:id" element={<EncryptedFiles />} />
@@ -59,11 +61,11 @@ export default function App() {
         <Route path="/passEployee" element={<PassEmployee />} />
         <Route path="/ForgenEmployee" element={<ForeignEmployee />} />
         <Route path="/recruitmentArea" element={<RecruitmentArea />} />
-        <Route path="/updateClient/:id" element={<UpdateClientData />} /> */}
-        {/* <Route path="/updateProfile/:id" element={<UpdateMyProfile />} /> */}
-        {/* <Route path="/encriptionData" element={<EncriptionData />} /> */}
+        <Route path="/updateClient/:id" element={<UpdateClientData />} /> 
+          <Route path="/updateProfile/:id" element={<UpdateMyProfile />} />
+          <Route path="/encriptionData" element={<EncriptionData />} /> 
 
-        {data.user_type === "admin" && (
+        {/* {data.user_type === "admin" && (
           <>
             <Route path="/addEmployee" element={<AddEmployee />} />
             <Route path="/Dashboard" element={<Dashboard />} />
@@ -100,7 +102,7 @@ export default function App() {
             <Route path="/recruitmentArea" element={<RecruitmentArea />} />
             <Route path="/updateProfile/:id" element={<UpdateMyProfile />} />
           </>
-        )}
+        )} */}
         <Route
           path="*"
           element={
