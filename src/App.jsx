@@ -1,4 +1,4 @@
-import {  Route, Routes, useLocation } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import LandingPage from "./pages/LandingPage";
 import About from "./pages/About";
 import Service from "./pages/Service";
@@ -40,8 +40,6 @@ export default function App() {
       .then((res) => setData(res.data.data));
   }, []);
 
-  
-
   return (
     <>
       <Routes>
@@ -52,18 +50,71 @@ export default function App() {
         <Route path="/about" element={<About />} />
         <Route path="/service" element={<Service />} />
         <Route path="/security" element={<Security />} />
-        <Route path="/Dashboard" element={<Dashboard />} /> 
-        <Route path="/addEmployee" element={data?.user_type === "admin" ||data?.user_type === "recruitment district"?<AddEmployee />:<LandingPage/> }/>
-        <Route path="/employee" element={<Employee />} />
-        <Route path="/EditEmployee/:id" element={<EditEmployee />} />
-        <Route path="/EncryptedFiles/:id" element={<EncryptedFiles />} />
-        <Route path="/Encryption" element={<Encryption />} />
-        <Route path="/passEployee" element={<PassEmployee />} />
-        <Route path="/ForgenEmployee" element={<ForeignEmployee />} />
-        <Route path="/recruitmentArea" element={<RecruitmentArea />} />
-        <Route path="/updateClient/:id" element={<UpdateClientData />} /> 
-          <Route path="/updateProfile/:id" element={<UpdateMyProfile />} />
-          <Route path="/encriptionData" element={<EncriptionData />} /> 
+        <Route path="/Dashboard" element={<Dashboard />} />
+        <Route
+          path="/addEmployee"
+          element={
+            data?.user_type === "admin" ? <AddEmployee /> : <LandingPage />
+          }
+        />
+        <Route
+          path="/employee"
+          element={data?.user_type === "admin" ? <Employee /> : <LandingPage />}
+        />
+        <Route
+          path="/EditEmployee/:id"
+          element={
+            data?.user_type === "admin" ? <EditEmployee /> : <LandingPage />
+          }
+        />
+        <Route
+          path="/EncryptedFiles/:id"
+          element={
+            data?.user_type === "admin" ? <EncryptedFiles /> : <LandingPage />
+          }
+        />
+        <Route
+          path="/Encryption"
+          element={
+            data?.user_type === "admin" ? <Encryption /> : <LandingPage />
+          }
+        />
+        <Route
+          path="/passEployee"
+          element={
+            data?.user_type === "admin" ? <PassEmployee /> : <LandingPage />
+          }
+        />
+        <Route
+          path="/ForgenEmployee"
+          element={
+            data?.user_type === "admin"  ? <ForeignEmployee /> : <LandingPage />
+          }
+        />
+        <Route
+          path="/recruitmentArea"
+          element={
+            data?.user_type === "admin" ||   data?.user_type === "recruitment district"  ? <RecruitmentArea /> : <LandingPage />
+          }
+        />
+        <Route
+          path="/updateClient/:id"
+          element={
+            data?.user_type === "admin" ? <UpdateClientData /> : <LandingPage />
+          }
+        />
+        <Route
+          path="/updateProfile/:id"
+          element={
+            data?.user_type === "admin" ? <UpdateMyProfile /> : <LandingPage />
+          }
+        />
+        <Route
+          path="/encriptionData"
+          element={
+            data?.user_type === "admin" ? <EncriptionData /> : <LandingPage />
+          }
+        />
 
         {/* {data.user_type === "admin" && (
           <>
