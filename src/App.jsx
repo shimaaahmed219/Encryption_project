@@ -50,8 +50,8 @@ export default function App() {
         <Route path="/about" element={<About />} />
         <Route path="/service" element={<Service />} />
         <Route path="/security" element={<Security />} />
-        <Route path="/Dashboard" element={<Dashboard />} />
-        <Route path="/addEmployee" element={<AddEmployee />} />
+        {/* <Route path="/Dashboard" element={<Dashboard />} /> */}
+        {/* <Route path="/addEmployee" element={<AddEmployee />} />
         <Route path="/employee" element={<Employee />} />
         <Route path="/EditEmployee/:id" element={<EditEmployee />} />
         <Route path="/EncryptedFiles/:id" element={<EncryptedFiles />} />
@@ -59,13 +59,14 @@ export default function App() {
         <Route path="/passEployee" element={<PassEmployee />} />
         <Route path="/ForgenEmployee" element={<ForeignEmployee />} />
         <Route path="/recruitmentArea" element={<RecruitmentArea />} />
-        <Route path="/updateClient/:id" element={<UpdateClientData />} />
-        <Route path="/updateProfile/:id" element={<UpdateMyProfile />} />
-        <Route path="/encriptionData" element={<EncriptionData />} />
+        <Route path="/updateClient/:id" element={<UpdateClientData />} /> */}
+        {/* <Route path="/updateProfile/:id" element={<UpdateMyProfile />} /> */}
+        {/* <Route path="/encriptionData" element={<EncriptionData />} /> */}
 
-        {/* {data.user_type === "admin" && (
+        {data.user_type === "admin" && (
           <>
             <Route path="/addEmployee" element={<AddEmployee />} />
+            <Route path="/Dashboard" element={<Dashboard />} />
             <Route path="/employee" element={<Employee />} />
             <Route path="/EditEmployee/:id" element={<EditEmployee />} />
             <Route path="/EncryptedFiles/:id" element={<EncryptedFiles />} />
@@ -80,7 +81,7 @@ export default function App() {
         )}
         {data.user_type === "mofa" && (
           <>
-           
+           <Route path="/Dashboard" element={<Dashboard />} />
             <Route path="/ForgenEmployee" element={<ForeignEmployee />} />
             <Route path="/updateProfile/:id" element={<UpdateMyProfile />} />
           </>
@@ -95,11 +96,11 @@ export default function App() {
 
         {data.user_type === "recruitment district" && (
           <>
-         
+         <Route path="/Dashboard" element={<Dashboard />} />
             <Route path="/recruitmentArea" element={<RecruitmentArea />} />
             <Route path="/updateProfile/:id" element={<UpdateMyProfile />} />
           </>
-        )} */}
+        )}
         <Route
           path="*"
           element={

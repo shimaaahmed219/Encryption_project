@@ -15,7 +15,7 @@ import Title from "../components/LandingPage/Title";
 import LandingSvg from "../components/LandingPage/svg/LandingSvg";
 import LandingPolygon from "../components/LandingPage/svg/LandingPolygon";
 import AnimatedText from "../components/LandingPage/AnimatedText";
-
+import land from "../assets/landingPage/Group22.svg"
 export default function LandingPage() {
   return (
     <div className="w-full min-h-screen relative">
@@ -47,18 +47,19 @@ export default function LandingPage() {
           </div>
           {/* computer image */}
           <div>
-            <div className=" flex  items-center lg:ml-[-400px]   md:ml-[50px] md:px-0 px-10">
-              <div className="relative">
+            <div className=" flex  mt-6 items-center lg:ml-[-400px]   ">
+              {/* <div className="relative">
                 <img src={img} className="mt-[170px] absolute ml-[-20px]" />
                 <img src={g4} className="" />
-              </div>
-              <div className="md:block hidden">
+              </div> */}
+              {/* <div className="md:block hidden">
                 <div className="flex items-center mx-3 ">
                   <img src={mob} className="absolute  " />
                   <img src={tru} className="absolute mt-[160px] ml-[-30px]" />
                   <img src={t} className="absolute mt-[160px] ml-[-15px]" />
-                </div>
-              </div>
+                </div> */}
+              {/* </div> */}
+              <img src={land}/>
             </div>
           </div>
         </div>
