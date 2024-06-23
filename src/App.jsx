@@ -82,19 +82,20 @@ export default function App() {
         <Route
           path="/passEployee"
           element={
-            data?.user_type === "admin" ? <PassEmployee /> : <LandingPage />
+          
+           data?.user_type === "passport authority" ||    data?.user_type === "admin"?  <PassEmployee  /> : <LandingPage />
           }
         />
         <Route
           path="/ForgenEmployee"
           element={
-            data?.user_type === "admin"  ? <ForeignEmployee /> : <LandingPage />
+            data?.user_type === "admin" ||  data?.user_type === "mofa" ? <ForeignEmployee /> : <LandingPage />
           }
         />
         <Route
           path="/recruitmentArea"
           element={
-            data?.user_type === "admin" ||   data?.user_type === "recruitment district"  ? <RecruitmentArea /> : <LandingPage />
+            data?.user_type === "admin" ||   data?.user_type ==="recruitment district"  ? <RecruitmentArea /> : <LandingPage />
           }
         />
         <Route
@@ -106,7 +107,7 @@ export default function App() {
         <Route
           path="/updateProfile/:id"
           element={
-            data?.user_type === "admin" ? <UpdateMyProfile /> : <LandingPage />
+            data?.user_type ==="recruitment district" || data?.user_type ==="admin" || data?.user_type ==="mofa" ? <UpdateMyProfile /> : <LandingPage />
           }
         />
         <Route
