@@ -17,28 +17,28 @@ import RecruitmentArea from "./pages/RecruitmentArea";
 import UpdateClientData from "./pages/UpdateClientData";
 import Security from "./pages/Security";
 import UpdateMyProfile from "./pages/UpdateMyProfile";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import EncriptionData from "./pages/EncriptionData";
-import axios from "axios";
-import { url } from "./components/URL";
+// import axios from "axios";
+// import { url } from "./components/URL";
 
 export default function App() {
   const location = useLocation();
-  const [data, setData] = useState({});
+  // const [data, setData] = useState({});
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location]);
 
-  useEffect(() => {
-    axios
-      .get(`${url}/auth/myProfile`, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-          Authorization: `Bearer ${window.localStorage.getItem("token")}`,
-        },
-      })
-      .then((res) => setData(res.data.data));
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get(`${url}/auth/myProfile`, {
+  //       headers: {
+  //         "Content-Type": "multipart/form-data",
+  //         Authorization: `Bearer ${window.localStorage.getItem("token")}`,
+  //       },
+  //     })
+  //     .then((res) => setData(res.data.data));
+  // }, []);
 
   return (
     <>
@@ -50,72 +50,18 @@ export default function App() {
         <Route path="/about" element={<About />} />
         <Route path="/service" element={<Service />} />
         <Route path="/security" element={<Security />} />
-        <Route path="/Dashboard" element={<Dashboard />} />
-        <Route
-          path="/addEmployee"
-          element={
-            data?.user_type === "admin" ? <AddEmployee /> : <LandingPage />
-          }
-        />
-        <Route
-          path="/employee"
-          element={data?.user_type === "admin" ? <Employee /> : <LandingPage />}
-        />
-        <Route
-          path="/EditEmployee/:id"
-          element={
-            data?.user_type === "admin" ? <EditEmployee /> : <LandingPage />
-          }
-        />
-        <Route
-          path="/EncryptedFiles/:id"
-          element={
-            data?.user_type === "admin" ? <EncryptedFiles /> : <LandingPage />
-          }
-        />
-        <Route
-          path="/Encryption"
-          element={
-            data?.user_type === "admin" ? <Encryption /> : <LandingPage />
-          }
-        />
-        <Route
-          path="/passEployee"
-          element={
-          
-           data?.user_type === "passport authority" ||    data?.user_type === "admin"?  <PassEmployee  /> : <LandingPage />
-          }
-        />
-        <Route
-          path="/ForgenEmployee"
-          element={
-            data?.user_type === "admin" ||  data?.user_type === "mofa" ? <ForeignEmployee /> : <LandingPage />
-          }
-        />
-        <Route
-          path="/recruitmentArea"
-          element={
-            data?.user_type === "admin" ||   data?.user_type ==="recruitment district"  ? <RecruitmentArea /> : <LandingPage />
-          }
-        />
-        <Route
-          path="/updateClient/:id"
-          element={
-            data?.user_type === "admin" ? <UpdateClientData /> : <LandingPage />
-          }
-        />
-        <Route
-          path="/updateProfile/:id"
-          element={
-            data?.user_type ==="recruitment district" || data?.user_type ==="admin" || data?.user_type ==="mofa" ? <UpdateMyProfile /> : <LandingPage />
-          }
-        />
-        <Route
-          path="/encriptionData"
-          element={
-            data?.user_type === "admin" ? <EncriptionData /> : <LandingPage />
-          }
-        />
+        <Route path="/Dashboard" element={<Dashboard />} /> 
+        <Route path="/addEmployee" element={<AddEmployee />} />
+        <Route path="/employee" element={<Employee />} />
+        <Route path="/EditEmployee/:id" element={<EditEmployee />} />
+        <Route path="/EncryptedFiles/:id" element={<EncryptedFiles />} />
+        <Route path="/Encryption" element={<Encryption />} />
+        <Route path="/passEployee" element={<PassEmployee />} />
+        <Route path="/ForgenEmployee" element={<ForeignEmployee />} />
+        <Route path="/recruitmentArea" element={<RecruitmentArea />} />
+        <Route path="/updateClient/:id" element={<UpdateClientData />} /> 
+        <Route path="/updateProfile/:id" element={<UpdateMyProfile />} />
+        <Route path="/encriptionData" element={<EncriptionData />} />
 
         {/* {data.user_type === "admin" && (
           <>

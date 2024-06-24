@@ -43,16 +43,15 @@ export default function LoginWeb() {
       const response = await loginUser(data).unwrap();
 
       const userData = {
-        name: response.user.name,
-        token: response.access_token,
-        email: response.user.email,
-        phone: response.user.phone,
+        name:response.user.name,
+        token:response.access_token,
+        email:response.user.email,
+        phone:response.user.phone,
       };
 
       // set user data in localStorge
       localStorage.setItem("user", JSON.stringify(userData));
       localStorage.setItem("token", response.access_token);
-
       navigate("/dashboard");
     } catch (error) {
       console.error(error);
@@ -161,8 +160,7 @@ export default function LoginWeb() {
               <button
                 type="submit"
                 className={` ${
-                  !isValid && "bg-gray-500"
-                }  bg-greenAcc font-tinos font-bold md:w-[210px]  mt-[15px] w-[180px] h-[60px] capitalize  text-center text-white text-[32px] rounded-input`}
+                  !isValid ? "bg-gray-500":" bg-greenAcc "} font-tinos font-bold md:w-[210px]  mt-[15px] w-[180px] h-[60px] capitalize  text-center text-white text-[32px] rounded-input`}
                 disabled={!isValid}
               >
                 login
